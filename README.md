@@ -4,4 +4,5 @@
 to install the library:
 
 if (!require('devtools')) install.packages('devtools')
+
 devtools::install_github('armandosunny/EcoNicheS')
