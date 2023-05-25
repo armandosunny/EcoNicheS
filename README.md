@@ -7,6 +7,10 @@ if (!require('devtools')) install.packages('devtools')
 
 devtools::install_github('armandosunny/EcoNicheS')
 
+#### To open the shiny GUI application:
+
+shiny::runApp("EcoNicheS.R")
+
 
 # Please cite as:
 
