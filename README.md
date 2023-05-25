@@ -14,7 +14,7 @@ shiny::runApp("EcoNicheS.R")
 
 # Please cite as:
 
-Sunny, A. (2023). EcoNicheS: An R library for Shiny that enables the analysis of ecological niche modeling using the biomod2 library and other analytics.GitHub. https://github.com/armandosunny/EcoNicheS
+Sunny, A. (2023). EcoNicheS: An R library for Shiny that enables the analysis of ecological niche modeling using the biomod2 library and other analytics. GitHub. https://github.com/armandosunny/EcoNicheS
 
 
 # Acknowledgements
