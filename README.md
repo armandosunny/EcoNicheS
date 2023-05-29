@@ -17,7 +17,7 @@ Locate the compressed biomod2 4.2.2 file that you have downloaded.
 Click on the file to select it.
 Confirm the installation by proceeding with the installation process.
 
-####If you already have a different version of biomod2 installed, you can remove it with the following function: remove.packages("biomod2") and later install the correct version biomod2 4.2.2.
+###### If you already have a different version of biomod2 installed, you can remove it with the following function: remove.packages("biomod2") and later install the correct version biomod2 4.2.2.
 
 #### For your convenience, the biomod2 4.2.2 version has been included in the repository.
 
