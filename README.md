@@ -7,7 +7,19 @@ if (!require('devtools')) install.packages('devtools')
 
 devtools::install_github('armandosunny/EcoNicheS')
 
-#### To open the shiny GUI application:
+## EcoNicheS collaborates with biomod2 version 4.2.2 specifically, as it was found that later versions are incompatible. Therefore, to ensure smooth functionality, please follow these instructions to download and install the correct version of biomod2 in Rstudio:
+
+Open Rstudio.
+Navigate to "Tools" in the top menu.
+Select "Install Packages."
+In the "Install from" dropdown menu, choose "Package Archive File (.zip; .tar.gz)."
+Locate the compressed biomod2 4.2.2 file that you have downloaded.
+Click on the file to select it.
+Confirm the installation by proceeding with the installation process.
+
+#### For your convenience, the biomod2 4.2.2 version has been included in the repository.
+
+## To open the shiny GUI application:
 
 shiny::runApp("EcoNicheS.R")
 
