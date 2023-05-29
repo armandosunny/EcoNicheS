@@ -7,7 +7,7 @@ if (!require('devtools')) install.packages('devtools')
 
 devtools::install_github('armandosunny/EcoNicheS')
 
-### EcoNicheS collaborates with biomod2 version 4.2.2 specifically, as it was found that later versions are incompatible. Therefore, to ensure smooth functionality, please follow these instructions to download and install the correct version of biomod2 in Rstudio:
+#### EcoNicheS collaborates with biomod2 version 4.2.2 specifically, as it was found that later versions are incompatible. Therefore, to ensure smooth functionality, please follow these instructions to download and install the correct version of biomod2 in Rstudio:
 
 Open Rstudio.
 Navigate to "Tools" in the top menu.
