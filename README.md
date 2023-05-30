@@ -30,7 +30,7 @@ Click on the file to select it.
 
 Confirm the installation by proceeding with the installation process.
 
-###To ensure smooth workflow in RStudio, it is crucial to define the working directory properly. Follow these steps: navigate to "Session" -> "Set Working Directory" -> "Choose Directory". Select the folder that contains the .asc layers and the .csv coordinate base file. The base file should have the species listed in the first column, followed by longitude (X) in the second column, and latitude (Y) in the third column. Additionally, ensure that the folder includes all the necessary files for running MAXENT.
+### To ensure smooth workflow in RStudio, it is crucial to define the working directory properly. Follow these steps: navigate to "Session" -> "Set Working Directory" -> "Choose Directory". Select the folder that contains the .asc layers and the .csv coordinate base file. The base file should have the species listed in the first column, followed by longitude (X) in the second column, and latitude (Y) in the third column. Additionally, ensure that the folder includes all the necessary files for running MAXENT.
 
 ## To open the shiny GUI application:
 
