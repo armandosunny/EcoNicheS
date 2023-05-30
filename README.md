@@ -38,7 +38,7 @@ Confirm the installation by proceeding with the installation process.
 ![DatabaseExample](https://github.com/armandosunny/EcoNicheS/assets/25662791/4345d761-ec1e-4c8c-89a5-5e5c8b89191e)
 
 
-###### Additionally, ensure that the folder includes all the necessary files for running MAXENT.
+###### Additionally, ensure that the working directory includes all the necessary files for running MAXENT.
 
 
 ![maxentExamples](https://github.com/armandosunny/EcoNicheS/assets/25662791/47e8882b-1075-47b5-b0d4-40d2136b1876)
