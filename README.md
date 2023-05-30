@@ -47,6 +47,7 @@ Confirm the installation by proceeding with the installation process.
 shiny::runApp("EcoNicheS.R")
 
 
+![EcoNicheSfig](https://github.com/armandosunny/EcoNicheS/assets/25662791/8216d77b-b976-4c45-9676-4d92aeec9e41)
 
 
 ## Please cite as:
