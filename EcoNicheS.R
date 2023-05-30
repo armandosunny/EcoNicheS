@@ -62,7 +62,7 @@ ui <- fluidPage(
     ),
     mainPanel(
       tabsetPanel(
-        tabPanel("Datos", tableOutput("data_table")),
+        tabPanel("Data", tableOutput("data_table")),
         tabPanel("Model Output", verbatimTextOutput("modelOutput")),
         tabPanel("Evaluation", plotOutput("evalScoresPlot"), plotOutput("evalScoresPlotValidation"),
                  plotOutput("evalScoresBoxplot")),
@@ -81,7 +81,7 @@ server <- function(input, output, session) {
   evaluations <- reactiveVal(NULL)
   varImportance <- reactiveVal(NULL)
   
-  # Función para cargar la base de datos
+  # Función para cargar la base de Data
   observeEvent(input$file, {
     file <- input$file
     data_raw <- read.csv(file$datapath)
@@ -171,7 +171,7 @@ server <- function(input, output, session) {
       points <- data()
       envt.st <- layers()
       
-      # Configurar el archivo de datos para Biomod2
+      # Configurar el archivo de Data para Biomod2
       bmData <- BIOMOD_FormatingData(
         resp.var = points$Response,
         resp.xy = points[, c("X", "Y")],
