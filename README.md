@@ -13,7 +13,7 @@ devtools::install_github('armandosunny/EcoNicheS')
 
 ##### For your convenience, the biomod2 4.2.2 version has been included in the repository.
  
-To install biomod2 4.2.2 download the package form this repository 
+To install biomod2 4.2.2 download the package form this repository. 
 
 Open Rstudio.
 
