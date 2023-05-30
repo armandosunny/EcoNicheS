@@ -1,5 +1,5 @@
 # EcoNicheS
- An R library for Shiny that enables the analysis of ecological niche modeling using the biomod2 library and other analyzes. This is the EcoNicheS version 1.0.0, and subsequent versions will be uploaded with additional analyses and upgrades. Thank you very much for using this library.
+ An R package for Shiny that enables the analysis of ecological niche modeling using the biomod2 package and other analyzes. This is the EcoNicheS version 1.0.0, and subsequent versions will be uploaded with additional analyses and upgrades. Thank you very much for using this package.
 
 ### To install the library:
 
@@ -48,9 +48,9 @@ shiny::runApp("EcoNicheS.R")
 
 ## Please cite as:
 
-Sunny, A. (2023). EcoNicheS: An R library for Shiny that enables the analysis of ecological niche modeling using the biomod2 library and other analyzes. GitHub. https://github.com/armandosunny/EcoNicheS
+Sunny, A. (2023). EcoNicheS: An R package for Shiny that enables the analysis of ecological niche modeling using the biomod2 package and other analyzes. GitHub. https://github.com/armandosunny/EcoNicheS
 
 
 ## Acknowledgements
 
-The creation of this library was made possible by the financial support provided by the Secretary of Research and Advanced Studies (SYEA) of the Autonomous University of the State of Mexico (Grant: 4732/2019CIB). 
+The creation of this package was made possible by the financial support provided by the Secretary of Research and Advanced Studies (SYEA) of the Autonomous University of the State of Mexico (Grant: 4732/2019CIB). 
