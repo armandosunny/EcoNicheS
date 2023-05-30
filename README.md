@@ -40,9 +40,7 @@ Confirm the installation by proceeding with the installation process.
 
 ###### Additionally, ensure that the working directory includes all the necessary files for running MAXENT (MAXENT can be downloaded from here: https://biodiversityinformatics.amnh.org/open_source/maxent/)
 
-
-![maxentExamples](https://github.com/armandosunny/EcoNicheS/assets/25662791/47e8882b-1075-47b5-b0d4-40d2136b1876)
-
+![maxentExamples2](https://github.com/armandosunny/EcoNicheS/assets/25662791/12819901-36ae-429a-a8b6-eb44dffce579)
 
 ## To open the shiny GUI application:
 
