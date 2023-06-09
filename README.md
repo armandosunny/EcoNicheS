@@ -1,6 +1,7 @@
-# EcoNicheS
+# EcoNicheS![Sin título-1](https://github.com/armandosunny/EcoNicheS/assets/25662791/16dd5132-f389-4d13-b7da-bae929a19dee)
 
-######![EcoNicheS](https://github.com/armandosunny/EcoNicheS/assets/25662791/27edc34a-99be-417a-a9fd-c46faf7c864b)
+
+
 
  An R package for Shiny that enables the analysis of ecological niche modeling using the biomod2 package and other analyzes. This is the EcoNicheS version 1.0.0, and subsequent versions will be uploaded with additional analyses and upgrades. Thank you very much for using this package.
 
