@@ -6,7 +6,11 @@ Aquí irá texto o no no sep, estoy haciendo una pruebita
 
 
 ## Getting started
+``` r
+options(shiny.maxRequestSize = 6000*1024^2)
+```
 
+Texto
 
 ``` r
 library(shiny)
@@ -25,7 +29,7 @@ library(shinydashboard)
 library(sf)
 library(ggplot2)
 library(dplyr)
-library(rJava)
 ```
+
 
 
