@@ -8,10 +8,8 @@ An R library for Shiny that enables the analysis of ecological niche modeling us
 ## Getting started
 
 
-
-
-
-`library(shiny)
+``` r
+library(shiny)
 library(terra)
 library(raster)
 library(usdm)
@@ -23,13 +21,11 @@ library(rgdal)
 library(tiff)
 library(rJava)
 library(tidyterra)
-library(shinydashboard)`
-`library(sf)
-library(terra)
-library(ENMTools)
+library(shinydashboard)
+library(sf)
 library(ggplot2)
 library(dplyr)
-library(rJava)`
-
+library(rJava)
+```
 
 
