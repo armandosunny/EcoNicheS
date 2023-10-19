@@ -12,24 +12,5 @@ options(shiny.maxRequestSize = 6000*1024^2)
 
 Texto
 
-``` r
-library(shiny)
-library(terra)
-library(raster)
-library(usdm)
-library(ENMTools)
-library(biomod2)
-library(RColorBrewer)
-library(dismo)
-library(rgdal)
-library(tiff)
-library(rJava)
-library(tidyterra)
-library(shinydashboard)
-library(sf)
-library(ggplot2)
-library(dplyr)
-```
-
 
 
