@@ -5,7 +5,7 @@ An R library for Shiny that enables the analysis of ecological niche modeling us
 
 
 
-# Getting started: Prepare your database
+### Getting started: Prepare your database
 ``` r
 options(shiny.maxRequestSize = 6000*1024^2)
 ```
@@ -31,6 +31,6 @@ options(shiny.maxRequestSize = 6000*1024^2)
 ## Partial ROC Analysis
 
 
-# Citation
+### Citation
 
 
