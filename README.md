@@ -5,7 +5,7 @@ An R library for Shiny that enables the analysis of ecological niche modeling us
 -----
 
 
-### Getting started: Requirements to use EcoNiches
+### Getting started: Requirements to use EcoNicheS
 
 #### Aquí o lo de las librerías o lo de mandra?
 
