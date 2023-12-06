@@ -2,15 +2,35 @@
 An R library for Shiny that enables the analysis of ecological niche modeling using the biomod2 library and other analyzes. This is Version 2.0.0, and subsequent versions will be uploaded with additional analyses and upgrades. 
 
 ##Features
-Aquí irá texto o no no sep, estoy haciendo una pruebita
 
 
-## Getting started
+
+## Getting started: Prepare your database
 ``` r
 options(shiny.maxRequestSize = 6000*1024^2)
 ```
 
-Texto
+## Correlation analysis between .asc layers 
 
+
+## Points and pseudoabsences
+
+
+## Biomod2 and more
+
+
+## Remove urbanization
+
+
+## Calculate area
+
+
+## Gains and losses plot
+
+
+## Partial ROC Analysis
+
+
+## Citation
 
 
