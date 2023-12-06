@@ -16,6 +16,10 @@ options(shiny.maxRequestSize = 6000*1024^2)
 -----
 ## Correlation analysis between .asc layers 
 
+
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/8d168349-7d40-420f-8e99-76c89b42dc2c)
+
+
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/72c6511a-610a-497b-8b5a-f4c90ae3acdf)
 
 
