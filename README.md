@@ -38,7 +38,7 @@ install_version("RColorBrewer", version = "1.1.3")
 install_version("dismo", version = "1.3.14")
 install_version("tiff", version = "0.1.11")
 install_version("rJava", version = "1.0.6")
-install_version("tifyterra", version = "0.4.0")
+install_version("tidyterra", version = "0.4.0")
 install_version("shinydashboard", version = "0.7.2")
 install_version("pROC", version = "1.18.4")
 install_version("R.utils", version = "2.12.2")
@@ -47,11 +47,20 @@ install_version("ENMGadgets", version = "0.1.0.1")
 
 #### Define the working directory in RStudio and prepare your databases
 
-To ensure smooth workflow in RStudio, it is crucial to define the working directory properly. Follow these steps: navigate to "Session" -> "Set Working Directory" -> "Choose Directory". Select the folder that contains the .asc layers and the .csv coordinate base file.
-The base file should have the Species listed in the first column, followed by longitude (X) in the second column, and latitude (Y) in the third column.
+To ensure smooth workflow in RStudio, it is crucial to define the working directory properly. Follow these steps, navigate to: "Session" ➥ "Set Working Directory" ➥ "Choose Directory", and select the folder that contains the .asc layers and the .csv coordinate base file.
+
+The base file should have the Species listed in the first column, followed by longitude (X) in the second column, and latitude (Y) in the third column as seen below:
+
+In RStudio
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/727045e3-cbc0-47b0-95d8-72cdc158b3fe)
+
+In Excel
+
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/addc0249-104d-4133-9d13-5168d039eb79)
+
+----
+
 
 ## Correlation analysis between .asc layers 
 
@@ -69,6 +78,9 @@ The base file should have the Species listed in the first column, followed by lo
 
 ## Biomod2 and more
 
+Ensure that the working directory includes all the necessary files for running MAXENT (MAXENT can be downloaded from here: https://biodiversityinformatics.amnh.org/open_source/maxent/)
+
+![maxentExamples2](https://github.com/armandosunny/EcoNicheS/assets/25662791/12819901-36ae-429a-a8b6-eb44dffce579)
 
 ## Remove urbanization
 
