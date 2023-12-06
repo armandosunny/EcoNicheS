@@ -5,9 +5,12 @@ An R library for Shiny that enables the analysis of ecological niche modeling us
 -----
 
 
-### Getting started: Requirements to use EcoNicheS
+### Getting started: Requirements to use EcoNicheS 2.0.0
 
-#### Aquí o lo de las librerías o lo de mandra?
+#### Load the correct versions of the required packages in R
+EcoNicheS works with specific versions of the libraries to conduct ecological niche modeling analyses, as later versions have been found to be incompatible. Therefore, to ensure smooth functionality, please download and install the correct version of the following libraries in RStudio:
+
+
 
 #### Prepare your databases
 ``` r
