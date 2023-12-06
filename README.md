@@ -2,10 +2,14 @@
 An R library for Shiny that enables the analysis of ecological niche modeling using the biomod2 library and other analyzes. This is Version 2.0.0, and subsequent versions will be uploaded with additional analyses and upgrades. 
 
 ##Features
+-----
 
 
+### Getting started: Requirements to use EcoNiches
 
-### Getting started: Prepare your databases
+#### Aquí o lo de las librerías o lo de mandra?
+
+#### Prepare your databases
 ``` r
 options(shiny.maxRequestSize = 6000*1024^2)
 ```
