@@ -10,6 +10,37 @@ An R library for Shiny that enables the analysis of ecological niche modeling us
 #### Load the correct versions of the required packages in R
 EcoNicheS works with specific versions of the libraries to conduct ecological niche modeling analyses, as later versions have been found to be incompatible. Therefore, to ensure smooth functionality, please download and install the correct version of the following libraries in RStudio:
 
+``` r
+ packageVersion("shiny")
+[1] ‘1.7.5’
+ packageVersion("terra")
+[1] ‘1.7.46’
+ packageVersion("usdm")
+[1] ‘2.1.6’
+ packageVersion("ENMTools")
+[1] ‘1.1.1’
+ packageVersion("biomod2")
+[1] ‘4.2.4’
+ packageVersion("RColorBrewer")
+[1] ‘1.1.3’
+ packageVersion("dismo")
+[1] ‘1.3.14’
+ packageVersion("tiff")
+[1] ‘0.1.11’
+ packageVersion("rJava")
+[1] ‘1.0.6’
+ packageVersion("tidyterra")
+[1] ‘0.4.0’
+ packageVersion("shinydashboard")
+[1] ‘0.7.2’
+ packageVersion("pROC")
+[1] ‘1.18.4’
+ packageVersion("R.utils")
+[1] ‘2.12.2’
+ packageVersion("ENMGadgets")
+[1] ‘0.1.0.1’
+
+```
 
 
 #### Prepare your databases
