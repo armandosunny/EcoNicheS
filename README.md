@@ -45,11 +45,13 @@ install_version("R.utils", version = "2.12.2")
 install_version("ENMGadgets", version = "0.1.0.1")
 ```
 
-#### Prepare your databases
-``` r
-options(shiny.maxRequestSize = 6000*1024^2)
-```
------
+#### Define the working directory in RStudio and prepare your databases
+
+To ensure smooth workflow in RStudio, it is crucial to define the working directory properly. Follow these steps: navigate to "Session" -> "Set Working Directory" -> "Choose Directory". Select the folder that contains the .asc layers and the .csv coordinate base file.
+The base file should have the Species listed in the first column, followed by longitude (X) in the second column, and latitude (Y) in the third column.
+
+
+
 ## Correlation analysis between .asc layers 
 
 
