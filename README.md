@@ -16,6 +16,7 @@ options(shiny.maxRequestSize = 6000*1024^2)
 -----
 ## Correlation analysis between .asc layers 
 
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/37999c91-49a7-4971-9281-1f500566888b)
 
 ## Points and pseudoabsences
 
