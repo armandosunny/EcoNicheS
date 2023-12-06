@@ -9,7 +9,7 @@ An R library for Shiny that enables the analysis of ecological niche modeling us
 ``` r
 options(shiny.maxRequestSize = 6000*1024^2)
 ```
-
+-----
 ## Correlation analysis between .asc layers 
 
 
