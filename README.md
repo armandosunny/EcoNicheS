@@ -1,10 +1,10 @@
-# EcoNicheS-2.0.0 <img src="https://user-images.githubusercontent.com/25662791/244543343-ac0a9b00-a873-469d-ac33-4b49cba48a90.png" referrerpolicy="no-referrer" alt="eco2" align="right" height="276" />
+o# EcoNicheS-2.0.0 <img src="https://user-images.githubusercontent.com/25662791/244543343-ac0a9b00-a873-469d-ac33-4b49cba48a90.png" referrerpolicy="no-referrer" alt="eco2" align="right" height="276" />
 An R library for Shiny that enables the analysis of ecological niche modeling using the biomod2 library and other analyzes. This is Version 2.0.0, and subsequent versions will be uploaded with additional analyses and upgrades. 
 
 
 -----
 # Exploring the App
-The application consists of 7 work tabs: Correlation layers, Points and psudoabsences, Biomod2, Partial ROC Analysis, Remove urbanization, Calculate area and Gains ans losses. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow ecological niche modeling analyses, but before starting to interact with the application there are some prerequisites necessary to ensure smooth functionality, these prerequisites imply the installation of packages in RStudio and the conditioning of the databases with which you wish to carry out this type of analysis.
+EcoNicheS 2.0.0 consists of 7 work tabs: Correlation layers, Points and psudoabsences, Biomod2, Partial ROC Analysis, Remove urbanization, Calculate area and Gains ans losses. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow ecological niche modeling analyses, but before starting to interact with the application there are some prerequisites necessary to ensure smooth functionality, these prerequisites imply the installation of packages in RStudio and the conditioning of the databases with which you wish to carry out this type of analysis.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6b7e83ae-007a-44d5-9650-fffee1f66c24)
 
