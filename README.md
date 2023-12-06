@@ -8,7 +8,7 @@ An R library for Shiny that enables the analysis of ecological niche modeling us
 ### Getting started: Requirements to use EcoNicheS 2.0.0
 
 #### Load the correct versions of the required packages in R :)
-EcoNicheS works with specific versions of the libraries to conduct ecological niche modeling analyses, as later versions have been found to be incompatible. Therefore, to ensure smooth functionality, please download and install the correct version of the following libraries in RStudio:
+EcoNicheS works with specific versions of the libraries it uses to perform ecological niche modeling analyses, as later versions have been found to be incompatible. Therefore, to ensure smooth functionality, please download and install the correct version of the following libraries in RStudio:
 
 - shiny 1.7.5
 - terra 1.7.46
@@ -26,7 +26,7 @@ EcoNicheS works with specific versions of the libraries to conduct ecological ni
 - ENMGadgets 0.1.0.1
 
 #### Load the correct versions of the required packages in R (:
-EcoNicheS works with specific versions of the libraries to conduct ecological niche modeling analyses, as later versions have been found to be incompatible. Therefore, to ensure smooth functionality, please download and install the correct version of the following libraries in RStudio:
+EcoNicheS works with specific versions of the libraries it uses to perform ecological niche modeling analyses, as later versions have been found to be incompatible. Therefore, to ensure smooth functionality, please download and install the correct version of the following libraries in RStudio:
 
 ``` r
 install_version("shiny", version = "1.7.5")
