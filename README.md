@@ -77,6 +77,11 @@ This is an example of the expected results to be obtained. You can download the 
 
 ## Points and pseudoabsences
 
+This tab is where in the first input button we will load our previously modified database so that the columns that contain the coordinates of points of presence of our species are titled "Species", "X" and "Y".
+In the second button, any of our .asc layers can be loaded and in the third button we will indicate the number of random points appropriate for our study.
+
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/384f708c-54d5-41ce-b179-45230811c41b)
+
 
 ## Biomod2 and more
 
