@@ -84,6 +84,11 @@ In the second button, any of our .asc layers can be loaded and in the third butt
 
 In the example that below shows the results obtained, 1000000 was used as the number of random points, however the default value is 100. The result obtained is a map that can be viewed in RStudio in addition to the generated database, whose name can be modified by always maintaining the .csv extension, this generated document will be saved in the directory indicated in RStudio at the beginning.
 
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a2919135-d8c8-4187-b617-b08ad3937077)
+
+
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/cb2f6514-d18b-481f-bb89-5cd3ffc00dfe)
+
 
 
 ## Biomod2 and more
