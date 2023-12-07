@@ -3,11 +3,11 @@ An R library for Shiny that enables the analysis of ecological niche modeling us
 
 -----
 # Getting ready to use the app
-EcoNicheS 2.0.0 consists of 7 work tabs: Correlation layers, Points and psudoabsences, Biomod2, Partial ROC Analysis, Remove urbanization, Calculate area and Gains ans losses. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow ecological niche modeling analyses, but before starting to interact with the application there are some prerequisites necessary to ensure smooth functionality, these prerequisites imply the installation of packages in RStudio and the conditioning of the databases with which you wish to carry out this type of analysis.
+EcoNicheS-2.0.0 consists of 7 work tabs: Correlation layers, Points and psudoabsences, Biomod2, Partial ROC Analysis, Remove urbanization, Calculate area and Gains ans losses. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow ecological niche modeling analyses, but before starting to interact with the application there are some prerequisites necessary to ensure smooth functionality, these prerequisites imply the installation of packages in RStudio and the conditioning of the databases with which you wish to carry out this type of analysis.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6b7e83ae-007a-44d5-9650-fffee1f66c24)
 
-## Getting started: Requirements to use EcoNicheS 2.0.0
+## Getting started: Requirements to use EcoNicheS-2.0.0
 
 ### Load the correct versions of the required packages in R :)
 EcoNicheS works with specific versions of the libraries it uses to perform ecological niche modeling analyses, as later versions have been found to be incompatible. Therefore, to ensure smooth functionality, please download and install the correct version of the following libraries in RStudio:
@@ -74,12 +74,6 @@ This section allows us to select multiple .asc files, as well as choose the Thre
 This is an example of the expected results to be obtained. You can download the example documents to practice using the application here. Results can be downloaded in PDF format. For this tab and for the following ones too, it is important to consider that  all the buttons must be pressed only once, since a single click guarantees that the documents are being loaded, the analyzes are being carried out or that the download is taking place.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/8d168349-7d40-420f-8e99-76c89b42dc2c)
-
-
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/72c6511a-610a-497b-8b5a-f4c90ae3acdf)
-
-
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/37999c91-49a7-4971-9281-1f500566888b)
 
 ## Points and pseudoabsences
 
