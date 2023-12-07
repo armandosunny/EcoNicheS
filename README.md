@@ -67,7 +67,7 @@ In Excel
 ## Correlation analysis between .asc layers 
 
 The first of the work tabs requires raster files or .asc layers and by obtaining a heatmap it allows us to determine if there is autocorrelation between said files.
-This section allows us to select multiple .asc files, as well as choose the Threshold (th) value for the analysis. Once we press the "Calculate correlation" action button in the white panel, we will obtain the generated heatmap image as a result.
+This section allows us to select multiple .asc files, as well as choose the Threshold (th) value for the analysis. Once we press the "Calculate correlation" action button, in the white panel, we will obtain the generated heatmap image as a result.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/3428e3eb-364f-4ae4-8b01-5e19f23f7abd)
 
