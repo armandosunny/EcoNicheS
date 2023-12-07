@@ -90,6 +90,9 @@ In the example that below shows the results obtained, 1000000 was used as the nu
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/cb2f6514-d18b-481f-bb89-5cd3ffc00dfe)
 
 
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/afdad7e2-46fe-4b9e-982c-938401a86f08)
+
+
 
 ## Biomod2 and more
 
