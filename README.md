@@ -103,9 +103,11 @@ Multiple models can be selected to perform the analysis depending on our needs. 
 
 ## Remove urbanization
 
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/37fe587e-37bf-4728-86ae-76c8c0eafda2)
 
 ## Calculate area
 
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/109b585a-fac3-4160-99aa-f7bd7091b409)
 
 ## Gains and losses plot
 
