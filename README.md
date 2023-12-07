@@ -94,7 +94,7 @@ In the example that below shows the results obtained, 1000000 was used as the nu
 
 
 
-## Biomod2 and more
+## Biomod2
 
 For this analysis, the file to be loaded is the database generated in the previous tab, and the necessary .asc layers are those that did not show autocorrelation indicated by the heatmap obtained in the first tab of EcoNiches-2.0.0.
 Multiple models can be selected to perform the analysis depending on our needs. If the MAXENT model is selected, prior to the analysis ensure that the working directory includes all the necessary files for running this model (MAXENT can be downloaded from here: https://biodiversityinformatics.amnh.org/open_source/maxent/).
