@@ -118,7 +118,7 @@ Multiple models can be selected to perform the analysis depending on our needs. 
 ## Partial ROC Analysis
 
 
-## To open the shiny GUI application:
+# To open the shiny GUI application:
 
 
 
