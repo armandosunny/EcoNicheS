@@ -3,11 +3,11 @@ An R library for Shiny that enables the analysis of ecological niche modeling us
 
 -----
 # Getting ready to use the app
-EcoNicheS-2.0.0, as it's shown in the following, consists of 7 work tabs: **_Correlation layers, Points and pseudoabsences, Biomod2, Partial ROC Analysis, Remove urbanization, Calculate area_** and **_Gains and losses_**. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow developing ecological niche modeling analyses, but before starting to interact with the app there are some prerequisites necessary to ensure smooth functionality, these prerequisites imply the installation of packages in RStudio and the conditioning of the databases with which you wish to carry out this type of analysis.
+EcoNicheS-2.0.0, as it's shown in the following, consists of 7 work tabs: **_Correlation layers, Points and pseudoabsences, Biomod2, Partial ROC Analysis, Remove urbanization, Calculate area_** and **_Gains and losses_**. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow developing ecological niche modeling analyses, but before starting to interact with the app there are some prerequisites necessary to ensure smooth functionality, these prerequisites imply the _installation of packages in RStudio and the conditioning of the databases_ with which you wish to carry out this type of analysis.
 
 ![Imagen 7 tabs](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/07ac590c-b74a-4d92-8e4f-f30d71f9c6af)
 
-## Getting started: Requirements to use EcoNicheS-2.0.0
+## Getting started: _Requirements to use EcoNicheS-2.0.0_
 
 ### Load the correct versions of the required packages in R :)
 EcoNicheS works with specific versions of the libraries it uses to perform ecological niche modeling analyses, as later versions have been found to be incompatible. Therefore, to ensure smooth functionality, please download and install the correct version of the following libraries in RStudio. You can visit the websites listed below to obtain the packages ¿and? try using the listed commands as well to obtain the necessary versions.
@@ -27,8 +27,7 @@ EcoNicheS works with specific versions of the libraries it uses to perform ecolo
 - R.utils 2.12.2
 - ENMGadgets 0.1.0.1
 
-### Load the correct versions of the required packages in R (:
-EcoNicheS works with specific versions of the libraries it uses to perform ecological niche modeling analyses, as later versions have been found to be incompatible. Therefore, to ensure smooth functionality, please download and install the correct version of the following libraries in RStudio:
+
 
 ``` r
 install_version("shiny", version = "1.7.5")
