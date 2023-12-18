@@ -50,7 +50,7 @@ install_version("ENMGadgets", version = "0.1.0.1")
 
 To ensure smooth workflow in RStudio, it is crucial to define the working directory properly, location where all databases created during the analyzes will be saved. Follow these steps, navigate to: "Session" ➥ "Set Working Directory" ➥ "Choose Directory", and select for example, the folder that contains the .asc layers and the .csv coordinate base file.
 
-In order to use your databases, the .csv base file should have the Species listed in the first column, followed by longitude (X) in the second column, and latitude (Y) in the third column as seen below. Editing your database respecting lowercase and uppercase letters is essential for the analysis to proceed.
+In order to use your databases, the _.csv base file_ should have the _Species listed in the first column_, followed by _longitude (X)_ in the second column, and _latitude (Y)_ in the third column as seen below. _Editing your database respecting lowercase and uppercase letters is essential for the analysis to proceed_.
 
 <sub>Visualization in RStudio</sub>
 
