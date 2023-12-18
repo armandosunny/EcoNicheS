@@ -3,9 +3,10 @@ An R library for Shiny that enables the analysis of ecological niche modeling us
 
 -----
 # Getting ready to use the app
-EcoNicheS-2.0.0 consists of 7 work tabs: Correlation layers, Points and psudoabsences, Biomod2, Partial ROC Analysis, Remove urbanization, Calculate area and Gains ans losses. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow ecological niche modeling analyses, but before starting to interact with the application there are some prerequisites necessary to ensure smooth functionality, these prerequisites imply the installation of packages in RStudio and the conditioning of the databases with which you wish to carry out this type of analysis.
+EcoNicheS-2.0.0, as it's shown in the following, consists of 7 work tabs: Correlation layers, Points and pseudoabsences, Biomod2, Partial ROC Analysis, Remove urbanization, Calculate area and Gains and losses. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow developing ecological niche modeling analyses, but before starting to interact with the app there are some prerequisites necessary to ensure smooth functionality, these prerequisites imply the installation of packages in RStudio and the conditioning of the databases with which you wish to carry out this type of analysis.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6b7e83ae-007a-44d5-9650-fffee1f66c24)
+![Imagen 7 tabs](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/07ac590c-b74a-4d92-8e4f-f30d71f9c6af)
 
 ## Getting started: Requirements to use EcoNicheS-2.0.0
 
@@ -75,7 +76,7 @@ This is an example of the expected results to be obtained. You can download the 
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/8d168349-7d40-420f-8e99-76c89b42dc2c)
 
-## Points and pseudoabsences
+## [Points and pseudoabsences](http://cran.nexr.com/web/packages/ENMeval/vignettes/ENMeval-vignette.html)
 
 This tab is where in the first input button we will load our previously modified database so that the columns that contain the coordinates of points of presence of our species are titled "Species", "X" and "Y".
 In the second button, any of our .asc layers can be loaded and in the third button we will indicate the number of random points appropriate for our study.
