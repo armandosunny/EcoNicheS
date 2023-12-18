@@ -11,7 +11,7 @@ EcoNicheS-2.0.0, as it's shown in the following, consists of 7 work tabs: Correl
 ## Getting started: Requirements to use EcoNicheS-2.0.0
 
 ### Load the correct versions of the required packages in R :)
-EcoNicheS works with specific versions of the libraries it uses to perform ecological niche modeling analyses, as later versions have been found to be incompatible. Therefore, to ensure smooth functionality, please download and install the correct version of the following libraries in RStudio:
+EcoNicheS works with specific versions of the libraries it uses to perform ecological niche modeling analyses, as later versions have been found to be incompatible. Therefore, to ensure smooth functionality, please download and install the correct version of the following libraries in RStudio. You can visit the websites listed below to obtain the packages ¿and? try using the listed commands as well to obtain the necessary versions.
 
 - [shiny](https://www.r-project.org/nosvn/pandoc/shiny.html) 1.7.5
 - [terra](https://github.com/rspatial/terra) 1.7.46
