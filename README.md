@@ -13,12 +13,12 @@ EcoNicheS-2.0.0, as it's shown in the following, consists of 7 work tabs: Correl
 ### Load the correct versions of the required packages in R :)
 EcoNicheS works with specific versions of the libraries it uses to perform ecological niche modeling analyses, as later versions have been found to be incompatible. Therefore, to ensure smooth functionality, please download and install the correct version of the following libraries in RStudio:
 
-- shiny 1.7.5
-- terra 1.7.46
-- usdm 2.1.6
-- ENMTools 1.1.1
-- biomod2 4.2.4
-- RColorBrewer 1.1.3
+- [shiny](https://www.r-project.org/nosvn/pandoc/shiny.html) 1.7.5
+- [terra[(https://github.com/rspatial/terra) 1.7.46
+- [usdm](https://rdrr.io/rforge/usdm/)2.1.6
+- [ENMTools](https://github.com/danlwarren/ENMTools) 1.1.1
+- [biomod2](http://cran.nexr.com/web/packages/ENMeval/vignettes/ENMeval-vignette.html) 4.2.4
+- [RColorBrewer](https://rdrr.io/cran/RColorBrewer/) 1.1.3
 - dismo 1.3.14
 - tiff 0.1.11
 - rJava 1.0.6
