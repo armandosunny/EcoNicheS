@@ -3,7 +3,7 @@ An R library for Shiny that enables the analysis of ecological niche modeling us
 
 -----
 # Getting ready to use the app
-EcoNicheS-2.0.0, as it's shown in the following, consists of 7 work tabs: **_Correlation layers, Points and pseudoabsences, Biomod2, Partial ROC Analysis, Remove urbanization, Calculate area_** and **_Gains and losses_**. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow developing ecological niche modeling analyses, but before starting to interact with the app there are some prerequisites necessary to ensure smooth functionality, these prerequisites imply the _installation of packages in RStudio and the conditioning of the databases_ with which you wish to carry out this type of analysis.
+EcoNicheS-2.0.0 is an interactive web application that consists of 7 work tabs: **_Correlation layers, Points and pseudoabsences, Biomod2, Partial ROC Analysis, Remove urbanization, Calculate area_** and **_Gains and losses_**. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow developing ecological niche modeling analyses, but before starting to interact with the app there are some prerequisites necessary to ensure smooth functionality, these prerequisites imply the _use of RStudio and the installation of packages in it, and the conditioning of the databases_ with which you wish to carry out this type of analysis.
 
 ![Imagen 7 tabs](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/07ac590c-b74a-4d92-8e4f-f30d71f9c6af)
 
@@ -50,7 +50,7 @@ install_version("ENMGadgets", version = "0.1.0.1")
 
 To ensure smooth workflow in RStudio, it is crucial to define the working directory properly. Follow these steps, navigate to: "Session" ➥ "Set Working Directory" ➥ "Choose Directory", and select the folder that contains the .asc layers and the .csv coordinate base file.
 
-The base file should have the Species listed in the first column, followed by longitude (X) in the second column, and latitude (Y) in the third column as seen below:
+The .csv base file should have the Species listed in the first column, followed by longitude (X) in the second column, and latitude (Y) in the third column as seen below:
 
 In RStudio
 
