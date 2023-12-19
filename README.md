@@ -83,7 +83,8 @@ Here we can sample random points from the background, the appropriate number of 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/33ced7f2-3dad-4fd4-b6e6-3a7bde468a25)
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/d2bb018a-1461-4a5a-9a62-4618b5c7cb26)
 
-In the example that below shows the results obtained, 1000000 was used as the number of random points, however the default value is 100. The result obtained is a map that can be viewed in RStudio in addition to the generated database, whose name can be modified by always maintaining the .csv extension, this generated document will be saved in the directory indicated in RStudio at the beginning.
+In the example that shows the results obtained, 1000000 was used as the number of random points, however the default value is 100, but this value can be modified, as mentioned above. 
+Despite that, the main result appears as a legend in the main panel of our EcoNicheS tab, as can be seen in the image below. This implies that a new database was obtained, which is stored in the working directory indicated at the beginning. The name of the generated database can and should be modified by always maintaining the .csv extension, in this way we ensure that its creation and saving are being carried out correctly.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a4415556-a480-4837-9790-63f939e823ad)
 
