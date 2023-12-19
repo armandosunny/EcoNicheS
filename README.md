@@ -52,12 +52,12 @@ To ensure smooth workflow in RStudio, it is crucial to define the working direct
 
 In order to use your databases, the _.csv base file_ should have the _Species listed in the first column_, followed by _longitude (X)_ in the second column, and _latitude (Y)_ in the third column as seen below. _Editing your database respecting lowercase and uppercase letters is essential for the analysis to proceed_.
 
-<sub>Visualization in RStudio</sub>
+<sub>Visualization in RStudio</sub> 
 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/727045e3-cbc0-47b0-95d8-72cdc158b3fe)
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/727045e3-cbc0-47b0-95d8-72cdc158b3fe) 
 
 <sub>Visualization in Excel</sub>
-
+ 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/addc0249-104d-4133-9d13-5168d039eb79)
 
 ----
