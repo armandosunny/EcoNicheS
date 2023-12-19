@@ -76,12 +76,16 @@ This is an example of the expected results to be obtained. Results can be downlo
 
 ## [Points and pseudoabsences](http://cran.nexr.com/web/packages/ENMeval/vignettes/ENMeval-vignette.html)
 
-This tab is where in the first input button we will load our previously modified database so that the columns that contain the coordinates of points of presence of our species are titled "Species", "X" and "Y".
-In the second button, any of our .asc layers can be loaded and in the third button we will indicate the number of random points appropriate for our study.
+Here we can sample random points from the background, the appropriate number of points for our study can be indicated in the third box of the tab. As a result, in RStudio we will obtain a map that can be viewed in the files and graphics window, specifically in the Plot tab.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a37ba849-6c5e-422e-b26e-d1562e09e4ae) 
 
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/33ced7f2-3dad-4fd4-b6e6-3a7bde468a25)
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/d2bb018a-1461-4a5a-9a62-4618b5c7cb26)
+
 In the example that below shows the results obtained, 1000000 was used as the number of random points, however the default value is 100. The result obtained is a map that can be viewed in RStudio in addition to the generated database, whose name can be modified by always maintaining the .csv extension, this generated document will be saved in the directory indicated in RStudio at the beginning.
+
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a4415556-a480-4837-9790-63f939e823ad)
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a2919135-d8c8-4187-b617-b08ad3937077)
 
