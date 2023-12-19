@@ -87,8 +87,6 @@ Despite the above, the main result appears as a legend in the main panel of our 
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a4415556-a480-4837-9790-63f939e823ad)
 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a2919135-d8c8-4187-b617-b08ad3937077)
-
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/cb2f6514-d18b-481f-bb89-5cd3ffc00dfe)
 
