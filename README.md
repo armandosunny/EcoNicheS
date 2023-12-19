@@ -145,4 +145,58 @@ Sunny, A. (2023). EcoNicheS: An R package for Shiny that enables the analysis of
 
 The creation of this package was made possible by the financial support provided by the Secretary of Research and Advanced Studies (SYEA) of the Autonomous University of the State of Mexico (Grant: 4732/2019CIB). 
 
+# References
+
+  R Core Team (2023). _R: A Language and Environment for Statistical Computing_. R
+  Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>.
+
+  Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson J,
+  Dipert A, Borges B (2023). _shiny: Web Application Framework for R_. R package version
+  1.7.5, <https://CRAN.R-project.org/package=shiny>.
+
+  Hijmans R (2023). _terra: Spatial Data Analysis_. R package version 1.7-46,
+  <https://CRAN.R-project.org/package=terra>.
+
+  Naimi B, Hamm Na, Groen TA, Skidmore AK, Toxopeus AG (2014). “Where is positional
+  uncertainty a problem for species distribution modelling.” _Ecography_, *37*, 191-203.
+  doi:10.1111/j.1600-0587.2013.00205.x
+  <https://doi.org/10.1111/j.1600-0587.2013.00205.x>.
+
+  Warren D, Dinnage R (2023). _ENMTools: Analysis of Niche Evolution using Niche and
+  Distribution Models_. R package version 1.1.1.
+
+  Thuiller W, Georges D, Gueguen M, Engler R, Breiner F, Lafourcade B, Patin R (2023).
+  _biomod2: Ensemble Platform for Species Distribution Modeling_. R package version
+  4.2-4, <https://CRAN.R-project.org/package=biomod2>.
+
+  Neuwirth E (2022). _RColorBrewer: ColorBrewer Palettes_. R package version 1.1-3,
+  <https://CRAN.R-project.org/package=RColorBrewer>.
+
+  Hijmans RJ, Phillips S, Leathwick J, Elith J (2023). _dismo: Species Distribution
+  Modeling_. R package version 1.3-14, <https://CRAN.R-project.org/package=dismo>.
+
+  Urbanek S, Johnson K (2022). _tiff: Read and Write TIFF Images_. R package version
+  0.1-11, <https://CRAN.R-project.org/package=tiff>.
+
+  Urbanek S (2021). _rJava: Low-Level R to Java Interface_. R package version 1.0-6,
+  <https://CRAN.R-project.org/package=rJava>.
+
+  Hernangomez D (2023). tidyterra: tidyverse Methods and ggplot2 Helpers for terra
+  Objects. <https://doi.org/10.5281/zenodo.6572471>,
+  <https://dieghernan.github.io/tidyterra/>
+
+  Chang W, Borges Ribeiro B (2021). _shinydashboard: Create Dashboards with 'Shiny'_. R
+  package version 0.7.2, <https://CRAN.R-project.org/package=shinydashboard>.
+
+  Xavier Robin, Natacha Turck, Alexandre Hainard, Natalia Tiberti, Frédérique Lisacek,
+  Jean-Charles Sanchez and Markus Müller (2011). pROC: an open-source package for R and
+  S+ to analyze and compare ROC curves. BMC Bioinformatics, 12, p. 77.  DOI:
+  10.1186/1471-2105-12-77 <http://www.biomedcentral.com/1471-2105/12/77/>
+
+  Bengtsson H (2022). _R.utils: Various Programming Utilities_. R package version
+  2.12.2, <https://CRAN.R-project.org/package=R.utils>.
+
+  Barve N, Barve V (2019). _ENMGadgets: Pre and Post Processing in ENM Workflow_. R
+  package version 0.1.0.1.
+
 
