@@ -123,7 +123,10 @@ Desplegable de modelos
 Todo cargado:
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a1a050f3-a882-454f-af78-e49b79c2598f)
 
-Como va cargando en R:
+Como va cargando con maxent
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/672be5b8-dd70-42be-938e-83586211bfd8)
+
+Como va cargando en R si no hay maxent:
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/d061477f-ed9e-4328-b100-5f9c04d41053)
 
 ## Partial ROC Analysis
