@@ -132,9 +132,21 @@ Como va cargando en R si no hay maxent:
 Así se ve el archivo .tif
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/7b011b18-988b-4fc2-87b4-68211cc53b30)
 
+Model put
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/4c7f1533-d873-4d53-8335-b454407cb9a0)
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/fff1293b-2fcc-42b4-9f84-37922b11b1a0)
+
+Response curves
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/d52df7d6-c644-4658-8d55-c485d78283cb)
+
 
 
 ## Partial ROC Analysis
+Asi
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/560a2fbd-2cd6-444a-914f-4f84815661dc)
+
+Cosas cargadas
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/ffde883a-ae1e-4f15-a010-b7458eefd39d)
 
 
 ## Remove urbanization
