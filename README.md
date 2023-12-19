@@ -66,11 +66,12 @@ In order to use your databases, the _.csv base file_ should have the _Species li
 ## Correlation analysis between .asc layers 
 
 The first of the work tabs requires raster files or .asc layers and by obtaining a heatmap it allows us to determine if there is autocorrelation between said files.
-This section allows us to select multiple .asc files, as well as choose the Threshold (th) value for the analysis. Once we press the "Calculate correlation" action button, in the white panel, we will obtain the generated heatmap image as a result.
+This section allows us to select multiple .asc files, as well as choose the Threshold (th) value for the analysis. 
 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/3428e3eb-364f-4ae4-8b01-5e19f23f7abd)![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/57ef3e0b-88eb-4f16-b15d-b462de43c666)
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/3428e3eb-364f-4ae4-8b01-5e19f23f7abd) ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/57ef3e0b-88eb-4f16-b15d-b462de43c666)
 
-This is an example of the expected results to be obtained. You can download the example documents to practice using the application here. Results can be downloaded in PDF format. For this tab and for the following ones too, it is important to consider that  all the buttons must be pressed only once, since a single click guarantees that the documents are being loaded, the analyzes are being carried out or that the download is taking place.
+Once we press the "Calculate correlation" action button, in the white panel, we will obtain the generated heatmap image as a result.
+This is an example of the expected results to be obtained. You can download the example documents to practice using the application [here](). Results can be downloaded in PDF format. For this tab and for the following ones too, it is important to consider that  all the buttons must be pressed only once, since a single click guarantees that the documents are being loaded, the analyzes are being carried out or that the download is taking place.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/8d168349-7d40-420f-8e99-76c89b42dc2c)
 
@@ -79,7 +80,7 @@ This is an example of the expected results to be obtained. You can download the 
 This tab is where in the first input button we will load our previously modified database so that the columns that contain the coordinates of points of presence of our species are titled "Species", "X" and "Y".
 In the second button, any of our .asc layers can be loaded and in the third button we will indicate the number of random points appropriate for our study.
 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a37ba849-6c5e-422e-b26e-d1562e09e4ae)
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a37ba849-6c5e-422e-b26e-d1562e09e4ae) 
 
 In the example that below shows the results obtained, 1000000 was used as the number of random points, however the default value is 100. The result obtained is a map that can be viewed in RStudio in addition to the generated database, whose name can be modified by always maintaining the .csv extension, this generated document will be saved in the directory indicated in RStudio at the beginning.
 
