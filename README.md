@@ -65,12 +65,12 @@ In order to use your databases, the _.csv base file_ should have the _Species li
 # Exploring EcoNicheS features
 ## Correlation analysis between .asc layers 
 
-The first of the work tabs requires the raster files or .asc layers that contain the data about the geography of the area, place or location of interest (pongo cita?https://acs-hosted-feature-layers-faq-esri.hub.arcgis.com/). Since these layers are our study variables, by obtaining a heatmap, this tab allows us to determine if there is autocorrelation between them, thus, it is possible to select multiple .asc files, as well as choose the Threshold (th) value for the analysis. 
+The first of the work tabs requires the raster files or .asc layers that contain the data about the geography of the area, place or location of interest (pongo cita?https://acs-hosted-feature-layers-faq-esri.hub.arcgis.com/). Since these layers are our study variables, by obtaining a heatmap, this tab allows us to determine if there is autocorrelation between them, thus, it is possible to select multiple .asc files, as well as choose the Threshold (th) value for the analysis.  You can download the example documents to practice using the application [here](). 
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/57ef3e0b-88eb-4f16-b15d-b462de43c666)
 
 Once we press the "Calculate correlation" action button, in the white panel, we will obtain the generated heatmap image as a result.
-This is an example of the expected results to be obtained. You can download the example documents to practice using the application [here](). Results can be downloaded in PDF format. For this tab and for the following ones too, it is important to consider that  all the buttons must be pressed only once, since a single click guarantees that the documents are being loaded, the analyzes are being carried out or that the download is taking place.
+This is an example of the expected results to be obtained. Results can be downloaded in PDF format. For this tab and for the following ones too, it is important to consider that  all the buttons must be pressed only once, since a single click guarantees that the documents are being loaded, the analyzes are being carried out or that the download is taking place.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/8d168349-7d40-420f-8e99-76c89b42dc2c)
 
