@@ -82,7 +82,7 @@ In the example shown below, 1000000 was used as the number of random points, how
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a37ba849-6c5e-422e-b26e-d1562e09e4ae) 
 
-<sub>Plot shown in RStudio. If you wish, remember that it is also possible to save the image in PNG format by right-clicking on it.</sub> 
+This is an example of the plot shown in RStudio using the database of our example species. If you wish, remember that it is also possible to save the image in PNG format by right-clicking on it.
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/d2bb018a-1461-4a5a-9a62-4618b5c7cb26)
 
 
