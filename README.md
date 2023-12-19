@@ -65,8 +65,7 @@ In order to use your databases, the _.csv base file_ should have the _Species li
 # Exploring EcoNicheS features
 ## Correlation analysis between .asc layers 
 
-The first of the work tabs requires raster files or .asc layers and by obtaining a heatmap it allows us to determine if there is autocorrelation between said files.
-This section allows us to select multiple .asc files, as well as choose the Threshold (th) value for the analysis. 
+The first of the work tabs requires the raster files or .asc layers that contain the data about the geography of the area, place or location of interest (pongo cita?https://acs-hosted-feature-layers-faq-esri.hub.arcgis.com/). Since these layers are our study variables, by obtaining a heatmap, this tab allows us to determine if there is autocorrelation between them, thus, it is possible to select multiple .asc files, as well as choose the Threshold (th) value for the analysis. 
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/57ef3e0b-88eb-4f16-b15d-b462de43c666)
 
