@@ -129,6 +129,11 @@ Como va cargando con maxent
 Como va cargando en R si no hay maxent:
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/d061477f-ed9e-4328-b100-5f9c04d41053)
 
+Así se ve el archivo .tif
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/7b011b18-988b-4fc2-87b4-68211cc53b30)
+
+
+
 ## Partial ROC Analysis
 
 
