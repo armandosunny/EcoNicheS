@@ -80,7 +80,6 @@ Here we can sample random points from the background, the appropriate number of 
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a37ba849-6c5e-422e-b26e-d1562e09e4ae) 
 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/33ced7f2-3dad-4fd4-b6e6-3a7bde468a25)
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/d2bb018a-1461-4a5a-9a62-4618b5c7cb26)
 
 In the example that shows the results obtained, 1000000 was used as the number of random points, however the default value is 100, but it can be modified, as mentioned above.
