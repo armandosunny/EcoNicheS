@@ -123,10 +123,10 @@ Additionally, as mentioned, multiple models can be selected for analysis executi
 Finally, after selecting the data split percentage and the Threshold value, in the second evaluation metrics selection box we can choose the consensus model to perform the analysis. Continuing with our example, we select TSS.
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a1a050f3-a882-454f-af78-e49b79c2598f)
 
-Como va cargando con maxent
+Once the analysis begins, in the RStudio console it is possible to view its progress, which does not end as long as the red "Stop" button remains visible in the upper right corner of the console.
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/672be5b8-dd70-42be-938e-83586211bfd8)
 
-Como va cargando en R si no hay maxent:
+If the files necessary to use the MAXENT model are not found in the working directory, in the pop-up legends in the console we can read the following warning message that indicates that it is necessary to have the files to perform the analysis with this model.
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/d061477f-ed9e-4328-b100-5f9c04d41053)
 
 Así se ve el archivo .tif
