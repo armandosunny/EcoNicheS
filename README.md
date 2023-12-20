@@ -117,7 +117,7 @@ The first step is to upload the .csv document with the presence points and pseud
 Next, the display of the button to load the appropriate .asc layers after clicking on the "Load .asc layers" button is the second sign that our .csv database was loaded correctly, otherwise we will not observe the appearance of this option window.
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/32b7bc3e-08c8-4565-ac45-7533c1def0d5)
 
-Desplegable de modelos
+Additionally, as mentioned, multiple models can be selected for analysis execution. For the example shown in this manual through images and databases, all available models were selected.
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/96a4dd3d-02bf-4fd9-bb2e-dbbdff5ca604)
 
 Todo cargado:
