@@ -107,14 +107,14 @@ Thus, the database with the coordinates of our species now consists of 5 columns
 
 
 For this analysis, the file to be loaded is the database generated in the previous tab, and the necessary .asc layers are those that did not show autocorrelation indicated by the heatmap obtained in the first tab of EcoNiches-2.0.0.
-Multiple models can be selected to perform the analysis depending on our needs. If the MAXENT model is selected, prior to the analysis ensure that the working directory includes all the necessary files for running this model ([MAXENT.zip](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709332/MAXENT.zip) can be downloaded from here: https://biodiversityinformatics.amnh.org/open_source/maxent/).
+Multiple models can be selected to perform this analysis depending on our needs. If the MAXENT model is selected, prior to the analysis ensure that the working directory includes all the necessary files for running this model: ([MAXENT.zip](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709332/MAXENT.zip).
 
 [![maxent bat](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/1b534599-e6e8-442d-8ab1-a81c64ff82a0)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709353/MAXENTbat.zip) [![maxent jar](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/9e030780-32a4-4fa2-8554-ace630cb1681)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709414/MAXENTjar.zip) [![maxent sh](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6fe03b4a-535c-4c1e-9e59-d854a422f2df)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709416/MAXENTsh.zip)
 
-Así se ve al cargar el .csv
+The first step is to upload the .csv document with the presence points and pseudo-absences. It is important to note that seconds after loading the file, the first sub-tab called Database will show us the content of the file; if not, it may mean that there is an error in our file or that the good workflow was interrupted.
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/464a558b-ac63-4b81-a3a0-3515d9626379)
 
-Así se ve al cargar las capas .asc
+Next, the display of the button to load the appropriate .asc layers after clicking on the "Load .asc layers" button is the second sign that our .csv database was loaded correctly, otherwise we will not observe the appearance of this option window.
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/32b7bc3e-08c8-4565-ac45-7533c1def0d5)
 
 Desplegable de modelos
