@@ -120,7 +120,7 @@ Next, the display of the button to load the appropriate .asc layers after clicki
 Additionally, as mentioned, multiple models can be selected for analysis execution. For the example shown in this manual through images and databases, all available models were selected.
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/96a4dd3d-02bf-4fd9-bb2e-dbbdff5ca604)
 
-Todo cargado:
+Finally, after selecting the data split percentage and the Threshold value, in the second evaluation metrics selection box we can choose the consensus model to perform the analysis. Continuing with our example, we select TSS.
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a1a050f3-a882-454f-af78-e49b79c2598f)
 
 Como va cargando con maxent
