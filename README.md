@@ -112,21 +112,27 @@ Multiple models can be selected to perform this analysis depending on our needs.
 [![maxent bat](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/1b534599-e6e8-442d-8ab1-a81c64ff82a0)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709353/MAXENTbat.zip) [![maxent jar](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/9e030780-32a4-4fa2-8554-ace630cb1681)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709414/MAXENTjar.zip) [![maxent sh](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6fe03b4a-535c-4c1e-9e59-d854a422f2df)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709416/MAXENTsh.zip)
 
 The first step is to upload the .csv document with the presence points and pseudo-absences. It is important to note that seconds after loading the file, the first sub-tab called Database will show us the content of the file; if not, it may mean that there is an error in our file or that the good workflow was interrupted.
+
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/464a558b-ac63-4b81-a3a0-3515d9626379)
 
 Next, the display of the button to load the appropriate .asc layers after clicking on the "Load .asc layers" button is the second sign that our .csv database was loaded correctly, otherwise we will not observe the appearance of this option window.
+
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/32b7bc3e-08c8-4565-ac45-7533c1def0d5)
 
 Additionally, as mentioned, multiple models can be selected for analysis execution. For the example shown in this manual through images and databases, all available models were selected.
+
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/96a4dd3d-02bf-4fd9-bb2e-dbbdff5ca604)
 
 Finally, after selecting the data split percentage and the Threshold value, in the second evaluation metrics selection box we can choose the consensus model to perform the analysis. Continuing with our example, we select TSS.
+
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a1a050f3-a882-454f-af78-e49b79c2598f)
 
-Once the analysis begins, in the RStudio console it is possible to view its progress, which does not end as long as the red "Stop" button remains visible in the upper right corner of the console.
+Once the analysis begins, in the RStudio console it is possible to view its progress.
+
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/672be5b8-dd70-42be-938e-83586211bfd8)
 
 If the files necessary to use the MAXENT model are not found in the working directory, in the pop-up legends in the console we can read the following warning message that indicates that it is necessary to have the files to perform the analysis with this model.
+
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/d061477f-ed9e-4328-b100-5f9c04d41053)
 
 Así se ve el archivo .tif
