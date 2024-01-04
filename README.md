@@ -156,9 +156,6 @@ You can find the main results stored in a new folder stored in your working dire
 
 As mentioned above, one of the files needed to perform this analysis is part of the results above, but if you already have a Prediction Raster file, you can also upload it in .asc format. As mentioned above, one of the files needed to perform this analysis is part of the results above, but if you already have a Prediction Raster file, you can also upload it in .asc format.
 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/560a2fbd-2cd6-444a-914f-4f84815661dc)
-
-Cosas cargadas
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/ffde883a-ae1e-4f15-a010-b7458eefd39d)
 
 Remember to press the action buttons only once, in addition, as with the Biomod2 tab, in RStudio you can view the progress of the analysis according to the number of simulations that you indicate.
