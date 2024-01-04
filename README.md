@@ -178,7 +178,8 @@ Resultados
 
 ## Gains and losses plot
 
-![gains and losses 16 50 cn arch cargados](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/cb36e1d1-9b14-4bdb-a129-190de1d019da)
+This tab requires two files, the only acceptable format of which is .asc. The first of these raster files must correspond to the file generated in the tab where the urbanization was removed from the potential distribution map.
+The second file corresponds to a future prediction of the conditions of the landscape, in this case, here is the link I wanted
 
 ![gains and losses 16 y 50 cn resultados](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/4c68a466-d6be-47c6-adb1-b9bd4df70638)
 
