@@ -173,12 +173,13 @@ Resultados
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/37fe587e-37bf-4728-86ae-76c8c0eafda2)
 
 ## Calculate area
+This tab, by using the file generated in the previous tab, indicates as a legend within EcoNicheS the suitability area for our study species.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/109b585a-fac3-4160-99aa-f7bd7091b409)
 
 ## Gains and losses plot
 
-This tab requires two files, the only acceptable format of which is .asc. The first of these raster files must correspond to the file generated in the tab where the urbanization was removed from the potential distribution map.
+This tab requires two files, the only acceptable format of which is .asc. The first of these raster files must also correspond to the file generated in the tab where the urbanization was removed from the potential distribution map.
 The second file corresponds to a future prediction of the conditions of the landscape, in this case, aqui va lo del liiink <-----------
 
 ![gains and losses 16 y 50 cn resultados](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/4c68a466-d6be-47c6-adb1-b9bd4df70638)
