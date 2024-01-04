@@ -120,7 +120,7 @@ Next, the display of the button to load the appropriate .asc layers after clicki
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/32b7bc3e-08c8-4565-ac45-7533c1def0d5)
 
-Biomod2 es una librería que permite el análisis de distribución de especies a través de 10 modelos: GLM, GBM, GAM, CTA, ANN, SRE, FDA, RF, MAXENT and MAXNET, es decir es un método de análisis ensemble, so, multiple models can be selected for analysis execution. For the example shown in this manual through images and databases, all available models were selected.
+Biomod2 is a library that allows the analysis of species distribution through 10 models: GLM, GBM, GAM, CTA, ANN, SRE, FDA, RF, MAXENT and MAXNET, that is, it is an ensemble analysis method, so, multiple models can be selected for analysis execution. For the example shown in this manual through images and databases, all available models were selected.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/96a4dd3d-02bf-4fd9-bb2e-dbbdff5ca604)
 
@@ -137,8 +137,12 @@ If the files necessary to use the MAXENT model are not found in the working dire
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/d061477f-ed9e-4328-b100-5f9c04d41053)
 
 
-Model put
+After pressing the button to start the analysis it is a good idea to move to the second sub-tab of the main panel, model output. When the analyzes are finished, here you will be able to see various values and evaluation results of the models.
+
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/4c7f1533-d873-4d53-8335-b454407cb9a0)
+
+Having the previous results, you can also go to the other sub-tabs to observe the performance of the models, so you can interpret the results through the graphs that you will find in the last three sub-tabs.
+
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/fff1293b-2fcc-42b4-9f84-37922b11b1a0)
 
 Response curves
