@@ -175,7 +175,8 @@ Resultados
 ## Calculate area
 This tab, by using the file generated in the previous tab, indicates as a legend within EcoNicheS the suitability area for our study species.
 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/109b585a-fac3-4160-99aa-f7bd7091b409)
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/945f4ce5-0d8e-4c52-9bf5-debd19f834f0)
+
 
 ## Gains and losses plot
 
