@@ -120,7 +120,7 @@ Next, the display of the button to load the appropriate .asc layers after clicki
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/32b7bc3e-08c8-4565-ac45-7533c1def0d5)
 
-Biomod2 is a library that allows the analysis of species distribution through 10 models: GLM, GBM, GAM, CTA, ANN, SRE, FDA, RF, MAXENT and MAXNET, that is, it is an ensemble analysis method, so, multiple models can be selected for analysis execution. For the example shown in this manual through images and databases, all available models were selected.
+Biomod2 is a library that allows the analysis of species distribution through 10 models: GLM, GBM, GAM, CTA, ANN, SRE, FDA, RF, MAXENT and MAXNET, that is, it is an ensemble analysis method, so, multiple models can be selected for analysis execution. For the example shown in this manual through images and databases, all available models were selected. https://www.nature.com/articles/s41598-023-45887-6 
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/96a4dd3d-02bf-4fd9-bb2e-dbbdff5ca604)
 
@@ -154,6 +154,7 @@ You can find the main results stored in a new folder stored in your working dire
 
 ## Partial ROC Analysis
 
+As mentioned above, one of the files needed to perform this analysis is part of the results above, but if you already have a Prediction Raster file, you can also upload it in .asc format. As mentioned above, one of the files needed to perform this analysis is part of the results above, but if you already have a Prediction Raster file, you can also upload it in .asc format.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/560a2fbd-2cd6-444a-914f-4f84815661dc)
 
