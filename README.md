@@ -162,7 +162,13 @@ Cosas cargadas
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/ffde883a-ae1e-4f15-a010-b7458eefd39d)
 
 Remember to press the action buttons only once, in addition, as with the Biomod2 tab, in RStudio you can view the progress of the analysis according to the number of simulations that you indicate.
+
 ![Progress Partial ROC](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/e2f648a4-014e-4c9a-9c6d-7094d5a6e593)
+
+Resultados
+
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/2959f0c8-bce7-4a51-8dcc-474107b690bb)
+
 
 
 ## Remove urbanization
