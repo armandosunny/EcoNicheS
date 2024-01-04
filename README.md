@@ -83,6 +83,7 @@ In the example shown below, 1000000 was used as the number of random points, how
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a37ba849-6c5e-422e-b26e-d1562e09e4ae) 
 
 This is an example of the plot shown in RStudio using the database of our example species. If you wish, remember that it is also possible to save the image in PNG format by right-clicking on it.
+
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/d2bb018a-1461-4a5a-9a62-4618b5c7cb26)
 
 
@@ -119,7 +120,7 @@ Next, the display of the button to load the appropriate .asc layers after clicki
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/32b7bc3e-08c8-4565-ac45-7533c1def0d5)
 
-Additionally, as mentioned, multiple models can be selected for analysis execution. For the example shown in this manual through images and databases, all available models were selected.
+Biomod2 es una librería que permite el análisis de distribución de especies a través de 10 modelos: GLM, GBM, GAM, CTA, ANN, SRE, FDA, RF, MAXENT and MAXNET, es decir es un método de análisis ensemble, so, multiple models can be selected for analysis execution. For the example shown in this manual through images and databases, all available models were selected.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/96a4dd3d-02bf-4fd9-bb2e-dbbdff5ca604)
 
@@ -135,8 +136,6 @@ If the files necessary to use the MAXENT model are not found in the working dire
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/d061477f-ed9e-4328-b100-5f9c04d41053)
 
-Así se ve el archivo .tif
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/7b011b18-988b-4fc2-87b4-68211cc53b30)
 
 Model put
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/4c7f1533-d873-4d53-8335-b454407cb9a0)
@@ -149,6 +148,10 @@ Response curves
 
 ## Partial ROC Analysis
 Asi
+
+Así se ve el archivo .tif
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/7b011b18-988b-4fc2-87b4-68211cc53b30)
+
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/560a2fbd-2cd6-444a-914f-4f84815661dc)
 
 Cosas cargadas
