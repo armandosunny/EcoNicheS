@@ -148,13 +148,12 @@ Having the previous results, you can also go to the other sub-tabs to observe th
 Response curves
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/d52df7d6-c644-4658-8d55-c485d78283cb)
 
+You can find the main results stored in a new folder stored in your working directory at the end of the analysis, which will be named with the name of the species of your analysis. Inside you can find another folder, proj_Current, here you will find the .tif file necessary to continue with the workflow in the next EcoNicheS tab.
 
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/7b011b18-988b-4fc2-87b4-68211cc53b30)
 
 ## Partial ROC Analysis
-Asi
 
-Así se ve el archivo .tif
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/7b011b18-988b-4fc2-87b4-68211cc53b30)
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/560a2fbd-2cd6-444a-914f-4f84815661dc)
 
