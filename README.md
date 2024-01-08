@@ -82,12 +82,12 @@ In the example shown below, 1000000 was used as the number of random points, how
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a37ba849-6c5e-422e-b26e-d1562e09e4ae) 
 
-This is an example of the plot shown in RStudio using the database of our example species. If you wish, remember that it is also possible to save the image in PNG format by right-clicking on it.
+This is an example of the plot shown in RStudio using the database of our example species. If you wish, remember that it is also possible to save the image in PNG format by right-clicking on it, but it is a file that is also generated and saveed automatically when we perform the analyzes of the following tab.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/d2bb018a-1461-4a5a-9a62-4618b5c7cb26)
 
 
-Despite the above, the main result appears as a legend in the main panel of our EcoNicheS tab, as can be seen in the image below. This implies that a new database was obtained, which is stored in the working directory indicated at the beginning. Before running the analysis, the name of the generated database can and must be modified from default name by always maintaining the .csv extension, in this way we ensure that its creation and saving are being carried out correctly.
+Despite the above, the main result here appears as a legend in the main panel of our EcoNicheS tab, as can be seen in the image below. This implies that a new database was obtained, which is stored in the working directory indicated at the beginning. Before running the analysis, the name of the generated database can and must be modified from default name by always maintaining the .csv extension, in this way we ensure that its creation and saving are being carried out correctly.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a4415556-a480-4837-9790-63f939e823ad)
 
@@ -120,7 +120,7 @@ Next, the display of the button to load the appropriate .asc layers after clicki
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/32b7bc3e-08c8-4565-ac45-7533c1def0d5)
 
-Biomod2 is a library that allows the analysis of species distribution through 10 models: GLM, GBM, GAM, CTA, ANN, SRE, FDA, RF, MAXENT and MAXNET, that is, it is an ensemble analysis method, so, multiple models can be selected for analysis execution. For the example shown in this manual through images and databases, all available models were selected. https://www.nature.com/articles/s41598-023-45887-6 
+Biomod2 is a library that allows the analysis of species distribution through 10 models: GLM, GBM, GAM, CTA, ANN, SRE, FDA, RF, MAXENT and MAXNET, that is, it is an ensemble analysis method, so, multiple models can be selected for analysis execution<sup>2</sup>. For the example shown in this manual through images and databases, all available models were selected. 
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/96a4dd3d-02bf-4fd9-bb2e-dbbdff5ca604)
 
@@ -206,6 +206,10 @@ The creation of this package was made possible by the financial support provided
 
   <sup>1</sup> _ACS hosted Feature Layers FAQ_. (n.d.-a). ACS Hosted Feature Layers FAQ.
   https://acs-hosted-feature-layers-faq-esri.hub.arcgis.com/ 
+
+  <sup>2</sup> Huang, D., An, Q., Huang, S., Tan, G., Quan, H., Chen, Y., Zhou, J., & Liao, H. (2023). 
+  Biomod2 modeling for predicting the potential ecological distribution of three Fritillaria species under climate change. 
+  _Scientific reports_, 13(1), 18801. https://doi.org/10.1038/s41598-023-45887-6
   
   R Core Team (2023). _R: A Language and Environment for Statistical Computing_. R
   Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>.
