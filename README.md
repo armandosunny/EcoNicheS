@@ -204,6 +204,9 @@ The creation of this package was made possible by the financial support provided
 
 # References
 
+  <sup>1</sup> _ACS hosted Feature Layers FAQ_. (n.d.-a). ACS Hosted Feature Layers FAQ.
+  https://acs-hosted-feature-layers-faq-esri.hub.arcgis.com/ 
+  
   R Core Team (2023). _R: A Language and Environment for Statistical Computing_. R
   Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>.
 
