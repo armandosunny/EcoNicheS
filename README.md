@@ -175,6 +175,8 @@ As a result, in the main panel of the tab you will be able to display an inscrip
 
 ## Remove urbanization
 
+For this part of the application you must have two raster files, the first must contain only the geographical data of urbanization within the potential distribution area of the study species, the second file must contain such a distribution map, thus, after running the analysis you will obtain an .asc file where said urbanization data was removed from the potential distribution area.
+
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/37fe587e-37bf-4728-86ae-76c8c0eafda2)
 
 ## Calculate area
