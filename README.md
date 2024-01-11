@@ -167,7 +167,7 @@ Remember to press the action buttons only once, in addition, as with the Biomod2
 
 ![Progress Partial ROC](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/e2f648a4-014e-4c9a-9c6d-7094d5a6e593)
 
-Resultados
+As a result, in the main panel of the tab you will be able to display an inscription, which describes the average values for the area under the curve obtained according to the number of simulations. A table with all the values is also displayed according to the number of simulations indicated, in our example that is why 500 entries are shown.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/2959f0c8-bce7-4a51-8dcc-474107b690bb)
 
