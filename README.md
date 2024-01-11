@@ -265,4 +265,6 @@ The creation of this package was made possible by the financial support provided
   Barve N, Barve V (2019). _ENMGadgets: Pre and Post Processing in ENM Workflow_. R
   package version 0.1.0.1.
 
+  Osorio-Olvera L, Lira-Noriega A, Soberón J, et al. ntbox: An r package with graphical user interface for modelling and evaluating multidimensional ecological niches. Methods Ecol Evol. 2020; 11: 1199–1206. https://doi.org/10.1111/2041-210X.13452
+
 
