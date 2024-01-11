@@ -22,10 +22,10 @@ EcoNicheS works with specific versions of the libraries it uses to perform ecolo
 - [tiff](https://cran.r-project.org/web/packages/tiff/index.html) 0.1.11
 - [rJava](https://cran.r-project.org/web/packages/rJava/index.html) 1.0.6
 - [tidyterra](https://cran.r-project.org/web/packages/tidyterra/index.html) 0.4.0
-- shinydashboard 0.7.2
-- pROC 1.18.4
-- R.utils 2.12.2
-- ENMGadgets 0.1.0.1
+- [shinydashboard](https://rstudio.github.io/shinydashboard/get_started.html) 0.7.2
+- [pROC](https://cran.r-project.org/web/packages/pROC/index.html) 1.18.4
+- [R.utils](https://cran.r-project.org/web/packages/R.utils/index.html) 2.12.2
+- [ENMGadgets](https://github.com/narayanibarve/ENMGadgets) 0.1.0.1
 
 
 
