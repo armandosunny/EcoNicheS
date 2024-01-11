@@ -180,7 +180,7 @@ For this part of the application you must have two raster files, the first must 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/37fe587e-37bf-4728-86ae-76c8c0eafda2)
 
 ## Calculate area
-This tab, by using the file generated in the previous tab, indicates as a legend within EcoNicheS the suitability area for our study species.
+This tab allows you to obtain the area of suitability of the species of interest by uploading the .asc file created in the previous tab or an existing file if applicable. The Suitability Threshold value can be modified according to the appropriate value for your study and the only result consists of the legend obtained in the main panel of the tab as you can see below.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/945f4ce5-0d8e-4c52-9bf5-debd19f834f0)
 
