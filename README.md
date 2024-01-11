@@ -267,4 +267,5 @@ The creation of this package was made possible by the financial support provided
 
   Osorio-Olvera L, Lira-Noriega A, Soberón J, et al. ntbox: An r package with graphical user interface for modelling and evaluating multidimensional ecological niches. Methods Ecol Evol. 2020; 11: 1199–1206. https://doi.org/10.1111/2041-210X.13452
 
+Steven J. Phillips, Miroslav Dudík, Robert E. Schapire. [Internet] Maxent software for modeling species niches and distributions (Version 3.4.1). Available from url: http://biodiversityinformatics.amnh.org/open_source/maxent/. Accessed on 2024-1-11.
 
