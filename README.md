@@ -20,8 +20,8 @@ EcoNicheS works with specific versions of the libraries it uses to perform ecolo
 - [RColorBrewer](https://rdrr.io/cran/RColorBrewer/) 1.1.3
 - [dismo](https://github.com/rspatial/dismo) 1.3.14
 - [tiff](https://cran.r-project.org/web/packages/tiff/index.html) 0.1.11
-- rJava 1.0.6
-- tidyterra 0.4.0
+- [rJava](https://cran.r-project.org/web/packages/rJava/index.html) 1.0.6
+- [tidyterra](https://cran.r-project.org/web/packages/tidyterra/index.html) 0.4.0
 - shinydashboard 0.7.2
 - pROC 1.18.4
 - R.utils 2.12.2
