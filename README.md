@@ -129,7 +129,8 @@ Biomod2 is a library that allows the analysis of species distribution through 10
 
 Finally, after selecting the data split percentage and the Threshold value, in the second evaluation metrics selection box we can choose the consensus model to perform the analysis. Continuing with our example, we select TSS.
 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a1a050f3-a882-454f-af78-e49b79c2598f)
+![upload](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/4122a56b-6eea-4085-bea2-ec1630499644)
+
 
 Once the analysis begins, in the RStudio console it is possible to view its progress.
 
