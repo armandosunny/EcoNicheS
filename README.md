@@ -10,7 +10,7 @@ EcoNicheS-2.0.0 is an interactive web application that consists of 7 work tabs: 
 ## Getting started: _Requirements to use EcoNicheS-2.0.0_
 
 ### Load the correct versions of the required packages in R 
-EcoNicheS works with specific versions of the libraries it uses to perform ecological niche modeling analyses, as later versions have been found to be incompatible. Therefore, to ensure smooth functionality, please download and install the correct version of the following libraries in RStudio. You can visit the websites listed below to obtain the required packages with the specified versions or you can try using the listed commands in RStudio as well to obtain the necessary versions.
+EcoNicheS works with specific versions of the libraries it uses to perform ecological niche modeling analyses, as later versions have been found to be incompatible. Therefore, to ensure smooth functionality, please download and install the correct version of the following libraries in RStudio. You can visit the websites listed below to obtain the required packages and you can try using the listed commands in RStudio as well to obtain the necessary versions.
 
 - [shiny](https://CRAN.R-project.org/package=shiny) 1.7.5
 - [terra](https://github.com/rspatial/terra) 1.7.46
