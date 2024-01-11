@@ -114,11 +114,13 @@ Multiple models can be selected to perform this analysis depending on our needs.
 
 The first step is to upload the .csv document with the presence points and pseudo-absences. It is important to note that seconds after loading the file, the first sub-tab called Database will show us the content of the file; if not, it may mean that there is an error in our file or that the good workflow was interrupted.
 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/464a558b-ac63-4b81-a3a0-3515d9626379)
+![Biomod 0 7](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/2b60d6fa-5802-43a8-a4a6-62ee7bb0fe4c)
+
 
 Next, the display of the button to load the appropriate .asc layers after clicking on the "Load .asc layers" button is the second sign that our .csv database was loaded correctly, otherwise we will not observe the appearance of this option window.
 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/32b7bc3e-08c8-4565-ac45-7533c1def0d5)
+![select  asc files biomod2](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6186fb94-64b3-4a92-a9ee-c744344418a9)
+
 
 Biomod2 is a library that allows the analysis of species distribution through 10 models: GLM, GBM, GAM, CTA, ANN, SRE, FDA, RF, MAXENT and MAXNET, that is, it is an ensemble analysis method, so, multiple models can be selected for analysis execution<sup>2</sup>. For the example shown in this manual through images and databases, all available models were selected. 
 
