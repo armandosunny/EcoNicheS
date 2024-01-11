@@ -128,6 +128,7 @@ Biomod2 is a library that allows the analysis of species distribution through 10
 
 
 Finally, after selecting the data split percentage and the Threshold value, in the second evaluation metrics selection box we can choose the consensus model to perform the analysis. Continuing with our example, we select TSS.
+In addition, you can also modify the values of the data split percentage and the number of repetitions according to the parameters necessary for your study.
 
 ![upload](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/4122a56b-6eea-4085-bea2-ec1630499644)
 
