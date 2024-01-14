@@ -13,18 +13,18 @@ EcoNicheS is an interactive web application that consists of 7 work tabs: **_Cor
 EcoNicheS works with specific versions of the libraries it uses to perform ecological niche modeling analyses, as later versions have been found to be incompatible. Therefore, to ensure smooth functionality, please download and install the correct version of the following libraries in RStudio. You can visit the websites listed below to obtain the required packages and you can try using the listed commands in RStudio as well to obtain the necessary versions.
 
 - [shiny](https://CRAN.R-project.org/package=shiny) 1.7.5
-- [terra]([https://github.com/rspatial/terra](https://cran.r-project.org/package=terra)) 1.7.46
+- [terra]([https://github.com/rspatial/terra](https://cran.r-project.org/package=terra) 1.7.46
 - [usdm](https://cran.r-project.org/package=usdm)2.1.6
 - [ENMTools](https://github.com/danlwarren/ENMTools) 1.1.1
 - [biomod2](https://cran.r-project.org/package=biomod2) 4.2.4
 - [RColorBrewer](https://cran.r-project.org/package=RColorBrewer) 1.1.3
-- [dismo](https://github.com/rspatial/dismo) 1.3.14
-- [tiff](https://cran.r-project.org/web/packages/tiff/index.html) 0.1.11
-- [rJava](https://cran.r-project.org/web/packages/rJava/index.html) 1.0.6
-- [tidyterra](https://cran.r-project.org/web/packages/tidyterra/index.html) 0.4.0
-- [shinydashboard](https://rstudio.github.io/shinydashboard/get_started.html) 0.7.2
-- [pROC](https://cran.r-project.org/web/packages/pROC/index.html) 1.18.4
-- [R.utils](https://cran.r-project.org/web/packages/R.utils/index.html) 2.12.2
+- [dismo](https://cran.r-project.org/package=dismo) 1.3.14
+- [tiff](https://cran.r-project.org/package=tiff) 0.1.11
+- [rJava](https://cran.r-project.org/package=rJava) 1.0.6
+- [tidyterra](https://cran.r-project.org/package=tidyterra) 0.4.0
+- [shinydashboard](https://cran.r-project.org/package=shinydashboard) 0.7.2
+- [pROC](https://cran.r-project.org/package=pROCl) 1.18.4
+- [R.utils](https://cran.r-project.org/package=R.utils) 2.12.2
 - [ENMGadgets](https://github.com/narayanibarve/ENMGadgets) 0.1.0.1
 
 
