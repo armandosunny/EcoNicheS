@@ -1,6 +1,6 @@
-These are the libraries necessary to perform analyzes in EcoNicheS with the required versions to ensure 
-that all work is done properly. Be sure to read the messages in RStudio when using this code to make 
-sure everything was installed correctly.
+#These are the libraries necessary to perform analyzes in EcoNicheS with the required versions to ensure 
+#that all work is done properly. Be sure to read the messages in RStudio when using this code to make 
+#sure everything was installed correctly.
 
 
 if (!require('remotes')) install.packages('remotes')
