@@ -45,6 +45,8 @@ EcoNicheS works with specific versions of the libraries it uses to perform ecolo
 
 
 ``` r
+if (!require('remotes')) install.packages('remotes')
+library(remotes)
 install_version("shiny", version = "1.7.5")
 install_version("terra", version = "1.7.46")
 install_version("usdm", version = "2.1.6")
