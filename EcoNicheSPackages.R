@@ -1,8 +1,5 @@
-This is a Shiny web application. You can run the application by clicking the 'Run App' button above.
+These are the libraries necessary to perform analyzes in EcoNicheS with the required versions to ensure that all work is done properly. Be sure to read the messages in RStudio when using this code to make sure everything was installed correctly.
 
-Find out more about building applications with Shiny here:
-
-http://shiny.rstudio.com/
 
 if (!require('remotes')) install.packages('remotes')
 library(remotes)
