@@ -16,8 +16,8 @@ EcoNicheS works with specific versions of the libraries it uses to perform ecolo
 - [terra]([https://github.com/rspatial/terra](https://cran.r-project.org/package=terra)) 1.7.46
 - [usdm](https://cran.r-project.org/package=usdm)2.1.6
 - [ENMTools](https://github.com/danlwarren/ENMTools) 1.1.1
-- [biomod2](http://cran.nexr.com/web/packages/ENMeval/vignettes/ENMeval-vignette.html) 4.2.4
-- [RColorBrewer](https://rdrr.io/cran/RColorBrewer/) 1.1.3
+- [biomod2](https://cran.r-project.org/package=biomod2) 4.2.4
+- [RColorBrewer](https://cran.r-project.org/package=RColorBrewer) 1.1.3
 - [dismo](https://github.com/rspatial/dismo) 1.3.14
 - [tiff](https://cran.r-project.org/web/packages/tiff/index.html) 0.1.11
 - [rJava](https://cran.r-project.org/web/packages/rJava/index.html) 1.0.6
