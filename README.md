@@ -13,7 +13,7 @@ EcoNicheS is an interactive web application that consists of 7 work tabs: **_Cor
 EcoNicheS works with specific versions of the libraries it uses to perform ecological niche modeling analyses, as later versions have been found to be incompatible. Therefore, to ensure smooth functionality, please download and install the correct version of the following libraries in RStudio. You can visit the websites listed below to obtain the required packages and you can try using the listed commands in RStudio as well to obtain the necessary versions.
 
 - [shiny](https://CRAN.R-project.org/package=shiny) 1.7.5
-- [terra]([https://github.com/rspatial/terra](https://cran.r-project.org/package=terra) 1.7.46
+- [terra](https://cran.r-project.org/package=terra) 1.7.46
 - [usdm](https://cran.r-project.org/package=usdm)2.1.6
 - [ENMTools](https://github.com/danlwarren/ENMTools) 1.1.1
 - [biomod2](https://cran.r-project.org/package=biomod2) 4.2.4
