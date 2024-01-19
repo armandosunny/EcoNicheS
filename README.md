@@ -5,7 +5,12 @@ An R library for Shiny that enables the analysis of ecological niche modeling us
 
 # First things first, pre-requisites to use EcoNiches
 
+### Windows Users
 
+
+### Mac Users
+
+To know which version is appropriate for your computer, you need to know its processor architecture. If your computer has an M chip integrated in any of its versions, download this document [rJava Mchip]. On the other hand, if the processor is Intel, click here: [rJava Intel].
 
 # To install the library
 To open the shiny GUI application:
