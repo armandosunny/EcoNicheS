@@ -4,8 +4,9 @@
 
 #http://shiny.rstudio.com/
 
-options(shiny.maxRequestSize = 6000*1024^2)
- 
+
+(c("shiny","terra","usdm","ENMTools","biomod2","RColorBrewer","dismo","tiff","rJava","tidyterra","shinydashboard","pROC", "R.utils"))
+
  library(shiny)
  library(terra)
  library(usdm)
@@ -20,6 +21,8 @@ options(shiny.maxRequestSize = 6000*1024^2)
  library(pROC)
  library(R.utils)
  library(ENMGadgets)
+
+options(shiny.maxRequestSize = 6000*1024^2)
  
  # Definir UI de la aplicación principal
  ui <- dashboardPage(
