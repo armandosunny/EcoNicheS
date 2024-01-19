@@ -5,7 +5,7 @@
 #http://shiny.rstudio.com/
 
 
-(c("shiny","terra","usdm","ENMTools","biomod2","RColorBrewer","dismo","tiff","rJava","tidyterra","shinydashboard","pROC", "R.utils"))
+install.packages(c("shiny","terra","usdm","ENMTools","biomod2","RColorBrewer","dismo","tiff","rJava","tidyterra","shinydashboard","pROC", "R.utils"))
 
  library(shiny)
  library(terra)
