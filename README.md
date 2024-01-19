@@ -14,7 +14,9 @@ devtools::install_github('armandosunny/EcoNicheS')
 
 ``` r
 shiny::runApp("EcoNicheS.R")
-``` 
+```
+
+# First things first, pre-requisites to use EcoNiches
 
 
 # Getting ready to use the app
