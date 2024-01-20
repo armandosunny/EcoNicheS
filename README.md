@@ -35,9 +35,20 @@ When using the application, the necessary packages are installed automatically, 
 
 ![RStudio Tools](https://github.com/armandosunny/EcoNicheS/assets/25662791/a06fa320-a49d-46ac-80fd-03d2f3807028)
 
-![RStudio Browse](https://github.com/armandosunny/EcoNicheS/assets/25662791/d11b2d25-29e2-435c-a0d0-021f4c7ef5a9)
+![RStudio Tools Install](https://github.com/armandosunny/EcoNicheS/assets/25662791/61dc1f41-70a5-4fb7-9996-d8f2ad9ccb48)
 
-![RStudio tar](https://github.com/armandosunny/EcoNicheS/assets/25662791/af7a609a-36cd-4474-a4e1-82a181734b25)
+![Select tar](https://github.com/armandosunny/EcoNicheS/assets/25662791/8041633b-be48-4bbd-b4e6-10250067a71e)
+
+![rgdal](https://github.com/armandosunny/EcoNicheS/assets/25662791/6bc0952f-92da-4f12-bd5c-e86a4256d66a)
+
+![Installing](https://github.com/armandosunny/EcoNicheS/assets/25662791/a89e99c6-cf45-4058-a991-0813aaa5718c)
+
+![Done](https://github.com/armandosunny/EcoNicheS/assets/25662791/dda83dc8-bd73-45e2-9081-9076a3edd63f)
+
+
+
+
+
 
 
 
