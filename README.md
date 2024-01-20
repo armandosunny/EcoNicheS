@@ -29,6 +29,9 @@ devtools::install_github('armandosunny/EcoNicheS')
 shiny::runApp("EcoNicheS.R")
 ```
 
+# Problems installing packages
+
+When using the application, the necessary packages are installed automatically, but problems can arise on each device, so there may be errors when installing the libraries. If so, these errors will appear in RStudio and EcpNicheS will not be able to be opened. In this case, please go to the R packages folder where the libraries are located in .tar format and follow the following steps to manually install those packages with which there are problems.
 
 # Getting ready to use the app
 EcoNicheS is an interactive web application that consists of 7 work tabs: **_Correlation layers, Points and pseudoabsences, Biomod2, Partial ROC Analysis, Remove urbanization, Calculate area_** and **_Gains and losses_**. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow developing ecological niche modeling analyses, but before starting to interact with the app there are some prerequisites necessary to ensure smooth functionality, these prerequisites imply the _use of RStudio and the installation of packages in it, and the conditioning of the databases_ with which you wish to carry out this type of analysis.
@@ -56,25 +59,6 @@ EcoNicheS works with specific versions of the libraries it uses to perform ecolo
 - [ENMGadgets](https://github.com/narayanibarve/ENMGadgets) 0.1.0.1
 
 
-
-``` r
-if (!require('remotes')) install.packages('remotes')
-library(remotes)
-install_version("shiny", version = "1.7.5")
-install_version("terra", version = "1.7.46")
-install_version("usdm", version = "2.1.6")
-install_version("ENMTools", version = "1.1.1")	
-install_version("biomod2", version = "4.2.4")
-install_version("RColorBrewer", version = "1.1.3")
-install_version("dismo", version = "1.3.14")
-install_version("tiff", version = "0.1.11")
-install_version("rJava", version = "1.0.6")
-install_version("tidyterra", version = "0.4.0")
-install_version("shinydashboard", version = "0.7.2")
-install_version("pROC", version = "1.18.4")
-install_version("R.utils", version = "2.12.2")
-install_version("ENMGadgets", version = "0.1.0.1")
-```
 
 #### Define the working directory in RStudio and prepare your databases
 
