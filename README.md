@@ -33,6 +33,9 @@ shiny::runApp("EcoNicheS.R")
 
 When using the application, the necessary packages are installed automatically, but problems can arise on each device, so there may be errors when installing the libraries. If so, these errors will appear in RStudio and EcpNicheS will not be able to be opened. In this case, please go to the R packages folder where the libraries are located in .tar format and follow the following steps to manually install those packages with which there are problems.
 
+![RStudio Tools](https://github.com/armandosunny/EcoNicheS/assets/25662791/a06fa320-a49d-46ac-80fd-03d2f3807028)
+
+
 # Getting ready to use the app
 EcoNicheS is an interactive web application that consists of 7 work tabs: **_Correlation layers, Points and pseudoabsences, Biomod2, Partial ROC Analysis, Remove urbanization, Calculate area_** and **_Gains and losses_**. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow developing ecological niche modeling analyses, but before starting to interact with the app there are some prerequisites necessary to ensure smooth functionality, these prerequisites imply the _use of RStudio and the installation of packages in it, and the conditioning of the databases_ with which you wish to carry out this type of analysis.
 
