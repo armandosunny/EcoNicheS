@@ -33,11 +33,13 @@ shiny::runApp("EcoNicheS.R")
 
 When using the application, the necessary packages are installed automatically, but problems can arise on each device, so there may be errors when installing the libraries. If so, these errors will appear in RStudio and EcpNicheS will not be able to be opened. In this case, please go to the R packages folder where the libraries are located in .tar.gz format and follow the following steps to manually install those packages with which there are problems.
 
-Open RStudio and go to the top menu and click on the **Tools** button, a new menu will be displayed, where you must click on the **Install** button.
+Open RStudio and go to the top menu and click on the **Tools** button, a new menu will be displayed, where you must click on the **Install Packages** option.
 
 ![RStudio Tools](https://github.com/armandosunny/EcoNicheS/assets/25662791/a06fa320-a49d-46ac-80fd-03d2f3807028)
 
 ![RStudio Tools Install](https://github.com/armandosunny/EcoNicheS/assets/25662791/61dc1f41-70a5-4fb7-9996-d8f2ad9ccb48)
+
+In the window that will open, in _Install from_, select the second option, which will allow us to install packages in .tar.gz format. Next, click on **Browse**, and search your devices for the file(s) downloaded from the R Packages folder in this repository. Select the package(s) that presented problems during installation and _without having to change the option in the Install to library section_ (it is best to leave the default option), click on **Install**.
 
 ![Select tar](https://github.com/armandosunny/EcoNicheS/assets/25662791/8041633b-be48-4bbd-b4e6-10250067a71e)
 
