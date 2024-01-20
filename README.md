@@ -35,6 +35,8 @@ When using the application, the necessary packages are installed automatically, 
 
 ![RStudio Tools](https://github.com/armandosunny/EcoNicheS/assets/25662791/a06fa320-a49d-46ac-80fd-03d2f3807028)
 
+![RStudio Browse](https://github.com/armandosunny/EcoNicheS/assets/25662791/d11b2d25-29e2-435c-a0d0-021f4c7ef5a9)
+
 
 # Getting ready to use the app
 EcoNicheS is an interactive web application that consists of 7 work tabs: **_Correlation layers, Points and pseudoabsences, Biomod2, Partial ROC Analysis, Remove urbanization, Calculate area_** and **_Gains and losses_**. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow developing ecological niche modeling analyses, but before starting to interact with the app there are some prerequisites necessary to ensure smooth functionality, these prerequisites imply the _use of RStudio and the installation of packages in it, and the conditioning of the databases_ with which you wish to carry out this type of analysis.
