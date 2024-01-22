@@ -267,6 +267,9 @@ The creation of this package was made possible by the financial support provided
   Dipert A, Borges B (2023). _shiny: Web Application Framework for R_. R package version
   1.7.5, <https://CRAN.R-project.org/package=shiny>.
 
+Hijmans R (2023). _raster: Geographic Data Analysis and Modeling_. R package version
+  3.6-23, <https://CRAN.R-project.org/package=raster>.
+
   Hijmans R (2023). _terra: Spatial Data Analysis_. R package version 1.7-46,
   <https://CRAN.R-project.org/package=terra>.
 
