@@ -260,6 +260,12 @@ The creation of this package was made possible by the financial support provided
   Biomod2 modeling for predicting the potential ecological distribution of three Fritillaria species under climate change. 
   _Scientific reports_, 13(1), 18801. https://doi.org/10.1038/s41598-023-45887-6
 
+  Barve N, Barve V (2019). _ENMGadgets: Pre and Post Processing in ENM Workflow_. R
+  package version 0.1.0.1.
+
+  Bengtsson H (2022). _R.utils: Various Programming Utilities_. R package version
+  2.12.2, <https://CRAN.R-project.org/package=R.utils>.
+
   Chang W, Borges Ribeiro B (2021). _shinydashboard: Create Dashboards with 'Shiny'_. R
   package version 0.7.2, <https://CRAN.R-project.org/package=shinydashboard>.
   
@@ -303,12 +309,6 @@ Hijmans RJ, Phillips S, Leathwick J, Elith J (2023). _dismo: Species Distributio
 
   Urbanek S, Johnson K (2022). _tiff: Read and Write TIFF Images_. R package version
   0.1-11, <https://CRAN.R-project.org/package=tiff>.
-
-  Bengtsson H (2022). _R.utils: Various Programming Utilities_. R package version
-  2.12.2, <https://CRAN.R-project.org/package=R.utils>.
-
-  Barve N, Barve V (2019). _ENMGadgets: Pre and Post Processing in ENM Workflow_. R
-  package version 0.1.0.1.
 
   Osorio-Olvera L, Lira-Noriega A, Soberón J, et al. ntbox: An r package with graphical user interface for modelling and evaluating multidimensional ecological niches. Methods Ecol Evol. 2020; 11: 1199–1206. https://doi.org/10.1111/2041-210X.13452
 
