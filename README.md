@@ -12,7 +12,7 @@ To use EcoNicheS it is necessary to have 64-bit rJava installed. However, this i
 
 ### Mac Users
 
-To know which version is appropriate for your computer, you need to know its processor architecture. If your computer has an M chip integrated in any of its versions, download the ._jre-8u401-macosx-aarch64 document [here], on the other hand, if the processor is Intel, download the ._jre-8u401-macosx-x64 file [here].
+To know which version is appropriate for your computer, you need to know its processor architecture. If your computer has an M chip integrated in any of its versions, download the jre-8u401-macosx-aarch64 document [here], on the other hand, if the processor is Intel, download the jre-8u401-macosx-x64 file [here].
 
 
 
