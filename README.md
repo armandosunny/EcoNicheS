@@ -295,10 +295,14 @@ Hijmans RJ, Phillips S, Leathwick J, Elith J (2023). _dismo: Species Distributio
   Neuwirth E (2022). _RColorBrewer: ColorBrewer Palettes_. R package version 1.1-3,
   <https://CRAN.R-project.org/package=RColorBrewer>.
 
+    Osorio-Olvera L, Lira-Noriega A, Soberón J, et al. (2020) ntbox: An r package with graphical user interface for modelling and evaluating multidimensional ecological niches. Methods Ecol Evol. 11: 1199–1206. https://doi.org/10.1111/2041-210X.13452
+
   R Core Team (2023). _R: A Language and Environment for Statistical Computing_. R
   Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>.
 
   Robin X, Turck N, Hainard A, Tiberti N, Lisacek F, Sanchez JC, Müller M. (2011). pROC: an open-source package for R and S+ to analyze and compare ROC curves. BMC Bioinformatics 12, 77 https://doi.org/10.1186/1471-2105-12-77
+
+  Steven J. Phillips, Miroslav Dudík, Robert E. Schapire. [Internet] Maxent software for modeling species niches and distributions (Version 3.4.1). Available from url: http://biodiversityinformatics.amnh.org/open_source/maxent/. Accessed on 2024-1-11.
 
   Thuiller W, Georges D, Gueguen M, Engler R, Breiner F, Lafourcade B, Patin R (2023).
   _biomod2: Ensemble Platform for Species Distribution Modeling_. R package version
@@ -310,9 +314,5 @@ Hijmans RJ, Phillips S, Leathwick J, Elith J (2023). _dismo: Species Distributio
   Urbanek S, Johnson K (2022). _tiff: Read and Write TIFF Images_. R package version
   0.1-11, <https://CRAN.R-project.org/package=tiff>.
 
-  Osorio-Olvera L, Lira-Noriega A, Soberón J, et al. (2020) ntbox: An r package with graphical user interface for modelling and evaluating multidimensional ecological niches. Methods Ecol Evol. 11: 1199–1206. https://doi.org/10.1111/2041-210X.13452
-
-Steven J. Phillips, Miroslav Dudík, Robert E. Schapire. [Internet] Maxent software for modeling species niches and distributions (Version 3.4.1). Available from url: http://biodiversityinformatics.amnh.org/open_source/maxent/. Accessed on 2024-1-11.
-
-Warren, D.L., Matzke, N.J., Cardillo, M., Baumgartner, J.B., Beaumont, L.J., Turelli, M., Glor, R.E., Huron, N.A., Simões, M., Iglesias, T.L. Piquet, J.C., and Dinnage, R. 2021. ENMTools 1.0: an R package for comparative ecological biogeography. Ecography, 44(4), pp.504-511.
+Warren DL, Matzke NJ, Cardillo M, Baumgartner JB, Beaumont LJ, Turelli M, Glor RE, Huron NA, Simões M, Iglesias TL Piquet JC, Dinnage R (2021). ENMTools 1.0: an R package for comparative ecological biogeography. Ecography, 44(4), pp.504-511.
 
