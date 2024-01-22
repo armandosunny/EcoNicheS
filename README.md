@@ -10,7 +10,7 @@ An R library for Shiny that enables the analysis of ecological niche modeling us
 
 ### Mac Users
 
-To know which version is appropriate for your computer, you need to know its processor architecture. Then go to the top of the manual, where the repository folders and files are located, and access the Mac Users folder. If your computer has an M chip integrated in any of its versions, download the ._jre-8u401-macosx-aarch64 document, on the other hand, if the processor is Intel, download the ._jre-8u401-macosx-x64 file.
+To know which version is appropriate for your computer, you need to know its processor architecture. If your computer has an M chip integrated in any of its versions, download the ._jre-8u401-macosx-aarch64 document [here], on the other hand, if the processor is Intel, download the ._jre-8u401-macosx-x64 file [here].
 
 
 
