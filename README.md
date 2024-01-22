@@ -12,7 +12,6 @@ An R library for Shiny that enables the analysis of ecological niche modeling us
 
 To know which version is appropriate for your computer, you need to know its processor architecture. Then go to the top of the manual, where the repository folders and files are located, and access the Mac Users folder. If your computer has an M chip integrated in any of its versions, download the ._jre-8u401-macosx-aarch64 document, on the other hand, if the processor is Intel, download the ._jre-8u401-macosx-x64 file.
 
-![rJAVA mac si](https://github.com/armandosunny/EcoNicheS/assets/25662791/0efc4b14-3593-48cf-b439-bfcda1b6492e)
 
 
 # To install the library
