@@ -259,10 +259,19 @@ The creation of this package was made possible by the financial support provided
   <sup>2</sup> Huang D, An Q, Huang S, Tan G, Quan H, Chen Y, Zhou J, Liao H. (2023). 
   Biomod2 modeling for predicting the potential ecological distribution of three Fritillaria species under climate change. 
   _Scientific reports_, 13(1), 18801. https://doi.org/10.1038/s41598-023-45887-6
+
+  Chang W, Borges Ribeiro B (2021). _shinydashboard: Create Dashboards with 'Shiny'_. R
+  package version 0.7.2, <https://CRAN.R-project.org/package=shinydashboard>.
   
   Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson J,
   Dipert A, Borges B (2023). _shiny: Web Application Framework for R_. R package version
   1.7.5, <https://CRAN.R-project.org/package=shiny>.
+
+  Hernangomez D (2023). tidyterra: tidyverse Methods and ggplot2 Helpers for terra
+  Objects. <https://doi.org/10.5281/zenodo.6572471>,
+  <https://dieghernan.github.io/tidyterra/>
+
+Hernangómez, D., (2023). Using the tidyverse with terra objects: the tidyterra package. Journal of Open Source Software, 8(91), 5751, https://doi.org/10.21105/joss.05751.
 
 Hijmans R (2023). _raster: Geographic Data Analysis and Modeling_. R package version
   3.6-23, <https://CRAN.R-project.org/package=raster>.
@@ -275,7 +284,6 @@ Hijmans R (2023). _raster: Geographic Data Analysis and Modeling_. R package ver
 
   Naimi B, Hamm Na, Groen TA, Skidmore AK, Toxopeus AG (2014). “Where is positional
   uncertainty a problem for species distribution modelling.” _Ecography_, *37*, 191-203.
-  doi:10.1111/j.1600-0587.2013.00205.x
   <https://doi.org/10.1111/j.1600-0587.2013.00205.x>.
 
   Neuwirth E (2022). _RColorBrewer: ColorBrewer Palettes_. R package version 1.1-3,
@@ -288,19 +296,11 @@ Hijmans R (2023). _raster: Geographic Data Analysis and Modeling_. R package ver
   _biomod2: Ensemble Platform for Species Distribution Modeling_. R package version
   4.2-4, <https://CRAN.R-project.org/package=biomod2>.
 
-
-  Urbanek S, Johnson K (2022). _tiff: Read and Write TIFF Images_. R package version
-  0.1-11, <https://CRAN.R-project.org/package=tiff>.
-
   Urbanek S (2021). _rJava: Low-Level R to Java Interface_. R package version 1.0-6,
   <https://CRAN.R-project.org/package=rJava>.
 
-  Hernangomez D (2023). tidyterra: tidyverse Methods and ggplot2 Helpers for terra
-  Objects. <https://doi.org/10.5281/zenodo.6572471>,
-  <https://dieghernan.github.io/tidyterra/>
-
-  Chang W, Borges Ribeiro B (2021). _shinydashboard: Create Dashboards with 'Shiny'_. R
-  package version 0.7.2, <https://CRAN.R-project.org/package=shinydashboard>.
+  Urbanek S, Johnson K (2022). _tiff: Read and Write TIFF Images_. R package version
+  0.1-11, <https://CRAN.R-project.org/package=tiff>.
 
   Xavier Robin, Natacha Turck, Alexandre Hainard, Natalia Tiberti, Frédérique Lisacek,
   Jean-Charles Sanchez and Markus Müller (2011). pROC: an open-source package for R and
