@@ -256,7 +256,7 @@ The creation of this package was made possible by the financial support provided
   <sup>1</sup> _ACS hosted Feature Layers FAQ_. (n.d.-a). ACS Hosted Feature Layers FAQ.
   https://acs-hosted-feature-layers-faq-esri.hub.arcgis.com/ 
 
-  <sup>2</sup> Huang, D., An, Q., Huang, S., Tan, G., Quan, H., Chen, Y., Zhou, J., & Liao, H. (2023). 
+  <sup>2</sup> Huang D, An Q, Huang S, Tan G, Quan H, Chen Y, Zhou J, Liao H. (2023). 
   Biomod2 modeling for predicting the potential ecological distribution of three Fritillaria species under climate change. 
   _Scientific reports_, 13(1), 18801. https://doi.org/10.1038/s41598-023-45887-6
   
