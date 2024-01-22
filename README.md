@@ -279,7 +279,7 @@ Hijmans R (2023). _raster: Geographic Data Analysis and Modeling_. R package ver
   Hijmans R (2023). _terra: Spatial Data Analysis_. R package version 1.7-46,
   <https://CRAN.R-project.org/package=terra>.
 
-    Hijmans RJ, Phillips S, Leathwick J, Elith J (2023). _dismo: Species Distribution
+Hijmans RJ, Phillips S, Leathwick J, Elith J (2023). _dismo: Species Distribution
   Modeling_. R package version 1.3-14, <https://CRAN.R-project.org/package=dismo>.
 
   Naimi B, Hamm Na, Groen TA, Skidmore AK, Toxopeus AG (2014). “Where is positional
@@ -292,6 +292,8 @@ Hijmans R (2023). _raster: Geographic Data Analysis and Modeling_. R package ver
   R Core Team (2023). _R: A Language and Environment for Statistical Computing_. R
   Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>.
 
+  Robin X, Turck N, Hainard A, Tiberti N, Lisacek F, Sanchez JC, Müller M. (2011). pROC: an open-source package for R and S+ to analyze and compare ROC curves. BMC Bioinformatics 12, 77 https://doi.org/10.1186/1471-2105-12-77
+
   Thuiller W, Georges D, Gueguen M, Engler R, Breiner F, Lafourcade B, Patin R (2023).
   _biomod2: Ensemble Platform for Species Distribution Modeling_. R package version
   4.2-4, <https://CRAN.R-project.org/package=biomod2>.
@@ -301,11 +303,6 @@ Hijmans R (2023). _raster: Geographic Data Analysis and Modeling_. R package ver
 
   Urbanek S, Johnson K (2022). _tiff: Read and Write TIFF Images_. R package version
   0.1-11, <https://CRAN.R-project.org/package=tiff>.
-
-  Xavier Robin, Natacha Turck, Alexandre Hainard, Natalia Tiberti, Frédérique Lisacek,
-  Jean-Charles Sanchez and Markus Müller (2011). pROC: an open-source package for R and
-  S+ to analyze and compare ROC curves. BMC Bioinformatics, 12, p. 77.  DOI:
-  10.1186/1471-2105-12-77 <http://www.biomedcentral.com/1471-2105/12/77/>
 
   Bengtsson H (2022). _R.utils: Various Programming Utilities_. R package version
   2.12.2, <https://CRAN.R-project.org/package=R.utils>.
