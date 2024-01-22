@@ -17,7 +17,7 @@ To know which version is appropriate for your computer, you need to know its pro
 
 
 # To install the library
-To open the shiny GUI application:
+
 
 ``` r
 if (!require('devtools')) install.packages('devtools')
