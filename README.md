@@ -260,9 +260,6 @@ The creation of this package was made possible by the financial support provided
   Biomod2 modeling for predicting the potential ecological distribution of three Fritillaria species under climate change. 
   _Scientific reports_, 13(1), 18801. https://doi.org/10.1038/s41598-023-45887-6
   
-  R Core Team (2023). _R: A Language and Environment for Statistical Computing_. R
-  Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>.
-
   Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson J,
   Dipert A, Borges B (2023). _shiny: Web Application Framework for R_. R package version
   1.7.5, <https://CRAN.R-project.org/package=shiny>.
@@ -273,22 +270,24 @@ Hijmans R (2023). _raster: Geographic Data Analysis and Modeling_. R package ver
   Hijmans R (2023). _terra: Spatial Data Analysis_. R package version 1.7-46,
   <https://CRAN.R-project.org/package=terra>.
 
+    Hijmans RJ, Phillips S, Leathwick J, Elith J (2023). _dismo: Species Distribution
+  Modeling_. R package version 1.3-14, <https://CRAN.R-project.org/package=dismo>.
+
   Naimi B, Hamm Na, Groen TA, Skidmore AK, Toxopeus AG (2014). “Where is positional
   uncertainty a problem for species distribution modelling.” _Ecography_, *37*, 191-203.
   doi:10.1111/j.1600-0587.2013.00205.x
   <https://doi.org/10.1111/j.1600-0587.2013.00205.x>.
 
+  Neuwirth E (2022). _RColorBrewer: ColorBrewer Palettes_. R package version 1.1-3,
+  <https://CRAN.R-project.org/package=RColorBrewer>.
 
+  R Core Team (2023). _R: A Language and Environment for Statistical Computing_. R
+  Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>.
 
   Thuiller W, Georges D, Gueguen M, Engler R, Breiner F, Lafourcade B, Patin R (2023).
   _biomod2: Ensemble Platform for Species Distribution Modeling_. R package version
   4.2-4, <https://CRAN.R-project.org/package=biomod2>.
 
-  Neuwirth E (2022). _RColorBrewer: ColorBrewer Palettes_. R package version 1.1-3,
-  <https://CRAN.R-project.org/package=RColorBrewer>.
-
-  Hijmans RJ, Phillips S, Leathwick J, Elith J (2023). _dismo: Species Distribution
-  Modeling_. R package version 1.3-14, <https://CRAN.R-project.org/package=dismo>.
 
   Urbanek S, Johnson K (2022). _tiff: Read and Write TIFF Images_. R package version
   0.1-11, <https://CRAN.R-project.org/package=tiff>.
