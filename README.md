@@ -275,8 +275,7 @@ The creation of this package was made possible by the financial support provided
   doi:10.1111/j.1600-0587.2013.00205.x
   <https://doi.org/10.1111/j.1600-0587.2013.00205.x>.
 
-  Warren D, Dinnage R (2023). _ENMTools: Analysis of Niche Evolution using Niche and
-  Distribution Models_. R package version 1.1.1.
+
 
   Thuiller W, Georges D, Gueguen M, Engler R, Breiner F, Lafourcade B, Patin R (2023).
   _biomod2: Ensemble Platform for Species Distribution Modeling_. R package version
@@ -315,4 +314,6 @@ The creation of this package was made possible by the financial support provided
   Osorio-Olvera L, Lira-Noriega A, Soberón J, et al. ntbox: An r package with graphical user interface for modelling and evaluating multidimensional ecological niches. Methods Ecol Evol. 2020; 11: 1199–1206. https://doi.org/10.1111/2041-210X.13452
 
 Steven J. Phillips, Miroslav Dudík, Robert E. Schapire. [Internet] Maxent software for modeling species niches and distributions (Version 3.4.1). Available from url: http://biodiversityinformatics.amnh.org/open_source/maxent/. Accessed on 2024-1-11.
+
+Warren, D.L., Matzke, N.J., Cardillo, M., Baumgartner, J.B., Beaumont, L.J., Turelli, M., Glor, R.E., Huron, N.A., Simões, M., Iglesias, T.L. Piquet, J.C., and Dinnage, R. 2021. ENMTools 1.0: an R package for comparative ecological biogeography. Ecography, 44(4), pp.504-511.
 
