@@ -295,7 +295,7 @@ Hijmans RJ, Phillips S, Leathwick J, Elith J (2023). _dismo: Species Distributio
   Neuwirth E (2022). _RColorBrewer: ColorBrewer Palettes_. R package version 1.1-3,
   <https://CRAN.R-project.org/package=RColorBrewer>.
 
-    Osorio-Olvera L, Lira-Noriega A, Soberón J, et al. (2020) ntbox: An r package with graphical user interface for modelling and evaluating multidimensional ecological niches. Methods Ecol Evol. 11: 1199–1206. https://doi.org/10.1111/2041-210X.13452
+Osorio-Olvera L, Lira-Noriega A, Soberón J, et al. (2020) ntbox: An r package with graphical user interface for modelling and evaluating multidimensional ecological niches. Methods Ecol Evol. 11: 1199–1206. https://doi.org/10.1111/2041-210X.13452
 
   R Core Team (2023). _R: A Language and Environment for Statistical Computing_. R
   Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>.
