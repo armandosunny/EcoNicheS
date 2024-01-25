@@ -7,6 +7,8 @@ An R library for Shiny that enables the analysis of ecological niche modeling us
 
 To use EcoNicheS it is necessary to have 64-bit Java installed. However, this involves downloading different versions depending on the operating system of your computer.For this you can visit the Oracle Java download page by clicking [here](https://www.oracle.com/java/technologies/downloads/)
 
+### Linux Users
+
 ### Windows Users
 
 
