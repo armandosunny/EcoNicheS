@@ -24,7 +24,7 @@ To know which version is appropriate for your computer, you need to know its pro
 ``` r
 if (!require('devtools')) install.packages('devtools')
 
-devtools::install_github('armandosunny/EcoNicheS')
+devtools::install_github('armandosunny/EcoNicheS-1.0.0')
 ```
 # To open the shiny GUI application:
 
