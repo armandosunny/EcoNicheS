@@ -9,6 +9,8 @@ To use EcoNicheS it is necessary to have 64-bit Java installed. However, this in
 
 ### Linux Users
 
+![oracle](https://github.com/armandosunny/EcoNicheS/assets/25662791/8b0fc17c-a6fd-4b0b-9be3-a9a8d4cda2a4)
+
 ### Windows Users
 
 
