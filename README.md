@@ -39,7 +39,7 @@ require(ENMGadgets)
 install_github("danlwarren/ENMTools")
 library(ENMTools)
 
-devtools::install_github('armandosunny/EcoNicheS')
+install_github('armandosunny/EcoNicheS')
 
 library(EcoNicheS)
 ```
