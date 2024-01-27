@@ -1,1 +1,4 @@
-
+Package: EcoNicheS
+Type: Package
+Title: analysis of ecological niche modeling
+Version: 1.0.0
