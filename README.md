@@ -46,7 +46,7 @@ library(EcoNicheS)
 # To open the shiny GUI application:
 
 ``` 
-shiny::runApp()
+ shinyApp(ui = ui, server = server)
 ```
 
 # Problems installing packages
