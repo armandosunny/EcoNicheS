@@ -4,7 +4,7 @@ Title: analysis of ecological niche modeling
 Version: 1.0.0
 Depends:
   ENMTools,
-  R.utils
+  R.utils,
   RColorBrewer,
   biomod2,
   dismo,
