@@ -1,5 +1,5 @@
 # EcoNicheS <img src="https://user-images.githubusercontent.com/25662791/244543343-ac0a9b00-a873-469d-ac33-4b49cba48a90.png" referrerpolicy="no-referrer" alt="eco2" align="right" height="276" />
-An R library for Shiny that enables the analysis of ecological niche modeling using the biomod2 library and other analyzes. This is Version 1.0.0, and subsequent versions will be uploaded with additional analyses and upgrades. 
+An R library for shinydashboard  that enables the analysis of ecological niche modeling using the biomod2 library and other analyzes. This is Version 1.0.0, and subsequent versions will be uploaded with additional analyses and upgrades. 
 
 -----
 
@@ -248,7 +248,7 @@ This tab requires two files, the only acceptable format of which is .asc. The fi
 
 #### Please cite as:
 
-Sunny A, Marmolejo-López CM (2024). EcoNicheS: An R package for Shiny that enables the analysis of ecological niche modeling using the biomod2 package and other analyzes. GitHub. https://github.com/armandosunny/EcoNicheS
+Sunny A, Marmolejo-López CM (2024). EcoNicheS: An R package for shinydashboard that enables the analysis of ecological niche modeling using the biomod2 package and other analyzes. GitHub. https://github.com/armandosunny/EcoNicheS
 
 
 # Acknowledgements
