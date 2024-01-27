@@ -34,9 +34,11 @@ install.packages("https://cran.r-project.org/src/contrib/Archive/maptools/maptoo
 if (!require('devtools')) install.packages('devtools')
 
 install_github("narayanibarve/ENMGadgets")
+
 require(ENMGadgets)
 
 install_github("danlwarren/ENMTools")
+
 library(ENMTools)
 
 install_github('armandosunny/EcoNicheS')
@@ -51,7 +53,7 @@ library(EcoNicheS)
 
 # Problems installing packages
 
-When using the application, the necessary packages are installed automatically, but problems can arise on each device, so there may be errors when installing the libraries. If so, these errors will appear in RStudio and EcpNicheS will not be able to be opened. In this case, please go to the R packages folder where the libraries are located in .tar.gz format and follow the following steps to manually install those packages with which there are problems.
+When using the application, the necessary packages are installed automatically, but problems can arise on each device, so there may be errors when installing the libraries. If so, these errors will appear in RStudio and EcoNicheS will not be able to be opened. In this case, please go to the R packages folder where the libraries are located in .tar.gz format and follow the following steps to manually install those packages with which there are problems.
 
 Open RStudio and go to the top menu and click on the **Tools** button, a new menu will be displayed, where you must click on the **Install Packages** option.
 
