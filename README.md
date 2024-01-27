@@ -24,6 +24,17 @@ To know which version is appropriate for your computer, you need to know its pro
 
 
 ``` r
+
+
+install.packages("https://cran.r-project.org/src/contrib/Archive/maptools/maptools_1.1-8.tar.gz", repos = NULL, type = "source")
+
+
+install.packages("https://cran.r-project.org/src/contrib/Archive/rgdal/rgdal_1.6-7.tar.gz", repos = NULL, type = "source")
+
+
+install.packages("https://cran.r-project.org/src/contrib/Archive/rgeos/rgeos_0.6-4.tar.gz", repos = NULL, type = "source")
+
+
 if (!require('devtools')) install.packages('devtools')
 
 devtools::install_github('armandosunny/EcoNicheS')
