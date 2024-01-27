@@ -248,7 +248,7 @@ This tab requires two files, the only acceptable format of which is .asc. The fi
 
 #### Please cite as:
 
-Sunny, A. (2023). EcoNicheS: An R package for Shiny that enables the analysis of ecological niche modeling using the biomod2 package and other analyzes. GitHub. https://github.com/armandosunny/EcoNicheS
+Sunny A, Marmolejo-López CM (2024). EcoNicheS: An R package for Shiny that enables the analysis of ecological niche modeling using the biomod2 package and other analyzes. GitHub. https://github.com/armandosunny/EcoNicheS
 
 
 # Acknowledgements
