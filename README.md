@@ -45,8 +45,8 @@ library(EcoNicheS)
 ```
 # To open the shiny GUI application:
 
-``` r
-shiny::runApp("EcoNicheS.R")
+``` 
+shiny::runApp()
 ```
 
 # Problems installing packages
