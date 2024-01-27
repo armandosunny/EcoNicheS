@@ -33,6 +33,12 @@ install.packages("https://cran.r-project.org/src/contrib/Archive/maptools/maptoo
 
 if (!require('devtools')) install.packages('devtools')
 
+install_github("narayanibarve/ENMGadgets")
+require(ENMGadgets)
+
+install_github("danlwarren/ENMTools")
+library(ENMTools)
+
 devtools::install_github('armandosunny/EcoNicheS')
 
 library(EcoNicheS)
