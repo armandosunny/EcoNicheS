@@ -2,3 +2,20 @@ Package: EcoNicheS
 Type: Package
 Title: analysis of ecological niche modeling
 Version: 1.0.0
+Depends:
+ENMTools,
+R.utils
+RColorBrewer,
+biomod2,
+dismo,
+maptools,
+pROC,
+rJava,
+raster,
+rgdal,
+shiny,
+shinydashboard,
+terra,
+tidyterra,
+tiff,
+usdm
