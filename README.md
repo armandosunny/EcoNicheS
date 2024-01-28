@@ -17,7 +17,9 @@ To use EcoNicheS it is necessary to have 64-bit Java installed. However, this in
 
 ### Mac Users
 
-To know which version is appropriate for your computer, you need to know its processor architecture. If your computer has an M chip integrated in any of its versions, download the jre-8u401-macosx-aarch64 document, on the other hand, if the processor is Intel, download the jre-8u401-macosx-x64 file.
+To know which version is appropriate for your computer, you need to know its processor architecture. If your computer has an M chip integrated in any of its versions, download the -aarch64 document (naranja), on the other hand, if the processor is Intel, download the -x64 file (purple).
+
+![MacOsJavaEdited](https://github.com/armandosunny/EcoNicheS/assets/25662791/f66eb950-9645-42fa-8b70-2cfd2ed4630e)
 
 
 
