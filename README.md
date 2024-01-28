@@ -13,6 +13,7 @@ To use EcoNicheS it is necessary to have 64-bit Java installed. However, this in
 
 ### Windows Users
 
+![JavaWindowseditado](https://github.com/armandosunny/EcoNicheS/assets/25662791/6c6e1a4b-9824-482e-a818-230fbaac753b)
 
 ### Mac Users
 
