@@ -219,6 +219,7 @@ This tab requires two files, the only acceptable format of which is .asc. The fi
 
 ![gains and losses 16 y 50 cn resultados](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/4c68a466-d6be-47c6-adb1-b9bd4df70638)
 
+-----
 
 # Problems installing packages
 
