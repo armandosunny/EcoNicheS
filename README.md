@@ -47,6 +47,12 @@ library(ENMTools)
 install_github('armandosunny/EcoNicheS')
 
 library(EcoNicheS)
+
+
+#Before loading the graphical interface, paste this line to give more capacity to rJava and then select the working directory
+
+options(shiny.maxRequestSize = 6000*1024^2)
+
 ```
 # To open the shiny GUI application:
 
