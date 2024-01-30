@@ -36,6 +36,7 @@ If you are not familiar with Biomod2, in its corresponding section in this manua
 
 ### Learning to use EcoNicheS with an example case study
 
+To know and understand in detail the functions that EcoNicheS offers and the results that we can obtain from them, we invite you to learn about the application through a case study based on _Phrynosoma orbiculare_, also known as Mexican Plateau horned lizar. The documents and databases necessary to be able to use each of the EcoNicheS functions are available [here].
 
 -----
 
