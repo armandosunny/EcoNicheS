@@ -20,7 +20,7 @@ To ensure smooth workflow in RStudio, it is crucial to define the working direct
 In order to use your databases, the _.csv base file_ must have the _name of the species listed in the first column_, followed by _longitude (X)_ in the second column, and _latitude (Y)_ in the third column as seen below. _Editing your database respecting lowercase and uppercase letters is essential for the analysis to proceed_.
 
 > [!NOTE]
-> If what you are looking for is to learn how to perform ecological niche modeling analysis and you do not have these files, please go to the section [Learning to use EcoNicheS with an example case study] 
+> If what you are looking for is to learn how to perform ecological niche modeling analysis and you do not have these files, please go to the section [Learning to use EcoNicheS with an example case study](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#learning-to-use-econiches-with-an-example-case-study), where you will find all the files necessary to use EcoNicheS. 
 
 <sub>Visualization in RStudio</sub> 
 
