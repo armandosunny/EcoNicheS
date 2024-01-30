@@ -22,11 +22,11 @@ In order to use your databases, the _.csv base file_ must have the _name of the 
 > [!NOTE]
 > If what you are looking for is to learn how to perform ecological niche modeling analysis and you do not have these files, please go to the section [Learning to use EcoNicheS with an example case study](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#learning-to-use-econiches-with-an-example-case-study), where you will find all the files necessary to use EcoNicheS. 
 
-<sub>Visualization in RStudio</sub> 
+<sub>.csv file is displayed in RStudio</sub> 
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/727045e3-cbc0-47b0-95d8-72cdc158b3fe) 
 
-<sub>Visualization in Excel</sub>
+<sub>.csv file is displayed in Excel</sub>
  
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/addc0249-104d-4133-9d13-5168d039eb79)
 
