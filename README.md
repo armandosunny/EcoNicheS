@@ -45,6 +45,8 @@ library(EcoNicheS)
 ```
 # To open the shiny GUI application:
 
+After ensuring that the above commands worked successfully, use this command to start exploring the EcoNicheS interface and features.
+
 ``` 
  shinyApp(ui = ui, server = server)
 ```
