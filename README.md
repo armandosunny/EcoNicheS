@@ -15,7 +15,10 @@ To use EcoNicheS it is necessary to have 64-bit Java installed. For this you can
 
 ### Define the working directory in RStudio and prepare your databases
 
-To ensure smooth workflow in RStudio, it is crucial to define the working directory properly, the location where all databases created during the analyzes will be saved. Follow these steps, navigate to: "Session" ➥ "Set Working Directory" ➥ "Choose Directory", and select for example, the folder that contains the databases necessary to carry out this type of analysis, the .asc layers of your study area and the .csv file containing the coordinates with the points of presence of your study species.
+To ensure smooth workflow in RStudio, it is crucial to define the working directory properly, the location where all databases created during the analyzes will be saved. Follow these steps, navigate to: "Session" ➥ "Set Working Directory" ➥ "Choose Directory", and select for example, the folder that contains the databases necessary to carry out this type of analysis,}: the .asc layers of your study area and the .csv file containing the coordinates with the points of presence of your study species.
+
+> [!NOTE]
+> If what you are looking for is to learn how to perform ecological niche modeling analysis and you do not have these files, please go to the section
 
 In order to use your databases, the _.csv base file_ must have the _name of the species listed in the first column_, followed by _longitude (X)_ in the second column, and _latitude (Y)_ in the third column as seen below. _Editing your database respecting lowercase and uppercase letters is essential for the analysis to proceed_.
 
@@ -34,7 +37,9 @@ One of the EcoNicheS tabs bases its analyzes on [Biomod2](https://github.com/arm
 
 If you are not familiar with Biomod2, in its corresponding section in this manual you will know how to use it with EcoNicheS but it is important that you have the mentioned files from the beginning to ensure that there will be no problems when you use this tab.
 
-### Learning to use EcoNicheS with an example case study
+-----
+
+# Learning to use EcoNicheS with an example case study
 
 To know and understand in detail the functions that EcoNicheS offers and the results that we can obtain from them, we invite you to learn about the application through a case study based on _Phrynosoma orbiculare_, also known as Mexican Plateau horned lizar. The documents and databases necessary to be able to use each of the EcoNicheS functions are available [here].
 
