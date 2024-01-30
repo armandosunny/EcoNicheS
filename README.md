@@ -27,7 +27,7 @@ To know which version is appropriate for your computer, you need to know its pro
 
 
 ``` r
-
+#Before loading the graphical interface, paste this line to give more capacity to rJava and then select the working directory
 options(shiny.maxRequestSize = 6000*1024^2)
 
 install.packages("https://cran.r-project.org/src/contrib/Archive/rgdal/rgdal_1.6-7.tar.gz", repos = NULL, type = "source")
@@ -52,10 +52,6 @@ install_github('armandosunny/EcoNicheS')
 
 library(EcoNicheS)
 
-
-#Before loading the graphical interface, paste this line to give more capacity to rJava and then select the working directory
-
-options(shiny.maxRequestSize = 6000*1024^2)
 
 ```
 # To open the shiny GUI application:
