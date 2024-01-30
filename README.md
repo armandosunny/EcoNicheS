@@ -7,13 +7,13 @@ An R library for shinydashboard  that enables the analysis of ecological niche m
 
 _The current version of EcoNiches_, due to the package loading it uses in R, _is available only for **Windows**_. Future versions will be published with updates and improvements to expand the use of the application to Mac users. 
 
-#### EcoNicheS requires the installation of 64-bit Java
+### EcoNicheS requires the installation of 64-bit Java
 
 To use EcoNicheS it is necessary to have 64-bit Java installed. For this you can visit the Oracle Java download page by clicking [here](https://www.oracle.com/java/technologies/downloads/). Downloading the .exe file is the easiest option.
 
 ![JavaWindowseditado](https://github.com/armandosunny/EcoNicheS/assets/25662791/6c6e1a4b-9824-482e-a818-230fbaac753b)
 
-#### Define the working directory in RStudio and prepare your databases
+### Define the working directory in RStudio and prepare your databases
 
 To ensure smooth workflow in RStudio, it is crucial to define the working directory properly, the location where all databases created during the analyzes will be saved. Follow these steps, navigate to: "Session" ➥ "Set Working Directory" ➥ "Choose Directory", and select for example, the folder that contains the databases necessary to carry out this type of analysis, the .asc layers of your study area and the .csv file containing the coordinates with the points of presence of your study species.
 
@@ -27,12 +27,17 @@ In order to use your databases, the _.csv base file_ must have the _name of the 
  
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/addc0249-104d-4133-9d13-5168d039eb79)
 
-#### MAXENT model
+### MAXENT model
 One of the EcoNicheS tabs bases its analyzes on [Biomod2](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#biomod2), which in turn uses different models to perform the ecological niche modeling analysis. One of these models is MAXENT, which requires the prior download of 3 files so that the analysis with it can be carried out, so, if the [MAXENT](https://biodiversityinformatics.amnh.org/open_source/maxent/) model is selected, prior to the analysis ensure that the working directory includes all the necessary files for running this model: [MAXENT](https://doi.org/10.6084/m9.figshare.24980664.v1).
 
 [![maxent bat](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/1b534599-e6e8-442d-8ab1-a81c64ff82a0)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709353/MAXENTbat.zip) [![maxent jar](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/9e030780-32a4-4fa2-8554-ace630cb1681)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709414/MAXENTjar.zip) [![maxent sh](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6fe03b4a-535c-4c1e-9e59-d854a422f2df)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709416/MAXENTsh.zip)
 
 If you are not familiar with Biomod2, in its corresponding section in this manual you will know how to use it with EcoNicheS but it is important that you have the mentioned files from the beginning to ensure that there will be no problems when you use this tab.
+
+### Learning to use EcoNicheS with an example case study
+
+
+-----
 
 # To install the library
 
