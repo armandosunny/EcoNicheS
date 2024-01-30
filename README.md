@@ -5,22 +5,9 @@ An R library for shinydashboard  that enables the analysis of ecological niche m
 
 # First and foremost: prerequisites for utilizing EcoNiches
 
-To use EcoNicheS it is necessary to have 64-bit Java installed. However, this involves downloading different versions depending on the operating system of your computer.For this you can visit the Oracle Java download page by clicking [here](https://www.oracle.com/java/technologies/downloads/)
-
-### Linux Users
-
-![oracle](https://github.com/armandosunny/EcoNicheS/assets/25662791/8b0fc17c-a6fd-4b0b-9be3-a9a8d4cda2a4)
-
-### Windows Users
+To use EcoNicheS it is necessary to have 64-bit Java installed. For this you can visit the Oracle Java download page by clicking [here](https://www.oracle.com/java/technologies/downloads/)
 
 ![JavaWindowseditado](https://github.com/armandosunny/EcoNicheS/assets/25662791/6c6e1a4b-9824-482e-a818-230fbaac753b)
-
-### Mac Users
-
-To know which version is appropriate for your computer, you need to know its processor architecture. If your computer has an M chip integrated in any of its versions, download the -aarch64 document (naranja), on the other hand, if the processor is Intel, download the -x64 file (purple).
-
-![MacOsJavaEdited](https://github.com/armandosunny/EcoNicheS/assets/25662791/f66eb950-9645-42fa-8b70-2cfd2ed4630e)
-
 
 
 # To install the library
