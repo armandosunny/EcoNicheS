@@ -12,7 +12,7 @@ _The current version of EcoNiches_, due to the package loading it uses in R, _is
 
 # To install the library
 
-EcoNicheS works with specific libraries in R that it uses to perform ecological niche modeling analyses, as later versions have been found to be incompatible. Therefore, to ensure smooth functionality, please download and install the correct version of the following libraries in RStudio. You can visit the websites listed below to obtain the required packages and you can try using the listed commands in RStudio as well to obtain the necessary versions.
+EcoNicheS works with specific libraries in R that it uses to perform ecological niche modeling analyses, and although the loading of most of them is automatic when running the application, there are some exceptions so it is necessary that you please use the command shown below in RStudio to ensure smooth functionality. 
 
 ``` r
 #Before loading the graphical interface, paste this line to give more capacity to rJava and then select the working directory
@@ -205,7 +205,7 @@ This tab requires two files, the only acceptable format of which is .asc. The fi
 
 # Problems installing packages
 
-By using the above commands to install the library, problems can arise on each device, so there may be errors when installing the packages. If so, these errors will appear in RStudio and EcoNicheS will not be able to be opened. In this case, please go to the R packages folder where the libraries are located in .tar.gz format and follow the following steps to manually install those packages with which there are problems.
+By using the commands to install the library, problems can arise on each device, so there may be errors when installing the packages. If so, these errors will appear in RStudio and EcoNicheS will not be able to be opened. In this case, please go to the R packages folder where the libraries are located in .tar.gz format and follow the following steps to manually install those packages with which there are problems.
 
 Open RStudio and go to the top menu and click on the **Tools** button, a new menu will be displayed, where you must click on the **Install Packages** option.
 
