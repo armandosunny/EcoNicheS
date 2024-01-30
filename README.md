@@ -36,6 +36,8 @@ install.packages("https://cran.r-project.org/src/contrib/Archive/maptools/maptoo
 
 if (!require('devtools')) install.packages('devtools')
 
+library(devtools)
+
 install_github("narayanibarve/ENMGadgets")
 
 require(ENMGadgets)
