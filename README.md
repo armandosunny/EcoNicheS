@@ -28,6 +28,8 @@ To know which version is appropriate for your computer, you need to know its pro
 
 ``` r
 
+options(shiny.maxRequestSize = 6000*1024^2)
+
 install.packages("https://cran.r-project.org/src/contrib/Archive/rgdal/rgdal_1.6-7.tar.gz", repos = NULL, type = "source")
 
 install.packages("https://cran.r-project.org/src/contrib/Archive/rgeos/rgeos_0.6-4.tar.gz", repos = NULL, type = "source")
