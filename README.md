@@ -12,7 +12,7 @@ _The current version of EcoNiches_, due to the package loading it uses in R, _is
 
 # To install the library
 
-EcoNicheS works with specific libraries in R that it uses to perform ecological niche modeling analyses, and although the loading of most of them is automatic when running the application, there are some exceptions so it is necessary that you please use the command shown below in RStudio to ensure smooth functionality. 
+EcoNicheS works with specific libraries in R that it uses to perform ecological niche modeling analyses, and although the loading of most of them is automatic when running the application, there are some exceptions so it is necessary that you please use the command shown below in RStudio to ensure smooth functionality. If in this section or when running the command to open the application there is a problem regarding the failure to install any of the libraries, please refer to the **Problems installing packages** part of the manual.
 
 ``` r
 #Before loading the graphical interface, paste this line to give more capacity to rJava and then select the working directory
