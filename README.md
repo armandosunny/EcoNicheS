@@ -1,4 +1,4 @@
-# EcoNicheS <img src="https://user-images.githubusercontent.com/25662791/244543343-ac0a9b00-a873-469d-ac33-4b49cba48a90.png" referrerpolicy="no-referrer" alt="eco2" align="right" height="276" />
+ld# EcoNicheS <img src="https://user-images.githubusercontent.com/25662791/244543343-ac0a9b00-a873-469d-ac33-4b49cba48a90.png" referrerpolicy="no-referrer" alt="eco2" align="right" height="276" />
 An R library for shinydashboard  that enables the analysis of ecological niche modeling using the biomod2 library and other analyzes. This is Version 1.0.0, and subsequent versions will be uploaded with additional analyses and upgrades. 
 
 -----
@@ -15,7 +15,7 @@ To use EcoNicheS it is necessary to have 64-bit Java installed. For this you can
 
 ### Download and install RTools
 
-
+In addition to having R and RStudio, RTools is essential to be able to use some packages in R, so please download and install it on your device to avoid problems when running and using EcoNicheS.
 
 ### Define the working directory in RStudio and prepare your databases
 
