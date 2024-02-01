@@ -110,7 +110,7 @@ This is an example of the expected results to be obtained. Results can be downlo
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/8d168349-7d40-420f-8e99-76c89b42dc2c)
 
-## [Points and pseudoabsences](http://cran.nexr.com/web/packages/ENMeval/vignettes/ENMeval-vignette.html)
+## [Points and pseudoabsences]
 
 Here, by uploading our previously edited .csv file and any of our .asc layers, as a result, in RStudio we will obtain a map that can be viewed in the files and graphics window, specifically in the Plot tab. 
 
@@ -140,7 +140,7 @@ Thus, the database with the coordinates of our species now consists of 5 columns
 
 
 
-## [Biomod2](http://cran.nexr.com/web/packages/ENMeval/vignettes/ENMeval-vignette.html)
+## [Biomod2]
 
 
 For this analysis, the file to be loaded is the database generated in the previous tab, and the necessary .asc layers are those that did not show autocorrelation indicated by the heatmap obtained in the first tab of EcoNiches.
