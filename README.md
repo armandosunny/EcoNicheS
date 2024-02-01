@@ -293,7 +293,7 @@ The creation of this package was made possible by the financial support provided
   Objects. <https://doi.org/10.5281/zenodo.6572471>,
   <https://dieghernan.github.io/tidyterra/>
 
-Hernangómez, D., (2023). Using the tidyverse with terra objects: the tidyterra package. Journal of Open Source Software, 8(91), 5751, https://doi.org/10.21105/joss.05751.
+Hernangómez D (2023). Using the tidyverse with terra objects: the tidyterra package. Journal of Open Source Software, 8(91), 5751, https://doi.org/10.21105/joss.05751.
 
 Hijmans R (2023). _raster: Geographic Data Analysis and Modeling_. R package version
   3.6-23, <https://CRAN.R-project.org/package=raster>.
