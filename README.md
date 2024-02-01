@@ -15,7 +15,7 @@ To use EcoNicheS it is necessary to have 64-bit Java installed. For this you can
 
 ### Download and install RTools
 
-In addition to having R and RStudio, RTools is essential to be able to use some packages in R, so please download and install it on your device to avoid problems when running and using EcoNicheS.
+In addition to having R and RStudio, RTools is essential to be able to use some packages in R, so please download and install it on your device to avoid problems when running and using EcoNicheS. You can download it by accessing this [link](https://cran.r-project.org/bin/windows/Rtools/).
 
 ### Define the working directory in RStudio and prepare your databases
 
