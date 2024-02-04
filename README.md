@@ -11,7 +11,8 @@ _The current version of EcoNiches_, due to the package loading it uses in R, _is
 
 To use EcoNicheS it is necessary to have 64-bit Java installed. For this you can visit the Oracle Java download page by clicking [here](https://www.oracle.com/java/technologies/downloads/). Downloading the .exe file is the easiest option.
 
-![JavaWindowseditado](https://github.com/armandosunny/EcoNicheS/assets/25662791/6c6e1a4b-9824-482e-a818-230fbaac753b)
+> [!TIP]
+> ![JavaWindowseditado](https://github.com/armandosunny/EcoNicheS/assets/25662791/6c6e1a4b-9824-482e-a818-230fbaac753b)
 
 ### Download and install RTools
 
