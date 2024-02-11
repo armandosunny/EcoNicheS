@@ -90,8 +90,10 @@ library(EcoNicheS)
 
 After ensuring that the above commands worked successfully, use this command to start exploring the EcoNicheS interface and features.
 
-``` 
- shinyApp(ui = ui, server = server)
+```
+options(shiny.maxRequestSize = 6000*1024^2)
+
+shinyApp(ui = ui, server = server)
 ```
 
 -----
