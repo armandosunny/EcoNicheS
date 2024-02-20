@@ -18,4 +18,12 @@ Depends:
   terra,
   tidyterra,
   tiff,
-  usdm
+  usdm,
+countrycode,
+CoordinateCleaner,
+dplyr,
+ggplot2,
+rgbif,
+sf,
+rnaturalearthdata
+ 
