@@ -104,6 +104,9 @@ EcoNicheS is an interactive web application that consists of 7 work tabs: **_Cor
 
 ![Imagen 7 tabs](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/07ac590c-b74a-4d92-8e4f-f30d71f9c6af)
 
+## Obtaining and cleaning species occurrences
+Coordinate cleaner is based on automated data cleaning tests and algorithms to identify and remove records that may be flagged as erroneous or imprecise based on their identification as maritime, zero, atypical coordinates; coordinates assigned to centroids of countries and provinces, located within urban areas or assigned to biodiversity institutions, as well as disagreements between coordinates and countries. -Aquí lo de los km -  Finally, it is also possible to filter the clean data according to the year and location of interest (Zizka et al., 2019). 
+
 ## Correlation analysis between .asc layers 
 
 The first of the work tabs requires the raster files or .asc layers that contain the data about the geography of the area, place or location of interest<sup>1</sup>. Since these layers are our study variables, by obtaining a heatmap, this tab allows us to determine if there is autocorrelation between them, thus, it is possible to select multiple .asc files, as well as choose the Threshold (th) value for the analysis.  You can download the example documents to practice using the application [here](). 
