@@ -267,7 +267,7 @@ library(rgdal)
 
 #### Please cite as:
 
-Sunny A, Marmolejo C (2024). EcoNicheS: An R package for shinydashboard that enables the analysis of ecological niche modeling using the biomod2 package and other analyzes. GitHub. https://github.com/armandosunny/EcoNicheS
+Marmolejo C, López Vidal R, Díaz-Sánchez LE, Sunny A,  (2024). EcoNicheS: An R package for shinydashboard that enables the analysis of ecological niche modeling using the biomod2 package and other analyzes. GitHub. https://github.com/armandosunny/EcoNicheS
 
 
 # Acknowledgements
