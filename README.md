@@ -267,7 +267,7 @@ library(rgdal)
 
 #### Please cite as:
 
-Marmolejo C, López Vidal R, Díaz-Sánchez LE, Sunny A,  (2024). EcoNicheS: Empowering Ecological Niche Modeling Analysis with Shinydashboard and R Package. GitHub. https://github.com/armandosunny/EcoNicheS
+Marmolejo C, López Vidal R, Díaz-Sánchez LE, Sunny A (2024). EcoNicheS: Empowering Ecological Niche Modeling Analysis with Shinydashboard and R Package. GitHub. https://github.com/armandosunny/EcoNicheS
 
 
 # Acknowledgements
