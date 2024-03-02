@@ -298,6 +298,8 @@ The creation of this package was made possible by the financial support provided
   Dipert A, Borges B (2023). _shiny: Web Application Framework for R_. R package version
   1.7.5, <https://CRAN.R-project.org/package=shiny>.
 
+GBIF: The Global Biodiversity Information Facility (year) What is GBIF?. Available from https://www.gbif.org/what-is-gbif [13 January 2020].
+
   Hernangomez D (2023). tidyterra: tidyverse Methods and ggplot2 Helpers for terra
   Objects. <https://doi.org/10.5281/zenodo.6572471>,
   <https://dieghernan.github.io/tidyterra/>
@@ -341,3 +343,4 @@ Osorio-Olvera L, Lira-Noriega A, Soberón J, et al. (2020) ntbox: An r package w
 
 Warren DL, Matzke NJ, Cardillo M, Baumgartner JB, Beaumont LJ, Turelli M, Glor RE, Huron NA, Simões M, Iglesias TL Piquet JC, Dinnage R (2021). ENMTools 1.0: an R package for comparative ecological biogeography. Ecography, 44(4), pp.504-511.
 
+Zizka A, Silvestro D, Andermann T, Azevedo J, Duarte Ritter C, Edler D, Farooq H, Herdean A, Ariza M, Scharn R, Svanteson S, Wengstrom N, Zizka V, Antonelli A (2019). “CoordinateCleaner: standardized cleaning of occurrence records from biological collection databases.” Methods in Ecology and Evolution, -7. doi:10.1111/2041-210X.13152, R package version 3.0.1, https://github.com/ropensci/CoordinateCleaner.
