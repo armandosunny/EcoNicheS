@@ -100,9 +100,10 @@ shinyApp(ui = ui, server = server)
 
 # Exploring EcoNicheS features
 
-EcoNicheS is an interactive web application that consists of 7 work tabs: **_Correlation layers, Points and pseudoabsences, Biomod2, Partial ROC Analysis, Remove urbanization, Calculate area_** and **_Gains and losses_**. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow developing ecological niche modeling analyses.
+EcoNicheS is an interactive web application that consists of 8 work tabs: **_Occurrence processing, Correlation layers, Points and pseudoabsences, Biomod2, Partial ROC Analysis, Remove urbanization, Calculate area_** and **_Gains and losses_**. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow developing ecological niche modeling analyses.
 
-![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/d23aaa44-27ff-4209-8928-b14fa22d8162)
+![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/fcb5b2b3-8c54-4669-b22e-e90c7a360e8d)
+
 
 ## Obtaining and cleaning species occurrences
 The first step to perform niche modeling analysis is to obtain the recorded occurrences of the species of interest. Using EcoNicheS this is achieved by downloading documents with this information from the Global Biodiversity Information Facility (GBIF, [gbif.org](https://www.gbif.org/)), one of the large biodiversity databases. Obtaining this information is achieved using the Coordinate cleaner package as a means for this.
