@@ -115,6 +115,14 @@ Coordinate cleaner not only does it allow us to obtain presence points, but it i
 
 ![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/96badbfe-fc36-4a5f-b1b0-35a9646ba12b)
 
+![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/4829c336-d2d0-4679-9550-e1c7f89e50fe)
+
+![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/98965824-edb6-41b1-b0f5-1419a7aa6ed3)
+
+![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/febe7285-4556-4f52-a9ac-8a38ce29037f)
+
+![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/686aeace-9849-4fb3-bc7c-73b22b69c604)
+
 
 
 
