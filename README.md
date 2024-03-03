@@ -133,6 +133,7 @@ It uses the metadata to clean the data, and one of these parameters is coordinat
 ![Captura de pantalla 2024-03-02 190820](https://github.com/armandosunny/EcoNicheS/assets/25662791/a171b656-baf1-4385-88d7-6b6a01a2776b)
 
 Let's now focus on the second option in the menu of this tab. It is a second data cleaning option in case there are already other files with the points of presence to be processed, coming from different databases, whose metadata is not available to be processed from them. This is why the cleaning process here is carried out in cbo thanks to the spThin package, which allows us to eliminate duplicate data, and to achieve this, the file to be entered must be in .csv format, otherwise it will not be able to be processed.
+In order to process the data, it is essential that you enter the name of the column where the latitude data that makes up the occurrence data is found. The same should be done for the column with the lengths and the name of the species. Also, remember to enter the kilometers by which you want the data to be separated.
 
 ![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/7728efb9-32f8-47e6-9d52-16c5633d03e9)
 
