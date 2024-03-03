@@ -123,6 +123,7 @@ Coordinate cleaner not only does it allow us to obtain presence points, but it i
 
 ![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/686aeace-9849-4fb3-bc7c-73b22b69c604)
 
+![Captura de pantalla 2024-03-02 190820](https://github.com/armandosunny/EcoNicheS/assets/25662791/a171b656-baf1-4385-88d7-6b6a01a2776b)
 
 
 
