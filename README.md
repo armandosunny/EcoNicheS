@@ -114,7 +114,7 @@ The next step is to enter the scientific name of the species of interest, in add
 
 ![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/b3bc756b-6708-4435-aec4-e5f1d20dd200)
 
-Coordinate cleaner not only does it allow us to obtain presence points, but it is also based on automated data cleaning tests and algorithms to identify and remove records that may be flagged as erroneous or imprecise. It uses the metadata to clean the data, and one of these parameters is coordinateUncertaintyInMeters, which describes the smallest circle containing the whole of the Location and serves as a reference for the accuracy of the coordinate location, in addition, it allows estimating the potential distance of the real occurrence location from the recorded values. No se como citar esta pagina https://www.gbif.org/data-quality-requirements-occurrences#dcUncertainty. And it is also possible to filter the clean data according to the year and location of interest (Zizka et al., 2019).
+Coordinate cleaner not only does it allow us to obtain presence points, but it is also based on automated data cleaning tests and algorithms to identify and remove records that may be flagged as erroneous or imprecise. 
 
 ![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/96badbfe-fc36-4a5f-b1b0-35a9646ba12b)
 
@@ -125,6 +125,8 @@ Coordinate cleaner not only does it allow us to obtain presence points, but it i
 ![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/febe7285-4556-4f52-a9ac-8a38ce29037f)
 
 ![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/686aeace-9849-4fb3-bc7c-73b22b69c604)
+
+It uses the metadata to clean the data, and one of these parameters is coordinateUncertaintyInMeters, which describes the smallest circle containing the whole of the Location and serves as a reference for the accuracy of the coordinate location, in addition, it allows estimating the potential distance of the real occurrence location from the recorded values. No se como citar esta pagina https://www.gbif.org/data-quality-requirements-occurrences#dcUncertainty. And it is also possible to filter the clean data according to the year and location of interest (Zizka et al., 2019).
 
 ![Captura de pantalla 2024-03-02 190820](https://github.com/armandosunny/EcoNicheS/assets/25662791/a171b656-baf1-4385-88d7-6b6a01a2776b)
 
