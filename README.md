@@ -113,6 +113,10 @@ Coordinate cleaner not only does it allow us to obtain presence points, but it i
 
 ![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/b3bc756b-6708-4435-aec4-e5f1d20dd200)
 
+![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/96badbfe-fc36-4a5f-b1b0-35a9646ba12b)
+
+
+
 
 ## Correlation analysis between .asc layers 
 
