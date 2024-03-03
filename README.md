@@ -114,7 +114,7 @@ The next step is to enter the scientific name of the species of interest, in add
 
 ![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/b3bc756b-6708-4435-aec4-e5f1d20dd200)
 
-Coordinate cleaner not only does it allow us to obtain presence points, but it is also based on automated data cleaning tests and algorithms to identify and remove records that may be flagged as erroneous or imprecise. 
+Coordinate cleaner not only does it allow us to obtain presence points, but it is also based on automated data cleaning tests and algorithms to identify and remove records that may be flagged as erroneous or imprecise. We can see this through the graphs shown in the application, in addition to having the raw data in the database that is generated and saved in the working directory.
 
 ![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/96badbfe-fc36-4a5f-b1b0-35a9646ba12b)
 
