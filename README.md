@@ -122,8 +122,6 @@ Coordinate cleaner not only does it allow us to obtain presence points, but it i
 
 ![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/98965824-edb6-41b1-b0f5-1419a7aa6ed3)
 
-Let's now focus on the second option in the menu of this tab. It is a second data cleaning option in case there are already other files with the points of presence to be processed, coming from different databases, whose metadata is not available to be processed from them. This is why the cleaning process here is carried out in cbo thanks to the spThin package, which allows us to eliminate duplicate data, and to achieve this, the file to be entered must be in .csv format, otherwise it will not be able to be processed.
-
 ![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/febe7285-4556-4f52-a9ac-8a38ce29037f)
 
 ![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/686aeace-9849-4fb3-bc7c-73b22b69c604)
