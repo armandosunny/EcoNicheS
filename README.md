@@ -109,6 +109,7 @@ EcoNicheS is an interactive web application that consists of 8 work tabs: **_Occ
 The first step to perform niche modeling analysis is to obtain the recorded occurrences of the species of interest. Using EcoNicheS this is achieved by downloading documents with this information from the Global Biodiversity Information Facility (GBIF, [gbif.org](https://www.gbif.org/)), one of the large biodiversity databases. Obtaining this information is achieved using the Coordinate cleaner package as a means for this.
 
 ![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/36c0046c-7d63-4464-a95b-f5db285c0cd8)
+
 <sub>The first step is to select the first option from the drop-down menu to access the data collection tools</sub>
 
 Coordinate cleaner not only does it allow us to obtain presence points, but it is also based on automated data cleaning tests and algorithms to identify and remove records that may be flagged as erroneous or imprecise. It uses the metadata to clean the data, and one of these parameters is coordinateUncertaintyInMeters, which describes the smallest circle containing the whole of the Location and serves as a reference for the accuracy of the coordinate location, in addition, it allows estimating the potential distance of the real occurrence location from the recorded values. No se como citar esta pagina https://www.gbif.org/data-quality-requirements-occurrences#dcUncertainty. And it is also possible to filter the clean data according to the year and location of interest (Zizka et al., 2019).
