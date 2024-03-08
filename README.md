@@ -102,7 +102,7 @@ shinyApp(ui = ui, server = server)
 
 EcoNicheS is an interactive web application that consists of 8 work tabs: **_Occurrence processing, Load and Plot Maps (2x), Correlation layers, Points and pseudoabsences, biomod2, Partial ROC Analysis, Remove urbanization, Calculate area_** and **_Gains and losses_**. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow developing ecological niche modeling analyses.
 
-![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/fcb5b2b3-8c54-4669-b22e-e90c7a360e8d)
+![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/f6119a00-4a7d-4b89-aaf0-dd7b0ac23c6f)
 
 
 ## Obtaining and cleaning species occurrences
