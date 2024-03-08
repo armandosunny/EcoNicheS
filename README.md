@@ -293,6 +293,10 @@ library(rgdal)
 
 # Contributions
 
+   - Armando Sunny - wrote the code
+   - Armando Sunny -
+   - López-Vidal R - Helped with function documentation
+   - Díaz-Sánchez LE - financed the project
 
 
 # Citation
