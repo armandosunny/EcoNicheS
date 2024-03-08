@@ -140,7 +140,7 @@ In order to process the data, it is essential that you enter the name of the col
 
 ## Correlation analysis between .asc layers 
 
-The first of the work tabs requires the raster files or .asc layers that contain the data about the geography of the area, place or location of interest<sup>1</sup>. Since these layers are our study variables, by obtaining a heatmap, this tab allows us to determine if there is autocorrelation between them, thus, it is possible to select multiple .asc files, as well as choose the Threshold (th) value for the analysis.  You can download the example documents to practice using the application [here](). 
+The first of the work tabs requires the raster files or .asc layers that contain the data about the geography of the area, place or location of interest (ACS hosted Feature Layers FAQ, n.d.-a). Since these layers are our study variables, by obtaining a heatmap, this tab allows us to determine if there is autocorrelation between them, thus, it is possible to select multiple .asc files, as well as choose the Threshold (th) value for the analysis.  You can download the example documents to practice using the application [here](). 
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/57ef3e0b-88eb-4f16-b15d-b462de43c666)
 
@@ -193,7 +193,7 @@ Next, the display of the button to load the appropriate .asc layers after clicki
 ![select  asc files biomod2](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6186fb94-64b3-4a92-a9ee-c744344418a9)
 
 
-biomod2 is a library that allows the analysis of species distribution through 10 models: GLM, GBM, GAM, CTA, ANN, SRE, FDA, RF, MAXENT and MAXNET, that is, it is an ensemble analysis method, so, multiple models can be selected for analysis execution<sup>2</sup>. For the example shown in this manual through images and databases, all available models were selected. 
+biomod2 is a library that allows the analysis of species distribution through 10 models: GLM, GBM, GAM, CTA, ANN, SRE, FDA, RF, MAXENT and MAXNET, that is, it is an ensemble analysis method, so, multiple models can be selected for analysis execution (Huang et al., 2023). For the example shown in this manual through images and databases, all available models were selected. 
 
 ![modelosbiomod2](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/82d4a3f8-5815-4604-99b4-858df06f58b4)
 
@@ -312,10 +312,10 @@ The creation of this package was made possible by the financial support provided
 
 # References
 
-  <sup>1</sup> _ACS hosted Feature Layers FAQ_. (n.d.-a). ACS Hosted Feature Layers FAQ.
+  ACS hosted Feature Layers FAQ_. (n.d.-a). ACS Hosted Feature Layers FAQ.
   https://acs-hosted-feature-layers-faq-esri.hub.arcgis.com/ 
 
-  <sup>2</sup> Huang D, An Q, Huang S, Tan G, Quan H, Chen Y, Zhou J, Liao H. (2023). 
+  Huang D, An Q, Huang S, Tan G, Quan H, Chen Y, Zhou J, Liao H. (2023). 
   biomod2 modeling for predicting the potential ecological distribution of three Fritillaria species under climate change. 
   _Scientific reports_, 13(1), 18801. https://doi.org/10.1038/s41598-023-45887-6
 
