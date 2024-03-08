@@ -20,6 +20,33 @@ In addition to having installed [R](https://cran.rstudio.com/) and [RStudio](htt
 > [!TIP]
 > https://rstudio-education.github.io/hopr/starting.html
 
+### Packages EcoNicheS depends on
+
+EcoNicheS works with specific libraries in R. You can visit the websites listed below to obtain the required packages.
+
+- [shiny](https://CRAN.R-project.org/package=shiny) 
+- [terra]([https://github.com/rspatial/terra](https://cran.r-project.org/package=terra)) 
+- [terra]([https://github.com/rspatial/terra](https://cran.r-project.org/package=terra) 
+- [usdm](https://cran.r-project.org/package=usdm)
+- [ENMTools](https://github.com/danlwarren/ENMTools) 
+- [biomod2](https://cran.r-project.org/package=biomod2) 
+- [RColorBrewer](https://cran.r-project.org/package=RColorBrewer) 
+- [dismo](https://github.com/rspatial/dismo) 
+- [tiff](https://cran.r-project.org/web/packages/tiff/index.html) 
+- [rJava](https://cran.r-project.org/web/packages/rJava/index.html) 
+- [tidyterra](https://cran.r-project.org/web/packages/tidyterra/index.html) 
+- [shinydashboard](https://rstudio.github.io/shinydashboard/get_started.html) 
+- [pROC](https://cran.r-project.org/web/packages/pROC/index.html) 
+- [R.utils](https://cran.r-project.org/web/packages/R.utils/index.html) 
+- [dismo](https://cran.r-project.org/package=dismo)
+- [tiff](https://cran.r-project.org/package=tiff) 
+- [rJava](https://cran.r-project.org/package=rJava) 
+- [tidyterra](https://cran.r-project.org/package=tidyterra) 
+- [shinydashboard](https://cran.r-project.org/package=shinydashboard) 
+- [pROC](https://cran.r-project.org/package=pROCl) 
+- [R.utils](https://cran.r-project.org/package=R.utils)
+- [ENMGadgets](https://github.com/narayanibarve/ENMGadgets)
+  
 ### Define the working directory in RStudio and prepare your databases
 
 To ensure smooth workflow in RStudio, it is crucial to define the working directory properly, the location where all databases created during the analyzes will be saved. Follow these steps, navigate to: "Session" ➥ "Set Working Directory" ➥ "Choose Directory", and select the folder that contains the databases necessary to carry out this type of analysis: the .asc layers of your study area and the .csv file containing the coordinates with the points of presence of your study species.
