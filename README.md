@@ -25,7 +25,7 @@ In addition to having installed [R](https://cran.rstudio.com/) and [RStudio](htt
 EcoNicheS works with specific libraries in R. You can visit the websites listed below to obtain the required packages.
 
 - [shiny](https://CRAN.R-project.org/package=shiny) 
-- [terra]([https://github.com/rspatial/terra) (https://cran.r-project.org/package=terra) 
+- [terra](https://cran.r-project.org/package=terra) 
 - [usdm](https://cran.r-project.org/package=usdm)
 - [ENMTools](https://github.com/danlwarren/ENMTools) 
 - [biomod2](https://cran.r-project.org/package=biomod2) 
