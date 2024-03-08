@@ -38,11 +38,11 @@ In order to use your databases, the _.csv base file_ must have the _name of the 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/addc0249-104d-4133-9d13-5168d039eb79)
 
 ### MAXENT model
-One of the EcoNicheS tabs bases its analyzes on [Biomod2](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#biomod2), which in turn uses different models to perform the ecological niche modeling analysis. One of these models is [MAXENT](https://biodiversityinformatics.amnh.org/open_source/maxent/), which requires the prior download of 3 files so that the analysis with it can be carried out, so, if it is selected, prior to the analysis ensure that the working directory includes all the necessary files for running this model: [MAXENT](https://doi.org/10.6084/m9.figshare.24980664.v1).
+One of the EcoNicheS tabs bases its analyzes on [biomod2](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#biomod2), which in turn uses different models to perform the ecological niche modeling analysis. One of these models is [MAXENT](https://biodiversityinformatics.amnh.org/open_source/maxent/), which requires the prior download of 3 files so that the analysis with it can be carried out, so, if it is selected, prior to the analysis ensure that the working directory includes all the necessary files for running this model: [MAXENT](https://doi.org/10.6084/m9.figshare.24980664.v1).
 
 [![maxent bat](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/1b534599-e6e8-442d-8ab1-a81c64ff82a0)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709353/MAXENTbat.zip) [![maxent jar](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/9e030780-32a4-4fa2-8554-ace630cb1681)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709414/MAXENTjar.zip) [![maxent sh](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6fe03b4a-535c-4c1e-9e59-d854a422f2df)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709416/MAXENTsh.zip)
 
-If you are not familiar with Biomod2, in its corresponding section in this manual you will know how to use it with EcoNicheS but it is important that you have the mentioned files from the beginning to ensure that there will be no problems when you use this tab.
+If you are not familiar with biomod2, in its corresponding section in this manual you will know how to use it with EcoNicheS but it is important that you have the mentioned files from the beginning to ensure that there will be no problems when you use this tab.
 
 -----
 
@@ -100,7 +100,7 @@ shinyApp(ui = ui, server = server)
 
 # Exploring EcoNicheS features
 
-EcoNicheS is an interactive web application that consists of 8 work tabs: **_Occurrence processing, Correlation layers, Points and pseudoabsences, Biomod2, Partial ROC Analysis, Remove urbanization, Calculate area_** and **_Gains and losses_**. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow developing ecological niche modeling analyses.
+EcoNicheS is an interactive web application that consists of 8 work tabs: **_Occurrence processing, Correlation layers, Points and pseudoabsences, biomod2, Partial ROC Analysis, Remove urbanization, Calculate area_** and **_Gains and losses_**. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow developing ecological niche modeling analyses.
 
 ![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/fcb5b2b3-8c54-4669-b22e-e90c7a360e8d)
 
@@ -179,7 +179,7 @@ Thus, the database with the coordinates of our species now consists of 5 columns
 
 
 
-## Biomod2
+## biomod2
 
 
 For this analysis, the file to be loaded is the database generated in the previous tab, and the necessary .asc layers are those that did not show autocorrelation indicated by the heatmap obtained in the first tab of EcoNiches.
@@ -193,7 +193,7 @@ Next, the display of the button to load the appropriate .asc layers after clicki
 ![select  asc files biomod2](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6186fb94-64b3-4a92-a9ee-c744344418a9)
 
 
-Biomod2 is a library that allows the analysis of species distribution through 10 models: GLM, GBM, GAM, CTA, ANN, SRE, FDA, RF, MAXENT and MAXNET, that is, it is an ensemble analysis method, so, multiple models can be selected for analysis execution<sup>2</sup>. For the example shown in this manual through images and databases, all available models were selected. 
+biomod2 is a library that allows the analysis of species distribution through 10 models: GLM, GBM, GAM, CTA, ANN, SRE, FDA, RF, MAXENT and MAXNET, that is, it is an ensemble analysis method, so, multiple models can be selected for analysis execution<sup>2</sup>. For the example shown in this manual through images and databases, all available models were selected. 
 
 ![modelosbiomod2](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/82d4a3f8-5815-4604-99b4-858df06f58b4)
 
@@ -235,7 +235,7 @@ As mentioned above, one of the files needed to perform this analysis is part of 
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/ffde883a-ae1e-4f15-a010-b7458eefd39d)
 
-Remember to press the action buttons only once, in addition, as with the Biomod2 tab, in RStudio you can view the progress of the analysis according to the number of simulations that you indicate.
+Remember to press the action buttons only once, in addition, as with the biomod2 tab, in RStudio you can view the progress of the analysis according to the number of simulations that you indicate.
 
 ![progress rstudio](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/96d82c16-1c6b-4e42-815a-ebad3317f49e)
 
@@ -316,7 +316,7 @@ The creation of this package was made possible by the financial support provided
   https://acs-hosted-feature-layers-faq-esri.hub.arcgis.com/ 
 
   <sup>2</sup> Huang D, An Q, Huang S, Tan G, Quan H, Chen Y, Zhou J, Liao H. (2023). 
-  Biomod2 modeling for predicting the potential ecological distribution of three Fritillaria species under climate change. 
+  biomod2 modeling for predicting the potential ecological distribution of three Fritillaria species under climate change. 
   _Scientific reports_, 13(1), 18801. https://doi.org/10.1038/s41598-023-45887-6
 
   Barve N, Barve V (2019). _ENMGadgets: Pre and Post Processing in ENM Workflow_. R
