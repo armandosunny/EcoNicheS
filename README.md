@@ -45,6 +45,7 @@ EcoNicheS works with specific libraries in R. You can visit the websites listed 
 - [pROC](https://cran.r-project.org/package=pROCl) 
 - [R.utils](https://cran.r-project.org/package=R.utils)
 - [ENMGadgets](https://github.com/narayanibarve/ENMGadgets)
+- [ntbox] (https://github.com/luismurao/ntbox)
   
 ### Define the working directory in RStudio and prepare your databases
 
