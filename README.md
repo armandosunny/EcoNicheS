@@ -321,10 +321,11 @@ library(rgdal)
 
 # Contributions
 
-   - Armando Sunny - wrote the code
-   - Armando Sunny -
-   - López-Vidal R - Helped with function documentation
-   - Díaz-Sánchez LE - financed the project
+-Clere Marmolejo and Armando Sunny: Lead developers responsible for coding the application.
+-Clere Marmolejo and Armando Sunny: Editors and skilled developers who crafted the polished user interface and functionality of the app.
+-Clere Marmolejo: Contributed to the comprehensive function documentation, ensuring clarity and usability.
+-López-Vidal R: Provided valuable assistance with server management and website interface design, enhancing the overall user experience.
+-Díaz-Sánchez LE and Armando Sunny: Offered financial support, enabling the successful realization of the project.
 
 
 # Citation
