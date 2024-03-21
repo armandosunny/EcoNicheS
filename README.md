@@ -2,7 +2,7 @@
 An R library that enables Ecological Niche Modeling Analysis with Shinydashboard. This is Version 1.0.0, and subsequent versions will be uploaded with additional analyses and upgrades. 
 
 -----
-
+#h
 # First and foremost: prerequisites for utilizing EcoNiches
 
 _The current version of EcoNiches_, due to the package loading it uses in R, _is available only for **Windows**_. Future versions will be published with updates and improvements to expand the use of the application to Mac users. 
