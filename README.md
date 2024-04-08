@@ -24,6 +24,7 @@ In addition to having installed [R](https://cran.rstudio.com/) and [RStudio](htt
 > https://rstudio-education.github.io/hopr/starting.html
 
 ### Packages EcoNicheS depends on
+##For the correct functioning of EcoNicheS it is necessary to update all packages installed in R
 
 EcoNicheS works with specific libraries in R. You can visit the websites listed below to obtain the required packages.
 
