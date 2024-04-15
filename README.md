@@ -421,7 +421,7 @@ Zizka A, Silvestro D, Andermann T, Azevedo J, Duarte Ritter C, Edler D, Farooq H
 
 
 
-#### Centro de Innovación Digital "Mandra", Laboratorio Nacional de SuperCómputo, CONAHCYT-Facultad de Ciencias, UAEMex.
+## Centro de Innovación Digital "Mandra", Laboratorio Nacional de SuperCómputo, CONAHCYT-Facultad de Ciencias, UAEMex.
 
 <div style="display: flex; flex-direction: column; align-items: center;">
     <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/ae7755de-7376-46c2-a43d-97c11076d2ea" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/ae7755de-7376-46c2-a43d-97c11076d2ea" alt="imagen" width="250"></a>
