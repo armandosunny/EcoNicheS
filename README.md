@@ -73,13 +73,6 @@ One of the EcoNicheS tabs bases its analyzes on [biomod2](https://github.com/arm
 
 [![maxent bat](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/1b534599-e6e8-442d-8ab1-a81c64ff82a0)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709353/MAXENTbat.zip) [![maxent jar](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/9e030780-32a4-4fa2-8554-ace630cb1681)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709414/MAXENTjar.zip) [![maxent sh](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6fe03b4a-535c-4c1e-9e59-d854a422f2df)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709416/MAXENTsh.zip)
 
-<div style="display: flex; justify-content: center; align-items: center;">
-    <a href="https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709353/MAXENTbat.zip" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/1b534599-e6e8-442d-8ab1-a81c64ff82a0" alt="maxent bat" width="350"></a>
-    <a href="https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709414/MAXENTjar.zip" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/9e030780-32a4-4fa2-8554-ace630cb1681" alt="maxent jar" width="350"></a>
-    <a href="https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709416/MAXENTsh.zip" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6fe03b4a-535c-4c1e-9e59-d854a422f2df" alt="maxent sh" width="350"></a>
-</div>
-
-
 If you are not familiar with biomod2, in its corresponding section in this manual you will know how to use it with EcoNicheS but it is important that you have the mentioned files from the beginning to ensure that there will be no problems when you use this tab.
 
 -----
