@@ -330,7 +330,7 @@ library(rgdal)
 
 -Clere Marmolejo and Armando Sunny: Editors and skilled developers who crafted the polished user interface and functionality of the app.
 
--Clere Marmolejo: Contributed to the comprehensive function documentation, ensuring clarity and usability.
+-Clere Marmolejo and Armando Sunny: Contributed to the comprehensive function documentation, ensuring clarity and usability.
 
 -López-Vidal R: Provided valuable assistance with server management and website interface design, enhancing the overall user experience.
 
