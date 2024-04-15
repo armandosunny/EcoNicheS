@@ -341,7 +341,7 @@ library(rgdal)
 
 ![imagen](https://github.com/armandosunny/EcoNicheS/assets/25662791/9c570696-5937-43d7-a61d-2f1d032dac17 =350x) 
 
-![imagen](https://github.com/armandosunny/EcoNicheS/assets/25662791/5a6a6a43-5663-40fc-9525-3041e6d32f30=350x250)
+![imagen](https://github.com/armandosunny/EcoNicheS/assets/25662791/5a6a6a43-5663-40fc-9525-3041e6d32f30=150x50)
 
 [![texto_alternativo](URL_de_la_imagen =350x250)](URL_de_la_imagen)
 # Citation
