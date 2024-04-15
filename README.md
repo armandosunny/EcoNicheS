@@ -336,14 +336,15 @@ library(rgdal)
 
 -Díaz-Sánchez LE and Armando Sunny: Offered financial support, enabling the successful realization of the project.
 
-### Centro de Innovación Digital "Mandra"
-#### LABORATORIO NACIONAL DE SUPERCÓMPUTO
+  ### Centro de Innovación Digital "Mandra"
+  #### LABORATORIO NACIONAL DE SUPERCÓMPUTO
 
-![imagen](https://github.com/armandosunny/EcoNicheS/assets/25662791/9c570696-5937-43d7-a61d-2f1d032dac17 =350x) 
+<a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/5a6a6a43-5663-40fc-9525-3041e6d32f30" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/5a6a6a43-5663-40fc-9525-3041e6d32f30" alt="imagen" width="250"></a>
 
-![imagen](https://github.com/armandosunny/EcoNicheS/assets/25662791/5a6a6a43-5663-40fc-9525-3041e6d32f30=150x50)
 
-[![texto_alternativo](URL_de_la_imagen =350x250)](URL_de_la_imagen)
+![imagen](https://github.com/armandosunny/EcoNicheS/assets/25662791/5a6a6a43-5663-40fc-9525-3041e6d32f30)
+
+
 # Citation
 
 #### Please cite as:
