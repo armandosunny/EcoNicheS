@@ -336,16 +336,6 @@ library(rgdal)
 
 -Díaz-Sánchez LE and Armando Sunny: Offered financial support, enabling the successful realization of the project.
 
-  #### Centro de Innovación Digital "Mandra", Laboratorio Nacional de SuperCómputo, CONAHCYT-Facultad de Ciencias, UAEMex.
-
-<div style="display: flex; flex-direction: column; align-items: center;">
-    <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/ae7755de-7376-46c2-a43d-97c11076d2ea" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/ae7755de-7376-46c2-a43d-97c11076d2ea" alt="imagen" width="250"></a>
-    <div style="display: flex; justify-content: center;">
-        <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/5a6a6a43-5663-40fc-9525-3041e6d32f30" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/5a6a6a43-5663-40fc-9525-3041e6d32f30" alt="imagen" width="150"></a>
-        <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/58dd866a-18af-4bd8-b8bf-d0916cb9159d" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/58dd866a-18af-4bd8-b8bf-d0916cb9159d" alt="imagen" width="60"></a>
-        <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/064fd750-877a-465e-a9c7-e467281f54d9" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/064fd750-877a-465e-a9c7-e467281f54d9" alt="imagen" width="100"></a>
-        <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/5e9f3491-01c3-46b9-89e3-48807fdfe496" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/5e9f3491-01c3-46b9-89e3-48807fdfe496" alt="imagen" width="90"></a>
-    </div>
 
   
 # Citation
@@ -427,3 +417,17 @@ Osorio-Olvera L, Lira-Noriega A, Soberón J, et al. (2020) ntbox: An r package w
 Warren DL, Matzke NJ, Cardillo M, Baumgartner JB, Beaumont LJ, Turelli M, Glor RE, Huron NA, Simões M, Iglesias TL Piquet JC, Dinnage R (2021). ENMTools 1.0: an R package for comparative ecological biogeography. Ecography, 44(4), pp.504-511.
 
 Zizka A, Silvestro D, Andermann T, Azevedo J, Duarte Ritter C, Edler D, Farooq H, Herdean A, Ariza M, Scharn R, Svanteson S, Wengstrom N, Zizka V, Antonelli A (2019). “CoordinateCleaner: standardized cleaning of occurrence records from biological collection databases.” Methods in Ecology and Evolution, -7. doi:10.1111/2041-210X.13152, R package version 3.0.1, https://github.com/ropensci/CoordinateCleaner.
+
+
+
+
+#### Centro de Innovación Digital "Mandra", Laboratorio Nacional de SuperCómputo, CONAHCYT-Facultad de Ciencias, UAEMex.
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/ae7755de-7376-46c2-a43d-97c11076d2ea" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/ae7755de-7376-46c2-a43d-97c11076d2ea" alt="imagen" width="250"></a>
+    <div style="display: flex; justify-content: center;">
+        <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/5a6a6a43-5663-40fc-9525-3041e6d32f30" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/5a6a6a43-5663-40fc-9525-3041e6d32f30" alt="imagen" width="150"></a>
+        <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/58dd866a-18af-4bd8-b8bf-d0916cb9159d" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/58dd866a-18af-4bd8-b8bf-d0916cb9159d" alt="imagen" width="60"></a>
+        <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/064fd750-877a-465e-a9c7-e467281f54d9" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/064fd750-877a-465e-a9c7-e467281f54d9" alt="imagen" width="100"></a>
+        <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/5e9f3491-01c3-46b9-89e3-48807fdfe496" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/5e9f3491-01c3-46b9-89e3-48807fdfe496" alt="imagen" width="90"></a>
+    </div>
