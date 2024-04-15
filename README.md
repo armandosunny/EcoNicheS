@@ -339,7 +339,7 @@ library(rgdal)
 ### Centro de Innovación Digital "Mandra"
 #### LABORATORIO NACIONAL DE SUPERCÓMPUTO
 
-![imagen](https://github.com/armandosunny/EcoNicheS/assets/25662791/9c570696-5937-43d7-a61d-2f1d032dac17)
+![imagen](https://github.com/armandosunny/EcoNicheS/assets/25662791/9c570696-5937-43d7-a61d-2f1d032dac17 =350x) 
 
 
 
