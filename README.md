@@ -341,9 +341,9 @@ library(rgdal)
 
 
 <div style="display: flex; justify-content: center;">
-    <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/5a6a6a43-5663-40fc-9525-3041e6d32f30" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/5a6a6a43-5663-40fc-9525-3041e6d32f30" alt="imagen" width="50"></a>
-    <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/064fd750-877a-465e-a9c7-e467281f54d9" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/064fd750-877a-465e-a9c7-e467281f54d9" alt="imagen" width="50"></a>
-    <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/58dd866a-18af-4bd8-b8bf-d0916cb9159d" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/58dd866a-18af-4bd8-b8bf-d0916cb9159d" alt="imagen" width="50"></a>
+    <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/5a6a6a43-5663-40fc-9525-3041e6d32f30" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/5a6a6a43-5663-40fc-9525-3041e6d32f30" alt="imagen" width="150"></a>
+    <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/064fd750-877a-465e-a9c7-e467281f54d9" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/064fd750-877a-465e-a9c7-e467281f54d9" alt="imagen" width="100"></a>
+    <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/58dd866a-18af-4bd8-b8bf-d0916cb9159d" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/58dd866a-18af-4bd8-b8bf-d0916cb9159d" alt="imagen" width="70"></a>
 </div>
 
 
