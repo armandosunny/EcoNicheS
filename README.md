@@ -336,7 +336,7 @@ library(rgdal)
 
 -Díaz-Sánchez LE and Armando Sunny: Offered financial support, enabling the successful realization of the project.
 
-  ### Centro de Innovación Digital "Mandra", LABORATORIO NACIONAL DE SUPERCÓMPUTO CONAHCYT-Facultad de Ciencias, UAEMex.
+  # Centro de Innovación Digital "Mandra", Laboratorio Nacional de SuperCómputo CONAHCYT-Facultad de Ciencias, UAEMex.
 
 
 <div style="display: flex; justify-content: center;">
