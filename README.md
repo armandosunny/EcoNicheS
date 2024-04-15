@@ -342,24 +342,23 @@ library(rgdal)
     <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/ae7755de-7376-46c2-a43d-97c11076d2ea" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/ae7755de-7376-46c2-a43d-97c11076d2ea" alt="imagen" width="250"></a>
     <div style="display: flex; justify-content: center;">
         <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/5a6a6a43-5663-40fc-9525-3041e6d32f30" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/5a6a6a43-5663-40fc-9525-3041e6d32f30" alt="imagen" width="150"></a>
-        <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/58dd866a-18af-4bd8-b8bf-d0916cb9159d" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/58dd866a-18af-4bd8-b8bf-d0916cb9159d" alt="imagen" width="70"></a>
+        <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/58dd866a-18af-4bd8-b8bf-d0916cb9159d" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/58dd866a-18af-4bd8-b8bf-d0916cb9159d" alt="imagen" width="60"></a>
         <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/064fd750-877a-465e-a9c7-e467281f54d9" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/064fd750-877a-465e-a9c7-e467281f54d9" alt="imagen" width="100"></a>
         <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/5e9f3491-01c3-46b9-89e3-48807fdfe496" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/5e9f3491-01c3-46b9-89e3-48807fdfe496" alt="imagen" width="90"></a>
     </div>
-</div>
 
-
+    </div>
 # Citation
 
 #### Please cite as:
 
 Marmolejo C, López-Vidal R, Díaz-Sánchez LE, Sunny A (2024). EcoNicheS: Empowering Ecological Niche Modeling Analysis with Shinydashboard and R Package. GitHub. https://github.com/armandosunny/EcoNicheS
 
-
+    </div>
 # Acknowledgements
 
 The creation of this package was made possible by the financial support provided by the Secretary of Research and Advanced Studies (SYEA) of the Universidad Autónoma del Estado de México (Grants to AS: 4732/2019CIB and 6801/2022CID), SEP (Grant to AS: PRODEP 511/2022-5401) and CONACYT (Grant to AS: FOINS 6828/2017). A.S: Adahy Olun Contreras-García yo nunca te abandoné, estoy haciendo todo para que la justicia mexicana me permita volver a estar contigo, pero es un proceso muy lento, te extraño mucho.
-
+    </div>
 # References
 
   ACS hosted Feature Layers FAQ_. (n.d.-a). ACS Hosted Feature Layers FAQ.
