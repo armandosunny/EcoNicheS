@@ -73,6 +73,15 @@ One of the EcoNicheS tabs bases its analyzes on [biomod2](https://github.com/arm
 
 [![maxent bat](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/1b534599-e6e8-442d-8ab1-a81c64ff82a0)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709353/MAXENTbat.zip) [![maxent jar](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/9e030780-32a4-4fa2-8554-ace630cb1681)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709414/MAXENTjar.zip) [![maxent sh](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6fe03b4a-535c-4c1e-9e59-d854a422f2df)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709416/MAXENTsh.zip)
 
+<div style="display: flex; justify-content: center; align-items: center;">
+    <a href="https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709353/MAXENTbat.zip" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/1b534599-e6e8-442d-8ab1-a81c64ff82a0" alt="maxent bat" width="350"></a>
+    <a href="https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709414/MAXENTjar.zip" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/9e030780-32a4-4fa2-8554-ace630cb1681" alt="maxent jar" width="350"></a>
+    <a href="https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709416/MAXENTsh.zip" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6fe03b4a-535c-4c1e-9e59-d854a422f2df" alt="maxent sh" width="350"></a>
+    <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/127abe4c-162f-4b28-8f9f-99349e845b58" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/127abe4c-162f-4b28-8f9f-99349e845b58" alt="imagen" width="350"></a>
+    <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/fc6d9482-0809-4ee4-8522-b82d41ea604b" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/fc6d9482-0809-4ee4-8522-b82d41ea604b" alt="imagen" width="350"></a>
+</div>
+
+
 If you are not familiar with biomod2, in its corresponding section in this manual you will know how to use it with EcoNicheS but it is important that you have the mentioned files from the beginning to ensure that there will be no problems when you use this tab.
 
 -----
@@ -338,14 +347,13 @@ library(rgdal)
 
   # Centro de Innovación Digital "Mandra", Laboratorio Nacional de SuperCómputo CONAHCYT-Facultad de Ciencias, UAEMex.
 
-
-<div style="display: flex; justify-content: center;">
-    <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/5a6a6a43-5663-40fc-9525-3041e6d32f30" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/5a6a6a43-5663-40fc-9525-3041e6d32f30" alt="imagen" width="150"></a>
-    <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/064fd750-877a-465e-a9c7-e467281f54d9" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/064fd750-877a-465e-a9c7-e467281f54d9" alt="imagen" width="100"></a>
-    <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/58dd866a-18af-4bd8-b8bf-d0916cb9159d" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/58dd866a-18af-4bd8-b8bf-d0916cb9159d" alt="imagen" width="70"></a>
+<div style="display: flex; justify-content: center; align-items: center;">
+    <a href="https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709353/MAXENTbat.zip" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/1b534599-e6e8-442d-8ab1-a81c64ff82a0" alt="maxent bat" width="350"></a>
+    <a href="https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709414/MAXENTjar.zip" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/9e030780-32a4-4fa2-8554-ace630cb1681" alt="maxent jar" width="350"></a>
+    <a href="https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709416/MAXENTsh.zip" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6fe03b4a-535c-4c1e-9e59-d854a422f2df" alt="maxent sh" width="350"></a>
+    <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/127abe4c-162f-4b28-8f9f-99349e845b58" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/127abe4c-162f-4b28-8f9f-99349e845b58" alt="imagen" width="350"></a>
+    <a href="https://github.com/armandosunny/EcoNicheS/assets/25662791/fc6d9482-0809-4ee4-8522-b82d41ea604b" target="_blank"><img src="https://github.com/armandosunny/EcoNicheS/assets/25662791/fc6d9482-0809-4ee4-8522-b82d41ea604b" alt="imagen" width="350"></a>
 </div>
-
-
 
 
 
