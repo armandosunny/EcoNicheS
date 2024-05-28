@@ -6,10 +6,6 @@ An R library that enables Ecological Niche Modeling Analysis with Shinydashboard
 
 -----
 
-# First and foremost: prerequisites for utilizing EcoNiches
-
-_The current version of EcoNiches_, due to the package loading it uses in R, _is available only for **Windows**_. Future versions will be published with updates and improvements to expand the use of the application to Mac users. 
-
 ### EcoNicheS requires the installation of 64-bit Java
 
 To use EcoNicheS it is necessary to have 64-bit Java installed. For this you can visit the Oracle Java download page by clicking [here](https://www.oracle.com/java/technologies/downloads/). Downloading the .exe file is the easiest option.
@@ -86,30 +82,9 @@ To know and understand in detail the functions that EcoNicheS offers and the res
 
 # To install the library
 
-EcoNicheS works with specific libraries in R that it uses to perform ecological niche modeling analyses, and although the loading of most of them is automatic when running the application, there are some exceptions so it is necessary that you please use the command shown below in RStudio to ensure smooth functionality. If in this section or when running the command to open the application there is a problem regarding the failure to install any of the libraries, please refer to the [**Problems installing packages**](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#problems-installing-packages) part of the manual.
-
-``` r
-#Before loading the graphical interface, paste this line to give more capacity to rJava and then select the working directory
-
-options(shiny.maxRequestSize = 6000*1024^2)
-
-install.packages("https://cran.r-project.org/src/contrib/Archive/rgdal/rgdal_1.6-7.tar.gz", repos = NULL, type = "source")
-
-install.packages("https://cran.r-project.org/src/contrib/Archive/rgeos/rgeos_0.6-4.tar.gz", repos = NULL, type = "source")
-
-install.packages("https://cran.r-project.org/src/contrib/Archive/maptools/maptools_1.1-8.tar.gz", repos = NULL, type = "source")
-
 if (!require('devtools')) install.packages('devtools')
 
 library(devtools)
-
-install_github("narayanibarve/ENMGadgets")
-
-require(ENMGadgets)
-
-install_github("danlwarren/ENMTools")
-
-library(ENMTools)
 
 install_github('armandosunny/EcoNicheS')
 
