@@ -3,6 +3,8 @@ Type: Package
 Title: analysis of ecological niche modeling
 Version: 1.0.0
 Depends:
+  shiny,
+  shinydashboard,
   terra,
   usdm,
   ENMTools,
