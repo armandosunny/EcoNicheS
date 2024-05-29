@@ -6,6 +6,10 @@ An R library that enables Ecological Niche Modeling Analysis with Shinydashboard
 
 -----
 
+# First and foremost: prerequisites for utilizing EcoNiches
+
+_The current version of EcoNiches_, due to the package loading it uses in R, _is available only for **Windows**_. Future versions will be published with updates and improvements to expand the use of the application to Mac users. 
+
 ### EcoNicheS requires the installation of 64-bit Java
 
 To use EcoNicheS it is necessary to have 64-bit Java installed. For this you can visit the Oracle Java download page by clicking [here](https://www.oracle.com/java/technologies/downloads/). Downloading the .exe file is the easiest option.
@@ -82,9 +86,30 @@ To know and understand in detail the functions that EcoNicheS offers and the res
 
 # To install the library
 
+EcoNicheS works with specific libraries in R that it uses to perform ecological niche modeling analyses, and although the loading of most of them is automatic when running the application, there are some exceptions so it is necessary that you please use the command shown below in RStudio to ensure smooth functionality. If in this section or when running the command to open the application there is a problem regarding the failure to install any of the libraries, please refer to the [**Problems installing packages**](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#problems-installing-packages) part of the manual.
+
+``` r
+#Before loading the graphical interface, paste this line to give more capacity to rJava and then select the working directory
+
+options(shiny.maxRequestSize = 6000*1024^2)
+
+install.packages("https://cran.r-project.org/src/contrib/Archive/rgdal/rgdal_1.6-7.tar.gz", repos = NULL, type = "source")
+
+install.packages("https://cran.r-project.org/src/contrib/Archive/rgeos/rgeos_0.6-4.tar.gz", repos = NULL, type = "source")
+
+install.packages("https://cran.r-project.org/src/contrib/Archive/maptools/maptools_1.1-8.tar.gz", repos = NULL, type = "source")
+
 if (!require('devtools')) install.packages('devtools')
 
 library(devtools)
+
+install_github("narayanibarve/ENMGadgets")
+
+require(ENMGadgets)
+
+install_github("danlwarren/ENMTools")
+
+library(ENMTools)
 
 install_github('armandosunny/EcoNicheS')
 
@@ -389,7 +414,7 @@ Osorio-Olvera L, Lira-Noriega A, Soberón J, et al. (2020) ntbox: An r package w
   Urbanek S, Johnson K (2022). _tiff: Read and Write TIFF Images_. R package version
   0.1-11, <https://CRAN.R-project.org/package=tiff>.
 
-Warren DL, Matzke NJ, Cardillo M, Baumgartner JB, Beaumont LJ, Turelli M, Glor RE, Huron NA, Simões M, Iglesias TL Piquet JC, Dinnage R (2021). ENMTools 1.0: an R package for comparative ecological biogeography. Ecography, 44(4), pp.504-511. 
+Warren DL, Matzke NJ, Cardillo M, Baumgartner JB, Beaumont LJ, Turelli M, Glor RE, Huron NA, Simões M, Iglesias TL Piquet JC, Dinnage R (2021). ENMTools 1.0: an R package for comparative ecological biogeography. Ecography, 44(4), pp.504-511.
 
 Zizka A, Silvestro D, Andermann T, Azevedo J, Duarte Ritter C, Edler D, Farooq H, Herdean A, Ariza M, Scharn R, Svanteson S, Wengstrom N, Zizka V, Antonelli A (2019). “CoordinateCleaner: standardized cleaning of occurrence records from biological collection databases.” Methods in Ecology and Evolution, -7. doi:10.1111/2041-210X.13152, R package version 3.0.1, https://github.com/ropensci/CoordinateCleaner.
 
