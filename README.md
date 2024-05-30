@@ -8,8 +8,6 @@ An R library that enables Ecological Niche Modeling Analysis with Shinydashboard
 
 # First and foremost: prerequisites for utilizing EcoNiches
 
-_The current version of EcoNiches_, due to the package loading it uses in R, _is available only for **Windows**_. Future versions will be published with updates and improvements to expand the use of the application to Mac users. 
-
 ### EcoNicheS requires the installation of 64-bit Java
 
 To use EcoNicheS it is necessary to have 64-bit Java installed. For this you can visit the Oracle Java download page by clicking [here](https://www.oracle.com/java/technologies/downloads/). Downloading the .exe file is the easiest option.
