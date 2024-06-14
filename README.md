@@ -12,6 +12,8 @@ To know and understand in detail the functions that EcoNicheS offers and the res
 
 In order to use your databases, the _.csv base file_ must have the _name of the species listed in the first column_, followed by _longitude (X)_ in the second column, and _latitude (Y)_ in the third column as seen below. _Editing your database respecting lowercase and uppercase letters is essential for the analysis to proceed_.
 
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/727045e3-cbc0-47b0-95d8-72cdc158b3fe)
+
 <sub>.csv file is displayed in RStudio</sub> 
 
 
