@@ -24,7 +24,7 @@ In order to use your databases, the _.csv base file_ must have the _name of the 
 
 # Exploring EcoNicheS features
 
-EcoNicheS is an interactive web application that consists of 8 work tabs: **_Occurrence processing, Load and Plot Maps (2x), Correlation layers, Points and pseudoabsences, biomod2, Partial ROC Analysis, Remove urbanization, Calculate area_** and **_Gains and losses_**. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow developing ecological niche modeling analyses.
+EcoNicheS is an interactive web application that consists of 8 work tabs: **_Occurrence processing, Load and Plot Maps (2x), Correlation layers, Points and pseudoabsences, biomod2, Partial ROC Analysis, Remove urbanization, Calculate area, Gains and losses_** and **_ENMTools_**. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow developing ecological niche modeling analyses.
 
 ![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/f6119a00-4a7d-4b89-aaf0-dd7b0ac23c6f)
 
