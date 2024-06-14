@@ -6,52 +6,7 @@ An R library that enables Ecological Niche Modeling Analysis with Shinydashboard
 
 -----
 
-# First and foremost: prerequisites for utilizing EcoNiches
 
-### EcoNicheS requires the installation of 64-bit Java
-
-To use EcoNicheS it is necessary to have 64-bit Java installed. For this you can visit the Oracle Java download page by clicking [here](https://www.oracle.com/java/technologies/downloads/). Downloading the .exe file is the easiest option.
-
-![JavaWindowseditado](https://github.com/armandosunny/EcoNicheS/assets/25662791/6c6e1a4b-9824-482e-a818-230fbaac753b)
-
-### Download and install RTools
-
-In addition to having installed [R](https://cran.rstudio.com/) and [RStudio](https://posit.co/download/rstudio-desktop/), RTools is essential to be able to use some packages in R, so please download and install it on your device to avoid problems when running and using EcoNicheS. You can download it by accessing this [link](https://cran.r-project.org/bin/windows/Rtools/).
-
-> [!TIP]
-> https://rstudio-education.github.io/hopr/starting.html
-
-### Packages EcoNicheS depends on
-##### For the correct functioning of EcoNiches it is necessary to update all the packages installed in R with the following command: update.packages(ask = FALSE, checkBuilt = TRUE)
-
-EcoNicheS works with specific libraries in R. You can visit the websites listed below to obtain the required packages.
-
-- [shiny](https://CRAN.R-project.org/package=shiny) 
-- [terra](https://cran.r-project.org/package=terra) 
-- [usdm](https://cran.r-project.org/package=usdm)
-- [ENMTools](https://github.com/danlwarren/ENMTools) 
-- [biomod2](https://cran.r-project.org/package=biomod2) 
-- [RColorBrewer](https://cran.r-project.org/package=RColorBrewer) 
-- [dismo](https://github.com/rspatial/dismo) 
-- [tiff](https://cran.r-project.org/web/packages/tiff/index.html) 
-- [rJava](https://cran.r-project.org/web/packages/rJava/index.html) 
-- [tidyterra](https://cran.r-project.org/web/packages/tidyterra/index.html) 
-- [shinydashboard](https://rstudio.github.io/shinydashboard/get_started.html) 
-- [pROC](https://cran.r-project.org/web/packages/pROC/index.html) 
-- [R.utils](https://cran.r-project.org/web/packages/R.utils/index.html) 
-- [dismo](https://cran.r-project.org/package=dismo)
-- [tiff](https://cran.r-project.org/package=tiff) 
-- [rJava](https://cran.r-project.org/package=rJava) 
-- [tidyterra](https://cran.r-project.org/package=tidyterra) 
-- [shinydashboard](https://cran.r-project.org/package=shinydashboard) 
-- [pROC](https://cran.r-project.org/package=pROCl) 
-- [R.utils](https://cran.r-project.org/package=R.utils)
-- [ENMGadgets](https://github.com/narayanibarve/ENMGadgets)
-- [ntbox] (https://github.com/luismurao/ntbox)
-  
-### Define the working directory in RStudio and prepare your databases
-
-To ensure smooth workflow in RStudio, it is crucial to define the working directory properly, the location where all databases created during the analyzes will be saved. Follow these steps, navigate to: "Session" ➥ "Set Working Directory" ➥ "Choose Directory", and select the folder that contains the databases necessary to carry out this type of analysis: the .asc layers of your study area and the .csv file containing the coordinates with the points of presence of your study species.
 
 > [!NOTE]
 > If what you are looking for is to learn how to perform ecological niche modeling analysis and you do not have these files, please go to the section [Learning how to use EcoNicheS with an example case study](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#learning-how-to-use-econiches-with-an-example-case-study) where you will find all the necessary files to use EcoNicheS. 
@@ -295,8 +250,54 @@ This tab requires two files, the only acceptable format of which is .asc. The fi
 ![gains and losses 16 y 50 cn resultados](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/4c68a466-d6be-47c6-adb1-b9bd4df70638)
 
 -----
+# For RStudio users
 
-# Problems installing packages
+### EcoNicheS requires the installation of 64-bit Java
+
+To use EcoNicheS it is necessary to have 64-bit Java installed. For this you can visit the Oracle Java download page by clicking [here](https://www.oracle.com/java/technologies/downloads/). Downloading the .exe file is the easiest option.
+
+![JavaWindowseditado](https://github.com/armandosunny/EcoNicheS/assets/25662791/6c6e1a4b-9824-482e-a818-230fbaac753b)
+
+### Download and install RTools
+
+In addition to having installed [R](https://cran.rstudio.com/) and [RStudio](https://posit.co/download/rstudio-desktop/), RTools is essential to be able to use some packages in R, so please download and install it on your device to avoid problems when running and using EcoNicheS. You can download it by accessing this [link](https://cran.r-project.org/bin/windows/Rtools/).
+
+> [!TIP]
+> https://rstudio-education.github.io/hopr/starting.html
+
+### Packages EcoNicheS depends on
+##### For the correct functioning of EcoNiches it is necessary to update all the packages installed in R with the following command: update.packages(ask = FALSE, checkBuilt = TRUE)
+
+EcoNicheS works with specific libraries in R. You can visit the websites listed below to obtain the required packages.
+
+- [shiny](https://CRAN.R-project.org/package=shiny) 
+- [terra](https://cran.r-project.org/package=terra) 
+- [usdm](https://cran.r-project.org/package=usdm)
+- [ENMTools](https://github.com/danlwarren/ENMTools) 
+- [biomod2](https://cran.r-project.org/package=biomod2) 
+- [RColorBrewer](https://cran.r-project.org/package=RColorBrewer) 
+- [dismo](https://github.com/rspatial/dismo) 
+- [tiff](https://cran.r-project.org/web/packages/tiff/index.html) 
+- [rJava](https://cran.r-project.org/web/packages/rJava/index.html) 
+- [tidyterra](https://cran.r-project.org/web/packages/tidyterra/index.html) 
+- [shinydashboard](https://rstudio.github.io/shinydashboard/get_started.html) 
+- [pROC](https://cran.r-project.org/web/packages/pROC/index.html) 
+- [R.utils](https://cran.r-project.org/web/packages/R.utils/index.html) 
+- [dismo](https://cran.r-project.org/package=dismo)
+- [tiff](https://cran.r-project.org/package=tiff) 
+- [rJava](https://cran.r-project.org/package=rJava) 
+- [tidyterra](https://cran.r-project.org/package=tidyterra) 
+- [shinydashboard](https://cran.r-project.org/package=shinydashboard) 
+- [pROC](https://cran.r-project.org/package=pROCl) 
+- [R.utils](https://cran.r-project.org/package=R.utils)
+- [ENMGadgets](https://github.com/narayanibarve/ENMGadgets)
+- [ntbox] (https://github.com/luismurao/ntbox)
+  
+### Define the working directory in RStudio and prepare your databases
+
+To ensure smooth workflow in RStudio, it is crucial to define the working directory properly, the location where all databases created during the analyzes will be saved. Follow these steps, navigate to: "Session" ➥ "Set Working Directory" ➥ "Choose Directory", and select the folder that contains the databases necessary to carry out this type of analysis: the .asc layers of your study area and the .csv file containing the coordinates with the points of presence of your study species.
+
+## Problems installing packages
 
 By using the commands to install the library, problems can arise on each device, so there may be errors when installing the packages. If so, these errors will appear in RStudio and EcoNicheS will not be able to be opened. In this case, please go to the R packages folder where the libraries are located in .tar.gz format and follow the steps shown below to manually install those packages with which there are problems.
 
