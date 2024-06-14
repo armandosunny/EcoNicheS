@@ -6,21 +6,6 @@ An R library that enables Ecological Niche Modeling Analysis with Shinydashboard
 
 -----
 
-# Learning how to use EcoNicheS with an example case study
-
-To know and understand in detail the functions that EcoNicheS offers and the results that we can obtain from them, we invite you to learn about the application through a case study based on _Phrynosoma orbiculare_, also known as Mexican Plateau horned lizard. The documents and databases necessary to be able to use each of the EcoNicheS functions are available [here].
-
-In order to use your databases, the _.csv base file_ must have the _name of the species listed in the first column_, followed by _longitude (X)_ in the second column, and _latitude (Y)_ in the third column as seen below. _Editing your database respecting lowercase and uppercase letters is essential for the analysis to proceed_.
-
-<sub>.csv file is displayed in RStudio</sub> 
-
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/727045e3-cbc0-47b0-95d8-72cdc158b3fe) 
-
-<sub>.csv file is displayed in Excel</sub>
- 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/addc0249-104d-4133-9d13-5168d039eb79)
-
-
 # To install the library
 
 EcoNicheS works with specific libraries in R that it uses to perform ecological niche modeling analyses, and although the loading of most of them is automatic when running the application, there are some exceptions so it is necessary that you please use the command shown below in RStudio to ensure smooth functionality. If in this section or when running the command to open the application there is a problem regarding the failure to install any of the libraries, please refer to the [**Problems installing packages**](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#problems-installing-packages) part of the manual.
@@ -63,6 +48,21 @@ options(shiny.maxRequestSize = 6000*1024^2)
 
 shinyApp(ui = ui, server = server)
 ```
+-----
+
+# Learning how to use EcoNicheS with an example case study
+
+To know and understand in detail the functions that EcoNicheS offers and the results that we can obtain from them, we invite you to learn about the application through a case study based on _Phrynosoma orbiculare_, also known as Mexican Plateau horned lizard. The documents and databases necessary to be able to use each of the EcoNicheS functions are available [here].
+
+In order to use your databases, the _.csv base file_ must have the _name of the species listed in the first column_, followed by _longitude (X)_ in the second column, and _latitude (Y)_ in the third column as seen below. _Editing your database respecting lowercase and uppercase letters is essential for the analysis to proceed_.
+
+<sub>.csv file is displayed in RStudio</sub> 
+
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/727045e3-cbc0-47b0-95d8-72cdc158b3fe) 
+
+<sub>.csv file is displayed in Excel</sub>
+ 
+![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/addc0249-104d-4133-9d13-5168d039eb79)
 
 -----
 
