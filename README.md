@@ -6,50 +6,6 @@ An R library that enables Ecological Niche Modeling Analysis with Shinydashboard
 
 -----
 
-# To install the library
-
-EcoNicheS works with specific libraries in R that it uses to perform ecological niche modeling analyses, and although the loading of most of them is automatic when running the application, there are some exceptions so it is necessary that you please use the command shown below in RStudio to ensure smooth functionality. If in this section or when running the command to open the application there is a problem regarding the failure to install any of the libraries, please refer to the [**Problems installing packages**](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#problems-installing-packages) part of the manual.
-
-``` r
-#Before loading the graphical interface, paste this line to give more capacity to rJava and then select the working directory
-
-options(shiny.maxRequestSize = 6000*1024^2)
-
-install.packages("https://cran.r-project.org/src/contrib/Archive/rgdal/rgdal_1.6-7.tar.gz", repos = NULL, type = "source")
-
-install.packages("https://cran.r-project.org/src/contrib/Archive/rgeos/rgeos_0.6-4.tar.gz", repos = NULL, type = "source")
-
-install.packages("https://cran.r-project.org/src/contrib/Archive/maptools/maptools_1.1-8.tar.gz", repos = NULL, type = "source")
-
-if (!require('devtools')) install.packages('devtools')
-
-library(devtools)
-
-install_github("narayanibarve/ENMGadgets")
-
-require(ENMGadgets)
-
-install_github("danlwarren/ENMTools")
-
-library(ENMTools)
-
-install_github('armandosunny/EcoNicheS')
-
-library(EcoNicheS)
-
-
-```
-# To open the shiny GUI application:
-
-After ensuring that the above commands worked successfully, use this command to start exploring the EcoNicheS interface and features.
-
-```
-options(shiny.maxRequestSize = 6000*1024^2)
-
-shinyApp(ui = ui, server = server)
-```
------
-
 # Learning how to use EcoNicheS with an example case study
 
 To know and understand in detail the functions that EcoNicheS offers and the results that we can obtain from them, we invite you to learn about the application through a case study based on _Phrynosoma orbiculare_, also known as Mexican Plateau horned lizard. The documents and databases necessary to be able to use each of the EcoNicheS functions are available [here].
@@ -288,6 +244,51 @@ One of the EcoNicheS tabs bases its analyzes on [biomod2](https://github.com/arm
 
 If you are not familiar with biomod2, in its corresponding section in this manual you will know how to use it with EcoNicheS but it is important that you have the mentioned files from the beginning to ensure that there will be no problems when you use this tab.
 
+-----
+
+# To install the library
+
+EcoNicheS works with specific libraries in R that it uses to perform ecological niche modeling analyses, and although the loading of most of them is automatic when running the application, there are some exceptions so it is necessary that you please use the command shown below in RStudio to ensure smooth functionality. If in this section or when running the command to open the application there is a problem regarding the failure to install any of the libraries, please refer to the [**Problems installing packages**](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#problems-installing-packages) part of the manual.
+
+``` r
+#Before loading the graphical interface, paste this line to give more capacity to rJava and then select the working directory
+
+options(shiny.maxRequestSize = 6000*1024^2)
+
+install.packages("https://cran.r-project.org/src/contrib/Archive/rgdal/rgdal_1.6-7.tar.gz", repos = NULL, type = "source")
+
+install.packages("https://cran.r-project.org/src/contrib/Archive/rgeos/rgeos_0.6-4.tar.gz", repos = NULL, type = "source")
+
+install.packages("https://cran.r-project.org/src/contrib/Archive/maptools/maptools_1.1-8.tar.gz", repos = NULL, type = "source")
+
+if (!require('devtools')) install.packages('devtools')
+
+library(devtools)
+
+install_github("narayanibarve/ENMGadgets")
+
+require(ENMGadgets)
+
+install_github("danlwarren/ENMTools")
+
+library(ENMTools)
+
+install_github('armandosunny/EcoNicheS')
+
+library(EcoNicheS)
+
+
+```
+# To open the shiny GUI application:
+
+After ensuring that the above commands worked successfully, use this command to start exploring the EcoNicheS interface and features.
+
+```
+options(shiny.maxRequestSize = 6000*1024^2)
+
+shinyApp(ui = ui, server = server)
+```
+-----
 
 -----
 
