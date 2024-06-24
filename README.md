@@ -5,6 +5,135 @@
 An R library that enables Ecological Niche Modeling Analysis with Shinydashboard. This is Version 1.0.0, and subsequent versions will be uploaded with additional analyses and upgrades. 
 
 -----
+# For RStudio users
+
+### EcoNicheS requires the installation of 64-bit Java
+
+To use EcoNicheS it is necessary to have 64-bit Java installed. For this you can visit the Oracle Java download page by clicking [here](https://www.oracle.com/java/technologies/downloads/). Downloading the .exe file is the easiest option.
+
+![JavaWindowseditado](https://github.com/armandosunny/EcoNicheS/assets/25662791/6c6e1a4b-9824-482e-a818-230fbaac753b)
+
+### Download and install RTools
+
+In addition to having installed [R](https://cran.rstudio.com/) and [RStudio](https://posit.co/download/rstudio-desktop/), RTools is essential to be able to use some packages in R, so please download and install it on your device to avoid problems when running and using EcoNicheS. You can download it by accessing this [link](https://cran.r-project.org/bin/windows/Rtools/).
+
+> [!TIP]
+> https://rstudio-education.github.io/hopr/starting.html
+
+### Packages EcoNicheS depends on
+##### For the correct functioning of EcoNiches it is necessary to update all the packages installed in R with the following command: update.packages(ask = FALSE, checkBuilt = TRUE)
+
+EcoNicheS works with specific libraries in R. You can visit the websites listed below to obtain the required packages.
+
+- [shiny](https://CRAN.R-project.org/package=shiny) 
+- [terra](https://cran.r-project.org/package=terra) 
+- [usdm](https://cran.r-project.org/package=usdm)
+- [ENMTools](https://github.com/danlwarren/ENMTools) 
+- [biomod2](https://cran.r-project.org/package=biomod2) 
+- [RColorBrewer](https://cran.r-project.org/package=RColorBrewer) 
+- [dismo](https://github.com/rspatial/dismo) 
+- [tiff](https://cran.r-project.org/web/packages/tiff/index.html) 
+- [rJava](https://cran.r-project.org/web/packages/rJava/index.html) 
+- [tidyterra](https://cran.r-project.org/web/packages/tidyterra/index.html) 
+- [shinydashboard](https://rstudio.github.io/shinydashboard/get_started.html) 
+- [pROC](https://cran.r-project.org/web/packages/pROC/index.html) 
+- [R.utils](https://cran.r-project.org/web/packages/R.utils/index.html) 
+- [dismo](https://cran.r-project.org/package=dismo)
+- [tiff](https://cran.r-project.org/package=tiff) 
+- [rJava](https://cran.r-project.org/package=rJava) 
+- [tidyterra](https://cran.r-project.org/package=tidyterra) 
+- [shinydashboard](https://cran.r-project.org/package=shinydashboard) 
+- [pROC](https://cran.r-project.org/package=pROCl) 
+- [R.utils](https://cran.r-project.org/package=R.utils)
+- [ENMGadgets](https://github.com/narayanibarve/ENMGadgets)
+- [ntbox] (https://github.com/luismurao/ntbox)
+  
+### Define the working directory in RStudio and prepare your databases
+
+To ensure smooth workflow in RStudio, it is crucial to define the working directory properly, the location where all databases created during the analyzes will be saved. Follow these steps, navigate to: "Session" ➥ "Set Working Directory" ➥ "Choose Directory", and select the folder that contains the databases necessary to carry out this type of analysis: the .asc layers of your study area and the .csv file containing the coordinates with the points of presence of your study species.
+
+### MAXENT model
+One of the EcoNicheS tabs bases its analyzes on [biomod2](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#biomod2), which in turn uses different models to perform the ecological niche modeling analysis. One of these models is [MAXENT](https://biodiversityinformatics.amnh.org/open_source/maxent/), which requires the prior download of 3 files so that the analysis with it can be carried out, so, if it is selected, prior to the analysis ensure that the working directory includes all the necessary files for running this model: [MAXENT](https://doi.org/10.6084/m9.figshare.24980664.v1).
+
+[![maxent bat](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/1b534599-e6e8-442d-8ab1-a81c64ff82a0)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709353/MAXENTbat.zip) [![maxent jar](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/9e030780-32a4-4fa2-8554-ace630cb1681)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709414/MAXENTjar.zip) [![maxent sh](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6fe03b4a-535c-4c1e-9e59-d854a422f2df)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709416/MAXENTsh.zip)
+
+If you are not familiar with biomod2, in its corresponding section in this manual you will know how to use it with EcoNicheS but it is important that you have the mentioned files from the beginning to ensure that there will be no problems when you use this tab.
+
+-----
+
+# To install the library
+
+EcoNicheS works with specific libraries in R that it uses to perform ecological niche modeling analyses, and although the loading of most of them is automatic when running the application, there are some exceptions so it is necessary that you please use the command shown below in RStudio to ensure smooth functionality. If in this section or when running the command to open the application there is a problem regarding the failure to install any of the libraries, please refer to the [**Problems installing packages**](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#problems-installing-packages) part of the manual.
+
+``` r
+#Before loading the graphical interface, paste this line to give more capacity to rJava and then select the working directory
+
+options(shiny.maxRequestSize = 6000*1024^2)
+
+install.packages("https://cran.r-project.org/src/contrib/Archive/rgdal/rgdal_1.6-7.tar.gz", repos = NULL, type = "source")
+
+install.packages("https://cran.r-project.org/src/contrib/Archive/rgeos/rgeos_0.6-4.tar.gz", repos = NULL, type = "source")
+
+install.packages("https://cran.r-project.org/src/contrib/Archive/maptools/maptools_1.1-8.tar.gz", repos = NULL, type = "source")
+
+if (!require('devtools')) install.packages('devtools')
+
+library(devtools)
+
+install_github("narayanibarve/ENMGadgets")
+
+require(ENMGadgets)
+
+install_github("danlwarren/ENMTools")
+
+library(ENMTools)
+
+install_github('armandosunny/EcoNicheS')
+
+library(EcoNicheS)
+
+
+```
+# To open the shiny GUI application:
+
+After ensuring that the above commands worked successfully, use this command to start exploring the EcoNicheS interface and features.
+
+```
+options(shiny.maxRequestSize = 6000*1024^2)
+
+shinyApp(ui = ui, server = server)
+```
+-----
+
+-----
+
+## Problems installing packages
+
+By using the commands to install the library, problems can arise on each device, so there may be errors when installing the packages. If so, these errors will appear in RStudio and EcoNicheS will not be able to be opened. In this case, please go to the R packages folder where the libraries are located in .tar.gz format and follow the steps shown below to manually install those packages with which there are problems.
+
+Open RStudio and go to the top menu and click on the **Tools** button, a new menu will be displayed, where you must click on the **Install Packages** option.
+
+![RStudio Tools](https://github.com/armandosunny/EcoNicheS/assets/25662791/a06fa320-a49d-46ac-80fd-03d2f3807028)
+
+![RStudio Tools Install](https://github.com/armandosunny/EcoNicheS/assets/25662791/61dc1f41-70a5-4fb7-9996-d8f2ad9ccb48)
+
+In the window that will open, in _Install from_, select the second option, which will allow us to install packages in .tar.gz format. Next, click on **Browse**, and search your devices for the file(s) downloaded from the R Packages folder in this repository. Select the package(s) that presented problems during installation and _without having to change the option in the Install to library section_ (it is best to leave the default option) and click on **Install**.
+
+![Select tar](https://github.com/armandosunny/EcoNicheS/assets/25662791/8041633b-be48-4bbd-b4e6-10250067a71e)
+
+![rgdal](https://github.com/armandosunny/EcoNicheS/assets/25662791/6bc0952f-92da-4f12-bd5c-e86a4256d66a)
+
+You will start to see messages appearing in the RStudio console, these will continue to appear until the package installation is complete. Once RStudio finishes working, at the end of the messages you should find one that mentions that the job is finished and the library has been installed. To verify that the installation was successful, you can try the following command, remembering that in each action you must look for errors that may indicate a problem. If installed correctly, there will be no message indicating any error.
+
+``` r
+library(rgdal)
+```
+
+![Installing](https://github.com/armandosunny/EcoNicheS/assets/25662791/a89e99c6-cf45-4058-a991-0813aaa5718c)
+
+![Done](https://github.com/armandosunny/EcoNicheS/assets/25662791/dda83dc8-bd73-45e2-9081-9076a3edd63f)
+
+-----
 
 # Learning how to use EcoNicheS with an example case study
 
@@ -191,133 +320,6 @@ This tab requires two files, the only acceptable format of which is .asc. The fi
 ![gains and losses 16 y 50 cn resultados](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/4c68a466-d6be-47c6-adb1-b9bd4df70638)
 
 -----
-# For RStudio users
-
-### EcoNicheS requires the installation of 64-bit Java
-
-To use EcoNicheS it is necessary to have 64-bit Java installed. For this you can visit the Oracle Java download page by clicking [here](https://www.oracle.com/java/technologies/downloads/). Downloading the .exe file is the easiest option.
-
-![JavaWindowseditado](https://github.com/armandosunny/EcoNicheS/assets/25662791/6c6e1a4b-9824-482e-a818-230fbaac753b)
-
-### Download and install RTools
-
-In addition to having installed [R](https://cran.rstudio.com/) and [RStudio](https://posit.co/download/rstudio-desktop/), RTools is essential to be able to use some packages in R, so please download and install it on your device to avoid problems when running and using EcoNicheS. You can download it by accessing this [link](https://cran.r-project.org/bin/windows/Rtools/).
-
-> [!TIP]
-> https://rstudio-education.github.io/hopr/starting.html
-
-### Packages EcoNicheS depends on
-##### For the correct functioning of EcoNiches it is necessary to update all the packages installed in R with the following command: update.packages(ask = FALSE, checkBuilt = TRUE)
-
-EcoNicheS works with specific libraries in R. You can visit the websites listed below to obtain the required packages.
-
-- [shiny](https://CRAN.R-project.org/package=shiny) 
-- [terra](https://cran.r-project.org/package=terra) 
-- [usdm](https://cran.r-project.org/package=usdm)
-- [ENMTools](https://github.com/danlwarren/ENMTools) 
-- [biomod2](https://cran.r-project.org/package=biomod2) 
-- [RColorBrewer](https://cran.r-project.org/package=RColorBrewer) 
-- [dismo](https://github.com/rspatial/dismo) 
-- [tiff](https://cran.r-project.org/web/packages/tiff/index.html) 
-- [rJava](https://cran.r-project.org/web/packages/rJava/index.html) 
-- [tidyterra](https://cran.r-project.org/web/packages/tidyterra/index.html) 
-- [shinydashboard](https://rstudio.github.io/shinydashboard/get_started.html) 
-- [pROC](https://cran.r-project.org/web/packages/pROC/index.html) 
-- [R.utils](https://cran.r-project.org/web/packages/R.utils/index.html) 
-- [dismo](https://cran.r-project.org/package=dismo)
-- [tiff](https://cran.r-project.org/package=tiff) 
-- [rJava](https://cran.r-project.org/package=rJava) 
-- [tidyterra](https://cran.r-project.org/package=tidyterra) 
-- [shinydashboard](https://cran.r-project.org/package=shinydashboard) 
-- [pROC](https://cran.r-project.org/package=pROCl) 
-- [R.utils](https://cran.r-project.org/package=R.utils)
-- [ENMGadgets](https://github.com/narayanibarve/ENMGadgets)
-- [ntbox] (https://github.com/luismurao/ntbox)
-  
-### Define the working directory in RStudio and prepare your databases
-
-To ensure smooth workflow in RStudio, it is crucial to define the working directory properly, the location where all databases created during the analyzes will be saved. Follow these steps, navigate to: "Session" ➥ "Set Working Directory" ➥ "Choose Directory", and select the folder that contains the databases necessary to carry out this type of analysis: the .asc layers of your study area and the .csv file containing the coordinates with the points of presence of your study species.
-
-### MAXENT model
-One of the EcoNicheS tabs bases its analyzes on [biomod2](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#biomod2), which in turn uses different models to perform the ecological niche modeling analysis. One of these models is [MAXENT](https://biodiversityinformatics.amnh.org/open_source/maxent/), which requires the prior download of 3 files so that the analysis with it can be carried out, so, if it is selected, prior to the analysis ensure that the working directory includes all the necessary files for running this model: [MAXENT](https://doi.org/10.6084/m9.figshare.24980664.v1).
-
-[![maxent bat](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/1b534599-e6e8-442d-8ab1-a81c64ff82a0)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709353/MAXENTbat.zip) [![maxent jar](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/9e030780-32a4-4fa2-8554-ace630cb1681)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709414/MAXENTjar.zip) [![maxent sh](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6fe03b4a-535c-4c1e-9e59-d854a422f2df)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709416/MAXENTsh.zip)
-
-If you are not familiar with biomod2, in its corresponding section in this manual you will know how to use it with EcoNicheS but it is important that you have the mentioned files from the beginning to ensure that there will be no problems when you use this tab.
-
------
-
-# To install the library
-
-EcoNicheS works with specific libraries in R that it uses to perform ecological niche modeling analyses, and although the loading of most of them is automatic when running the application, there are some exceptions so it is necessary that you please use the command shown below in RStudio to ensure smooth functionality. If in this section or when running the command to open the application there is a problem regarding the failure to install any of the libraries, please refer to the [**Problems installing packages**](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#problems-installing-packages) part of the manual.
-
-``` r
-#Before loading the graphical interface, paste this line to give more capacity to rJava and then select the working directory
-
-options(shiny.maxRequestSize = 6000*1024^2)
-
-install.packages("https://cran.r-project.org/src/contrib/Archive/rgdal/rgdal_1.6-7.tar.gz", repos = NULL, type = "source")
-
-install.packages("https://cran.r-project.org/src/contrib/Archive/rgeos/rgeos_0.6-4.tar.gz", repos = NULL, type = "source")
-
-install.packages("https://cran.r-project.org/src/contrib/Archive/maptools/maptools_1.1-8.tar.gz", repos = NULL, type = "source")
-
-if (!require('devtools')) install.packages('devtools')
-
-library(devtools)
-
-install_github("narayanibarve/ENMGadgets")
-
-require(ENMGadgets)
-
-install_github("danlwarren/ENMTools")
-
-library(ENMTools)
-
-install_github('armandosunny/EcoNicheS')
-
-library(EcoNicheS)
-
-
-```
-# To open the shiny GUI application:
-
-After ensuring that the above commands worked successfully, use this command to start exploring the EcoNicheS interface and features.
-
-```
-options(shiny.maxRequestSize = 6000*1024^2)
-
-shinyApp(ui = ui, server = server)
-```
------
-
------
-
-## Problems installing packages
-
-By using the commands to install the library, problems can arise on each device, so there may be errors when installing the packages. If so, these errors will appear in RStudio and EcoNicheS will not be able to be opened. In this case, please go to the R packages folder where the libraries are located in .tar.gz format and follow the steps shown below to manually install those packages with which there are problems.
-
-Open RStudio and go to the top menu and click on the **Tools** button, a new menu will be displayed, where you must click on the **Install Packages** option.
-
-![RStudio Tools](https://github.com/armandosunny/EcoNicheS/assets/25662791/a06fa320-a49d-46ac-80fd-03d2f3807028)
-
-![RStudio Tools Install](https://github.com/armandosunny/EcoNicheS/assets/25662791/61dc1f41-70a5-4fb7-9996-d8f2ad9ccb48)
-
-In the window that will open, in _Install from_, select the second option, which will allow us to install packages in .tar.gz format. Next, click on **Browse**, and search your devices for the file(s) downloaded from the R Packages folder in this repository. Select the package(s) that presented problems during installation and _without having to change the option in the Install to library section_ (it is best to leave the default option) and click on **Install**.
-
-![Select tar](https://github.com/armandosunny/EcoNicheS/assets/25662791/8041633b-be48-4bbd-b4e6-10250067a71e)
-
-![rgdal](https://github.com/armandosunny/EcoNicheS/assets/25662791/6bc0952f-92da-4f12-bd5c-e86a4256d66a)
-
-You will start to see messages appearing in the RStudio console, these will continue to appear until the package installation is complete. Once RStudio finishes working, at the end of the messages you should find one that mentions that the job is finished and the library has been installed. To verify that the installation was successful, you can try the following command, remembering that in each action you must look for errors that may indicate a problem. If installed correctly, there will be no message indicating any error.
-
-``` r
-library(rgdal)
-```
-
-![Installing](https://github.com/armandosunny/EcoNicheS/assets/25662791/a89e99c6-cf45-4058-a991-0813aaa5718c)
-
-![Done](https://github.com/armandosunny/EcoNicheS/assets/25662791/dda83dc8-bd73-45e2-9081-9076a3edd63f)
 
 # Contributions
 
