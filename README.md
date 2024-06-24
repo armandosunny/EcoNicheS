@@ -18,7 +18,8 @@ To use EcoNicheS it is necessary to have 64-bit Java installed. For this you can
 In addition to having installed [R](https://cran.rstudio.com/) and [RStudio](https://posit.co/download/rstudio-desktop/), RTools is essential to be able to use some packages in R, so please download and install it on your device to avoid problems when running and using EcoNicheS. You can download it by accessing this [link](https://cran.r-project.org/bin/windows/Rtools/).
 
 > [!TIP]
-> https://rstudio-education.github.io/hopr/starting.html
+>For new R users: Do you need help with installation? We recommend you go to the [Hands-On Programming with R](https://rstudio-education.github.io/hopr/starting.html) website, it allows you to access a manual that helps both Windows and Mac users learn to use R starting from the installation.
+
 
 ### Packages EcoNicheS depends on
 ##### For the correct functioning of EcoNiches it is necessary to update all the packages installed in R with the following command: update.packages(ask = FALSE, checkBuilt = TRUE)
