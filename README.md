@@ -5,7 +5,7 @@
 An R library that enables Ecological Niche Modeling Analysis with Shinydashboard. This is Version 1.0.0, and subsequent versions will be uploaded with additional analyses and upgrades. 
 
 -----
-# For RStudio users
+## EcoNiches Requirements
 
 ### EcoNicheS requires the installation of 64-bit Java
 
