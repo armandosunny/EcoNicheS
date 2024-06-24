@@ -47,7 +47,7 @@ EcoNicheS works with specific libraries in R. You can visit the websites listed 
 - [pROC](https://cran.r-project.org/package=pROCl) 
 - [R.utils](https://cran.r-project.org/package=R.utils)
 - [ENMGadgets](https://github.com/narayanibarve/ENMGadgets)
-- [ntbox] (https://github.com/luismurao/ntbox)
+- [ntbox](https://github.com/luismurao/ntbox)
   
 ### Define the working directory in RStudio and prepare your databases
 
@@ -71,7 +71,6 @@ EcoNicheS works with specific libraries in R that it uses to perform ecological 
 
 options(shiny.maxRequestSize = 6000*1024^2)
 
-install.packages("https://cran.r-project.org/src/contrib/Archive/rgdal/rgdal_1.6-7.tar.gz", repos = NULL, type = "source")
 
 install.packages("https://cran.r-project.org/src/contrib/Archive/rgeos/rgeos_0.6-4.tar.gz", repos = NULL, type = "source")
 
