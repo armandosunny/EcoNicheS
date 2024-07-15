@@ -1,5 +1,6 @@
 # EcoNicheS
-### Empowering Ecological Niche Modeling Analysis with Shinydashboard and R Package. <img src="https://user-images.githubusercontent.com/25662791/244543343-ac0a9b00-a873-469d-ac33-4b49cba48a90.png" referrerpolicy="no-referrer" alt="eco2" align="right" height="276" />
+### Empowering Ecological Niche Modeling Analysis with Shinydashboard and R Package. 
+![WhatsApp Image 2024-07-15 at 08 17 12](https://github.com/user-attachments/assets/3e524bac-3574-47a1-8a5d-8f900d276bdd)
 
 
 An R library that enables Ecological Niche Modeling Analysis with Shinydashboard. This is Version 1.0.0, and subsequent versions will be uploaded with additional analyses and upgrades. 
