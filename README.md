@@ -101,7 +101,7 @@ After ensuring that the above commands worked successfully, use this command to 
 
 ```
 options(shiny.maxRequestSize = 6000*1024^2)
-
+library(EcoNicheS)
 shinyApp(ui = ui, server = server)
 ```
 -----
