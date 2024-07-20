@@ -78,10 +78,16 @@ EcoNicheS works with specific libraries in R that it uses to perform ecological 
 
 options(shiny.maxRequestSize = 6000*1024^2)
 
+##Install the  rgeos
 
 install.packages("https://cran.r-project.org/src/contrib/Archive/rgeos/rgeos_0.6-4.tar.gz", repos = NULL, type = "source")
 
+##Install the  maptools
+
 install.packages("https://cran.r-project.org/src/contrib/Archive/maptools/maptools_1.1-8.tar.gz", repos = NULL, type = "source")
+
+##Install the  ENMGadgets
+
 
 if (!require('devtools')) install.packages('devtools')
 
@@ -91,9 +97,18 @@ install_github("narayanibarve/ENMGadgets")
 
 require(ENMGadgets)
 
+##Install the  ENMTools
+
+library(devtools)
+
 install_github("danlwarren/ENMTools")
 
 library(ENMTools)
+
+
+##Install the  ntbox
+
+library(devtools)
 
 devtools::install_github('luismurao/ntbox')
 
@@ -104,6 +119,8 @@ devtools::install_github('luismurao/ntbox',build_vignettes=TRUE)
 library(ntbox)
 run_ntbox()
 
+
+# Install the  EcoNicheS
 
 install_github('armandosunny/EcoNicheS')
 
