@@ -188,6 +188,9 @@ You can use these functions in order to perform the analyzes and evaluations of 
 
 ## First module: Environmental Data 
 [WorldClim](https://www.worldclim.org/) is a database with global climate and weather records and data. In Ecological Nichoe Modeling studies, it is one of the most relevant data sets from which it is possible to obtain information in high resolution and actionable format (.tif) on the environmental variables that are relevant to understanding the distribution of species.
+As mentioned above, the data it offers is global, but specific records can also be obtained for a country and even through R, a specific delimited geographic area of ​​interest. Through EcoNicheS it is possible to download WorldClim data in any of these ways, you can obtain global data (WorldClim Global), by country (WorldClim Country) or delimit your own study area (Interactive map).
+
+
 <img width="1045" alt="Captura de pantalla 2024-07-20 a la(s) 10 32 36 a m" src="https://github.com/user-attachments/assets/ed35fc53-250f-44b7-8557-b4b22d6cd704">
 
 <img width="941" alt="Captura de pantalla 2024-07-20 a la(s) 1 03 03 p m" src="https://github.com/user-attachments/assets/08c1ba6b-9a01-4e3d-ad57-4347e16c789e">
