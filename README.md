@@ -95,6 +95,16 @@ install_github("danlwarren/ENMTools")
 
 library(ENMTools)
 
+devtools::install_github('luismurao/ntbox')
+
+# If you want to build vignette, install pandoc before and then
+
+devtools::install_github('luismurao/ntbox',build_vignettes=TRUE)
+
+library(ntbox)
+run_ntbox()
+
+
 install_github('armandosunny/EcoNicheS')
 
 library(EcoNicheS)
