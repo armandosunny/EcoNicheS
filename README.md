@@ -59,7 +59,7 @@ EcoNicheS works with specific libraries in R. You can visit the websites listed 
 - [DT]
 - [shinyBS]
 - [prettymapr]
-- [ntbox]
+- [ntbox](https://github.com/luismurao/ntbox)
 - [gt]
 - [tidyverse]
 - [gtExtras]
@@ -73,7 +73,7 @@ EcoNicheS works with specific libraries in R. You can visit the websites listed 
 - [rgeos]
 - [gdistance]
 - [ENMGadgets](https://github.com/narayanibarve/ENMGadgets)
-- [ntbox](https://github.com/luismurao/ntbox)
+
   
   
 ### Define the working directory in RStudio and prepare your databases
