@@ -178,14 +178,21 @@ You can use these functions in order to perform the analyzes and evaluations of 
 <img width="1045" alt="Captura de pantalla 2024-07-20 a la(s) 10 32 36 a m" src="https://github.com/user-attachments/assets/ed35fc53-250f-44b7-8557-b4b22d6cd704">
 
 
-## Obtaining and cleaning species occurrences
+## Second module: Obtaining and cleaning species occurrences
+
+
+<img width="1042" alt="Captura de pantalla 2024-07-20 a la(s) 10 45 19 a m" src="https://github.com/user-attachments/assets/de93c123-0d3d-4bda-8e77-3e7f5cfa6cda">
+
+
+
 The first step to perform niche modeling analysis is to obtain the recorded occurrences of the species of interest. Using EcoNicheS this is achieved by downloading documents with this information from the Global Biodiversity Information Facility (GBIF, [gbif.org](https://www.gbif.org/)), one of the large biodiversity databases. Obtaining this information is achieved using the Coordinate cleaner package as a means for this. So, when opening the application, the first step is to select the first option from the drop-down menu to access the data collection tools.
 
-![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/36c0046c-7d63-4464-a95b-f5db285c0cd8)
+
 
 The next step is to enter the scientific name of the species of interest, in addition to entering the maximum amount of presence data that you wish to obtain. Obtaining the data may take a while, the greater the distribution of the species, the longer the waiting time will also be, but never more than a few minutes.
 
-![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/b3bc756b-6708-4435-aec4-e5f1d20dd200)
+<img width="1044" alt="Captura de pantalla 2024-07-20 a la(s) 10 54 22 a m" src="https://github.com/user-attachments/assets/deb78ec7-f413-4795-b993-653144151ca7">
+
 
 Coordinate cleaner not only does it allow us to obtain presence points, but it is also based on automated data cleaning tests and algorithms to identify and remove records that may be flagged as erroneous or imprecise. We can see this through the graphs shown in the application, in addition to having the raw data in the database that is generated and saved in the working directory.
 
