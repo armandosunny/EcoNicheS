@@ -158,6 +158,7 @@ You can use these functions in order to perform the analyzes and evaluations of 
 
 ## First module: Environmental Data 
 
+<img width="1045" alt="Captura de pantalla 2024-07-20 a la(s) 10 32 36 a m" src="https://github.com/user-attachments/assets/ed35fc53-250f-44b7-8557-b4b22d6cd704">
 
 
 ## Obtaining and cleaning species occurrences
