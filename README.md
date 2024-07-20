@@ -149,18 +149,12 @@ shinyApp(ui = ui, server = server)
 
 # Learning how to use EcoNicheS
 
-To know and understand in detail the functions that EcoNicheS offers and the results that we can obtain from them, we invite you to learn about the application through a case study based on _Phrynosoma orbiculare_, also known as Mexican Plateau horned lizard. The documents and databases necessary to be able to use each of the EcoNicheS functions are available [here].
+To know and understand in detail the functions that EcoNicheS offers and the results that we can obtain from them, we invite you to learn about the application through this manual. The documents and databases necessary to be able to use each of the EcoNicheS functions are available [here].
 
 In order to use your databases, the _.csv base file_ must have the _name of the species listed in the first column_, followed by _longitude (X)_ in the second column, and _latitude (Y)_ in the third column as seen below. _Editing your database respecting lowercase and uppercase letters is essential for the analysis to proceed_.
 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/727045e3-cbc0-47b0-95d8-72cdc158b3fe)
+<img width="528" alt="Captura de pantalla 2024-07-20 a la(s) 12 16 08 p m" src="https://github.com/user-attachments/assets/cd9ef681-0136-4d28-8a02-77297a7f62ed">
 
-<sub>.csv file is displayed in RStudio</sub> 
-
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/addc0249-104d-4133-9d13-5168d039eb79)
-
-<sub>.csv file is displayed in Excel</sub>
- 
 
 -----
 
