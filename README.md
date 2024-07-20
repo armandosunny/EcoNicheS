@@ -196,26 +196,16 @@ The next step is to enter the scientific name of the species of interest, in add
 
 Coordinate cleaner not only does it allow us to obtain presence points, but it is also based on automated data cleaning tests and algorithms to identify and remove records that may be flagged as erroneous or imprecise. We can see this through the graphs shown in the application, in addition to having the raw data in the database that is generated and saved in the working directory.
 
-![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/96badbfe-fc36-4a5f-b1b0-35a9646ba12b)
-
-![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/4829c336-d2d0-4679-9550-e1c7f89e50fe)
-
-![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/98965824-edb6-41b1-b0f5-1419a7aa6ed3)
-
-![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/febe7285-4556-4f52-a9ac-8a38ce29037f)
-
-![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/686aeace-9849-4fb3-bc7c-73b22b69c604)
-
 It uses the metadata to clean the data, and one of these parameters is coordinateUncertaintyInMeters, which describes the smallest circle containing the whole of the Location and serves as a reference for the accuracy of the coordinate location, in addition, it allows estimating the potential distance of the real occurrence location from the recorded values. No se como citar esta pagina https://www.gbif.org/data-quality-requirements-occurrences#dcUncertainty. And it is also possible to filter the clean data according to the year and location of interest (Zizka et al., 2019).
 
-![Captura de pantalla 2024-03-02 190820](https://github.com/armandosunny/EcoNicheS/assets/25662791/a171b656-baf1-4385-88d7-6b6a01a2776b)
 
-Let's now focus on the second option in the menu of this tab. It is a second data cleaning option in case there are already other files with the points of presence to be processed, coming from different databases, whose metadata is not available to be processed from them. This is why the cleaning process here is carried out in cbo thanks to the spThin package, which allows us to eliminate duplicate data, and to achieve this, the file to be entered must be in .csv format, otherwise it will not be able to be processed.
+
+## Second option in the menu of this module ##. 
+It is a second data cleaning option in case there are already other files with the points of presence to be processed, coming from different databases, whose metadata is not available to be processed from them. This is why the cleaning process here is carried out in cbo thanks to the spThin package, which allows us to eliminate duplicate data, and to achieve this, the file to be entered must be in .csv format, otherwise it will not be able to be processed.
 In order to process the data, it is essential that you enter the name of the column where the latitude data that makes up the occurrence data is found. The same should be done for the column with the lengths and the name of the species. Also, remember to enter the kilometers by which you want the data to be separated.
 
-![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/7728efb9-32f8-47e6-9d52-16c5633d03e9)
+<img width="1039" alt="Captura de pantalla 2024-07-20 a la(s) 11 10 37 a m" src="https://github.com/user-attachments/assets/38bd5b10-ddb9-4466-9ecd-6ce1f3c33840">
 
-![image](https://github.com/armandosunny/EcoNicheS/assets/25662791/25593b15-18e8-4ea5-8455-f87df7f54b58)
 
 
 ## Correlation analysis between .asc layers 
