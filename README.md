@@ -241,7 +241,8 @@ This is an example of the plot shown in RStudio using the database of our exampl
 
 Thus, the database with the coordinates of our species now consists of 5 columns, the new pair is a first column, where the amount of data is listed numerically, and a last column where the points of presence of our species were assigned the number 1, while pseudo-absences were assigned a 0.
 
-<img width="1050" alt="Captura de pantalla 2024-07-20 a la(s) 12 09 39 p m" src="https://github.com/user-attachments/assets/c3876c07-b1b8-4a17-98c2-bd35a23a07e0">
+<img width="752" alt="Captura de pantalla 2024-07-20 a la(s) 2 59 50 p m" src="https://github.com/user-attachments/assets/e9364670-077c-4bf2-9323-f1b443cfcb6e">
+
 
 
 ## biomod2
