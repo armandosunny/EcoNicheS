@@ -219,16 +219,15 @@ In this module you can load .asc, .tiff, .tif or .bil files to view the study ar
 
 
 
-Correlation analysis between .asc layers 
+## Fourth moduleCorrelation analysis between .asc layers 
 
 The first of the work tabs requires the raster files or .asc layers that contain the data about the geography of the area, place or location of interest (ACS hosted Feature Layers FAQ, n.d.-a). Since these layers are our study variables, by obtaining a heatmap, this tab allows us to determine if there is autocorrelation between them, thus, it is possible to select multiple .asc files, as well as choose the Threshold (th) value for the analysis.  You can download the example documents to practice using the application [here](). 
-
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/57ef3e0b-88eb-4f16-b15d-b462de43c666)
 
 Once we press the "Calculate correlation" action button, in the white panel, we will obtain the generated heatmap image as a result.
 This is an example of the expected results to be obtained. Results can be downloaded in PDF format. For this tab and for the following ones too, it is important to consider that  all the buttons must be pressed only once, since a single click guarantees that the documents are being loaded, the analyzes are being carried out or that the download is taking place.
 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/8d168349-7d40-420f-8e99-76c89b42dc2c)
+<img width="1042" alt="Captura de pantalla 2024-07-20 a la(s) 11 29 35 a m" src="https://github.com/user-attachments/assets/cb512fb0-dc55-4ed6-b960-556265ebffe8">
+
 
 ## Points and pseudoabsences
 
