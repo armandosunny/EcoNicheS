@@ -1,5 +1,5 @@
 # EcoNicheS  
-<img src="https://github.com/user-attachments/assets/1d3c5a33-d6e1-498e-a9a8-2f424735faf8" align="right" height="200" />
+<img src="https://github.com/user-attachments/assets/cc761f7a-038a-4641-bb2c-23a4674d7989" align="right" height="200" />
 
 ### Empowering Ecological Niche Modeling Analysis with Shinydashboard and R Package.
 
