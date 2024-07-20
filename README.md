@@ -141,6 +141,8 @@ shinyApp(ui = ui, server = server)
 
 -----
 
+<img width="1040" alt="Captura de pantalla 2024-07-20 a la(s) 11 43 54 a m" src="https://github.com/user-attachments/assets/a6686116-989d-4bc6-82cf-623ca2c54c95">
+
 
 
 # Learning how to use EcoNicheS
