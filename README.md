@@ -245,11 +245,17 @@ Thus, the database with the coordinates of our species now consists of 5 columns
 
 
 
-## biomod2
+## Sixth module: biomod2
+
+For this module to work well, it is necessary to have the maxent files in the same folder where the .asc layers and the database with the presences and pseudo-absences of the species to be analyzed are located.
+
+<img width="752" alt="Captura de pantalla 2024-07-20 a la(s) 3 24 11 p m" src="https://github.com/user-attachments/assets/39d263ff-b80d-4e7f-a057-cf891920dc40">
 
 
 For this analysis, the file to be loaded is the database generated in the previous tab, and the necessary .asc layers are those that did not show autocorrelation indicated by the heatmap obtained in the first tab of EcoNiches.
 Multiple models can be selected to perform this analysis depending on your needs. The first step is to upload the .csv document with the presence points and pseudo-absences. It is important to note that seconds after loading the file, the first sub-tab called Database will show us the content of the file; if not, it may mean that there is an error in our file or that the good workflow was interrupted.
+
+
 
 ![Biomod 0 7](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/2b60d6fa-5802-43a8-a4a6-62ee7bb0fe4c)
 
