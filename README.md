@@ -321,7 +321,8 @@ For this part of the application you must have two raster files, the first must 
 ## Calculate area
 This tab allows you to obtain the area of suitability of the species of interest by uploading the .asc file created in the previous tab or an existing file if applicable. The Suitability Threshold value can be modified according to the appropriate value for your study and the only result consists of the legend obtained in the main panel of the tab as you can see below.
 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/945f4ce5-0d8e-4c52-9bf5-debd19f834f0)
+<img width="474" alt="Captura de pantalla 2024-07-20 a la(s) 1 18 01 p m" src="https://github.com/user-attachments/assets/02fd1efa-fd4e-474f-a502-4ac357c2fe91">
+
 
 
 ## Gains and losses plot
