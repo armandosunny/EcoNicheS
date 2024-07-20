@@ -167,8 +167,7 @@ EcoNicheS is an interactive web application that consists of 12 modules: **Envir
 
 You can use these functions in order to perform the analyzes and evaluations of niche modeling, niche overlap and connectivity analysis with circuit theory.
 
-<img width="154" alt="tabs" src="https://github.com/user-attachments/assets/91f564f2-bbfc-4d04-83c7-a480a223f5cc">
-
+<img width="525" alt="Captura de pantalla 2024-07-20 a la(s) 12 18 53 p m" src="https://github.com/user-attachments/assets/680ab39e-ded1-49b9-b508-baf2183eb61c">
 
 
 ## First module: Environmental Data 
