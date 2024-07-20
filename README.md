@@ -328,7 +328,7 @@ This tab requires two files, the only acceptable format of which is .asc. The fi
 
 -Clere Marmolejo and Armando Sunny: Editors and skilled developers who crafted the polished user interface and functionality of the app.
 
--Clere Marmolejo and Armando Sunny: Contributed to the comprehensive function documentation, ensuring clarity and usability.
+-Clere Marmolejo, Bolom-Huet R and Armando Sunny: Contributed to the comprehensive function documentation, ensuring clarity and usability.
 
 -López-Vidal R: Provided valuable assistance with server management and website interface design, enhancing the overall user experience.
 
@@ -340,7 +340,7 @@ This tab requires two files, the only acceptable format of which is .asc. The fi
 
 #### Please cite as:
 
-Marmolejo C, López-Vidal R, Díaz-Sánchez LE, Sunny A (2024). EcoNicheS: Empowering Ecological Niche Modeling Analysis with Shinydashboard and R Package. GitHub. https://github.com/armandosunny/EcoNicheS
+Marmolejo C, Bolom-Huet R, López-Vidal R, Díaz-Sánchez LE, Sunny A (2024). EcoNicheS: Empowering Ecological Niche Modeling Analysis with Shinydashboard and R Package. GitHub. https://github.com/armandosunny/EcoNicheS
 
 
 # Acknowledgements
