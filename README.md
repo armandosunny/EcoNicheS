@@ -12,7 +12,7 @@ An R library that enables Ecological Niche Modeling Analysis with Shinydashboard
 <img src="https://github.com/user-attachments/assets/21759a04-b153-4ad0-b316-c773d6c20ce8" align="center" height="1000" />
 
 
-## EcoNiches Requirements
+## EcoNicheS Requirements
 
 ### Installation of 64-bit Java
 
@@ -23,7 +23,7 @@ To use EcoNicheS it is necessary to have 64-bit Java installed. For this you can
 
 ### Download and install RTools
 
-In addition to having installed [R](https://cran.rstudio.com/) and [RStudio](https://posit.co/download/rstudio-desktop/), RTools is essential to be able to use some packages in R, so please download and install it on your device to avoid problems when running and using EcoNicheS. You can download it by accessing this [link](https://cran.r-project.org/bin/windows/Rtools/).
+In addition to having installed [R](https://cran.rstudio.com/) and [RStudio](https://posit.co/download/rstudio-desktop/), RTools is essential to be able to use some packages in R required by EcoNicheS, so please download and install it on your device to avoid problems when running and using the app. You can download RTools by accessing this [link](https://cran.r-project.org/bin/windows/Rtools/).
 
 > [!TIP]
 >For new R users: Do you need help with installation? We recommend you go to the [Hands-On Programming with R](https://rstudio-education.github.io/hopr/starting.html) website, it allows you to access a manual that helps both Windows and Mac users learn to use R starting from the installation.
@@ -45,17 +45,36 @@ EcoNicheS works with specific libraries in R. You can visit the websites listed 
 - [rJava](https://cran.r-project.org/web/packages/rJava/index.html) 
 - [tidyterra](https://cran.r-project.org/web/packages/tidyterra/index.html) 
 - [shinydashboard](https://rstudio.github.io/shinydashboard/get_started.html) 
-- [pROC](https://cran.r-project.org/web/packages/pROC/index.html) 
-- [R.utils](https://cran.r-project.org/web/packages/R.utils/index.html) 
-- [dismo](https://cran.r-project.org/package=dismo)
-- [tiff](https://cran.r-project.org/package=tiff) 
-- [rJava](https://cran.r-project.org/package=rJava) 
-- [tidyterra](https://cran.r-project.org/package=tidyterra) 
-- [shinydashboard](https://cran.r-project.org/package=shinydashboard) 
 - [pROC](https://cran.r-project.org/package=pROCl) 
 - [R.utils](https://cran.r-project.org/package=R.utils)
+- [CoordinateCleaner]
+- [dplyr]
+- [ggplot2]
+- [rgbif]
+- [sf]
+- [rnaturalearthdata]
+- [spThin]
+- [shinyjs]
+- [leaflet]
+- [DT]
+- [shinyBS]
+- [prettymapr]
+- [ntbox]
+- [gt]
+- [tidyverse]
+- [gtExtras]
+- [MIAmaxent]
+- [shinyBS]
+- [leaflet.extras]
+- [geodata]
+- [viridis]
+- [ggthemes]
+- [sp]
+- [rgeos]
+- [gdistance]
 - [ENMGadgets](https://github.com/narayanibarve/ENMGadgets)
 - [ntbox](https://github.com/luismurao/ntbox)
+  
   
 ### Define the working directory in RStudio and prepare your databases
 
