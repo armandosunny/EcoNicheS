@@ -63,7 +63,8 @@ To ensure smooth workflow in RStudio, it is crucial to define the working direct
 ### MAXENT model
 One of the EcoNicheS tabs bases its analyzes on [biomod2](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#biomod2), which in turn uses different models to perform the ecological niche modeling analysis. One of these models is [MAXENT](https://biodiversityinformatics.amnh.org/open_source/maxent/), which requires the prior download of 3 files so that the analysis with it can be carried out, so, if it is selected, prior to the analysis ensure that the working directory includes all the necessary files for running this model: [MAXENT](https://doi.org/10.6084/m9.figshare.24980664.v1).
 
-[![maxent bat](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/1b534599-e6e8-442d-8ab1-a81c64ff82a0)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709353/MAXENTbat.zip) [![maxent jar](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/9e030780-32a4-4fa2-8554-ace630cb1681)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709414/MAXENTjar.zip) [![maxent sh](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6fe03b4a-535c-4c1e-9e59-d854a422f2df)](https://github.com/armandosunny/EcoNicheS-2.0.0/files/13709416/MAXENTsh.zip)
+<img width="525" alt="Captura de pantalla 2024-07-20 a la(s) 11 57 34 a m" src="https://github.com/user-attachments/assets/c8d3406c-bb3e-4d95-87f8-797bb5afa630">
+
 
 If you are not familiar with biomod2, in its corresponding section in this manual you will know how to use it with EcoNicheS but it is important that you have the mentioned files from the beginning to ensure that there will be no problems when you use this tab.
 
@@ -237,24 +238,14 @@ Here, by uploading our previously edited .csv file and any of our .asc layers, a
 
 In the example shown below, 1000000 was used as the number of random points, however the default value is 100, but it can be modified, so the appropriate number of points for our study can be indicated in the third box of the tab.
 
-This is an example of the plot shown in RStudio using the database of our example species. If you wish, remember that it is also possible to save the image in PNG format by right-clicking on it, but it is a file that is also generated and saveed automatically when we perform the analyzes of the following tab.
+This is an example of the plot shown in RStudio using the database of our example species. If you wish, remember that it is also possible to save the image in PNG format by right-clicking on it, but it is a file that is also generated and saveed automatically when we perform the analyzes of the following tab. Despite the above, the main result here appears as a legend in the main panel of our EcoNicheS tab, as can be seen in the image below. This implies that a new database was obtained, which is stored in the working directory indicated at the beginning. Before running the analysis, the name of the generated database can and must be modified from default name by always maintaining the .csv extension, in this way we ensure that its creation and saving are being carried out correctly.
 
 <img width="1040" alt="Captura de pantalla 2024-07-20 a la(s) 11 38 13 a m" src="https://github.com/user-attachments/assets/146a6485-a8e8-4c83-9d83-4bb91eed0dd4">
 
 
-Despite the above, the main result here appears as a legend in the main panel of our EcoNicheS tab, as can be seen in the image below. This implies that a new database was obtained, which is stored in the working directory indicated at the beginning. Before running the analysis, the name of the generated database can and must be modified from default name by always maintaining the .csv extension, in this way we ensure that its creation and saving are being carried out correctly.
-
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/a4415556-a480-4837-9790-63f939e823ad)
 
 Thus, the database with the coordinates of our species now consists of 5 columns, the new pair is a first column, where the amount of data is listed numerically, and a last column where the points of presence of our species were assigned the number 1, while pseudo-absences were assigned a 0.
 
-<sub>Visualization in RStudio</sub> 
-
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/afdad7e2-46fe-4b9e-982c-938401a86f08)
-
-<sub>Visualization in Excel</sub> 
-
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/cb2f6514-d18b-481f-bb89-5cd3ffc00dfe)
 
 
 
