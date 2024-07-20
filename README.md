@@ -124,35 +124,9 @@ shinyApp(ui = ui, server = server)
 
 -----
 
-## Problems installing packages
 
-By using the commands to install the library, problems can arise on each device, so there may be errors when installing the packages. If so, these errors will appear in RStudio and EcoNicheS will not be able to be opened. In this case, please go to the R packages folder where the libraries are located in .tar.gz format and follow the steps shown below to manually install those packages with which there are problems.
 
-Open RStudio and go to the top menu and click on the **Tools** button, a new menu will be displayed, where you must click on the **Install Packages** option.
-
-![RStudio Tools](https://github.com/armandosunny/EcoNicheS/assets/25662791/a06fa320-a49d-46ac-80fd-03d2f3807028)
-
-![RStudio Tools Install](https://github.com/armandosunny/EcoNicheS/assets/25662791/61dc1f41-70a5-4fb7-9996-d8f2ad9ccb48)
-
-In the window that will open, in _Install from_, select the second option, which will allow us to install packages in .tar.gz format. Next, click on **Browse**, and search your devices for the file(s) downloaded from the R Packages folder in this repository. Select the package(s) that presented problems during installation and _without having to change the option in the Install to library section_ (it is best to leave the default option) and click on **Install**.
-
-![Select tar](https://github.com/armandosunny/EcoNicheS/assets/25662791/8041633b-be48-4bbd-b4e6-10250067a71e)
-
-![rgdal](https://github.com/armandosunny/EcoNicheS/assets/25662791/6bc0952f-92da-4f12-bd5c-e86a4256d66a)
-
-You will start to see messages appearing in the RStudio console, these will continue to appear until the package installation is complete. Once RStudio finishes working, at the end of the messages you should find one that mentions that the job is finished and the library has been installed. To verify that the installation was successful, you can try the following command, remembering that in each action you must look for errors that may indicate a problem. If installed correctly, there will be no message indicating any error.
-
-``` r
-library(rgdal)
-```
-
-![Installing](https://github.com/armandosunny/EcoNicheS/assets/25662791/a89e99c6-cf45-4058-a991-0813aaa5718c)
-
-![Done](https://github.com/armandosunny/EcoNicheS/assets/25662791/dda83dc8-bd73-45e2-9081-9076a3edd63f)
-
------
-
-# Learning how to use EcoNicheS with an example case study
+# Learning how to use EcoNicheS
 
 To know and understand in detail the functions that EcoNicheS offers and the results that we can obtain from them, we invite you to learn about the application through a case study based on _Phrynosoma orbiculare_, also known as Mexican Plateau horned lizard. The documents and databases necessary to be able to use each of the EcoNicheS functions are available [here].
 
@@ -171,8 +145,18 @@ In order to use your databases, the _.csv base file_ must have the _name of the 
 
 # Exploring EcoNicheS features
 
-EcoNicheS is an interactive web application that consists of 12 work tabs: **_Environmental data, Occurrence processing, Load and Plot Maps (2x), Correlation layers, Points and pseudoabsences, biomod2, Partial ROC Analysis, Remove urbanization, Calculate area, Gains and losses_** and **_ENMTools_**. These tabs, when used sequentially or with the corresponding databases depending on the analysis, allow developing ecological niche modeling analyses.
 
+
+
+EcoNicheS is an interactive web application that consists of 12 modules: **Environmental Data, Occurrence processing, Load and Plot Maps (2x), Correlation layers, Points and pseudoabsences, biomod2, Partial ROC Analysis, Remove urbanization, Calculate area, Gains and Losses Plot, ENMTools, and Connectivity**. 
+
+You can use these functions in order to perform the analyzes and evaluations of niche modeling, niche overlap and connectivity analysis with circuit theory.
+
+<img width="154" alt="tabs" src="https://github.com/user-attachments/assets/91f564f2-bbfc-4d04-83c7-a480a223f5cc">
+
+
+
+## First module: Environmental Data 
 
 
 
@@ -433,7 +417,33 @@ Warren DL, Matzke NJ, Cardillo M, Baumgartner JB, Beaumont LJ, Turelli M, Glor R
 Zizka A, Silvestro D, Andermann T, Azevedo J, Duarte Ritter C, Edler D, Farooq H, Herdean A, Ariza M, Scharn R, Svanteson S, Wengstrom N, Zizka V, Antonelli A (2019). “CoordinateCleaner: standardized cleaning of occurrence records from biological collection databases.” Methods in Ecology and Evolution, -7. doi:10.1111/2041-210X.13152, R package version 3.0.1, https://github.com/ropensci/CoordinateCleaner.
 
 
+## Problems installing packages
 
+By using the commands to install the library, problems can arise on each device, so there may be errors when installing the packages. If so, these errors will appear in RStudio and EcoNicheS will not be able to be opened. In this case, please go to the R packages folder where the libraries are located in .tar.gz format and follow the steps shown below to manually install those packages with which there are problems.
+
+Open RStudio and go to the top menu and click on the **Tools** button, a new menu will be displayed, where you must click on the **Install Packages** option.
+
+![RStudio Tools](https://github.com/armandosunny/EcoNicheS/assets/25662791/a06fa320-a49d-46ac-80fd-03d2f3807028)
+
+![RStudio Tools Install](https://github.com/armandosunny/EcoNicheS/assets/25662791/61dc1f41-70a5-4fb7-9996-d8f2ad9ccb48)
+
+In the window that will open, in _Install from_, select the second option, which will allow us to install packages in .tar.gz format. Next, click on **Browse**, and search your devices for the file(s) downloaded from the R Packages folder in this repository. Select the package(s) that presented problems during installation and _without having to change the option in the Install to library section_ (it is best to leave the default option) and click on **Install**.
+
+![Select tar](https://github.com/armandosunny/EcoNicheS/assets/25662791/8041633b-be48-4bbd-b4e6-10250067a71e)
+
+![rgdal](https://github.com/armandosunny/EcoNicheS/assets/25662791/6bc0952f-92da-4f12-bd5c-e86a4256d66a)
+
+You will start to see messages appearing in the RStudio console, these will continue to appear until the package installation is complete. Once RStudio finishes working, at the end of the messages you should find one that mentions that the job is finished and the library has been installed. To verify that the installation was successful, you can try the following command, remembering that in each action you must look for errors that may indicate a problem. If installed correctly, there will be no message indicating any error.
+
+``` r
+library(rgdal)
+```
+
+![Installing](https://github.com/armandosunny/EcoNicheS/assets/25662791/a89e99c6-cf45-4058-a991-0813aaa5718c)
+
+![Done](https://github.com/armandosunny/EcoNicheS/assets/25662791/dda83dc8-bd73-45e2-9081-9076a3edd63f)
+
+-----
 
 ## Centro de Innovación Digital "Mandra"
 #### Laboratorio Nacional de SuperCómputo, CONAHCYT-Facultad de Ciencias, UAEMex.
