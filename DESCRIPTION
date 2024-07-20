@@ -1,36 +1,56 @@
 Package: EcoNicheS
+Title: EcoNicheS: Empowering Ecological Niche Modeling Analysis with Shinydashboard and R
 Type: Package
-Title: analysis of ecological niche modeling
 Version: 1.0.0
-Depends:
-  shiny,
-  terra,
-  usdm,
-  ENMTools,
-  biomod2,
-  RColorBrewer,
-  dismo,
-  tiff,
-  rJava,
-  tidyterra,
-  shinydashboard,
-  pROC,
-  R.utils,
-  countrycode,
-  CoordinateCleaner,
-  dplyr,
-  ggplot2,
-  rgbif,
-  sf,
-  rnaturalearthdata,
-  spThin,
-  shinyjs,
-  leaflet,
-  DT,
-  shinyBS,
-  prettymapr,
-  ntbox,
-  gt,
-  tidyverse,
-  gtExtras
+Authors@R: 
+    person("Clere", "Marmolejo", email = "marmolejod70@gmail.com", role = c("aut", "cre"))
+    person("Rene", "Bolom-Huet", email = "renblht@gmail.com", role = c("aut", "cre"))
+    person("Rodrigo", "López-Vidal", email = "sunny.biologiat@gmail.com", role = c("aut", "cre"))
+    person("Luis Enrique", "Díaz-Sánchez", email = "sunny.biologiat@gmail.com", role = c("aut", "cre"))
+    person("Armando", "Sunny", email = "sunny.biologiat@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "https://orcid.org/0000-0003-4685-5322"))
+Description: EcoNicheS empowers ecological niche modeling analysis with shinydashboard and R package. This is Version 1.0.0, and subsequent versions will be uploaded with additional analyses and upgrades.
+License: GPL-3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+Imports:
+    shiny,
+    terra,
+    usdm,
+    ENMTools,
+    biomod2,
+    RColorBrewer,
+    dismo,
+    tiff,
+    rJava,
+    tidyterra,
+    shinydashboard,
+    pROC,
+    R.utils,
+    countrycode,
+    CoordinateCleaner,
+    dplyr,
+    ggplot2,
+    rgbif,
+    sf,
+    rnaturalearthdata,
+    spThin,
+    shinyjs,
+    leaflet,
+    DT,
+    shinyBS,
+    prettymapr,
+    ntbox,
+    gt,
+    tidyverse,
+    gtExtras,
+    MIAmaxent,
+    leaflet.extras,
+    geodata,
+    viridis,
+    ggthemes,
+    sp,
+    rgeos,
+    gdistance
+
  
