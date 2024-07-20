@@ -200,7 +200,7 @@ It uses the metadata to clean the data, and one of these parameters is coordinat
 
 
 
-## Second option in the menu of this module ##. 
+## Second option in the menu of this module. 
 It is a second data cleaning option in case there are already other files with the points of presence to be processed, coming from different databases, whose metadata is not available to be processed from them. This is why the cleaning process here is carried out in cbo thanks to the spThin package, which allows us to eliminate duplicate data, and to achieve this, the file to be entered must be in .csv format, otherwise it will not be able to be processed.
 In order to process the data, it is essential that you enter the name of the column where the latitude data that makes up the occurrence data is found. The same should be done for the column with the lengths and the name of the species. Also, remember to enter the kilometers by which you want the data to be separated.
 
@@ -208,7 +208,18 @@ In order to process the data, it is essential that you enter the name of the col
 
 
 
-## Correlation analysis between .asc layers 
+## Third module: Load and Plot Maps
+
+In this module you can load .asc, .tiff, .tif or .bil files to view the study area on an interactive map and you can also download the map in PDF
+
+
+
+<img width="1046" alt="Captura de pantalla 2024-07-20 a la(s) 11 16 59 a m" src="https://github.com/user-attachments/assets/95fc05ed-2328-4eb0-ab57-0e4d573f4211">
+
+
+
+
+Correlation analysis between .asc layers 
 
 The first of the work tabs requires the raster files or .asc layers that contain the data about the geography of the area, place or location of interest (ACS hosted Feature Layers FAQ, n.d.-a). Since these layers are our study variables, by obtaining a heatmap, this tab allows us to determine if there is autocorrelation between them, thus, it is possible to select multiple .asc files, as well as choose the Threshold (th) value for the analysis.  You can download the example documents to practice using the application [here](). 
 
