@@ -188,16 +188,16 @@ You can use these functions in order to perform the analyzes and evaluations of 
 
 ## First module: Environmental Data 
 [WorldClim](https://www.worldclim.org/) is a database with global climate and weather records and data (Fick and Hijmans, 2017). In Ecological Nichoe Modeling studies, it is one of the most relevant data sets from which it is possible to obtain information in high resolution and actionable format (.tif) on the environmental variables that are relevant to understanding the distribution of species.
-As mentioned above, the data it offers is global, but specific records can also be obtained for a country and even through R, a specific delimited geographic area of ​​interest. Through EcoNicheS it is possible to download WorldClim data in any of these ways, you can obtain global data (WorldClim Global), by country (WorldClim Country) or delimit your own study area (Interactive map).
+As mentioned above, the data it offers is global, but specific records can also be obtained for a country and even through R, a specific delimited geographic area of ​​interest. Through EcoNicheS it is possible to download **WorldClim** data in any of these ways, you can obtain **global data** (*WorldClim Global*), by **country** (*WorldClim Country*) or **delimit your own study area** (*Interactive map*).
 
 The environmental variables that you can download from WorldClim through EcoNicheS are ["tmin", "tmax", "tavg", "prec", "wind", "vapr", and "bio"](https://www.worldclim.org/data/worldclim21.html) and respectively they correspond to minimum temperature (°C ), maximum temperature (°C), average temperature (°C), precipitation (mm), wind speed (m s-1), water vapor pressure (kPa) and [Bioclimatic variables](https://www.worldclim.org/data/bioclim.html).
 
 Please visit the links shown to obtain more information about the variables. In this case it is the historical climate data from 1970-2000. You can find a greater repertoire of data by accessing WorldClim.
 
-The data is downloaded with a specific spatial resolution which must be indicated according to your needs, between 30 seconds (~1 km2) to 10 minutes (~340 km2) (Fick and Hijmans, 2017).
+The data is downloaded with a **specific spatial resolution** which must be indicated according to your needs, between 30 seconds (~1 km2) to 10 minutes (~340 km2) (Fick and Hijmans, 2017).
 
-The above are the basic requirements, in the application you can choose to view and save or only view the data without editing, this is useful especially if you are just getting familiar with this type of data and/or with the application. However, EcoNicheS allows you to edit the data obtained.
-For global data the data can be edited using longitude and latitude to delimit the area by providing maximum and minimum values ​​for both.
+The above are the basic requirements, in the application you can choose to view and save or only view the data without editing, this is useful especially if you are just getting familiar with this type of data and/or with the application. However, *EcoNicheS allows you to edit the data obtained*.
+Global data can be edited using longitude and latitude to delimit the area by providing maximum and minimum values ​​for both.
 By country, the data can be delimited in the same way or using .asc files to more precisely trim the layers according to the geographical area.
 
 > [!IMPORTANT]
