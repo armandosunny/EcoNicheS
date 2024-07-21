@@ -201,7 +201,7 @@ Global data can be edited using longitude and latitude to delimit the area by pr
 By country, the data can be delimited in the same way or using .asc files to more precisely trim the layers according to the geographical area.
 
 > [!IMPORTANT]
-> There is also the option to provide your own files with layers or environmental variables and crop them with .asc files or using shape files. If you are familiar with shape files and their handling in R you will know that it is necessary to provide all the related files, so please upload all of them in the corresponding section in the application.
+> There is also the option to *provide your own files with layers or environmental variables and crop them with .asc files or using **shape files***. If you are familiar with shape files and their handling in R you will know that it is necessary to provide all the related files, so please upload all of them in the corresponding section in the application.
 
 <img width="1045" alt="Captura de pantalla 2024-07-20 a la(s) 10 32 36 a m" src="https://github.com/user-attachments/assets/ed35fc53-250f-44b7-8557-b4b22d6cd704">
 
