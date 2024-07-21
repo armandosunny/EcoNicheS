@@ -215,7 +215,7 @@ The first step to perform niche modeling analysis is to obtain the recorded occu
 
 ### Get and Clean GBIF data
 
-Obtaining geographical distribution data is achieved using the [CoordinateCleaner](https://ropensci.github.io/CoordinateCleaner/articles/Cleaning_GBIF_data_with_CoordinateCleaner.html) package (Zizka et al., 2019). So, when opening the application, the first step is to select the first option from the drop-down menu to access the data collection tools.The next step is to enter the scientific name of the species of interest, in addition to entering the maximum amount of presence data that you wish to obtain. Obtaining the data may take a while, the greater the distribution of the species, the longer the waiting time will also be, but never more than a few minutes.
+Obtaining geographical distribution data is achieved using the [CoordinateCleaner](https://ropensci.github.io/CoordinateCleaner/articles/Cleaning_GBIF_data_with_CoordinateCleaner.html) package (Zizka et al., 2019). So, when opening the application, the first step is to select the first option from the drop-down menu to access the data collection tools.The next step is to enter the scientific name of the species of interest, in addition to entering the maximum amount of presence data that you wish to obtain. Obtaining the data may take a while, the greater the distribution of the species, the longer the waiting time will also be, but never beyond a few minutes.
 
 <img width="1044" alt="Captura de pantalla 2024-07-20 a la(s) 10 54 22 a m" src="https://github.com/user-attachments/assets/deb78ec7-f413-4795-b993-653144151ca7">
 
