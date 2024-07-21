@@ -187,10 +187,14 @@ You can use these functions in order to perform the analyzes and evaluations of 
 
 
 ## First module: Environmental Data 
-[WorldClim](https://www.worldclim.org/) is a database with global climate and weather records and data. In Ecological Nichoe Modeling studies, it is one of the most relevant data sets from which it is possible to obtain information in high resolution and actionable format (.tif) on the environmental variables that are relevant to understanding the distribution of species.
+[WorldClim](https://www.worldclim.org/) is a database with global climate and weather records and data (Fick and Hijmans, 2017). In Ecological Nichoe Modeling studies, it is one of the most relevant data sets from which it is possible to obtain information in high resolution and actionable format (.tif) on the environmental variables that are relevant to understanding the distribution of species.
 As mentioned above, the data it offers is global, but specific records can also be obtained for a country and even through R, a specific delimited geographic area of ​​interest. Through EcoNicheS it is possible to download WorldClim data in any of these ways, you can obtain global data (WorldClim Global), by country (WorldClim Country) or delimit your own study area (Interactive map).
 
 The environmental variables that you can download from WorldClim through EcoNicheS are ["tmin", "tmax", "tavg", "prec", "wind", "vapr", and "bio"](https://www.worldclim.org/data/worldclim21.html) and respectively they correspond to minimum temperature (°C ), maximum temperature (°C), average temperature (°C), precipitation (mm), wind speed (m s-1), water vapor pressure (kPa) and [Bioclimatic variables](https://www.worldclim.org/data/bioclim.html).
+
+Please visit the links shown to obtain more information about the variables. In this case it is the historical climate data from 1970-2000. You can find a greater repertoire of data by accessing WorldClim.
+
+The data is downloaded with a specific spatial resolution which must be indicated according to your needs, between 30 seconds (~1 km2) to 10 minutes (~340 km2) (Fick and Hijmans, 2017).
 
 
 <img width="1045" alt="Captura de pantalla 2024-07-20 a la(s) 10 32 36 a m" src="https://github.com/user-attachments/assets/ed35fc53-250f-44b7-8557-b4b22d6cd704">
@@ -407,6 +411,8 @@ The creation of this package was made possible by the financial support provided
   Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson J,
   Dipert A, Borges B (2023). _shiny: Web Application Framework for R_. R package version
   1.7.5, <https://CRAN.R-project.org/package=shiny>.
+
+  Fick, S.E. and R.J. Hijmans, 2017. WorldClim 2: new 1km spatial resolution climate surfaces for global land areas. International Journal of Climatology 37 (12): 4302-4315.
 
 GBIF: The Global Biodiversity Information Facility (year) What is GBIF?. Available from https://www.gbif.org/what-is-gbif [13 January 2020].
 
