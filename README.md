@@ -209,11 +209,13 @@ By country, the data can be delimited in the same way or using .asc files to mor
 
 ## Second module: Obtaining and cleaning species occurrences
 
-The first step to perform niche modeling analysis is to obtain the recorded occurrences of the species of interest. Using EcoNicheS this is achieved by downloading documents with this information from the Global Biodiversity Information Facility (GBIF, [gbif.org](https://www.gbif.org/)), one of the large biodiversity databases. Obtaining this information is achieved using the [CoordinateCleaner](https://ropensci.github.io/CoordinateCleaner/articles/Cleaning_GBIF_data_with_CoordinateCleaner.html) package (Zizka et al., 2019) as a means for this. So, when opening the application, the first step is to select the first option from the drop-down menu to access the data collection tools.
+The first step to perform niche modeling analysis is to obtain the recorded occurrences of the species of interest. Using EcoNicheS this is achieved by downloading documents with this information from the Global Biodiversity Information Facility (GBIF, [gbif.org](https://www.gbif.org/)), one of the large biodiversity databases. Geographic distribution data must be processed before analysis. In EcoNicheS the processing can occur through two phases represented in two different submodules in this section, below you will find more details.
 
 <img width="1042" alt="Captura de pantalla 2024-07-20 a la(s) 10 45 19 a m" src="https://github.com/user-attachments/assets/de93c123-0d3d-4bda-8e77-3e7f5cfa6cda">
 
-The next step is to enter the scientific name of the species of interest, in addition to entering the maximum amount of presence data that you wish to obtain. Obtaining the data may take a while, the greater the distribution of the species, the longer the waiting time will also be, but never more than a few minutes.
+### Get and Clean GBIF data
+
+Obtaining geographical distribution data is achieved using the [CoordinateCleaner](https://ropensci.github.io/CoordinateCleaner/articles/Cleaning_GBIF_data_with_CoordinateCleaner.html) package (Zizka et al., 2019). So, when opening the application, the first step is to select the first option from the drop-down menu to access the data collection tools.The next step is to enter the scientific name of the species of interest, in addition to entering the maximum amount of presence data that you wish to obtain. Obtaining the data may take a while, the greater the distribution of the species, the longer the waiting time will also be, but never more than a few minutes.
 
 <img width="1044" alt="Captura de pantalla 2024-07-20 a la(s) 10 54 22 a m" src="https://github.com/user-attachments/assets/deb78ec7-f413-4795-b993-653144151ca7">
 
@@ -224,7 +226,7 @@ It uses the metadata to clean the data, and one of these parameters is coordinat
 
 
 
-## Second option in the menu of this module. 
+### Clean my own database 
 It is a second data cleaning option in case there are already other files with the points of presence to be processed, coming from different databases, whose metadata is not available to be processed from them. This is why the cleaning process here is carried out in cbo thanks to the spThin package, which allows us to eliminate duplicate data, and to achieve this, the file to be entered must be in .csv format, otherwise it will not be able to be processed.
 In order to process the data, it is essential that you enter the name of the column where the latitude data that makes up the occurrence data is found. The same should be done for the column with the lengths and the name of the species. Also, remember to enter the kilometers by which you want the data to be separated.
 
