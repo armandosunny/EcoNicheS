@@ -196,6 +196,9 @@ Please visit the links shown to obtain more information about the variables. In 
 
 The data is downloaded with a **specific spatial resolution** which must be indicated according to your needs, between 30 seconds (~1 km2) to 10 minutes (~340 km2) (Fick and Hijmans, 2017).
 
+> [!IMPORTANT]
+>If you search for information by country, you must enter the name of the country written in English.
+
 The above are the basic requirements, in the application you can choose to view and save or only view the data without editing, this is useful especially if you are just getting familiar with this type of data and/or with the application. However, *EcoNicheS allows you to edit the data obtained*.
 Global data can be edited using longitude and latitude to delimit the area by providing maximum and minimum values ​​for both.
 By country, the data can be delimited in the same way or using .asc files to more precisely trim the layers according to the geographical area.
