@@ -200,6 +200,10 @@ The data is downloaded with a **specific spatial resolution** which must be indi
 >If you search for information by country, you must enter the name of the country written in English.
 
 The above are the basic requirements, in the application you can choose to view and save or only view the data without editing, this is useful especially if you are just getting familiar with this type of data and/or with the application. However, *EcoNicheS allows you to edit the data obtained*.
+
+> [!WARNING]
+>For this tab and for the following ones too, it is important to consider that  all the buttons must be pressed only once, since a single click guarantees that the documents are being loaded, the analyzes are being carried out or that the download is taking place.
+
 Global data can be edited using longitude and latitude to delimit the area by providing maximum and minimum values ​​for both.
 By country, the data can be delimited in the same way or using .asc files to more precisely trim the layers according to the geographical area.
 
@@ -250,10 +254,10 @@ In this module you can load .asc, .tiff, .tif or .bil files to view the study ar
 
 ## Fourth module: Correlation analysis between .asc layers 
 
-The first of the work tabs requires the raster files or .asc layers that contain the data about the geography of the area, place or location of interest (ACS hosted Feature Layers FAQ, n.d.-a). Since these layers are our study variables, by obtaining a heatmap, this tab allows us to determine if there is autocorrelation between them, thus, it is possible to select multiple .asc files, as well as choose the Threshold (th) value for the analysis.  You can download the example documents to practice using the application [here](). 
+This module requires the raster files or .asc layers that contain the data about the geography of the area, place or location of interest (ACS hosted Feature Layers FAQ, n.d.-a). Since these layers are our study variables, by obtaining a heatmap, this tab allows us to determine if there is autocorrelation between them, thus, it is possible to select multiple .asc files, as well as choose the Threshold (th) value for the analysis.  You can download the example documents to practice using the application [here](). 
 
-Once we press the "Calculate correlation" action button, in the white panel, we will obtain the generated heatmap image as a result.
-This is an example of the expected results to be obtained. Results can be downloaded in PDF format. For this tab and for the following ones too, it is important to consider that  all the buttons must be pressed only once, since a single click guarantees that the documents are being loaded, the analyzes are being carried out or that the download is taking place.
+Once we press the "Calculate correlation" action button, and after waiting a few seconds or minutes (the longer the time will be the greater the number of variables entered), we will obtain the generated heatmap image as a result.
+This is an example of the expected results to be obtained. Results can be downloaded in PDF format. 
 
 <img width="1042" alt="Captura de pantalla 2024-07-20 a la(s) 11 29 35 a m" src="https://github.com/user-attachments/assets/cb512fb0-dc55-4ed6-b960-556265ebffe8">
 
