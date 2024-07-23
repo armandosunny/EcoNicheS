@@ -256,7 +256,7 @@ In this module you can load .asc, .tiff, .tif or .bil files to view the study ar
 
 This module requires the raster files or .asc layers that contain the data about the geography of the area, place or location of interest (ACS hosted Feature Layers FAQ, n.d.-a). Since these layers are our study variables, by obtaining a heatmap, this tab allows us to determine if there is autocorrelation between them, thus, it is possible to select multiple .asc files, as well as choose the Threshold (th) value for the analysis.  You can download the example documents to practice using the application [here](). 
 
-Once we press the "Calculate correlation" action button, and after waiting a few seconds or minutes (the longer the time will be the greater the number of variables entered), we will obtain the generated heatmap image as a result.
+Once we press the "Calculate correlation" action button, and after waiting a few seconds or minutes (the longer the time will be the greater the number of variables entered), we will obtain the generated heatmap image as a result. The data generated provides information on the *Pearson Correlation Coefficient¨* and the *Variance inflation factor (VIF)*.
 This is an example of the expected results to be obtained. Results can be downloaded in PDF format. 
 
 <img width="1042" alt="Captura de pantalla 2024-07-20 a la(s) 11 29 35 a m" src="https://github.com/user-attachments/assets/cb512fb0-dc55-4ed6-b960-556265ebffe8">
@@ -287,7 +287,7 @@ For this module to work well, it is necessary to have the maxent files in the sa
 <img width="752" alt="Captura de pantalla 2024-07-20 a la(s) 3 24 11 p m" src="https://github.com/user-attachments/assets/39d263ff-b80d-4e7f-a057-cf891920dc40">
 
 
-For this analysis, the file to be loaded is the database generated in the previous tab, and the necessary .asc layers are those that did not show autocorrelation indicated by the heatmap obtained in the first tab of EcoNiches.
+For this analysis, the file to be loaded is the database generated in the previous tab, and the necessary .asc layers are those that did not show autocorrelation indicated by the heatmap obtained in EcoNiches or those previously analyzed for your study.
 Multiple models can be selected to perform this analysis depending on your needs. The first step is to upload the .csv document with the presence points and pseudo-absences. It is important to note that seconds after loading the file, the first sub-tab called Database will show us the content of the file; if not, it may mean that there is an error in our file or that the good workflow was interrupted.
 
 
@@ -300,7 +300,7 @@ Next, the display of the button to load the appropriate .asc layers after clicki
 ![select  asc files biomod2](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6186fb94-64b3-4a92-a9ee-c744344418a9)
 
 
-biomod2 is a library that allows the analysis of species distribution through 10 models: GLM, GBM, GAM, CTA, ANN, SRE, FDA, RF, MAXENT and MAXNET, that is, it is an ensemble analysis method, so, multiple models can be selected for analysis execution (Huang et al., 2023). For the example shown in this manual through images and databases, all available models were selected. 
+[biomod2](https://biomodhub.github.io/biomod2/) is a library that allows the analysis of species distribution through 10 models: GLM, GBM, GAM, CTA, ANN, SRE, FDA, RF, MAXENT and MAXNET, that is, it is an ensemble analysis method, so, multiple models can be selected for analysis execution (Huang et al., 2023). For the example shown in this manual through images and databases, all available models were selected (Thuiller et al., 2024). 
 
 ![modelosbiomod2](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/82d4a3f8-5815-4604-99b4-858df06f58b4)
 
