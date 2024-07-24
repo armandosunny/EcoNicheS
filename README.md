@@ -224,14 +224,14 @@ The first step to perform niche modeling analysis is to obtain the recorded occu
 
 Obtaining geographical distribution data is achieved using the [CoordinateCleaner](https://ropensci.github.io/CoordinateCleaner/articles/Cleaning_GBIF_data_with_CoordinateCleaner.html) package (Zizka et al., 2019). So, when opening the application, the first step is to select the first option from the drop-down menu to access the data collection tools.The next step is to enter the scientific name of the species of interest, in addition to entering the maximum amount of presence data that you wish to obtain. Obtaining the data may take a while, the greater the distribution of the species, the longer the waiting time will also be, but never beyond a few minutes.
 
+At the end of your search, you will see on the screen an interactive map created with [leaflet](https://cran.r-project.org/package=leaflet) (Cheng et al., 2023), which will allow you to visualize the global distribution of the data. In addition, you will find graphs and metadata provided by GBIF and CoordinateCleaner that will allow you to have information about the records found, for example, Coordinate is also based on automated data cleaning tests and algorithms to identify and remove records that may be flagged as erroneous or imprecise (Zizka et al., 2019). We can see this through the graphs shown in the application, in addition to having the raw data in the database that is generated and saved in the working directory.
+
 <img width="1044" alt="Captura de pantalla 2024-07-20 a la(s) 10 54 22 a m" src="https://github.com/user-attachments/assets/deb78ec7-f413-4795-b993-653144151ca7">
 
+CoordinateCleaner uses the metadata to clean the data, and one of these parameters is coordinateUncertaintyInMeters, which describes the smallest circle containing the whole of the Location and serves as a reference for the accuracy of the coordinate location, in addition, it allows estimating the potential distance of the real occurrence location from the recorded values. No se como citar esta pagina https://www.gbif.org/data-quality-requirements-occurrences#dcUncertainty. And it is also possible to filter the clean data according to the year and location of interest either using a coordinate system or applying a filter by country (Zizka et al., 2019).
 
-Coordinate cleaner not only does it allow us to obtain presence points, but it is also based on automated data cleaning tests and algorithms to identify and remove records that may be flagged as erroneous or imprecise (Zizka et al., 2019). We can see this through the graphs shown in the application, in addition to having the raw data in the database that is generated and saved in the working directory.
-
-It uses the metadata to clean the data, and one of these parameters is coordinateUncertaintyInMeters, which describes the smallest circle containing the whole of the Location and serves as a reference for the accuracy of the coordinate location, in addition, it allows estimating the potential distance of the real occurrence location from the recorded values. No se como citar esta pagina https://www.gbif.org/data-quality-requirements-occurrences#dcUncertainty. And it is also possible to filter the clean data according to the year and location of interest either using a coordinate system or applying a filter by country (Zizka et al., 2019).
-
-
+> [!IMPORTANT]
+> All the data generated will be saved on your device in the working directory. In this sub module the files are always .csv and the application will tell you if there was any problem that prevented their creation. If you are new to using EcoNicheS, we recommend that you explore the databases created by viewing them in their corresponding application so that you can more easily understand the data obtained and the differences between raw data and when it is unprocessed and filtered.
 
 ### Clean my own database 
 It is a second data cleaning option in case there are already other files with the points of presence to be processed, coming from different databases, whose metadata is not available to be processed from them. This is why the cleaning process here is carried out in cbo thanks to the spThin package, which allows us to eliminate duplicate data, and to achieve this, the file to be entered must be in .csv format, otherwise it will not be able to be processed.
@@ -405,9 +405,9 @@ The creation of this package was made possible by the financial support provided
   ACS hosted Feature Layers FAQ_. (n.d.-a). ACS Hosted Feature Layers FAQ.
   https://acs-hosted-feature-layers-faq-esri.hub.arcgis.com/ 
 
-  Huang D, An Q, Huang S, Tan G, Quan H, Chen Y, Zhou J, Liao H. (2023). 
-  biomod2 modeling for predicting the potential ecological distribution of three Fritillaria species under climate change. 
-  _Scientific reports_, 13(1), 18801. https://doi.org/10.1038/s41598-023-45887-6
+  Cheng J, Schloerke B, Karambelkar B, Xie Y (2023). _leaflet: Create Interactive Web Maps
+  with the JavaScript 'Leaflet' Library_. R package version 2.2.1,
+  <https://CRAN.R-project.org/package=leaflet>.
 
   Barve N, Barve V (2019). _ENMGadgets: Pre and Post Processing in ENM Workflow_. R
   package version 0.1.0.1.
@@ -440,6 +440,10 @@ Hijmans R (2023). _raster: Geographic Data Analysis and Modeling_. R package ver
 
 Hijmans RJ, Phillips S, Leathwick J, Elith J (2023). _dismo: Species Distribution
   Modeling_. R package version 1.3-14, <https://CRAN.R-project.org/package=dismo>.
+
+    Huang D, An Q, Huang S, Tan G, Quan H, Chen Y, Zhou J, Liao H. (2023). 
+  biomod2 modeling for predicting the potential ecological distribution of three Fritillaria species under climate change. 
+  _Scientific reports_, 13(1), 18801. https://doi.org/10.1038/s41598-023-45887-6
 
   Naimi B, Hamm Na, Groen TA, Skidmore AK, Toxopeus AG (2014). “Where is positional
   uncertainty a problem for species distribution modelling.” _Ecography_, *37*, 191-203.
