@@ -53,7 +53,7 @@ EcoNicheS works with specific libraries in R. You can visit the websites listed 
 - [rgbif]
 - [sf]
 - [rnaturalearthdata]
-- [spThin]
+- [spThin](https://cran.r-project.org/package=spThin)
 - [shinyjs]
 - [leaflet]
 - [DT]
@@ -234,7 +234,7 @@ CoordinateCleaner uses the metadata to clean the data, and one of these paramete
 > All the data generated will be saved on your device in the working directory. In this sub module the files are always .csv and the application will tell you if there was any problem that prevented their creation. If you are new to using EcoNicheS, we recommend that you explore the databases created by viewing them in their corresponding application so that you can more easily understand the data obtained and the differences between raw data and when it is unprocessed and filtered.
 
 ### Clean my own database 
-It is a second data cleaning option in case there are already other files with the points of presence to be processed, coming from different databases, whose metadata is not available to be processed from them. This is why the cleaning process here is carried out in cbo thanks to the spThin package, which allows us to eliminate duplicate data, and to achieve this, the file to be entered must be in .csv format, otherwise it will not be able to be processed.
+It is a second data cleaning option in case there are already other files with the points of presence to be processed, coming from different databases, whose metadata is not available to be processed from them. This is why the cleaning process here is carried out in thanks to the [spThin](https://nsojournals.onlinelibrary.wiley.com/doi/epdf/10.1111/ecog.01132) package (Aiello-Lammens et al., 2015), which allows us to eliminate duplicate data, and to achieve this, the file to be entered must be in .csv format, otherwise it will not be able to be processed.
 In order to process the data, it is essential that you enter the name of the column where the latitude data that makes up the occurrence data is found. The same should be done for the column with the lengths and the name of the species. Also, remember to enter the kilometers by which you want the data to be separated.
 
 <img width="1039" alt="Captura de pantalla 2024-07-20 a la(s) 11 10 37 a m" src="https://github.com/user-attachments/assets/38bd5b10-ddb9-4466-9ecd-6ce1f3c33840">
@@ -404,6 +404,8 @@ The creation of this package was made possible by the financial support provided
 
   ACS hosted Feature Layers FAQ_. (n.d.-a). ACS Hosted Feature Layers FAQ.
   https://acs-hosted-feature-layers-faq-esri.hub.arcgis.com/ 
+
+  Aiello-Lammens, M.E., Boria, R.A., Radosavljevic, A., Vilela, B. and Anderson, R.P. (2015), spThin: an R package for spatial thinning of species occurrence records for use in ecological niche models. Ecography, 38: 541-545. https://doi.org/10.1111/ecog.01132
 
   Cheng J, Schloerke B, Karambelkar B, Xie Y (2023). _leaflet: Create Interactive Web Maps
   with the JavaScript 'Leaflet' Library_. R package version 2.2.1,
