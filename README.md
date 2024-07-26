@@ -340,7 +340,7 @@ You can find the main results stored in a new folder stored in your working dire
 
 
 
-## Partial ROC Analysis
+## Seventh module: Partial ROC Analysis
 
 As mentioned above, one of the files needed to perform this analysis is part of the results above, but if you already have a Prediction Raster file, you can also upload it in .asc format. As mentioned above, one of the files needed to perform this analysis is part of the results above, but if you already have a Prediction Raster file, you can also upload it in .asc format.
 
@@ -356,24 +356,30 @@ As a result, in the main panel of the tab you will be able to display an inscrip
 
 
 
-## Remove urbanization
+## Eighth module: Remove urbanization
 
 For this part of the application you must have two raster files, the first must contain only the geographical data of urbanization within the potential distribution area of the study species, the second file must contain such a distribution map, thus, after running the analysis you will obtain an .asc file where said urbanization data was removed from the potential distribution area.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/37fe587e-37bf-4728-86ae-76c8c0eafda2)
 
-## Calculate area
+## Ninth module: Calculate area
 This tab allows you to obtain the area of suitability of the species of interest by uploading the .asc file created in the previous tab or an existing file if applicable. The Suitability Threshold value can be modified according to the appropriate value for your study and the only result consists of the legend obtained in the main panel of the tab as you can see below.
 
 <img width="474" alt="Captura de pantalla 2024-07-20 a la(s) 1 18 01 p m" src="https://github.com/user-attachments/assets/02fd1efa-fd4e-474f-a502-4ac357c2fe91">
 
 
 
-## Gains and losses plot
+## Tenth module: Gains and losses plot
 
 This tab requires two files, the only acceptable format of which is .asc. The first of these raster files must correspond to a file with the characteristics or geographical data of the area of interest. The second file corresponds to a future prediction of the conditions of the landscape.
 
 ![gains and losses 16 y 50 cn resultados](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/4c68a466-d6be-47c6-adb1-b9bd4df70638)
+
+## Eleventh module: ENMTools
+
+
+## Twelfth module: Connectivity
+
 
 -----
 
