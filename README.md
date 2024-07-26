@@ -266,7 +266,7 @@ This is an example of the expected results to be obtained. Results can be downlo
 
 ## Fifth module: Points and pseudoabsences
 
-Here, by uploading our previously edited .csv file and any of our .asc layers, as a result, in RStudio we will obtain a map that can be viewed in the files and graphics window, specifically in the Plot tab. 
+Here, using [dismo](https://cran.r-project.org/package=dismo) (Hijmans et al., 2023), by uploading our previously edited .csv file and any of our .asc layers, as a result, in RStudio we will obtain a map that can be viewed in the files and graphics window, specifically in the Plot tab. 
 
 In the example shown below, 1000000 was used as the number of random points, however the default value is 100, but it can be modified, so the appropriate number of points for our study can be indicated in the third box of the tab.
 
