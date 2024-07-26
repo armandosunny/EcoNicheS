@@ -342,19 +342,7 @@ You can find the main results stored in a new folder stored in your working dire
 
 ## Seventh module: Partial ROC Analysis
 
-As mentioned above, one of the files needed to perform this analysis is part of the results above, but if you already have a Prediction Raster file, you can also upload it in .asc format. As mentioned above, one of the files needed to perform this analysis is part of the results above, but if you already have a Prediction Raster file, you can also upload it in .asc format.
-
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/ffde883a-ae1e-4f15-a010-b7458eefd39d)
-
-Remember to press the action buttons only once, in addition, as with the biomod2 tab, in RStudio you can view the progress of the analysis according to the number of simulations that you indicate.
-
-![progress rstudio](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/96d82c16-1c6b-4e42-815a-ebad3317f49e)
-
-As a result, in the main panel of the tab you will be able to display an inscription, which describes the average values for the area under the curve obtained according to the number of simulations. A table with all the values is also displayed according to the number of simulations indicated, in our example that is why 501 entries are shown.
-
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/2959f0c8-bce7-4a51-8dcc-474107b690bb)
-
-
+As mentioned above, one of the files needed to perform this analysis is part of the results above, but if you already have a Prediction Raster file, you can also upload it in .asc format. Here, we use [ntbox](https://luismurao.github.io/ntbox/) to evaluate the niche modeling carried out.
 
 ## Eighth module: Remove urbanization
 
