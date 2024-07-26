@@ -365,6 +365,8 @@ This tab requires two files, the only acceptable format of which is .asc. The fi
 
 ## Eleventh module: ENMTools
 
+In this module we will explore Niche Modeling Analysis and niche overlap thanks to ENMTools. For such a task we need you to provide distribution data that includes presence points and pseudo-absences.
+
 ![image](https://github.com/user-attachments/assets/71df3801-9c22-4950-9c18-47eab7631338)
 
 ![image](https://github.com/user-attachments/assets/ea99504e-563f-46f3-aab0-6188f62ca0ab)
