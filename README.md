@@ -447,9 +447,7 @@ Hijmans R (2023). _raster: Geographic Data Analysis and Modeling_. R package ver
 Hijmans RJ, Phillips S, Leathwick J, Elith J (2023). _dismo: Species Distribution
   Modeling_. R package version 1.3-14, <https://CRAN.R-project.org/package=dismo>.
 
-    Huang D, An Q, Huang S, Tan G, Quan H, Chen Y, Zhou J, Liao H. (2023). 
-  biomod2 modeling for predicting the potential ecological distribution of three Fritillaria species under climate change. 
-  _Scientific reports_, 13(1), 18801. https://doi.org/10.1038/s41598-023-45887-6
+Huang D, An Q, Huang S, Tan G, Quan H, Chen Y, Zhou J, Liao H. (2023). biomod2 modeling for predicting the potential ecological distribution of three Fritillaria species under climate change. _Scientific reports_, 13(1), 18801. https://doi.org/10.1038/s41598-023-45887-6
 
   Naimi B, Hamm Na, Groen TA, Skidmore AK, Toxopeus AG (2014). “Where is positional
   uncertainty a problem for species distribution modelling.” _Ecography_, *37*, 191-203.
