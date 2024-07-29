@@ -62,16 +62,14 @@ EcoNicheS works with specific libraries in R. You can visit the websites listed 
 - [ntbox](https://github.com/luismurao/ntbox)
 - [gt](https://cran.r-project.org/web/packages/gt/index.html)
 - [tidyverse](https://cran.r-project.org/web/packages/tidyverse/index.html)
-- [gtExtras]
-- [MIAmaxent]
-- [shinyBS]
-- [leaflet.extras]
-- [geodata]
-- [viridis]
-- [ggthemes]
-- [sp]
-- [rgeos]
-- [gdistance]
+- [gtExtras](https://cran.r-project.org/web/packages/gtExtras/index.html)
+- [leaflet.extras](https://cran.r-project.org/web/packages/leaflet.extras/index.html)
+- [geodata](https://cran.r-project.org/web/packages/geodata/index.html)
+- [viridis](https://cran.r-project.org/web/packages/viridis/index.html)
+- [ggthemes](https://cran.r-project.org/web/packages/ggthemes/index.html)
+- [sp](https://cran.r-project.org/web/packages/sp/index.html)
+- [rgeos](https://cran.r-project.org/src/contrib/Archive/rgeos/)
+- [gdistance](https://cran.r-project.org/web/packages/gdistance/index.html)
 - [ENMGadgets](https://github.com/narayanibarve/ENMGadgets)
 
   
