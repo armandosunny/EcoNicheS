@@ -373,7 +373,7 @@ One of the central points of the module is the possibility of evaluating the nic
 
 ## Twelfth module: Connectivity
 
-In this module, the graphical interface allows access to the connectivity analyzes that can be performed with [rgeos](https://www.rdocumentation.org/packages/rgeos/versions/0.6-4) and [gdistance](https: //cgspace.cgiar.org/items/87e6fd8b-53ff-4d61-9581-8cc83272ff73).
+In this module, the graphical interface allows access to the connectivity analyzes that can be performed with [rgeos](https://www.rdocumentation.org/packages/rgeos/versions/0.6-4) and [gdistance](https://cgspace.cgiar.org/items/87e6fd8b-53ff-4d61-9581-8cc83272ff73).
 
 -----
 
