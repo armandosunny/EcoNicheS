@@ -428,7 +428,7 @@ The creation of this package was made possible by the financial support provided
 
   Fick, S.E. and R.J. Hijmans, 2017. WorldClim 2: new 1km spatial resolution climate surfaces for global land areas. International Journal of Climatology 37 (12): 4302-4315.
 
-GBIF: The Global Biodiversity Information Facility (year) What is GBIF?. Available from https://www.gbif.org/what-is-gbif [13 January 2020].
+GBIF.org (2024) *Data quality requirements: Occurrence datasets*. Available from [https://www.gbif.org/what-is-gbif](https://www.gbif.org/data-quality-requirements-occurrences#dcUncertainty) [28 July 2020].
 
   Hernangomez D (2023). tidyterra: tidyverse Methods and ggplot2 Helpers for terra
   Objects. <https://doi.org/10.5281/zenodo.6572471>,
