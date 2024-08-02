@@ -344,11 +344,11 @@ You can find the main results stored in a new folder stored in your working dire
 
 ## Seventh module: Partial ROC Analysis
 
-As mentioned above, one of the files needed to perform this analysis is part of the results above, but if you already have a Prediction Raster file, you can also upload it in .asc format. Here, we use [ntbox](https://luismurao.github.io/ntbox/) to evaluate the niche modeling carried out.
+As mentioned above, one of the files needed to perform this analysis is part of the results above, but if you already have a Prediction Raster file, you can also upload it in .asc format. Here, we use [ntbox](https://luismurao.github.io/ntbox/) (Osorio-Olvera et al., 2020) to evaluate the niche modeling carried out.
 
 ## Eighth module: Remove urbanization
 
-For this part of the application you must have two raster files, the first must contain only the geographical data of urbanization within the potential distribution area of the study species, the second file must contain such a distribution map, thus, after running the analysis you will obtain an .asc file where said urbanization data was removed from the potential distribution area.
+For this part of the application you must have two raster files, the first must contain only the geographical data of urbanization within the potential distribution area of the study species, the second file must contain such a distribution map, thus, after running the analysis you will obtain an .asc file where said urbanization data was removed from the potential distribution area. In this same section it is possible to view the loaded maps and the result of removing the geographical area provided.
 
 ![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/37fe587e-37bf-4728-86ae-76c8c0eafda2)
 
