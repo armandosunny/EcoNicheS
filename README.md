@@ -32,7 +32,8 @@ In addition to having installed [R](https://cran.rstudio.com/) and [RStudio](htt
 ### Packages EcoNicheS depends on
 ##### For the correct functioning of EcoNiches it is necessary to update all the packages installed in R with the following command: update.packages(ask = FALSE, checkBuilt = TRUE)
 
-EcoNicheS works with specific libraries in R. You can visit the websites listed below to obtain the required packages. If in this section or when running the command to open the application there is a problem regarding the failure to install any of the libraries, please refer to the [**Problems installing packages**]
+EcoNicheS works with specific libraries in R. You can visit the websites listed below to obtain the required packages. If in this section or when running the command to open the application there is a problem regarding the failure to install any of the libraries, please refer to the [**Problems installing packages**](![image](https://github.com/user-attachments/assets/f4fdd0df-06a1-4850-a194-730329d0e9d6)
+)
 
 - [shiny](https://CRAN.R-project.org/package=shiny) 
 - [terra](https://cran.r-project.org/package=terra) 
