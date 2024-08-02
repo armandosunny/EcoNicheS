@@ -203,16 +203,19 @@ By country, the data can be delimited in the same way or using .asc files to mor
 
 <img width="941" alt="Captura de pantalla 2024-07-20 a la(s) 1 03 03 p m" src="https://github.com/user-attachments/assets/08c1ba6b-9a01-4e3d-ad57-4347e16c789e">
 
-> [!CAUTION]
-> In order to use your databases, the _.csv base file_ must have the _name of the species listed in the first column_, followed by _longitude (X)_ in the second column, and _latitude (Y)_ in the third column as seen below. _Editing your database respecting lowercase and uppercase letters is essential for the analysis to proceed_.
-
-<img width="528" alt="Captura de pantalla 2024-07-20 a la(s) 12 16 08 p m" src="https://github.com/user-attachments/assets/cd9ef681-0136-4d28-8a02-77297a7f62ed">
 
 ## Second module: Obtaining and cleaning species occurrences
 
 The first step to perform niche modeling analysis is to obtain the recorded occurrences of the species of interest. Using EcoNicheS this is achieved by downloading documents with this information from the Global Biodiversity Information Facility (GBIF, [gbif.org](https://www.gbif.org/)), one of the large biodiversity databases. Geographic distribution data must be processed before analysis. In EcoNicheS the processing can occur through two phases represented in two different submodules in this section, below you will find more details.
 
 <img width="1042" alt="Captura de pantalla 2024-07-20 a la(s) 10 45 19 a m" src="https://github.com/user-attachments/assets/de93c123-0d3d-4bda-8e77-3e7f5cfa6cda">
+
+
+> [!CAUTION]
+> In order to use your databases, the _.csv base file_ must have the _name of the species listed in the first column_, followed by _longitude (X)_ in the second column, and _latitude (Y)_ in the third column as seen below. _Editing your database respecting lowercase and uppercase letters is essential for the analysis to proceed_.
+
+<img width="528" alt="Captura de pantalla 2024-07-20 a la(s) 12 16 08 p m" src="https://github.com/user-attachments/assets/cd9ef681-0136-4d28-8a02-77297a7f62ed">
+
 
 ### Get and Clean GBIF data
 
