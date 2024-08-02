@@ -82,10 +82,9 @@ To ensure smooth workflow in RStudio, it is crucial to define the working direct
 ### MAXENT model
 One of the EcoNicheS tabs bases its analyzes on [biomod2](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#biomod2) (Thuiller et al., 2024), which in turn uses different models to perform the ecological niche modeling analysis. One of these models is [MAXENT](https://biodiversityinformatics.amnh.org/open_source/maxent/) (Steven et al., [Internet]), which requires the prior download of 3 files so that the analysis with it can be carried out, so, if it is selected, prior to the analysis ensure that the working directory includes all the necessary files for running this model: [MAXENT](https://doi.org/10.6084/m9.figshare.24980664.v1).
 
-<img width="525" alt="Captura de pantalla 2024-07-20 a la(s) 11 57 34 a m" src="https://github.com/user-attachments/assets/c8d3406c-bb3e-4d95-87f8-797bb5afa630">
-
-
 If you are not familiar with biomod2, in its corresponding section in this manual you will know how to use it with EcoNicheS but it is important that you have the mentioned files from the beginning to ensure that there will be no problems when you use this tab.
+
+<img width="525" alt="Captura de pantalla 2024-07-20 a la(s) 11 57 34 a m" src="https://github.com/user-attachments/assets/c8d3406c-bb3e-4d95-87f8-797bb5afa630">
 
 -----
 
@@ -108,7 +107,6 @@ install.packages("https://cran.r-project.org/src/contrib/Archive/maptools/maptoo
 
 ##Install the  ENMGadgets
 
-
 if (!require('devtools')) install.packages('devtools')
 
 library(devtools)
@@ -124,7 +122,6 @@ library(devtools)
 install_github("danlwarren/ENMTools")
 
 library(ENMTools)
-
 
 ##Install the  ntbox
 
@@ -164,19 +161,12 @@ shinyApp(ui = ui, server = server)
 
 # Learning how to use EcoNicheS
 
-To know and understand in detail the functions that EcoNicheS offers and the results that we can obtain from them, we invite you to learn about the application through this manual. The documents and databases necessary to be able to use each of the EcoNicheS functions are available [here].
-
-In order to use your databases, the _.csv base file_ must have the _name of the species listed in the first column_, followed by _longitude (X)_ in the second column, and _latitude (Y)_ in the third column as seen below. _Editing your database respecting lowercase and uppercase letters is essential for the analysis to proceed_.
-
-<img width="528" alt="Captura de pantalla 2024-07-20 a la(s) 12 16 08 p m" src="https://github.com/user-attachments/assets/cd9ef681-0136-4d28-8a02-77297a7f62ed">
+To know and understand in detail the functions that EcoNicheS offers and the results that we can obtain from them, we invite you to learn about the application through this manual. You can also learn more about the application and its scope in the report published about it [here].
 
 
 -----
 
 # Exploring EcoNicheS features
-
-
-
 
 EcoNicheS is an interactive web application that consists of 12 modules: **[Environmental Data](https://github.com/armandosunny/EcoNicheS?tab=readme-ov-file#first-module-environmental-data), [Occurrence processing](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#second-module-obtaining-and-cleaning-species-occurrences), [Load and Plot Maps (2x)](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#third-module-load-and-plot-maps), [Correlation layers](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#fourth-module-correlation-analysis-between-asc-layers), [Points and pseudoabsences](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#fifth-module-points-and-pseudoabsences), [biomod2](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#sixth-module-biomod2), [Partial ROC Analysis](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#seventh-module-partial-roc-analysis), [Remove urbanization](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#eighth-module-remove-urbanization), [Calculate area](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#ninth-module-calculate-area), [Gains and Losses Plot](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#tenth-module-gains-and-losses-plot), [ENMTools](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#eleventh-module-enmtools), and [Connectivity](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#twelfth-module-connectivity)**. 
 
@@ -212,6 +202,11 @@ By country, the data can be delimited in the same way or using .asc files to mor
 <img width="1045" alt="Captura de pantalla 2024-07-20 a la(s) 10 32 36 a m" src="https://github.com/user-attachments/assets/ed35fc53-250f-44b7-8557-b4b22d6cd704">
 
 <img width="941" alt="Captura de pantalla 2024-07-20 a la(s) 1 03 03 p m" src="https://github.com/user-attachments/assets/08c1ba6b-9a01-4e3d-ad57-4347e16c789e">
+
+> [!CAUTION]
+> In order to use your databases, the _.csv base file_ must have the _name of the species listed in the first column_, followed by _longitude (X)_ in the second column, and _latitude (Y)_ in the third column as seen below. _Editing your database respecting lowercase and uppercase letters is essential for the analysis to proceed_.
+
+<img width="528" alt="Captura de pantalla 2024-07-20 a la(s) 12 16 08 p m" src="https://github.com/user-attachments/assets/cd9ef681-0136-4d28-8a02-77297a7f62ed">
 
 ## Second module: Obtaining and cleaning species occurrences
 
@@ -265,7 +260,12 @@ This is an example of the expected results to be obtained. Results can be downlo
 
 ## Fifth module: Points and pseudoabsences
 
-Here, using [dismo](https://cran.r-project.org/package=dismo) (Hijmans et al., 2023), by uploading our previously edited .csv file and any of our .asc layers, as a result, points that correspond to the "pseudo-absences" will be generated, those will serve as a background and are necessary for ecological niche modeling. 
+Here, using [dismo](https://cran.r-project.org/package=dismo) (Hijmans et al., 2023), by uploading our previously edited .csv file* and any of our .asc layers, as a result, points that correspond to the "pseudo-absences" will be generated, those will serve as a background and are necessary for ecological niche modeling. 
+
+> [!CAUTION]
+> *In order to use your databases, the _.csv base file_ must have the _name of the species listed in the first column_, followed by _longitude (X)_ in the second column, and _latitude (Y)_ in the third column as seen below. _Editing your database respecting lowercase and uppercase letters is essential for the analysis to proceed_.
+
+<img width="528" alt="Captura de pantalla 2024-07-20 a la(s) 12 16 08 p m" src="https://github.com/user-attachments/assets/cd9ef681-0136-4d28-8a02-77297a7f62ed">
 
 In the example shown below, 1000000 was used as the number of random points, however the default value is 100, but it can be modified, so the appropriate number of points for our study can be indicated in the third box of the tab.
 
