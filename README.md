@@ -399,7 +399,7 @@ In this module, the graphical interface allows access to the connectivity analyz
 
 #### Please cite as:
 
-Marmolejo C, Bolom-Huet R, López-Vidal R, Díaz-Sánchez LE, Sunny A (2024). EcoNicheS: Empowering Ecological Niche Modeling Analysis with Shinydashboard and R Package. GitHub. https://github.com/armandosunny/EcoNicheS
+Marmolejo C, Bolom-Huet R, López-Vidal R, Sunny A (2024). EcoNicheS: Empowering Ecological Niche Modeling Analysis with Shinydashboard and R Package. GitHub. https://github.com/armandosunny/EcoNicheS
 
 
 # Acknowledgements
