@@ -139,6 +139,8 @@ run_ntbox()
 
 # Install the  EcoNicheS
 
+library(devtools)
+
 install_github('armandosunny/EcoNicheS')
 
 library(EcoNicheS)
