@@ -156,6 +156,7 @@ options(shiny.maxRequestSize = 6000*1024^2)
 library(EcoNicheS)
 shinyApp(ui = ui, server = server)
 ```
+"If you are unable to install EcoNicheS, please download the EcoNicheS.R file, open it in a text editor, and run it directly in the R console. We apologize for the inconvenience of not being able to run the command directly from GitHub at this time, but we are working to resolve the issue as soon as possible."
 
 <img width="1040" alt="Captura de pantalla 2024-07-20 a la(s) 11 43 54 a m" src="https://github.com/user-attachments/assets/a6686116-989d-4bc6-82cf-623ca2c54c95">
 
