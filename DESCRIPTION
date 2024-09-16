@@ -51,6 +51,11 @@ Imports:
     ggthemes,
     sp,
     rgeos,
-    gdistance
+    gdistance,
+    foreach,
+    doParallel,
+    gdistance,
+    raster,
+    progress
 
  
