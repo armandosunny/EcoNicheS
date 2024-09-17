@@ -394,7 +394,7 @@ Landscape connectivity refers to the degree to which an environment facilitates 
 
 -López-Vidal R: Provided valuable assistance with server management and website interface design, enhancing the overall user experience.
 
--Díaz-Sánchez LE and Armando Sunny: Offered financial support, enabling the successful realization of the project.
+-Armando Sunny: Offered financial support, enabling the successful realization of the project.
 
 
   
