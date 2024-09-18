@@ -418,6 +418,8 @@ PrePrint: https://www.researchgate.net/publication/384102957_EcoNicheS_enhancing
 
 The creation of this package was made possible by the financial support provided by the Secretary of Research and Advanced Studies (SYEA) of the Universidad Autónoma del Estado de México (Grants to AS: 4732/2019CIB and 6801/2022CID), SEP (Grant to AS: PRODEP 511/2022-5401) and CONACYT (Grant to AS: FOINS 6828/2017). A.S: Adahy Olun Contreras-García yo nunca te abandoné, estoy haciendo todo para que la justicia mexicana me permita volver a estar contigo, pero es un proceso muy lento, te extraño mucho.
     </div>
+
+
 # References
 
   ACS hosted Feature Layers FAQ_. (n.d.-a). ACS Hosted Feature Layers FAQ.
