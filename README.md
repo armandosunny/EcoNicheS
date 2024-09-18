@@ -345,6 +345,8 @@ You can find the main results stored in a new folder stored in your working dire
 
 ![Figure 3](https://github.com/user-attachments/assets/3d9100a2-70e5-4cec-9f77-a40e9772883a)
 
+![Figure 4](https://github.com/user-attachments/assets/cea351a9-1b11-488b-826c-3b0bc1199286)
+
 
 ## Seventh module: Partial ROC Analysis
 
