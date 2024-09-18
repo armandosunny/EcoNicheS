@@ -378,10 +378,17 @@ One of the central points of the module is the possibility of evaluating the nic
 
 ![image](https://github.com/user-attachments/assets/ea99504e-563f-46f3-aab0-6188f62ca0ab)
 
+![Figure 5](https://github.com/user-attachments/assets/0415371a-ebc2-477d-937a-e1ac0fe861a1)
+
+![Figure 6](https://github.com/user-attachments/assets/398f928f-078e-4ddb-bd4b-7e99ebb96d55)
+
 
 ## Twelfth module: Connectivity
 
 Landscape connectivity refers to the degree to which an environment facilitates or impedes the movement of organisms between different locations (Taylor et al., 1993; Tischendorf and Fahrig, 2000). In EcoNiches, users can generate ecological connectivity models by creating flow maps. The connectivity analysis uses habitat suitability as a resistance surface and employs conductance analysis through the gdistance package (van Etten, 2017). Users need species occurrence data and a resistance raster, which may contain species distribution model data or landscape elements with resistance values. The module splits the data into 80% for training and 20% for testing (Joseph, 2022). The resulting flow maps integrate least-cost path analysis and Circuitscape-type analyses to evaluate potential connectivity, identifying the shortest possible paths between locations within the area of interest. [rgeos](https://www.rdocumentation.org/packages/rgeos/versions/0.6-4) and [gdistance](https://cgspace.cgiar.org/items/87e6fd8b-53ff-4d61-9581-8cc83272ff73).
+
+![Figure 7](https://github.com/user-attachments/assets/30a78685-85bb-4af0-bbe1-0a118af26132)
+
 
 -----
 
@@ -405,6 +412,7 @@ Landscape connectivity refers to the degree to which an environment facilitates 
 
 Marmolejo C, Bolom-Huet R, López-Vidal R, Sunny A (2024). EcoNicheS: Empowering Ecological Niche Modeling Analysis with Shinydashboard and R Package. GitHub. https://github.com/armandosunny/EcoNicheS
 
+PrePrint: https://www.researchgate.net/publication/384102957_EcoNicheS_enhancing_ecological_niche_modeling_niche_overlap_and_connectivity_analysis_using_shiny_dashboard_and_R_Package?fbclid=IwY2xjawFXfb9leHRuA2FlbQIxMAABHauZ1MBdUJwF5Y5yEYuQN_pYOFEo-IrskTm5qd2sL98L7BLkZ4ZnDud4bA_aem_9xjG7BpvsrOS7WHG-IU9rQ
 
 # Acknowledgements
 
