@@ -383,7 +383,7 @@ As mentioned above, one of the files needed to perform this analysis is part of 
 
 ## Eighth module: Remove urbanization
 
-For this part of the application you must have two raster files, the first must contain only the geographical data of urbanization within the potential distribution area of the study species, the second file must contain such a distribution map, thus, after running the analysis you will obtain an .asc file where said urbanization data was removed from the potential distribution area. In this same section it is possible to view the loaded maps and the result of removing the geographical area provided.
+For this part of the application you must have two raster files, the first must contain only the geographical data of urbanization within the potential distribution area of the study species, the second file must contain such a distribution map, thus, after running the analysis you will obtain an .asc file where said urbanization data was removed from the potential distribution area. In this same section it is possible to view the loaded maps and the result of removing the geographical area provided. Note: Likewise, you can remove any other layer, this module deletes the data from one layer to the other layer.
 
 <img width="1055" alt="Captura de pantalla 2024-09-22 a la(s) 12 57 19 p m" src="https://github.com/user-attachments/assets/156305a9-ddb3-4cc5-a865-f61bb0f2ee52">
 
