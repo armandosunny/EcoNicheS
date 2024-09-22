@@ -561,7 +561,8 @@ Centro de Investigación en Ciencias Biológicas Aplicadas.
 
 Centro de Innovación Digital "Mandra" Laboratorio Nacional de SuperCómputo, CONAHCYT-Facultad de Ciencias, UAEMex.
 
-<img width="871" alt="Captura de pantalla 2024-09-22 a la(s) 9 11 09 a m" src="https://github.com/user-attachments/assets/dfa6664a-88cf-408f-a410-dad7b11568c1">
+<img width="871" alt="Captura de pantalla 2024-09-22 a la(s) 9 15 13 a m" src="https://github.com/user-attachments/assets/41890ef3-0cb4-4060-bc3d-dd764be96cdf">
+
 
 
 
