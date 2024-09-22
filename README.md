@@ -557,9 +557,12 @@ library(rgdal)
 ![Done](https://github.com/armandosunny/EcoNicheS/assets/25662791/dda83dc8-bd73-45e2-9081-9076a3edd63f)
 
 -----
+# Centro de Investigación en Ciencias Biológicas Aplicadas.
 
-Centro de Investigación en Ciencias Biológicas Aplicadas.
+# Centro de Innovación Digital "Mandra" Laboratorio Nacional de SuperCómputo, CONAHCYT-Facultad de Ciencias, UAEMex.
 
-Centro de Innovación Digital "Mandra" Laboratorio Nacional de SuperCómputo, CONAHCYT-Facultad de Ciencias, UAEMex.
+<img width="871" alt="Captura de pantalla 2024-09-22 a la(s) 9 11 09 a m" src="https://github.com/user-attachments/assets/dfa6664a-88cf-408f-a410-dad7b11568c1">
 
-<img width="734" alt="Captura de pantalla 2024-09-22 a la(s) 8 40 22 a m" src="https://github.com/user-attachments/assets/89f0259a-0cff-497f-99ae-7d44925fa2e9">
+
+
+
