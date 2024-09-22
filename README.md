@@ -458,7 +458,7 @@ Landscape connectivity refers to the degree to which an environment facilitates 
 
 -Clere Marmolejo, Bolom-Huet R and Armando Sunny: Contributed to the comprehensive function documentation, ensuring clarity and usability.
 
--López-Vidal R: Provided valuable assistance with server management and website interface design, enhancing the overall user experience.
+-López-Vidal R: Provided valuable assistance with server management and website interface design, enhancing the overall user experience. (It will soon be available in the internet browser on the Mandra website.)
 
 -Armando Sunny: Offered financial support, enabling the successful realization of the project.
 
