@@ -315,8 +315,8 @@ Next, the display of the button to load the appropriate .asc layers after clicki
 
 <img width="864" alt="Captura de pantalla 2024-09-22 a la(s) 7 44 07 a m" src="https://github.com/user-attachments/assets/b3aed45f-7c01-4782-84ba-1676bfef2dbd">
 
+<img width="864" alt="Captura de pantalla 2024-09-22 a la(s) 7 48 07 a m" src="https://github.com/user-attachments/assets/cc237f00-9091-4dde-a9eb-b629d601db6d">
 
-<img width="868" alt="Captura de pantalla 2024-09-22 a la(s) 7 39 43 a m" src="https://github.com/user-attachments/assets/9b772894-f56e-46a1-a5ad-58fa794e5fa3">
 
 
 Finally, after selecting the data split percentage and the Threshold value, in the second evaluation metrics selection box we can choose the consensus model to perform the analysis. Continuing with our example, we select TSS.
