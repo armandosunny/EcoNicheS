@@ -405,7 +405,10 @@ This tab requires two files, the only acceptable format of which is .asc. The fi
 In this module we will explore Niche Modeling Analysis and niche overlap thanks to [ENMTools](https://github.com/danlwarren/ENMTools) (Warren et al., 2021). For such a task we need you to provide distribution data that includes presence points and pseudo-absences. In this section multiple models can be built using the spatial distribution information and environmental layers relevant to each study (the same data are required in the biomod2 module).
 One of the central points of the module is the possibility of evaluating the niche overlap of two different species, resulting in maps and graphs for this purpose. Likewise, it is possible to build niche modeling for both species if desired, otherwise the answer marked as default in the corresponding section must be changed to indicate that only one species should be analyzed, which would be species 1. 
 
-![image](https://github.com/user-attachments/assets/71df3801-9c22-4950-9c18-47eab7631338)
+
+<img width="969" alt="Captura de pantalla 2024-09-22 a la(s) 9 39 19 a m" src="https://github.com/user-attachments/assets/e678d5f1-b5f5-49fa-9da5-3de857340730">
+
+
 
 ![image](https://github.com/user-attachments/assets/ea99504e-563f-46f3-aab0-6188f62ca0ab)
 
