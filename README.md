@@ -412,9 +412,10 @@ Landscape connectivity refers to the degree to which an environment facilitates 
 
 #### Please cite as:
 
-Marmolejo C, Bolom-Huet R, López-Vidal R, Sunny A (2024). EcoNicheS: Empowering Ecological Niche Modeling Analysis with Shinydashboard and R Package. GitHub. https://github.com/armandosunny/EcoNicheS
+Marmolejo C, Bolom-Huet R, López-Vidal R, Sunny A (2024). EcoNicheS: enhancing ecological niche modeling, niche overlap and connectivity analysis using shiny dashboard and R Package. GitHub. https://github.com/armandosunny/EcoNicheS
 
-PrePrint: https://www.researchgate.net/publication/384102957_EcoNicheS_enhancing_ecological_niche_modeling_niche_overlap_and_connectivity_analysis_using_shiny_dashboard_and_R_Package?fbclid=IwY2xjawFXfb9leHRuA2FlbQIxMAABHauZ1MBdUJwF5Y5yEYuQN_pYOFEo-IrskTm5qd2sL98L7BLkZ4ZnDud4bA_aem_9xjG7BpvsrOS7WHG-IU9rQ
+
+Sunny, A., Marmolejo, C., López-Vidal, R., Falconi-Briones, F., & Bolom-Huet, R. (2024). EcoNicheS: enhancing ecological niche modeling, niche overlap and connectivity analysis using shiny dashboard and R Package. PrePrint: https://www.researchgate.net/publication/384102957_EcoNicheS_enhancing_ecological_niche_modeling_niche_overlap_and_connectivity_analysis_using_shiny_dashboard_and_R_Package?fbclid=IwY2xjawFXfb9leHRuA2FlbQIxMAABHauZ1MBdUJwF5Y5yEYuQN_pYOFEo-IrskTm5qd2sL98L7BLkZ4ZnDud4bA_aem_9xjG7BpvsrOS7WHG-IU9rQ
 
 # Acknowledgements
 
