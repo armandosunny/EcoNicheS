@@ -429,6 +429,9 @@ One of the central points of the module is the possibility of evaluating the nic
 
 <img width="955" alt="Captura de pantalla 2024-09-22 a la(s) 9 51 59 a m" src="https://github.com/user-attachments/assets/f161d2fe-3b20-450b-9667-f4b18da5fc17">
 
+<img width="1052" alt="Captura de pantalla 2024-09-22 a la(s) 1 29 04 p m" src="https://github.com/user-attachments/assets/9b445771-fa21-4067-b9f9-2066aef7c891">
+
+
 <img width="961" alt="Captura de pantalla 2024-09-22 a la(s) 10 08 44 a m" src="https://github.com/user-attachments/assets/6a1c9da0-ee26-4473-aeb9-f4e514060079">
 
 
