@@ -307,7 +307,8 @@ Multiple models can be selected to perform this analysis depending on your needs
 
 Next, the display of the button to load the appropriate .asc layers after clicking on the "Load .asc layers" button is the second sign that our .csv database was loaded correctly, otherwise we will not observe the appearance of this option window.
 
-![select  asc files biomod2](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/6186fb94-64b3-4a92-a9ee-c744344418a9)
+
+<img width="862" alt="Captura de pantalla 2024-09-22 a la(s) 7 28 58 a m" src="https://github.com/user-attachments/assets/91c7e2b9-eaa2-465d-b718-5b8e88fc065f">
 
 
 [biomod2](https://biomodhub.github.io/biomod2/) is a library that allows the analysis of species distribution through 10 models: GLM, GBM, GAM, CTA, ANN, SRE, FDA, RF, MAXENT and MAXNET, that is, it is an ensemble analysis method, so, multiple models can be selected for analysis execution (Huang et al., 2023). For the example shown in this manual through images and databases, all available models were selected (Thuiller et al., 2024). 
