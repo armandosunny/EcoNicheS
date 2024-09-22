@@ -295,7 +295,7 @@ For more information, you can consult the biomod2 page:https://biomodhub.github.
 
 ![SCHEMA_BIOMOD2_WORKFLOW_functions](https://github.com/user-attachments/assets/0ad6d12a-66b7-4934-afc1-e014caac3dd9)
 
-####Figure showing how biomod2 works taken from the biomod2 page: https://biomodhub.github.io/biomod2/index.html
+Thhis figure showing how biomod2 works was taken from the biomod2 page:https://biomodhub.github.io/biomod2/index.html
 
 
 For this module to work well, it is necessary to have the maxent files in the same folder where the .asc layers and the database with the presences and pseudo-absences of the species to be analyzed are located.
