@@ -313,7 +313,8 @@ Next, the display of the button to load the appropriate .asc layers after clicki
 
 [biomod2](https://biomodhub.github.io/biomod2/) is a library that allows the analysis of species distribution through 14 models: GLM, GBM, GAM, CTA, ANN, SRE, FDA, RF, MAXENT,  MAXNET, that is, it is an ensemble analysis method, so, multiple models can be selected for analysis execution (Huang et al., 2023). For the example shown in this manual through images and databases, all available models were selected (Thuiller et al., 2024). 
 
-<img width="1039" alt="Captura de pantalla 2024-09-22 a la(s) 7 32 35 a m" src="https://github.com/user-attachments/assets/44b224fd-9842-4418-ae09-07fdab3aeba2">
+<img width="864" alt="Captura de pantalla 2024-09-22 a la(s) 7 44 07 a m" src="https://github.com/user-attachments/assets/b3aed45f-7c01-4782-84ba-1676bfef2dbd">
+
 
 <img width="868" alt="Captura de pantalla 2024-09-22 a la(s) 7 39 43 a m" src="https://github.com/user-attachments/assets/9b772894-f56e-46a1-a5ad-58fa794e5fa3">
 
