@@ -289,8 +289,8 @@ Thus, the database with the coordinates of our species now consists of 5 columns
 
 
 ## Sixth module: biomod2
-
-For more information, you can consult the biomod2 page:https://biomodhub.github.io/biomod2/index.html
+> [!IMPORTANT]
+> For more information, you can consult the biomod2 page:https://biomodhub.github.io/biomod2/index.html
 
 ![SCHEMA_BIOMOD2_WORKFLOW_functions](https://github.com/user-attachments/assets/0ad6d12a-66b7-4934-afc1-e014caac3dd9)
 
