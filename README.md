@@ -322,7 +322,8 @@ Next, the display of the button to load the appropriate .asc layers after clicki
 
 <img width="864" alt="Captura de pantalla 2024-09-22 a la(s) 7 44 07 a m" src="https://github.com/user-attachments/assets/b3aed45f-7c01-4782-84ba-1676bfef2dbd">
 
-<img width="864" alt="Captura de pantalla 2024-09-22 a la(s) 7 48 07 a m" src="https://github.com/user-attachments/assets/cc237f00-9091-4dde-a9eb-b629d601db6d">
+
+<img width="1052" alt="Captura de pantalla 2024-09-22 a la(s) 1 44 31 p m" src="https://github.com/user-attachments/assets/57ecbd35-9f00-44c8-a017-8cf39a010ee7">
 
 
 
