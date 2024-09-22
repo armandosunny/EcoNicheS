@@ -340,14 +340,22 @@ Once the analysis begins, in the RStudio console it is possible to view its prog
 
 After pressing the button to start the analysis it is a good idea to move to the second sub-tab of the main panel, model output. When the analyzes are finished, here you will be able to see various values and evaluation results of the models.
 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/4c7f1533-d873-4d53-8335-b454407cb9a0)
+<img width="865" alt="Captura de pantalla 2024-09-22 a la(s) 8 10 36 a m" src="https://github.com/user-attachments/assets/36a50e9a-3e48-430b-b20d-01bffa289a7d">
+
 
 Having the previous results, you can also go to the other sub-tabs to observe the performance of the models, so you can interpret the results through the graphs that you will find in the last three sub-tabs.
 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/fff1293b-2fcc-42b4-9f84-37922b11b1a0)
+<img width="865" alt="Captura de pantalla 2024-09-22 a la(s) 8 10 40 a m" src="https://github.com/user-attachments/assets/38089c3f-c26e-44d9-8ceb-fca18d5d5b96">
+
+<img width="865" alt="Captura de pantalla 2024-09-22 a la(s) 8 10 45 a m" src="https://github.com/user-attachments/assets/3641f02f-6d5d-435f-a333-5a528d86d074">
+
+
+
 
 Finally, you can view in the last sub-tab the plots of the response curves of each of the models applied to each of the .asc layers according to the number of runs or repetitions.
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/d52df7d6-c644-4658-8d55-c485d78283cb)
+
+<img width="865" alt="Captura de pantalla 2024-09-22 a la(s) 8 10 48 a m" src="https://github.com/user-attachments/assets/f837e9b3-59c8-45c1-923a-9934138d28d0">
+
 
 You can find the main results stored in a new folder stored in your working directory at the end of the analysis, which will be named with the name of the species of your analysis. Inside you can find another folder, proj_Current, here you will find the .tif file necessary to continue with the workflow in the next EcoNicheS tab.
 
