@@ -462,7 +462,8 @@ Landscape connectivity refers to the degree to which an environment facilitates 
 
 -Armando Sunny: Offered financial support, enabling the successful realization of the project.
 
-<img width="839" alt="Captura de pantalla 2024-09-22 a la(s) 2 15 51 p m" src="https://github.com/user-attachments/assets/5d63e331-388e-4bcb-af65-2a9ce5e8cd2a">
+<img width="839" alt="Captura de pantalla 2024-09-22 a la(s) 2 17 09 p m" src="https://github.com/user-attachments/assets/abe5940d-ccce-4273-8475-af71ebe63033">
+
 
   
 # Citation
