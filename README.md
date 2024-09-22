@@ -72,6 +72,7 @@ EcoNicheS works with specific libraries in R. You can visit the websites listed 
 - [rgeos](https://cran.r-project.org/src/contrib/Archive/rgeos/)
 - [gdistance](https://cran.r-project.org/web/packages/gdistance/index.html)
 - [ENMGadgets](https://github.com/narayanibarve/ENMGadgets)
+- [mda](https://cran.r-project.org/web/packages/mda/index.html)
 
   
   
