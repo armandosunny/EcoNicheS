@@ -144,8 +144,6 @@ library(devtools)
 
 install_github('armandosunny/EcoNicheS')
 
-library(EcoNicheS)
-
 
 ```
 # To open the shiny GUI application:
