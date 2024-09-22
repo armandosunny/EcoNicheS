@@ -293,6 +293,11 @@ Thus, the database with the coordinates of our species now consists of 5 columns
 
 For more information, you can consult the biomod2 page:https://biomodhub.github.io/biomod2/index.html
 
+![SCHEMA_BIOMOD2_WORKFLOW_functions](https://github.com/user-attachments/assets/0ad6d12a-66b7-4934-afc1-e014caac3dd9)
+
+####Figure showing how biomod2 works taken from the biomod2 page: https://biomodhub.github.io/biomod2/index.html
+
+
 For this module to work well, it is necessary to have the maxent files in the same folder where the .asc layers and the database with the presences and pseudo-absences of the species to be analyzed are located.
 
 <img width="752" alt="Captura de pantalla 2024-07-20 a la(s) 3 24 11 p m" src="https://github.com/user-attachments/assets/39d263ff-b80d-4e7f-a057-cf891920dc40">
