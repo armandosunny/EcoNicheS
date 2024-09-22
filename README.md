@@ -423,10 +423,6 @@ One of the central points of the module is the possibility of evaluating the nic
 <img width="961" alt="Captura de pantalla 2024-09-22 a la(s) 10 08 44 a m" src="https://github.com/user-attachments/assets/6a1c9da0-ee26-4473-aeb9-f4e514060079">
 
 
-![Figure 5](https://github.com/user-attachments/assets/0415371a-ebc2-477d-937a-e1ac0fe861a1)
-
-![Figure 6](https://github.com/user-attachments/assets/398f928f-078e-4ddb-bd4b-7e99ebb96d55)
-
 
 ## Twelfth module: Connectivity
 
