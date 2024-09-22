@@ -387,6 +387,11 @@ For this part of the application you must have two raster files, the first must 
 
 <img width="1055" alt="Captura de pantalla 2024-09-22 a la(s) 12 57 19 p m" src="https://github.com/user-attachments/assets/156305a9-ddb3-4cc5-a865-f61bb0f2ee52">
 
+Result 
+
+<img width="1046" alt="Captura de pantalla 2024-09-22 a la(s) 1 02 05 p m" src="https://github.com/user-attachments/assets/79f93e29-050a-409f-b25d-c46c3792888d">
+
+
 
 ## Ninth module: Calculate area
 This tab allows you to obtain the area of suitability of the species of interest by uploading the .asc file created in the previous tab or an existing file if applicable. The Suitability Threshold value can be modified according to the appropriate value for your study and the only result consists of the legend obtained in the main panel of the tab as you can see below.
