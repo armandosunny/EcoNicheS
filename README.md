@@ -370,6 +370,10 @@ You can find the main results stored in a new folder stored in your working dire
 
 As mentioned above, one of the files needed to perform this analysis is part of the results above, but if you already have a Prediction Raster file, you can also upload it in .asc format. Here, we use [ntbox](https://luismurao.github.io/ntbox/) (Osorio-Olvera et al., 2020) to evaluate the niche modeling carried out.
 
+<img width="1046" alt="Captura de pantalla 2024-09-22 a la(s) 8 21 52 a m" src="https://github.com/user-attachments/assets/4058dcaf-3c59-4524-b7cc-18178072804e">
+
+
+
 ## Eighth module: Remove urbanization
 
 For this part of the application you must have two raster files, the first must contain only the geographical data of urbanization within the potential distribution area of the study species, the second file must contain such a distribution map, thus, after running the analysis you will obtain an .asc file where said urbanization data was removed from the potential distribution area. In this same section it is possible to view the loaded maps and the result of removing the geographical area provided.
