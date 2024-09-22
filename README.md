@@ -322,7 +322,8 @@ Next, the display of the button to load the appropriate .asc layers after clicki
 Finally, after selecting the data split percentage and the Threshold value, in the second evaluation metrics selection box we can choose the consensus model to perform the analysis. Continuing with our example, we select TSS.
 In addition, you can also modify the values of the data split percentage and the number of repetitions according to the parameters necessary for your study.
 
-![upload](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/4122a56b-6eea-4085-bea2-ec1630499644)
+
+<img width="579" alt="Captura de pantalla 2024-09-22 a la(s) 7 51 28 a m" src="https://github.com/user-attachments/assets/0597e8d9-6f8b-4d35-b3a7-5d7adf792f68">
 
 
 Once the analysis begins, in the RStudio console it is possible to view its progress.
