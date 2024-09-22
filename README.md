@@ -334,7 +334,8 @@ Once the analysis begins, in the RStudio console it is possible to view its prog
 > [!CAUTION]
 >  If you selected the MAXENT model and the files necessary to use it are not found in the working directory, in the pop-up legends in the console we can read the following warning message that indicates that it is necessary to have the files to perform the analysis with this model. You can go to the [MAXENT model](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#maxent-model) section of this manual to find the files.
 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/d061477f-ed9e-4328-b100-5f9c04d41053)
+
+<img width="604" alt="Captura de pantalla 2024-09-22 a la(s) 8 02 30 a m" src="https://github.com/user-attachments/assets/97e52dbb-6856-4739-a77f-9e393b5c3929">
 
 
 After pressing the button to start the analysis it is a good idea to move to the second sub-tab of the main panel, model output. When the analyzes are finished, here you will be able to see various values and evaluation results of the models.
