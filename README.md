@@ -390,7 +390,8 @@ For this part of the application you must have two raster files, the first must 
 Result 
 
 
-<img width="800" alt="Captura de pantalla 2024-09-22 a la(s) 12 59 46 p m" src="https://github.com/user-attachments/assets/7d7e7c57-f159-4990-8554-87ed4c02dc1e">
+<img width="1052" alt="Captura de pantalla 2024-09-22 a la(s) 1 07 28 p m" src="https://github.com/user-attachments/assets/91a8e613-0d82-4013-b061-df55c7ad6aed">
+
 
 
 
