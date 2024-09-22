@@ -403,7 +403,7 @@ This tab requires two files, the only acceptable format of which is .asc. The fi
 ## Eleventh module: ENMTools
 
 In this module we will explore Niche Modeling Analysis and niche overlap thanks to [ENMTools](https://github.com/danlwarren/ENMTools) (Warren et al., 2021). For such a task we need you to provide distribution data that includes presence points and pseudo-absences. In this section multiple models can be built using the spatial distribution information and environmental layers relevant to each study (the same data are required in the biomod2 module).
-One of the central points of the module is the possibility of evaluating the niche overlap of two different species, resulting in maps and graphs for this purpose. Likewise, it is possible to build niche modeling for both species if desired, otherwise the answer marked as default in the corresponding section must be changed to indicate that only one species should be analyzed, which would be species 1. Note: in this module mx is the MAXENT algorithm.
+One of the central points of the module is the possibility of evaluating the niche overlap of two different species, resulting in maps and graphs for this purpose. Likewise, it is possible to build niche modeling for both species if desired, otherwise the answer marked as default in the corresponding section must be changed to indicate that only one species should be analyzed, which would be species 1. Note: This module, "mx," contains the MAXENT algorithm. Any analyses that are not displayed in the console when generating the PDF can be viewed within this module.
 
 
 <img width="969" alt="Captura de pantalla 2024-09-22 a la(s) 9 39 19 a m" src="https://github.com/user-attachments/assets/e678d5f1-b5f5-49fa-9da5-3de857340730">
@@ -411,6 +411,13 @@ One of the central points of the module is the possibility of evaluating the nic
 
 <img width="958" alt="Captura de pantalla 2024-09-22 a la(s) 9 43 17 a m" src="https://github.com/user-attachments/assets/001ca90e-09c9-4b83-bafb-8ee2ae223c62">
 
+
+<img width="955" alt="Captura de pantalla 2024-09-22 a la(s) 9 51 51 a m" src="https://github.com/user-attachments/assets/aa0a24b5-c56e-4875-81c0-461d09fa117b">
+
+
+<img width="955" alt="Captura de pantalla 2024-09-22 a la(s) 9 51 55 a m" src="https://github.com/user-attachments/assets/f82b08c8-bf46-4a48-88d6-75cefab8432e">
+
+<img width="955" alt="Captura de pantalla 2024-09-22 a la(s) 9 51 59 a m" src="https://github.com/user-attachments/assets/f161d2fe-3b20-450b-9667-f4b18da5fc17">
 
 
 ![Figure 5](https://github.com/user-attachments/assets/0415371a-ebc2-477d-937a-e1ac0fe861a1)
