@@ -557,7 +557,7 @@ library(rgdal)
 ![Done](https://github.com/armandosunny/EcoNicheS/assets/25662791/dda83dc8-bd73-45e2-9081-9076a3edd63f)
 
 -----
-Centro de Investigación en Ciencias Biológicas Aplicadas.
+Centro de Investigación en Ciencias Biológicas Aplicadas, Facultad de Ciencias, UAEMex.
 
 Centro de Innovación Digital "Mandra" Laboratorio Nacional de SuperCómputo, CONAHCYT-Facultad de Ciencias, UAEMex.
 
