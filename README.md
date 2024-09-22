@@ -559,6 +559,11 @@ Warren DL, Matzke NJ, Cardillo M, Baumgartner JB, Beaumont LJ, Turelli M, Glor R
 
 Zizka A, Silvestro D, Andermann T, Azevedo J, Duarte Ritter C, Edler D, Farooq H, Herdean A, Ariza M, Scharn R, Svanteson S, Wengstrom N, Zizka V, Antonelli A (2019). “CoordinateCleaner: standardized cleaning of occurrence records from biological collection databases.” Methods in Ecology and Evolution, -7. doi:10.1111/2041-210X.13152, R package version 3.0.1, https://github.com/ropensci/CoordinateCleaner.
 
+# Problems installing packages
+
+<img width="1052" alt="Captura de pantalla 2024-09-22 a la(s) 2 04 04 p m" src="https://github.com/user-attachments/assets/f6ec6b8c-7f07-48c1-8970-b20614283a02">
+
+<img width="1052" alt="Captura de pantalla 2024-09-22 a la(s) 2 04 08 p m" src="https://github.com/user-attachments/assets/e109813b-8e60-4f34-b134-01cb406419eb">
 
 -----
 Centro de Investigación en Ciencias Biológicas Aplicadas, Facultad de Ciencias, UAEMex.
