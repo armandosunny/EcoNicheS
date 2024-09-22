@@ -301,7 +301,8 @@ Multiple models can be selected to perform this analysis depending on your needs
 
 
 
-![Biomod 0 7](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/2b60d6fa-5802-43a8-a4a6-62ee7bb0fe4c)
+<img width="870" alt="Captura de pantalla 2024-09-22 a la(s) 7 27 02 a m" src="https://github.com/user-attachments/assets/a07866da-f661-49ff-8ee7-d0f26fbda9d5">
+
 
 
 Next, the display of the button to load the appropriate .asc layers after clicking on the "Load .asc layers" button is the second sign that our .csv database was loaded correctly, otherwise we will not observe the appearance of this option window.
