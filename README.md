@@ -399,7 +399,7 @@ This tab allows you to obtain the area of suitability of the species of interest
 
 This tab requires two files, the only acceptable format of which is .asc. The first of these raster files must correspond to a file with the characteristics or geographical data of the area of interest. The second file corresponds to a future prediction of the conditions of the landscape.
 
-![gains and losses 16 y 50 cn resultados](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/4c68a466-d6be-47c6-adb1-b9bd4df70638)
+<img width="1057" alt="Captura de pantalla 2024-09-22 a la(s) 12 50 55 p m" src="https://github.com/user-attachments/assets/904640e1-f6e5-4910-8297-c619dfee0098">
 
 ## Eleventh module: ENMTools
 
