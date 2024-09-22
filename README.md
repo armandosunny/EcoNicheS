@@ -328,7 +328,8 @@ In addition, you can also modify the values of the data split percentage and the
 
 Once the analysis begins, in the RStudio console it is possible to view its progress.
 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/672be5b8-dd70-42be-938e-83586211bfd8)
+<img width="863" alt="Captura de pantalla 2024-09-22 a la(s) 7 58 20 a m" src="https://github.com/user-attachments/assets/4ec8eccc-d1e1-4d6e-b90d-9d213fdcd9a5">
+
 
 > [!CAUTION]
 >  If you selected the MAXENT model and the files necessary to use it are not found in the working directory, in the pop-up legends in the console we can read the following warning message that indicates that it is necessary to have the files to perform the analysis with this model. You can go to the [MAXENT model](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#maxent-model) section of this manual to find the files.
