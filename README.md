@@ -375,7 +375,7 @@ You can find the main results stored in a new folder stored in your working dire
 
 ## Seventh module: Partial ROC Analysis
 
-As mentioned above, one of the files needed to perform this analysis is part of the results above, but if you already have a Prediction Raster file, you can also upload it in .asc format. Here, we use [ntbox](https://luismurao.github.io/ntbox/) (Osorio-Olvera et al., 2020) to evaluate the niche modeling carried out.
+As mentioned above, one of the files needed to perform this analysis is part of the results above, but if you already have a Prediction Raster file, you can also upload it in .asc format. Here, we use [ntbox](https://luismurao.github.io/ntbox/) (Osorio-Olvera et al., 2020) to evaluate the niche modeling carried out. Note: This module does not run on ARM64 Macs.
 
 <img width="1046" alt="Captura de pantalla 2024-09-22 a la(s) 8 21 52 a m" src="https://github.com/user-attachments/assets/4058dcaf-3c59-4524-b7cc-18178072804e">
 
@@ -438,9 +438,10 @@ One of the central points of the module is the possibility of evaluating the nic
 
 ## Twelfth module: Connectivity
 
-Landscape connectivity refers to the degree to which an environment facilitates or impedes the movement of organisms between different locations (Taylor et al., 1993; Tischendorf and Fahrig, 2000). In EcoNiches, users can generate ecological connectivity models by creating flow maps. The connectivity analysis uses habitat suitability as a resistance surface and employs conductance analysis through the gdistance package (van Etten, 2017). Users need species occurrence data and a resistance raster, which may contain species distribution model data or landscape elements with resistance values. The module splits the data into 80% for training and 20% for testing (Joseph, 2022). The resulting flow maps integrate least-cost path analysis and Circuitscape-type analyses to evaluate potential connectivity, identifying the shortest possible paths between locations within the area of interest. [rgeos](https://www.rdocumentation.org/packages/rgeos/versions/0.6-4) and [gdistance](https://cgspace.cgiar.org/items/87e6fd8b-53ff-4d61-9581-8cc83272ff73).
+Landscape connectivity refers to the degree to which an environment facilitates or impedes the movement of organisms between different locations (Taylor et al., 1993; Tischendorf and Fahrig, 2000). In EcoNiches, users can generate ecological connectivity models by creating flow maps. The connectivity analysis uses habitat suitability as a resistance surface and employs conductance analysis through the gdistance package (van Etten, 2017). Users need species occurrence data and a resistance raster, which may contain species distribution model data or landscape elements with resistance values. The module splits the data into 80% for training and 20% for testing (Joseph, 2022). The resulting flow maps integrate least-cost path analysis and Circuitscape-type analyses to evaluate potential connectivity, identifying the shortest possible paths between locations within the area of interest. [rgeos](https://www.rdocumentation.org/packages/rgeos/versions/0.6-4) and [gdistance](https://cgspace.cgiar.org/items/87e6fd8b-53ff-4d61-9581-8cc83272ff73). Note: This module does not run on ARM64 Macs.
 
-![Figure 7](https://github.com/user-attachments/assets/30a78685-85bb-4af0-bbe1-0a118af26132)
+<img width="1052" alt="Captura de pantalla 2024-09-22 a la(s) 1 32 12 p m" src="https://github.com/user-attachments/assets/22ac85b4-4a18-4690-ba1e-2f49117bd060">
+
 
 
 -----
