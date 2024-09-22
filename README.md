@@ -374,7 +374,9 @@ You can find the main results stored in a new folder stored in your working dire
 
 ## Seventh module: Partial ROC Analysis
 
-As mentioned above, one of the files needed to perform this analysis is part of the results above, but if you already have a Prediction Raster file, you can also upload it in .asc format. Here, we use [ntbox](https://luismurao.github.io/ntbox/) (Osorio-Olvera et al., 2020) to evaluate the niche modeling carried out. > [!CAUTION] Note: This module does not run on ARM64 Macs.
+As mentioned above, one of the files needed to perform this analysis is part of the results above, but if you already have a Prediction Raster file, you can also upload it in .asc format. Here, we use [ntbox](https://luismurao.github.io/ntbox/) (Osorio-Olvera et al., 2020) to evaluate the niche modeling carried out. 
+> [!CAUTION]
+> Note: This module does not run on ARM64 Macs.
 
 <img width="1046" alt="Captura de pantalla 2024-09-22 a la(s) 8 21 52 a m" src="https://github.com/user-attachments/assets/4058dcaf-3c59-4524-b7cc-18178072804e">
 
