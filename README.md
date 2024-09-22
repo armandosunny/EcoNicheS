@@ -366,7 +366,7 @@ Finally, you can view in the last sub-tab the plots of the response curves of ea
 
 You can find the main results stored in a new folder stored in your working directory at the end of the analysis, which will be named with the name of the species of your analysis. Inside you can find another folder, proj_Current, here you will find the .tif file necessary to continue with the workflow in the next EcoNicheS tab.
 
-![image](https://github.com/armandosunny/EcoNicheS-2.0.0/assets/25662791/7b011b18-988b-4fc2-87b4-68211cc53b30)
+<img width="1056" alt="Captura de pantalla 2024-09-22 a la(s) 12 38 15 p m" src="https://github.com/user-attachments/assets/e32ee8cd-c193-4604-b6f2-37a8b3d0b30c">
 
 ![Figure 3](https://github.com/user-attachments/assets/3d9100a2-70e5-4cec-9f77-a40e9772883a)
 
