@@ -558,7 +558,8 @@ library(rgdal)
 
 -----
 
-#Centro de Investigación en Ciencias Biológicas Aplicadas.
-#Centro de Innovación Digital "Mandra" Laboratorio Nacional de SuperCómputo, CONAHCYT-Facultad de Ciencias, UAEMex.
+Centro de Investigación en Ciencias Biológicas Aplicadas.
+
+Centro de Innovación Digital "Mandra" Laboratorio Nacional de SuperCómputo, CONAHCYT-Facultad de Ciencias, UAEMex.
 
 <img width="734" alt="Captura de pantalla 2024-09-22 a la(s) 8 40 22 a m" src="https://github.com/user-attachments/assets/89f0259a-0cff-497f-99ae-7d44925fa2e9">
