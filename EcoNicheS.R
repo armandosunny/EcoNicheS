@@ -52,11 +52,6 @@ library(doParallel)
 library(gdistance)
 library(raster)
 library(progress)
-library(mda)
-
-options(shiny.maxRequestSize = 80000*1024^2)
-
-
 # Definir UI de la aplicación principal
 ui <- dashboardPage(
   dashboardHeader(title = 'EcoNicheS',
@@ -258,7 +253,7 @@ ui <- dashboardPage(
                 img(src = "https://armandosunny.weebly.com/uploads/9/8/0/6/98067990/published/logo-shiny2.png?1721439587", height = "250px",  style = "display: block; margin: 0 auto;"),
                 p("Thanks for using our app! We hope you enjoy your experience.", style = "font-size: 36px; text-align: center;font-family: Arial;"),
                 p("Please cite as:", style = "font-size: 24px; text-align: center;font-weight: bold; font-family: Arial;"),
-                p("Marmolejo C, Bolom-Huet R, López-Vidal R, Sunny A (2024). EcoNicheS: enhancing ecological niche modeling, niche overlap and connectivity analysis using shiny dashboard and R Package. GitHub. https://github.com/armandosunny/EcoNicheS", style = "font-size: 16px; text-align: center;font-family: Arial;")
+                p("Marmolejo C, Bolom-Huet R, López-Vidal R, Díaz-Sánchez LE, Sunny A (2024). EcoNicheS: Empowering Ecological Niche Modeling Analysis with Shinydashboard and R Package. GitHub. https://github.com/armandosunny/EcoNicheS", style = "font-size: 16px; text-align: center;font-family: Arial;")
                 ## creo que estos parentesis de abajo son los que cierran el tab
               )
       ),
