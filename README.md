@@ -443,8 +443,18 @@ Landscape connectivity refers to the degree to which an environment facilitates 
 > [!WARNING]
 > Note: This module does not run on ARM64 Macs.
 
+## Twelfth module: Connectivity
+
+This module transforms the potential distribution modeling map into a resistance map by multiplying its values by *-1. The resulting map is essential for circuit theory connectivity analysis and the identification of Least Cost Path (LCP) corridors.
+
+![mapinverter](https://github.com/user-attachments/assets/9d61bdc9-d00b-4888-82ae-7682f4de6cbe)
+
+This module conducts a functional connectivity analysis based on circuit theory, employing a methodology akin to Circuitscape.
+
 <img width="1052" alt="Captura de pantalla 2024-09-22 a la(s) 1 32 12 p m" src="https://github.com/user-attachments/assets/22ac85b4-4a18-4690-ba1e-2f49117bd060">
 
+This module performs an analysis using least-cost maps to visualize optimal paths, highlighting routes with the lowest, intermediate, and highest resistance. These paths are represented using a color gradient ranging from red (high resistance) to green (low resistance).
+![lcp](https://github.com/user-attachments/assets/8978d135-e79e-4301-996f-1246e7524707)
 
 
 -----
@@ -455,14 +465,14 @@ Landscape connectivity refers to the degree to which an environment facilitates 
 
 -Clere Marmolejo and Armando Sunny: Editors and skilled developers who crafted the polished user interface and functionality of the app.
 
--Clere Marmolejo, Rene Bolom-Huet and Armando Sunny: Contributed to the comprehensive function documentation, ensuring clarity and usability.
+-Clere Marmolejo, Rene Bolom-Huet, Angela P. Cuervo-Robayo and Armando Sunny: Contributed to the comprehensive function documentation, ensuring clarity and usability.
 
 -Rodrigo López-Vidal: Provided valuable assistance with server management and website interface design, enhancing the overall user experience. (It will soon be available in the internet browser on the Mandra website.)
 
 -Armando Sunny: Offered financial support, enabling the successful realization of the project.
 
-<img width="839" alt="Captura de pantalla 2024-09-22 a la(s) 2 17 09 p m" src="https://github.com/user-attachments/assets/abe5940d-ccce-4273-8475-af71ebe63033">
 
+![autores](https://github.com/user-attachments/assets/194729e0-0c69-4754-93d5-9d7ee228c087)
 
   
 # Citation
