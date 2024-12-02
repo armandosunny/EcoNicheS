@@ -447,14 +447,16 @@ Landscape connectivity refers to the degree to which an environment facilitates 
 
 This module transforms the potential distribution modeling map into a resistance map by multiplying its values by *-1. The resulting map is essential for circuit theory connectivity analysis and the identification of Least Cost Path (LCP) corridors.
 
-![mapinverter](https://github.com/user-attachments/assets/9d61bdc9-d00b-4888-82ae-7682f4de6cbe)
+<img width="858" alt="Captura de pantalla 2024-12-02 a la(s) 10 56 25 a m" src="https://github.com/user-attachments/assets/dc5e0ded-8944-49c8-b836-38b41c1ab17e">
+
 
 This module conducts a functional connectivity analysis based on circuit theory, employing a methodology akin to Circuitscape.
 
 <img width="1052" alt="Captura de pantalla 2024-09-22 a la(s) 1 32 12 p m" src="https://github.com/user-attachments/assets/22ac85b4-4a18-4690-ba1e-2f49117bd060">
 
 This module performs an analysis using least-cost maps to visualize optimal paths, highlighting routes with the lowest, intermediate, and highest resistance. These paths are represented using a color gradient ranging from red (high resistance) to green (low resistance).
-![lcp](https://github.com/user-attachments/assets/8978d135-e79e-4301-996f-1246e7524707)
+
+<img width="858" alt="Captura de pantalla 2024-12-02 a la(s) 10 54 48 a m" src="https://github.com/user-attachments/assets/94200ff1-d1ea-4c2e-ad65-1e057c43127e">
 
 
 -----
@@ -471,8 +473,8 @@ This module performs an analysis using least-cost maps to visualize optimal path
 
 -Armando Sunny: Offered financial support, enabling the successful realization of the project.
 
+<img width="904" alt="Captura de pantalla 2024-12-02 a la(s) 10 54 30 a m" src="https://github.com/user-attachments/assets/cc40a304-ba91-46ef-ae2d-1a05901fd3bf">
 
-![autores](https://github.com/user-attachments/assets/194729e0-0c69-4754-93d5-9d7ee228c087)
 
   
 # Citation
