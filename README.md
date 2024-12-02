@@ -159,7 +159,8 @@ shinyApp(ui = ui, server = server)
 > ## "If you are unable to install EcoNicheS, please download the EcoNicheS.R file, open it in a text editor, and run it directly in the R console. We apologize for the inconvenience of not being able to run the command directly from GitHub at this time, but we are working to resolve the issue as soon as possible."
 
 
-<img width="869" alt="Captura de pantalla 2024-09-22 a la(s) 7 16 29 a m" src="https://github.com/user-attachments/assets/576f66d3-209c-4e21-9e3a-b47f4cac47ad">
+
+<img width="855" alt="Captura de pantalla 2024-12-02 a la(s) 11 12 12 a m" src="https://github.com/user-attachments/assets/fcff4065-0467-4ed8-abc2-f9d547c55612">
 
 
 
