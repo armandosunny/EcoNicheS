@@ -443,16 +443,21 @@ Landscape connectivity refers to the degree to which an environment facilitates 
 > [!WARNING]
 > Note: This module does not run on ARM64 Macs.
 
-## Twelfth module: Connectivity
+
+## Map inverter: 
 
 This module transforms the potential distribution modeling map into a resistance map by multiplying its values by *-1. The resulting map is essential for circuit theory connectivity analysis and the identification of Least Cost Path (LCP) corridors.
 
 <img width="858" alt="Captura de pantalla 2024-12-02 a la(s) 10 56 25 a m" src="https://github.com/user-attachments/assets/dc5e0ded-8944-49c8-b836-38b41c1ab17e">
 
 
+## Connectivity Circuit theory: 
+
 This module conducts a functional connectivity analysis based on circuit theory, employing a methodology akin to Circuitscape.
 
 <img width="1052" alt="Captura de pantalla 2024-09-22 a la(s) 1 32 12 p m" src="https://github.com/user-attachments/assets/22ac85b4-4a18-4690-ba1e-2f49117bd060">
+
+## LCP Corridors: 
 
 This module performs an analysis using least-cost maps to visualize optimal paths, highlighting routes with the lowest, intermediate, and highest resistance. These paths are represented using a color gradient ranging from red (high resistance) to green (low resistance).
 
