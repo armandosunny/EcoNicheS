@@ -34,49 +34,82 @@ In addition to having installed [R](https://cran.rstudio.com/) and [RStudio](htt
 
 EcoNicheS works with specific libraries in R. You can visit the websites listed below to obtain the required packages. If in this section or when running the command to open the application there is a problem regarding the failure to install any of the libraries, please refer to the [**Problems installing packages**](![image](https://github.com/user-attachments/assets/f4fdd0df-06a1-4850-a194-730329d0e9d6)
 )
--shiny: https://cran.r-project.org/package=shiny
--terra: https://cran.r-project.org/package=terra
--usdm: https://cran.r-project.org/package=usdm
--ENMTools: https://cran.r-project.org/package=ENMTools
--biomod2: https://cran.r-project.org/package=biomod2
--RColorBrewer: https://cran.r-project.org/package=RColorBrewer
--dismo: https://cran.r-project.org/package=dismo
--tiff: https://cran.r-project.org/package=tiff
--rJava: https://cran.r-project.org/package=rJava
--tidyterra: https://cran.r-project.org/package=tidyterra
--shinydashboard: https://cran.r-project.org/package=shinydashboard
--pROC: https://cran.r-project.org/package=pROC
--R.utils: https://cran.r-project.org/package=R.utils
--countrycode: https://cran.r-project.org/package=countrycode
--CoordinateCleaner: https://cran.r-project.org/package=CoordinateCleaner
--dplyr: https://cran.r-project.org/package=dplyr
--ggplot2: https://cran.r-project.org/package=ggplot2
--rgbif: https://cran.r-project.org/package=rgbif
--sf: https://cran.r-project.org/package=sf
--rnaturalearthdata: https://cran.r-project.org/package=rnaturalearthdata
--spThin: https://cran.r-project.org/package=spThin
--shinyjs: https://cran.r-project.org/package=shinyjs
--leaflet: https://cran.r-project.org/package=leaflet
--DT: https://cran.r-project.org/package=DT
--shinyBS: https://cran.r-project.org/package=shinyBS
--prettymapr: https://cran.r-project.org/package=prettymapr
--ntbox: https://github.com/luismurao/ntbox
--gt: https://cran.r-project.org/package=gt
--tidyverse: https://cran.r-project.org/package=tidyverse
--gtExtras: https://cran.r-project.org/package=gtExtras
--MIAmaxent: https://cran.r-project.org/package=MIAmaxent
--leaflet.extras: https://cran.r-project.org/package=leaflet.extras
--geodata: https://cran.r-project.org/package=geodata
--viridis: https://cran.r-project.org/package=viridis
--ggthemes: https://cran.r-project.org/package=ggthemes
--sp: https://cran.r-project.org/package=sp
--rgeos: https://cran.r-project.org/package=rgeos
--gdistance: https://cran.r-project.org/package=gdistance
--foreach: https://cran.r-project.org/package=foreach
--doParallel: https://cran.r-project.org/package=doParallel
--raster: https://cran.r-project.org/package=raster
--progress: https://cran.r-project.org/package=progress
--readr: https://cran.r-project.org/package=readr
+
+# Required Libraries for EcoNicheS
+
+To run **EcoNicheS**, you need to install the following libraries in R:
+
+## CRAN Packages
+- shiny
+- terra
+- usdm
+- ENMTools
+- biomod2
+- RColorBrewer
+- dismo
+- tiff
+- rJava
+- tidyterra
+- shinydashboard
+- pROC
+- R.utils
+- countrycode
+- CoordinateCleaner
+- dplyr
+- ggplot2
+- rgbif
+- sf
+- rnaturalearthdata
+- spThin
+- shinyjs
+- leaflet
+- DT
+- shinyBS
+- prettymapr
+- gt
+- tidyverse
+- gtExtras
+- MIAmaxent
+- leaflet.extras
+- geodata
+- viridis
+- ggthemes
+- sp
+- rgeos
+- gdistance
+- foreach
+- doParallel
+- raster
+- progress
+- readr
+
+## GitHub Packages
+- ntbox (from [luismurao/ntbox](https://github.com/luismurao/ntbox))
+- tidyterra (from [rspatial/terra](https://github.com/rspatial/terra))
+
+---
+
+### Installation Instructions
+
+To install these libraries, you can use the following R code:
+
+```R
+# CRAN Packages
+install.packages(c(
+  "shiny", "terra", "usdm", "ENMTools", "biomod2", "RColorBrewer",
+  "dismo", "tiff", "rJava", "tidyterra", "shinydashboard", "pROC",
+  "R.utils", "countrycode", "CoordinateCleaner", "dplyr", "ggplot2",
+  "rgbif", "sf", "rnaturalearthdata", "spThin", "shinyjs", "leaflet",
+  "DT", "shinyBS", "prettymapr", "gt", "tidyverse", "gtExtras",
+  "MIAmaxent", "leaflet.extras", "geodata", "viridis", "ggthemes",
+  "sp", "rgeos", "gdistance", "foreach", "doParallel", "raster",
+  "progress", "readr"
+))
+
+# GitHub Packages
+if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
+remotes::install_github("luismurao/ntbox")
+remotes::install_github("rspatial/terra")
   
   ## Note for Mac ARM users:
 The rgeos package (https://cran.r-project.org/package=rgeos) is not compatible with Mac ARM systems. If you're using a Mac with an ARM processor, you can still run the script by simply omitting this package. The rest of the script will work without any issues. If you encounter any problems or need further assistance, feel free to reach out.
@@ -106,48 +139,48 @@ Install Libraries
 R
 Copiar código
 # Install libraries from CRAN
-install.packages("shiny")
-install.packages("terra")
-install.packages("usdm")
-install.packages("ENMTools")
-install.packages("biomod2")
-install.packages("RColorBrewer")
-install.packages("dismo")
-install.packages("tiff")
-install.packages("rJava")
-install.packages("tidyterra")
-install.packages("shinydashboard")
-install.packages("pROC")
-install.packages("R.utils")
-install.packages("countrycode")
-install.packages("CoordinateCleaner")
-install.packages("dplyr")
-install.packages("ggplot2")
-install.packages("rgbif")
-install.packages("sf")
-install.packages("rnaturalearthdata")
-install.packages("spThin")
-install.packages("shinyjs")
-install.packages("leaflet")
-install.packages("DT")
-install.packages("shinyBS")
-install.packages("prettymapr")
-install.packages("gt")
-install.packages("tidyverse")
-install.packages("gtExtras")
-install.packages("MIAmaxent")
-install.packages("leaflet.extras")
-install.packages("geodata")
-install.packages("viridis")
-install.packages("ggthemes")
-install.packages("sp")
-install.packages("rgeos")
-install.packages("gdistance")
-install.packages("foreach")
-install.packages("doParallel")
-install.packages("raster")
-install.packages("progress")
-install.packages("readr")
+- install.packages("shiny")
+- install.packages("terra")
+- install.packages("usdm")
+- install.packages("ENMTools")
+- install.packages("biomod2")
+- install.packages("RColorBrewer")
+- install.packages("dismo")
+- install.packages("tiff")
+- install.packages("rJava")
+- install.packages("tidyterra")
+- install.packages("shinydashboard")
+- install.packages("pROC")
+- install.packages("R.utils")
+- install.packages("countrycode")
+- install.packages("CoordinateCleaner")
+- install.packages("dplyr")
+- install.packages("ggplot2")
+- install.packages("rgbif")
+- install.packages("sf")
+- install.packages("rnaturalearthdata")
+- install.packages("spThin")
+- install.packages("shinyjs")
+- install.packages("leaflet")
+- install.packages("DT")
+- install.packages("shinyBS")
+- install.packages("prettymapr")
+- install.packages("gt")
+- install.packages("tidyverse")
+- install.packages("gtExtras")
+- install.packages("MIAmaxent")
+- install.packages("leaflet.extras")
+- install.packages("geodata")
+- install.packages("viridis")
+- install.packages("ggthemes")
+- install.packages("sp")
+- install.packages("rgeos")
+- install.packages("gdistance")
+- install.packages("foreach")
+- install.packages("doParallel")
+- install.packages("raster")
+- install.packages("progress")
+- install.packages("readr")
 
 # Install libraries from GitHub
 if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
