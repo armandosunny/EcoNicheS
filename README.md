@@ -183,9 +183,20 @@ Copiar código
 - install.packages("readr")
 
 # Install libraries from GitHub
+
+library(devtools)
+
 if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
 remotes::install_github("rspatial/terra") # Ensure latest tidyterra
 remotes::install_github("luismurao/ntbox") # ntbox
+
+# If you want to build vignette, install pandoc before and then
+
+devtools::install_github('luismurao/ntbox',build_vignettes=TRUE)
+
+library(ntbox)
+run_ntbox()
+
 
 Additional Notes
 If you're using a Mac with an ARM processor, the rgeos package might not work. In that case, you can skip this library and the rest of the script will still function properly.
@@ -208,12 +219,6 @@ install.packages("https://cran.r-project.org/src/contrib/Archive/rgeos/rgeos_0.6
 
 install.packages("https://cran.r-project.org/src/contrib/Archive/maptools/maptools_1.1-8.tar.gz", repos = NULL, type = "source")
 
-##Install ENMGadgets
-
-if (!require('devtools')) install.packages('devtools')
-
-library(devtools)
-
 ##Install ENMTools
 
 library(devtools)
@@ -221,19 +226,6 @@ library(devtools)
 install_github("danlwarren/ENMTools")
 
 library(ENMTools)
-
-##Install ntbox
-
-library(devtools)
-
-devtools::install_github('luismurao/ntbox')
-
-# If you want to build vignette, install pandoc before and then
-
-devtools::install_github('luismurao/ntbox',build_vignettes=TRUE)
-
-library(ntbox)
-run_ntbox()
 
 
 # Install EcoNicheS
