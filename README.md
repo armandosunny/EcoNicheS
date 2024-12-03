@@ -112,10 +112,6 @@ if (!require('devtools')) install.packages('devtools')
 
 library(devtools)
 
-install_github("narayanibarve/ENMGadgets")
-
-require(ENMGadgets)
-
 ##Install ENMTools
 
 library(devtools)
