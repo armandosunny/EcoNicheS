@@ -56,6 +56,7 @@ Imports:
     doParallel,
     gdistance,
     raster,
-    progress
+    progress,
+    readr
 
  
