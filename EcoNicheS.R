@@ -52,7 +52,7 @@ library(gdistance)
 library(raster)
 library(progress)
 library(readr)
-library(RColorBrewer)
+
 # Definir UI de la aplicación principal
 ui <- dashboardPage(
   dashboardHeader(title = 'EcoNicheS',
