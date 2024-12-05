@@ -817,8 +817,8 @@ ui <- dashboardPage(
                        box(
                          title = div("Environmental data from different periods", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "You can obtain prediction of environmental changes from different raster layers.")),
                          width = NULL,
-                         fileInput("mapa_presente_input", div("Load Present Map", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Upload the file with the current environmental data. The allowed formats are '.tiff','.tif', '.asc' and '.bil'.")), accept = c('.tiff','.tif', '.asc', '.bil')),
-                         fileInput("mapa_futuro_input", div("Load Future Map", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Upload the file with the environmental prediction data for the future. The allowed formats are '.tiff','.tif', '.asc' and '.bil'.")), accept = c('.tiff','.tif', '.asc', '.bil')),
+                         fileInput("mapa_presente_input", div("Load Map 1", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Upload different maps to evaluate the differences, losses and gains between them. The allowed formats are '.tiff','.tif', '.asc' and '.bil'.")), accept = c('.tiff','.tif', '.asc', '.bil')),
+                         fileInput("mapa_futuro_input", div("Load Map 2", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Upload different maps to evaluate the differences, losses and gains between them. The allowed formats are '.tiff','.tif', '.asc' and '.bil'.")), accept = c('.tiff','.tif', '.asc', '.bil')),
                          actionButton("run_analysis_btn", "Run Analysis")
                        )
                 ),
@@ -3534,11 +3534,11 @@ server <- function(input, output, session) {
       Losses <- present_map() - future_map()
       
       output$Gains_plot <- renderPlot({
-        plot(Gains, main = "Gains: Future - Present")
+        plot(Gains, main = "Gains: Map 2 - Map 1")
       })
       
       output$Losses_plot <- renderPlot({
-        plot(Losses, main = "Losses: Present - Future")
+        plot(Losses, main = "Losses: Map 1 - Map 2")
       })
     }
   })
