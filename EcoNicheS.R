@@ -44,16 +44,16 @@ library(geodata)
 library(viridis)
 library(ggthemes)
 library(sp)
-library(rgeos)
 library(earth)
 library(xgboost)
 library(gdistance)
 library(foreach)
 library(doParallel)
-library(gdistance)
 library(raster)
 library(progress)
 library(readr)
+library(MIAmaxent)
+library(rgeos)
 
 # Definir UI de la aplicación principal
 ui <- dashboardPage(
@@ -1197,7 +1197,7 @@ ui <- dashboardPage(
 			box(
                          title = div("Databases", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "This section allows you to ... Below you can upload the necessary files.")),
                          width = NULL,
-                 fileInput("invertRasterFile", "Select ASC file to invert", accept = ".asc"),
+                 fileInput("invertRasterFile", "Select ASC file to invert", accept = c('.tiff','.tif', '.asc', '.bil')),
                  actionButton("invertRaster", "Invert Raster"),
                  downloadButton("downloadInvertedRaster", "Download Inverted Raster (.asc)"),
                  uiOutput("invertProgress") # Progress bar
@@ -4550,7 +4550,7 @@ observeEvent(input$runLCP, {
   }) #trycatch  
 })
 
-###################333
+###################
   
   
   
@@ -4558,7 +4558,3 @@ observeEvent(input$runLCP, {
 
 # Ejecutar la aplicación
 shinyApp(ui = ui, server = server)
-
-
-
-detectCores(all.tests = FALSE, logical = TRUE)
