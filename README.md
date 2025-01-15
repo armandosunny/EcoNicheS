@@ -18,7 +18,6 @@ We value your feedback and are here to help!
 
 <img src="https://github.com/user-attachments/assets/21759a04-b153-4ad0-b316-c773d6c20ce8" align="center" height="1000" />
 
-
 # EcoNicheS Installation Guide
 
 ## Step 1: Install Required Software
@@ -41,7 +40,7 @@ EcoNicheS requires 64-bit Java. Download and install it from [Oracle Java](https
 ### 2.1 CRAN Libraries
 EcoNicheS depends on several R libraries. Copy and paste the following command into your R console to install them all at once:
 
-\`\`\`r
+```
 install.packages(c(
   "shiny", "terra", "usdm", "ENMTools", "biomod2", "RColorBrewer",
   "dismo", "tiff", "rJava", "tidyterra", "shinydashboard", "pROC",
@@ -52,12 +51,12 @@ install.packages(c(
   "sp", "gdistance", "foreach", "doParallel", "raster",
   "progress", "readr"
 ))
-\`\`\`
+```
 
 ### 2.2 GitHub Libraries
 Some libraries are not available on CRAN and must be installed from GitHub. Run the following commands in your R console:
 
-\`\`\`r
+```
 if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
 
 # Install ntbox
@@ -68,16 +67,16 @@ remotes::install_github("rspatial/terra")
 
 # Install ENMTools
 remotes::install_github("danlwarren/ENMTools")
-\`\`\`
+```
 
 ---
 
 ## Step 3: Special Instructions for Mac ARM64 Users
 
-If you're using a Mac with an ARM64 processor (e.g., M1/M2 chip), the \`rgeos\` library is not supported. To avoid errors:
+If you're using a Mac with an ARM64 processor (e.g., M1/M2 chip), the `rgeos` library is not supported. To avoid errors:
 
-1. Skip the installation of \`rgeos\` by removing it from the list of libraries.
-2. When running the EcoNicheS script, delete or comment out the line \`library(rgeos)\`.
+1. Skip the installation of `rgeos` by removing it from the list of libraries.
+2. When running the EcoNicheS script, delete or comment out the line `library(rgeos)`.
 
 The rest of the application will work without issues.
 
@@ -85,11 +84,11 @@ The rest of the application will work without issues.
 
 ## Step 4: Increase Memory for Java (Optional but Recommended)
 
-Before loading the graphical interface, run this line to increase the memory available for \`rJava\`:
+Before loading the graphical interface, run this line to increase the memory available for `rJava`:
 
-\`\`\`r
+```
 options(shiny.maxRequestSize = 6000*1024^2)
-\`\`\`
+```
 
 ---
 
@@ -97,10 +96,10 @@ options(shiny.maxRequestSize = 6000*1024^2)
 
 ### 5.1 Download the EcoNicheS Script
 1. Go to the [EcoNicheS GitHub Repository](https://github.com/armandosunny/EcoNicheS).
-2. Download the \`EcoNicheS.R\` file.
+2. Download the `EcoNicheS.R` file.
 
 ### 5.2 Run the Script
-1. Open the \`EcoNicheS.R\` file in a text editor (e.g., Notepad).
+1. Open the `EcoNicheS.R` file in a text editor (e.g., Notepad).
 2. Copy all the code.
 3. Paste it into the R console and press Enter to run the script.
 
@@ -109,7 +108,7 @@ options(shiny.maxRequestSize = 6000*1024^2)
 ## Additional Notes
 
 - **Working Directory**: Set the working directory in RStudio where your databases and results will be saved:  
-  Go to \`Session\` ➜ \`Set Working Directory\` ➜ \`Choose Directory\`, and select your folder.
+  Go to `Session` ➜ `Set Working Directory` ➜ `Choose Directory`, and select your folder.
 
 - **MAXENT Model**: If using the MAXENT model, ensure the required files are in your working directory. Download them from [here](https://doi.org/10.6084/m9.figshare.24980664.v1).
 
@@ -122,7 +121,7 @@ options(shiny.maxRequestSize = 6000*1024^2)
 
 ### CRAN Libraries
 
-\`\`\`r
+```
 # Increase memory for Java
 options(shiny.maxRequestSize = 6000*1024^2)
 
@@ -137,19 +136,20 @@ install.packages(c(
   "sp", "gdistance", "foreach", "doParallel", "raster",
   "progress", "readr"
 ))
-\`\`\`
+```
 
 ### GitHub Libraries
 
-\`\`\`r
+```
 if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
 remotes::install_github("luismurao/ntbox")
 remotes::install_github("rspatial/terra")
 remotes::install_github("danlwarren/ENMTools")
-\`\`\`
+```
 
 > **Note for Mac ARM64 users**:  
-> Skip the \`rgeos\` library if you're using a Mac with M1/M2.
+> Skip the `rgeos` library if you're using a Mac with M1/M2.
+
 
 > [!IMPORTANT]
 > ## "If you are unable to install EcoNicheS, please download the EcoNicheS.R file, open it in a text editor, and run it directly in the R console. We apologize for the inconvenience of not being able to run the command directly from GitHub at this time, but we are working to resolve the issue as soon as possible."
