@@ -55,6 +55,7 @@ library(readr)
 library(MIAmaxent)
 library(rgeos)
 
+
 # Definir UI de la aplicación principal
 ui <- dashboardPage(
   dashboardHeader(title = 'EcoNicheS',
@@ -689,7 +690,7 @@ ui <- dashboardPage(
       #############################################3
       #######################################################3
       
-      tabItem(tabName = "tab8",
+tabItem(tabName = "tab8",
               fluidPage(
                 titlePanel("Load and Plot Maps"),
                 column(width = 4,
@@ -701,52 +702,47 @@ ui <- dashboardPage(
                          actionButton("load_leaflet_button_2", "Load Leaflet Map")
                        ) #box
                 ), #column
-                column(width = 4,
+                column(width = 8,
                        box(
                          title = div("Interactive Plot", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "In this section you can view your file on an interactive map after you have loaded the map.")),
                          width = NULL,
-                         leafletOutput("leaflet_map_2"))),
-                column(width = 4,
-                       box(
-                         title = div("PDF preview", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "You will be able to see a visualization of the graph of your map, and you will also be able to download the same graph in pdf.")),
-                         width = NULL,
-                         plotOutput("mapPlot_2"),
-                         conditionalPanel(
-                           condition = "output.mapPlot_2 !== undefined && output.mapPlot_2 !== null", 
-                           downloadButton("download_pdf_button_2", "Download Map as PDF", disabled = TRUE))
-                       ))
+                         leafletOutput("leaflet_map_2", height = "600px")
+                       ) #box
+                ) #column
               ) #fluidpage
-      ), #tabitem
+      ),
       
       #################################
       #############################################3
       #######################################################3
       
-      tabItem(tabName = "tab9",
-              fluidPage(
-                titlePanel("Partial ROC Analysis"),
-                column(width = 4,
-                       box(
-                         title = div("Upload your databases", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "This is a tooltip for the title")),
-                         width = NULL,
-                         fileInput("sdm_mod", div("Upload prediction raster", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Upload the consensus map obtained during the Ecological Niche Modeling. Visit the user manual for more information.")), accept = c('.tiff','.tif', '.asc')),
-                         fileInput("occ_proc", div("Upload Validation Data", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Upload the file that contains only the presence points of the species of interest. The format must be (.csv).")), accept = ".csv"),
-                         numericInput("iter", div("Number of bootstrap iterations ", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Iterations to be performed. Visit the user manual for more information.")), value = 500),
-                         numericInput("omission", "Threshold", value = 5),
-                         numericInput("randper", "Percent", value = 50),
-                         actionButton("runButton", "Run Analysis"),
-                       ) #box
-                ), #column
-                column(width = 8,
-                       box(
-                         title = "Results",
-                         width = NULL,
-                         tableOutput("summaryroc"),
-                         dataTableOutput("resultsroc")
-                       ) #box
-                ) #column
-              ) #fluidpage
-      ), 
+     tabItem(tabName = "tab9",
+        fluidPage(
+          titlePanel("Partial ROC Analysis"),
+          column(width = 4,
+                 box(
+                   title = div("Upload your databases", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "This is a tooltip for the title")),
+                   width = NULL,
+                   fileInput("sdm_mod", div("Upload prediction raster", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Upload the consensus map obtained during the Ecological Niche Modeling. Visit the user manual for more information.")), accept = c('.tiff','.tif', '.asc')),
+                   fileInput("occ_proc", div("Upload Validation Data", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Upload the file that contains only the presence points of the species of interest. The format must be (.csv).")), accept = ".csv"),
+                   numericInput("iter", div("Number of bootstrap iterations ", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Iterations to be performed. Visit the user manual for more information.")), value = 500),
+                   numericInput("omission", "Threshold", value = 5),
+                   numericInput("randper", "Percent", value = 50),
+                   actionButton("runButtonEnmEval", "Run ROC (0-1)"),
+                   actionButton("runButtonBiomod2", "Run ROC (0-100)")
+                 ) #box
+          ), #column
+          column(width = 8,
+                 box(
+                   title = "Results",
+                   width = NULL,
+                   verbatimTextOutput("errorMessage"),
+                   tableOutput("summaryroc"),
+                   dataTableOutput("resultsroc")
+                 ) #box
+          ) #column
+        ) #fluidpage
+),
       
       
       #
@@ -3256,113 +3252,67 @@ server <- function(input, output, session) {
   
   
   
-  
   observeEvent(input$load_leaflet_button_2, {
-    #############Inicia aquí
-    
-    tryCatch({ 
-      
-      if (is.null(input$file_maps2)) {
+  tryCatch({
+    if (is.null(input$file_maps2)) {
+      showModal(modalDialog(
+        title = "Error",
+        "You need to upload a database to continue."
+      ))
+      return()
+    }
+
+    withProgress(message = 'Loading maps...', value = 0, {
+
+      incProgress(0.3, detail = "Reading raster file...")
+
+      # Leer el archivo raster
+      raster_file <- tryCatch({
+        raster(input$file_maps2$datapath)
+      }, error = function(e) {
         showModal(modalDialog(
           title = "Error",
-          "You need to upload a database to continue."
+          paste("Error loading raster file:", e$message)
         ))
-      } else {
-        
-        withProgress(message = 'Loading maps...', value = 0, {
-          total_iterations_leaf1 <- 1
-          total_progress_leaf1 <- 1
-          # Aquí va el código para realizar el análisis
-          # Actualiza el valor de la barra de progreso en porcentaje
-          for (i in 1:total_iterations_leaf1) {
-            incProgress(5/10, detail = "Loading for viewing...")
-            
-            ############pausa
-            leaflet_data <- reactiveValues(map = NULL)
-            
-            output$leaflet_map_2 <- renderLeaflet({
-              leaflet_data$map
-            })
-            
-            incProgress(5/10, detail = "Loading for viewing...")
-            incProgress(total_progress_leaf1, detail = "Finished")
-          }
-        })
-        
-        
-        output$mapPlot_2 <- renderPlot({
-          req(input$file_maps2)
-          
-          withProgress(message = 'Loading maps...', value = 0, {
-            total_iterations_leaf11 <- 1
-            total_progress_leaf11 <- 1
-            # Aquí va el código para realizar el análisis
-            # Actualiza el valor de la barra de progreso en porcentaje
-            for (i in 1:total_iterations_leaf11) {
-              incProgress(5/10, detail = "Loading for viewing...")
-              
-              # Read raster file
-              raster_file <- raster(input$file_maps2$datapath)
-              
-              # Plot the map
-              plot(raster_file)
-              
-              incProgress(5/10, detail = "Loading for viewing...")
-              # If a Leaflet map is loaded, overlay it
-              if (!is.null(leaflet_data$map)) {
-                
-                leafletProxy("leaflet_map") %>%
-                  addRasterImage(raster_file)
-                
-                
-              }
-              incProgress(5/10, detail = "Loading for viewing...")
-              incProgress(total_progress_leaf11, detail = "Finished")
-            }
-          })
-        })
-        
-        #######Pausa2
-        leaflet_data$map <- leaflet() %>%
-          addTiles() %>%
-          setView(0, 0, zoom = 1)
-        
-        ###pausa3 pausa 3
-        observeEvent(input$file_maps2, {
-          shinyjs::toggleState("download_pdf_button_2", !is.null(input$file_maps2))
-        })
-        
-        output$download_pdf_button_2 <- downloadHandler(
-          filename = function() {
-            paste(gsub("\\.[^.]*$", "", input$file_maps2$name), ".pdf")
-          },
-          content = function(file) {
-            pdf(file)
-            plot(raster(input$file_maps2$datapath))
-            dev.off()
-          }
-        )
-        
+        return(NULL)
+      })
+
+      if (is.null(raster_file)) {
+        return()
       }
-      
-    }, error = function(e) {
-      # Error handling for a bad internet connection
-      if (inherits(e, "error")) {
-        
-        showModal(
-          modalDialog(
-            title = "Error",
-            paste("Something went wrong:", e$message),
-            easyClose = TRUE,
-            footer = NULL
-          )
-        )
-      }
+
+      # Visualizar en Leaflet con opciones mejoradas
+      output$leaflet_map_2 <- renderLeaflet({
+        leaflet() %>%
+          addProviderTiles(providers$Esri.WorldImagery, group = "Satellite") %>%
+          addProviderTiles(providers$OpenStreetMap, group = "OSM") %>%
+          addRasterImage(raster_file, opacity = 0.8, colors = colorNumeric("viridis", values(raster_file), na.color = "transparent"), group = "Raster") %>%
+          addLayersControl(
+            baseGroups = c("Satellite", "OSM"),
+            overlayGroups = c("Raster"),
+            options = layersControlOptions(collapsed = FALSE)
+          ) %>%
+          addLegend(pal = colorNumeric("viridis", values(raster_file), na.color = "transparent"),
+                    values = values(raster_file),
+                    title = "Raster Values",
+                    position = "bottomright")
+      })
+
+      incProgress(1, detail = "Map loaded successfully.")
+
     })
-    #################3termina aqui leaf
+
+  }, error = function(e) {
+    showModal(
+      modalDialog(
+        title = "Error",
+        paste("Something went wrong:", e$message),
+        easyClose = TRUE,
+        footer = NULL
+      )
+    )
   })
-  
-  
+})
   ####################################--------------------------------
   ####################################-------------------------------------------------
   ####################################-------------------------------------------------
@@ -3458,64 +3408,53 @@ server <- function(input, output, session) {
   
   # Calculate Area
   observeEvent(input$calcularArea, {
+  tryCatch({ 
+    req(input$archivoRaster)
+    req(input$umbralSuitability)
     
-    tryCatch({ 
+    # Reiniciar el resultado al inicio del evento
+    output$Result <- renderPrint({ NULL })
+    
+    withProgress(message = 'Calculating...', value = 0, {
+      total_iterationsarea <- 1
+      total_progressarea <- 1
       
-      req(input$archivoRaster)
-      withProgress(message = 'Calculating...', value = 0, {
-        total_iterationsarea <- 1
-        total_progressarea <- 1
-        # Aquí va el código para realizar el análisis
-        # Actualiza el valor de la barra de progreso en porcentaje
-        for (i in 1:total_iterationsarea) {
-          
-          archivoRaster <- input$archivoRaster$datapath
-          umbralSuitability <- input$umbralSuitability
-          
-          incProgress(2/10, detail = "Calculating...")
-          
-          rasterData <- raster(archivoRaster)
-          
-          incProgress(2/10, detail = "Calculating...")
-          rasterData[rasterData <= umbralSuitability] <- NA
-          
-          cell_size <- area(rasterData, na.rm = TRUE, weights = FALSE)
-          
-          incProgress(2/10, detail = "Calculating...")
-          
-          cell_size1 <- cell_size[!is.na(cell_size)]
-          areaSuitability <- length(cell_size1) * median(cell_size1)
-          
-          incProgress(2/10, detail = "Calculating...")
-          
-          output$Result <- renderPrint({
-            paste("Area of Suitability in km²:", areaSuitability)
-          })
-          
-          incProgress(2/10, detail = "Calculating...")
-          incProgress(total_progressarea, detail = "Proceso completado")
-          
-        }
-      })
-      
-    }, error = function(e) {
-      # Error handling for a bad internet connection
-      if (inherits(e, "error")) {
+      for (i in 1:total_iterationsarea) {
+        archivoRaster <- input$archivoRaster$datapath
+        umbralSuitability <- input$umbralSuitability
         
-        showModal(
-          modalDialog(
-            title = "Error",
-            paste("Something went wrong:", e$message),
-            easyClose = TRUE,
-            footer = NULL
-          )
-        )
+        incProgress(2/10, detail = "Loading raster data...")
+        rasterData <- raster(archivoRaster)
+        
+        incProgress(2/10, detail = "Applying threshold...")
+        rasterData[rasterData <= umbralSuitability] <- NA
+        
+        incProgress(2/10, detail = "Calculating cell areas...")
+        cell_size <- area(rasterData, na.rm = TRUE, weights = FALSE)
+        
+        incProgress(2/10, detail = "Calculating total area...")
+        cell_size1 <- cell_size[!is.na(cell_size)]
+        areaSuitability <- length(cell_size1) * median(cell_size1)
+        
+        incProgress(2/10, detail = "Finalizing...")
       }
+      
+      # Actualizar el resultado al final del cálculo
+      output$Result <- renderPrint({
+        paste("Area of Suitability in km²:", round(areaSuitability, 2))
+      })
     })
-    
+  }, error = function(e) {
+    showModal(
+      modalDialog(
+        title = "Error",
+        paste("Something went wrong:", e$message),
+        easyClose = TRUE,
+        footer = NULL
+      )
+    )
   })
-  
-  
+})
   ############################# present future
   
   
@@ -3575,30 +3514,97 @@ server <- function(input, output, session) {
   #######################################################3
   ######################################### Partial roc
   
-  observeEvent(input$runButton, {
-    
-    tryCatch({ 
+  observeEvent(input$runButtonEnmEval, {
+
+  tryCatch({ 
+
+    withProgress(message = 'Carrying out statistical evaluations...', value = 0, {
       
-      withProgress(message = 'Carrying out statistical evaluations...', value = 0, {
-        total_iterationsroc <- 1
-        total_progressroc <- 1
-        # Aquí va el código para realizar el análisis
-        # Actualiza el valor de la barra de progreso en porcentaje
-        incProgress(1/10, detail = "Starting analysis...")
-        
-        # Coloca tu código para cargar los datos aquí
-        test_data <- read.csv(input$occ_proc$datapath)
-        test_data <- test_data[, -1]
-        
-        # Renombra la columna "X" a "longitude" y "Y" a "latitude"
-        colnames(test_data)[colnames(test_data) == "X"] <- "longitude"
-        colnames(test_data)[colnames(test_data) == "Y"] <- "latitude"
-        
-        continuous_mod <- raster(input$sdm_mod$datapath)
-        
-        incProgress(2/10, detail = "Data loaded...")
-        
-        analisisproc <- pROC(
+      incProgress(1/10, detail = "Validating inputs...")
+      
+      # Validar archivo CSV
+      if (is.null(input$occ_proc$datapath) || input$occ_proc$datapath == "") {
+        stop("Validation data file not uploaded or invalid.")
+      }
+
+      test_data <- read.csv(input$occ_proc$datapath)
+
+      if (nrow(test_data) == 0) {
+        stop("The uploaded CSV file is empty.")
+      }
+
+      # Validar columnas esperadas
+      if (!all(c("X", "Y") %in% colnames(test_data))) {
+        stop("The CSV file must contain columns named 'X' and 'Y'.")
+      }
+
+      # Renombrar columnas
+      colnames(test_data)[colnames(test_data) == "X"] <- "longitude"
+      colnames(test_data)[colnames(test_data) == "Y"] <- "latitude"
+
+      # Filtrar solo las columnas necesarias
+      test_data <- test_data[, c("longitude", "latitude")]
+
+      # Validar que ahora solo tenga dos columnas
+      if (ncol(test_data) != 2) {
+        stop("The processed validation data must contain exactly two columns: 'longitude' and 'latitude'.")
+      }
+
+      # Validar archivo raster
+      if (is.null(input$sdm_mod$datapath) || input$sdm_mod$datapath == "") {
+        stop("Prediction raster file not uploaded or invalid.")
+      }
+
+      # Cargar el raster
+      continuous_mod <- tryCatch({
+        rast <- raster(input$sdm_mod$datapath)
+        if (is.null(values(rast))) {
+          stop("The raster has no associated values.")
+        }
+        rast
+      }, error = function(e) {
+        stop("Error loading raster: ", e$message)
+      })
+
+      if (is.null(continuous_mod)) {
+        stop("The uploaded raster file is not valid.")
+      }
+
+      # Validar si las coordenadas están dentro del área del raster
+      ext <- extent(continuous_mod)
+      if (any(test_data$longitude < ext@xmin | test_data$longitude > ext@xmax |
+              test_data$latitude < ext@ymin | test_data$latitude > ext@ymax)) {
+        stop("Some coordinates in the validation data are outside the raster extent.")
+      }
+
+      incProgress(2/10, detail = "Inputs validated...")
+
+      # Validar valores numéricos
+      if (is.null(input$iter) || input$iter <= 0) {
+        stop("Number of iterations must be greater than 0.")
+      }
+
+      if (is.null(input$omission) || input$omission < 0 || input$omission > 100) {
+        stop("Omission threshold must be between 0 and 100.")
+      }
+
+      if (is.null(input$randper) || input$randper <= 0 || input$randper > 100) {
+        stop("Percent for bootstrap must be between 1 and 100.")
+      }
+
+      # Realizar el análisis
+      incProgress(3/10, detail = "Starting analysis...")
+
+      analisisproc <- tryCatch({
+        if (!inherits(continuous_mod, "RasterLayer")) {
+          stop("The raster input is not a valid RasterLayer object.")
+        }
+
+        if (!inherits(test_data, "data.frame") || ncol(test_data) != 2) {
+          stop("The test data must be a data frame with exactly two columns: 'longitude' and 'latitude'.")
+        }
+
+        pROC(
           continuous_mod,
           test_data,
           n_iter = input$iter,
@@ -3610,43 +3616,188 @@ server <- function(input, output, session) {
           sub_sample = FALSE,
           sub_sample_size = 10000
         )
-        
-        output$summaryroc <- renderUI({
-          
-          suroc<-analisisproc$pROC_summary
-          suroc_df <- as.data.frame(t(suroc))
-          
-          tableroc <- suroc_df %>%
-            gt() %>%
-            gt_highlight_rows(rows = 1, font_weight = "normal")
-          
-          
-          tableroc
-        })
-        
-        output$resultsroc <- renderDataTable({
-          analisisproc$pROC_results
-        })
-        
-        incProgress(7/10, detail = "Analysis complete.")
-      }) # withProgress
+      }, error = function(e) {
+        stop("Error during pROC analysis: ", e$message)
+      })
+
+      incProgress(6/10, detail = "Analysis in progress...")
+
+      # Mostrar resultados
+      output$summaryroc <- renderUI({
+        suroc <- analisisproc$pROC_summary
+        suroc_df <- as.data.frame(t(suroc))
+
+        tableroc <- suroc_df %>%
+          gt() %>%
+          gt_highlight_rows(rows = 1, font_weight = "normal")
+
+        tableroc
+      })
+
+      output$resultsroc <- renderDataTable({
+        analisisproc$pROC_results
+      })
+
+      incProgress(9/10, detail = "Finalizing analysis...")
+
+    }) # withProgress
+
+  }, error = function(e) {
+    # Manejo de errores
+    showModal(
+      modalDialog(
+        title = "Error",
+        paste("Something went wrong:", e$message),
+        easyClose = TRUE,
+        footer = NULL
+      )
+    )
+  })
+
+}) # observeEvent
+
+observeEvent(input$runButtonBiomod2, {
+
+  tryCatch({ 
+
+    withProgress(message = 'Carrying out statistical evaluations...', value = 0, {
       
-    }, error = function(e) {
-      # Error handling for a bad internet connection
-      if (inherits(e, "error")) {
-        
-        showModal(
-          modalDialog(
-            title = "Error",
-            paste("Something went wrong:", e$message),
-            easyClose = TRUE,
-            footer = NULL
-          )
-        )
+      incProgress(1/10, detail = "Validating inputs...")
+      
+      # Validar archivo CSV
+      if (is.null(input$occ_proc$datapath) || input$occ_proc$datapath == "") {
+        stop("Validation data file not uploaded or invalid.")
       }
-    })
-    
-  }) # observeEvent
+
+      test_data <- read.csv(input$occ_proc$datapath)
+
+      if (nrow(test_data) == 0) {
+        stop("The uploaded CSV file is empty.")
+      }
+
+      # Validar columnas esperadas
+      if (!all(c("X", "Y") %in% colnames(test_data))) {
+        stop("The CSV file must contain columns named 'X' and 'Y'.")
+      }
+
+      # Renombrar columnas
+      colnames(test_data)[colnames(test_data) == "X"] <- "longitude"
+      colnames(test_data)[colnames(test_data) == "Y"] <- "latitude"
+
+      # Filtrar solo las columnas necesarias
+      test_data <- test_data[, c("longitude", "latitude")]
+
+      # Validar que ahora solo tenga dos columnas
+      if (ncol(test_data) != 2) {
+        stop("The processed validation data must contain exactly two columns: 'longitude' and 'latitude'.")
+      }
+
+      # Validar archivo raster
+      if (is.null(input$sdm_mod$datapath) || input$sdm_mod$datapath == "") {
+        stop("Prediction raster file not uploaded or invalid.")
+      }
+
+      # Cargar el raster y escalar valores (0-100 a 0-1)
+      continuous_mod <- tryCatch({
+        rast <- raster(input$sdm_mod$datapath)
+
+        if (maxValue(rast) > 1) {
+          rast <- calc(rast, function(x) x / 100)
+        }
+
+        rast
+      }, error = function(e) {
+        stop("Error loading or scaling raster: ", e$message)
+      })
+
+      if (is.null(continuous_mod)) {
+        stop("The uploaded raster file is not valid.")
+      }
+
+      # Validar si las coordenadas están dentro del área del raster
+      ext <- extent(continuous_mod)
+      if (any(test_data$longitude < ext@xmin | test_data$longitude > ext@xmax |
+              test_data$latitude < ext@ymin | test_data$latitude > ext@ymax)) {
+        stop("Some coordinates in the validation data are outside the raster extent.")
+      }
+
+      incProgress(2/10, detail = "Inputs validated...")
+
+      # Validar valores numéricos
+      if (is.null(input$iter) || input$iter <= 0) {
+        stop("Number of iterations must be greater than 0.")
+      }
+
+      if (is.null(input$omission) || input$omission < 0 || input$omission > 100) {
+        stop("Omission threshold must be between 0 and 100.")
+      }
+
+      if (is.null(input$randper) || input$randper <= 0 || input$randper > 100) {
+        stop("Percent for bootstrap must be between 1 and 100.")
+      }
+
+      # Realizar el análisis
+      incProgress(3/10, detail = "Starting analysis...")
+
+      analisisproc <- tryCatch({
+        if (!inherits(continuous_mod, "RasterLayer")) {
+          stop("The raster input is not a valid RasterLayer object.")
+        }
+
+        if (!inherits(test_data, "data.frame") || ncol(test_data) != 2) {
+          stop("The test data must be a data frame with exactly two columns: 'longitude' and 'latitude'.")
+        }
+
+        pROC(
+          continuous_mod,
+          test_data,
+          n_iter = input$iter,
+          E_percent = input$omission,
+          boost_percent = input$randper,
+          parallel = FALSE,
+          ncores = 4,
+          rseed = FALSE,
+          sub_sample = FALSE,
+          sub_sample_size = 10000
+        )
+      }, error = function(e) {
+        stop("Error during pROC analysis: ", e$message)
+      })
+
+      incProgress(6/10, detail = "Analysis in progress...")
+
+      # Mostrar resultados
+      output$summaryroc <- renderUI({
+        suroc <- analisisproc$pROC_summary
+        suroc_df <- as.data.frame(t(suroc))
+tableroc <- suroc_df %>%
+          gt() %>%
+          gt_highlight_rows(rows = 1, font_weight = "normal")
+
+        tableroc
+      })
+
+      output$resultsroc <- renderDataTable({
+        analisisproc$pROC_results
+      })
+
+      incProgress(9/10, detail = "Finalizing analysis...")
+
+    }) # withProgress
+
+  }, error = function(e) {
+    # Manejo de errores
+    showModal(
+      modalDialog(
+        title = "Error",
+        paste("Something went wrong:", e$message),
+        easyClose = TRUE,
+        footer = NULL
+      )
+    )
+  })
+
+}) # observeEvent
   
   
   #################################
@@ -4550,7 +4701,7 @@ observeEvent(input$runLCP, {
   }) #trycatch  
 })
 
-###################
+###################333
   
   
   
