@@ -173,7 +173,7 @@ EcoNicheS is an interactive web application that consists of 12 modules: **[Envi
 
 You can use these functions in order to perform the analyzes and evaluations of niche modeling, niche overlap and connectivity analysis with circuit theory. The application before, during and at the end of the analyzes has pop-up windows that will indicate errors or data necessary to continue, and you will also be able to see the progress of the work in the lower left corner every time you press the execution buttons. You must take into account that this first version of EcoNicheS does not allow you to cancel the analyses, they are only interrupted if the application detects an error in the analysis execution sequences, because this is sequential and this implies that the progress can stop when detecting an error, please make sure you enter the correct data before submitting it to analysis.
 
-<img width="525" alt="Captura de pantalla 2024-07-20 a la(s) 12 18 53 p m" src="https://github.com/user-attachments/assets/680ab39e-ded1-49b9-b508-baf2183eb61c">
+<img width="1138" alt="Captura de pantalla 2025-01-15 a la(s) 10 23 41 a m" src="https://github.com/user-attachments/assets/d857819c-f390-4329-bdb2-b92835cb799f" />
 
 
 ## First module: Environmental Data 
