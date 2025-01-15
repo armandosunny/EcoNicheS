@@ -19,89 +19,29 @@ We value your feedback and are here to help!
 <img src="https://github.com/user-attachments/assets/21759a04-b153-4ad0-b316-c773d6c20ce8" align="center" height="1000" />
 
 
-## EcoNicheS Requirements
+# EcoNicheS Installation Guide
 
-### Installation of 64-bit Java
+## Step 1: Install Required Software
 
-To use EcoNicheS it is necessary to have 64-bit Java installed. For this you can visit the Oracle Java download page by clicking [here](https://www.oracle.com/java/technologies/downloads/). Downloading the .exe file is the easiest option.
+### 1.1 Install 64-bit Java
+EcoNicheS requires 64-bit Java. Download and install it from [Oracle Java](https://www.oracle.com/java/technologies/downloads/). The `.exe` file is the easiest option for Windows users.
 
-<img width="1041" alt="Captura de pantalla 2024-07-20 a la(s) 12 12 16 p m" src="https://github.com/user-attachments/assets/956463e4-b574-4df6-9ec2-8325680e010b">
+### 1.2 Install R, RStudio, and RTools
+- **R**: Download and install it from [CRAN](https://cran.r-project.org/).
+- **RStudio**: Download the desktop version from [Posit](https://posit.co/download/rstudio-desktop/).
+- **RTools** (Windows only): Download it from [RTools](https://cran.r-project.org/bin/windows/Rtools/).
 
-
-### Download and install RTools
-
-In addition to having installed [R](https://cran.rstudio.com/) and [RStudio](https://posit.co/download/rstudio-desktop/), RTools is essential to be able to use some packages in R required by EcoNicheS, so please download and install it on your device to avoid problems when running and using the app. You can download RTools by accessing this [link](https://cran.r-project.org/bin/windows/Rtools/).
-
-> [!TIP]
->For new R users: Do you need help with installation? We recommend you go to the [Hands-On Programming with R](https://rstudio-education.github.io/hopr/starting.html) website, it allows you to access a manual that helps both Windows and Mac users learn to use R starting from the installation.
-
-
-### Packages EcoNicheS depends on
-##### For the correct functioning of EcoNiches it is necessary to update all the packages installed in R with the following command: update.packages(ask = FALSE, checkBuilt = TRUE)
-
-EcoNicheS works with specific libraries in R. You can visit the websites listed below to obtain the required packages. If in this section or when running the command to open the application there is a problem regarding the failure to install any of the libraries, please refer to the [**Problems installing packages**](![image](https://github.com/user-attachments/assets/f4fdd0df-06a1-4850-a194-730329d0e9d6)
-)
-
-# Required Libraries for EcoNicheS
-
-To run **EcoNicheS**, you need to install the following libraries in R:
-
-## CRAN Packages
-- shiny
-- terra
-- usdm
-- ENMTools
-- biomod2
-- RColorBrewer
-- dismo
-- tiff
-- rJava
-- tidyterra
-- shinydashboard
-- pROC
-- R.utils
-- countrycode
-- CoordinateCleaner
-- dplyr
-- ggplot2
-- rgbif
-- sf
-- rnaturalearthdata
-- spThin
-- shinyjs
-- leaflet
-- DT
-- shinyBS
-- prettymapr
-- gt
-- tidyverse
-- gtExtras
-- MIAmaxent
-- leaflet.extras
-- geodata
-- viridis
-- ggthemes
-- sp
-- rgeos
-- gdistance
-- foreach
-- doParallel
-- raster
-- progress
-- readr
-
-## GitHub Packages
-- ntbox (from [luismurao/ntbox](https://github.com/luismurao/ntbox))
-- tidyterra (from [rspatial/terra](https://github.com/rspatial/terra))
+> **Tip for Beginners**  
+> Need help with R installation? Check out the [Hands-On Programming with R](https://rstudio-education.github.io/hopr/starting.html) guide.
 
 ---
 
-### Installation Instructions
+## Step 2: Install EcoNicheS Dependencies
 
-To install these libraries, you can use the following R code:
+### 2.1 CRAN Libraries
+EcoNicheS depends on several R libraries. Copy and paste the following command into your R console to install them all at once:
 
-```R
-# CRAN Packages
+\`\`\`r
 install.packages(c(
   "shiny", "terra", "usdm", "ENMTools", "biomod2", "RColorBrewer",
   "dismo", "tiff", "rJava", "tidyterra", "shinydashboard", "pROC",
@@ -109,148 +49,109 @@ install.packages(c(
   "rgbif", "sf", "rnaturalearthdata", "spThin", "shinyjs", "leaflet",
   "DT", "shinyBS", "prettymapr", "gt", "tidyverse", "gtExtras",
   "MIAmaxent", "leaflet.extras", "geodata", "viridis", "ggthemes",
-  "sp", "rgeos", "gdistance", "foreach", "doParallel", "raster",
-  "progress", "readr", "MIAmaxent"
+  "sp", "gdistance", "foreach", "doParallel", "raster",
+  "progress", "readr"
 ))
+\`\`\`
 
-# GitHub Packages
+### 2.2 GitHub Libraries
+Some libraries are not available on CRAN and must be installed from GitHub. Run the following commands in your R console:
+
+\`\`\`r
+if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
+
+# Install ntbox
+remotes::install_github("luismurao/ntbox")
+
+# Install tidyterra (latest version)
+remotes::install_github("rspatial/terra")
+
+# Install ENMTools
+remotes::install_github("danlwarren/ENMTools")
+\`\`\`
+
+---
+
+## Step 3: Special Instructions for Mac ARM64 Users
+
+If you're using a Mac with an ARM64 processor (e.g., M1/M2 chip), the \`rgeos\` library is not supported. To avoid errors:
+
+1. Skip the installation of \`rgeos\` by removing it from the list of libraries.
+2. When running the EcoNicheS script, delete or comment out the line \`library(rgeos)\`.
+
+The rest of the application will work without issues.
+
+---
+
+## Step 4: Increase Memory for Java (Optional but Recommended)
+
+Before loading the graphical interface, run this line to increase the memory available for \`rJava\`:
+
+\`\`\`r
+options(shiny.maxRequestSize = 6000*1024^2)
+\`\`\`
+
+---
+
+## Step 5: Running EcoNicheS
+
+### 5.1 Download the EcoNicheS Script
+1. Go to the [EcoNicheS GitHub Repository](https://github.com/armandosunny/EcoNicheS).
+2. Download the \`EcoNicheS.R\` file.
+
+### 5.2 Run the Script
+1. Open the \`EcoNicheS.R\` file in a text editor (e.g., Notepad).
+2. Copy all the code.
+3. Paste it into the R console and press Enter to run the script.
+
+---
+
+## Additional Notes
+
+- **Working Directory**: Set the working directory in RStudio where your databases and results will be saved:  
+  Go to \`Session\` ➜ \`Set Working Directory\` ➜ \`Choose Directory\`, and select your folder.
+
+- **MAXENT Model**: If using the MAXENT model, ensure the required files are in your working directory. Download them from [here](https://doi.org/10.6084/m9.figshare.24980664.v1).
+
+- **Troubleshooting**:  
+  If you encounter issues during installation or execution, refer to the [Problems Installing Packages](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#problems-installing-packages) section in the manual.
+
+---
+
+## Full Code to Install All Required Libraries
+
+### CRAN Libraries
+
+\`\`\`r
+# Increase memory for Java
+options(shiny.maxRequestSize = 6000*1024^2)
+
+# Install CRAN libraries
+install.packages(c(
+  "shiny", "terra", "usdm", "ENMTools", "biomod2", "RColorBrewer",
+  "dismo", "tiff", "rJava", "tidyterra", "shinydashboard", "pROC",
+  "R.utils", "countrycode", "CoordinateCleaner", "dplyr", "ggplot2",
+  "rgbif", "sf", "rnaturalearthdata", "spThin", "shinyjs", "leaflet",
+  "DT", "shinyBS", "prettymapr", "gt", "tidyverse", "gtExtras",
+  "MIAmaxent", "leaflet.extras", "geodata", "viridis", "ggthemes",
+  "sp", "gdistance", "foreach", "doParallel", "raster",
+  "progress", "readr"
+))
+\`\`\`
+
+### GitHub Libraries
+
+\`\`\`r
 if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
 remotes::install_github("luismurao/ntbox")
 remotes::install_github("rspatial/terra")
-  
-  ## Note for Mac ARM users:
-The rgeos package (https://cran.r-project.org/package=rgeos) is not compatible with Mac ARM systems. If you're using a Mac with an ARM processor, you can still run the script by simply omitting this package. The rest of the script will work without any issues. If you encounter any problems or need further assistance, feel free to reach out.
+remotes::install_github("danlwarren/ENMTools")
+\`\`\`
+
+> **Note for Mac ARM64 users**:  
+> Skip the \`rgeos\` library if you're using a Mac with M1/M2.
 
 
-### Define the working directory in RStudio and prepare your databases
-
-To ensure smooth workflow in RStudio, it is crucial to define the working directory properly, the location where all databases created during the analyzes will be saved. Follow these steps, navigate to: "Session" ➥ "Set Working Directory" ➥ "Choose Directory", and select the folder where you want to save the results of the analyzes that EcoNicheS allows you to perform through its interface. If you have pre-existing files that you want to analyze, this folder should be the one that contains all your databases of interest.
-
-### MAXENT model
-One of the EcoNicheS tabs bases its analyzes on [biomod2](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#biomod2) (Thuiller et al., 2024), which in turn uses different models to perform the ecological niche modeling analysis. One of these models is [MAXENT](https://biodiversityinformatics.amnh.org/open_source/maxent/) (Steven et al., [Internet]), which requires the prior download of 3 files so that the analysis with it can be carried out, so, if it is selected, prior to the analysis ensure that the working directory includes all the necessary files for running this model: [MAXENT](https://doi.org/10.6084/m9.figshare.24980664.v1).
-
-If you are not familiar with biomod2, in its corresponding section in this manual you will know how to use it with EcoNicheS but it is important that you have the mentioned files from the beginning to ensure that there will be no problems when you use this tab.
-
-<img width="525" alt="Captura de pantalla 2024-07-20 a la(s) 11 57 34 a m" src="https://github.com/user-attachments/assets/c8d3406c-bb3e-4d95-87f8-797bb5afa630">
-
------
-
-# To install the library
-
-EcoNicheS works with specific libraries in R that it uses to perform ecological niche modeling analyses, and although the loading of most of them is automatic when running the application, there are some exceptions so it is necessary that you please use the command shown below in RStudio to ensure smooth functionality. If in this section or when running the command to open the application there is a problem regarding the failure to install any of the libraries, please refer to the [**Problems installing packages**](https://github.com/armandosunny/EcoNicheS/blob/main/README.md#problems-installing-packages) part of the manual.
-
-Important:
-To run EcoNicheS, you need to have all the required libraries installed in your R environment. If you’re new to R or unsure how to install packages, don’t worry! Below is the individual installation code for each library. Simply copy and paste the commands into your R console.
-
-Install Libraries
-R
-Copiar código
-# Install libraries from CRAN
-install.packages("shiny")
-install.packages("terra")
-install.packages("usdm")
-install.packages("ENMTools")
-install.packages("biomod2")
-install.packages("RColorBrewer")
-install.packages("dismo")
-install.packages("tiff")
-install.packages("rJava")
-install.packages("tidyterra")
-install.packages("shinydashboard")
-install.packages("pROC")
-install.packages("R.utils")
-install.packages("countrycode")
-install.packages("CoordinateCleaner")
-install.packages("dplyr")
-install.packages("ggplot2")
-install.packages("rgbif")
-install.packages("sf")
-install.packages("rnaturalearthdata")
-install.packages("spThin")
-install.packages("shinyjs")
-install.packages("leaflet")
-install.packages("DT")
-install.packages("shinyBS")
-install.packages("prettymapr")
-install.packages("gt")
-install.packages("tidyverse")
-install.packages("gtExtras")
-install.packages("MIAmaxent")
-install.packages("leaflet.extras")
-install.packages("geodata")
-install.packages("viridis")
-install.packages("ggthemes")
-install.packages("sp")
-install.packages("rgeos")
-install.packages("gdistance")
-install.packages("foreach")
-install.packages("doParallel")
-install.packages("raster")
-install.packages("progress")
-install.packages("readr")
-
-# Install libraries from GitHub
-
-library(devtools)
-
-if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
-remotes::install_github("rspatial/terra") # Ensure latest tidyterra
-remotes::install_github("luismurao/ntbox") # ntbox
-
-# If you want to build vignette, install pandoc before and then
-
-devtools::install_github('luismurao/ntbox',build_vignettes=TRUE)
-
-library(ntbox)
-run_ntbox()
-
-
-Additional Notes
-If you're using a Mac with an ARM processor, the rgeos package might not work. In that case, you can skip this library and the rest of the script will still function properly.
-If you encounter any issues while installing these packages or running the application, feel free to reach out for help.
-Once all the libraries are installed, you can run the EcoNicheS script, and the application will work smoothly.
-
-
-
-
-``` r
-#Before loading the graphical interface, paste this line to give more capacity to rJava and then select the working directory
-
-options(shiny.maxRequestSize = 6000*1024^2)
-
-##Install rgeos
-
-install.packages("https://cran.r-project.org/src/contrib/Archive/rgeos/rgeos_0.6-4.tar.gz", repos = NULL, type = "source")
-
-##Install maptools
-
-install.packages("https://cran.r-project.org/src/contrib/Archive/maptools/maptools_1.1-8.tar.gz", repos = NULL, type = "source")
-
-##Install ENMTools
-
-library(devtools)
-
-install_github("danlwarren/ENMTools")
-
-library(ENMTools)
-
-
-# Install EcoNicheS
-
-library(devtools)
-
-install_github('armandosunny/EcoNicheS')
-
-
-```
-# To open the shiny GUI application:
-
-After ensuring that the above commands worked successfully, use this command to start exploring the EcoNicheS interface and features.
-
-```
-options(shiny.maxRequestSize = 6000*1024^2)
-library(EcoNicheS)
-shinyApp(ui = ui, server = server)
 ```
 > [!IMPORTANT]
 > ## "If you are unable to install EcoNicheS, please download the EcoNicheS.R file, open it in a text editor, and run it directly in the R console. We apologize for the inconvenience of not being able to run the command directly from GitHub at this time, but we are working to resolve the issue as soon as possible."
