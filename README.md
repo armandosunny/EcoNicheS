@@ -6,6 +6,12 @@
 
 An R library that enables Ecological Niche Modeling, Niche Overlap, and Connectivity Analysis Using Shiny Dashboard and R Package. This is Version 1.0.0, and subsequent versions will be uploaded with additional analyses and upgrades. 
 
+Need Help or Found a Bug?
+For any questions, comments, or to report bugs related to EcoNicheS, feel free to:
+
+Send an email to: econichesapp@gmail.com
+Leave a message in the Issues section of the repository.
+We value your feedback and are here to help!
 
 -----
 #### Schematic description of the ecological niche modeling process, and steps that can be performed using the EcoNicheS package.
