@@ -470,7 +470,14 @@ You can find the main results stored in a new folder stored in your working dire
 
 
 
-## Seventh module: Partial ROC Analysis
+## Seventh module: Load and Plot Maps
+
+In this module, you can upload .asc, .tiff, .tif, or .bil files to display the Ecological Niche Modeling map on an interactive interface. The raster map is overlaid on a satellite or OpenStreetMap (OSM) base layer, allowing you to visualize the study area with the raster values clearly shown for detailed analysis.
+
+<img width="1106" alt="Captura de pantalla 2025-01-15 a la(s) 9 01 44 a m" src="https://github.com/user-attachments/assets/daa812c7-451a-45ed-ae25-7956af427903" />
+
+
+## Eighth module: Partial ROC Analysis
 
 As mentioned above, one of the files needed to perform this analysis is part of the results above, but if you already have a Prediction Raster file, you can also upload it in .asc format. Here, we use [ntbox](https://luismurao.github.io/ntbox/) (Osorio-Olvera et al., 2020) to evaluate the niche modeling carried out. 
 
@@ -479,9 +486,14 @@ As mentioned above, one of the files needed to perform this analysis is part of 
 
 <img width="1117" alt="Captura de pantalla 2025-01-15 a la(s) 8 47 08 a m" src="https://github.com/user-attachments/assets/601123b4-3b76-4eaa-a43a-dba7d49d273c" />
 
-## Eighth module: Remove urbanization
+## Ninth module: Remove Raster Layer (e.g., Urbanization)
+In this part of the application, you must have two raster files. The first file should contain the geographical data you want to remove (e.g., urbanization, water bodies, or any other raster layer) within the potential distribution area of the study species. The second file must contain the species' potential distribution map. After running the analysis, you will obtain an .asc file where the specified data has been removed from the potential distribution area.
 
-For this part of the application you must have two raster files, the first must contain only the geographical data of urbanization within the potential distribution area of the study species, the second file must contain such a distribution map, thus, after running the analysis you will obtain an .asc file where said urbanization data was removed from the potential distribution area. In this same section it is possible to view the loaded maps and the result of removing the geographical area provided. Note: Likewise, you can remove any other layer, this module deletes the data from one layer to the other layer.
+In this section, you can also view the uploaded maps and the resulting map after removing the specified geographical layer.
+
+Note: This module is not limited to removing urbanization—it can remove data from any raster layer based on another raster file.
+
+
 
 <img width="1055" alt="Captura de pantalla 2024-09-22 a la(s) 12 57 19 p m" src="https://github.com/user-attachments/assets/156305a9-ddb3-4cc5-a865-f61bb0f2ee52">
 
@@ -493,7 +505,7 @@ Result
 
 
 
-## Ninth module: Calculate area
+## Tenth module: Calculate area
 This tab allows you to obtain the area of suitability of the species of interest by uploading the .asc file created in the previous tab or an existing file if applicable. The Suitability Threshold value can be modified according to the appropriate value for your study and the only result consists of the legend obtained in the main panel of the tab as you can see below.
 
 
@@ -501,13 +513,13 @@ This tab allows you to obtain the area of suitability of the species of interest
 
 
 
-## Tenth module: Gains and losses plot
+## Eleventh module: Gains and losses plot
 
 This tab requires two files, the only acceptable format of which is .asc. The first of these raster files must correspond to a file with the characteristics or geographical data of the area of interest. The second file corresponds to a future prediction of the conditions of the landscape.
 
 <img width="1057" alt="Captura de pantalla 2024-09-22 a la(s) 12 50 55 p m" src="https://github.com/user-attachments/assets/904640e1-f6e5-4910-8297-c619dfee0098">
 
-## Eleventh module: ENMTools
+## Twelfth module: ENMTools
 
 In this module we will explore Niche Modeling Analysis and niche overlap thanks to [ENMTools](https://github.com/danlwarren/ENMTools) (Warren et al., 2021). For such a task we need you to provide distribution data that includes presence points and pseudo-absences. In this section multiple models can be built using the spatial distribution information and environmental layers relevant to each study (the same data are required in the biomod2 module).
 One of the central points of the module is the possibility of evaluating the niche overlap of two different species, resulting in maps and graphs for this purpose. Likewise, it is possible to build niche modeling for both species if desired, otherwise the answer marked as default in the corresponding section must be changed to indicate that only one species should be analyzed, which would be species 1. Note: This module, "mx," contains the MAXENT algorithm, some analyses  are displayed in the R studio console and others in the EconNicheS console.
@@ -534,7 +546,7 @@ One of the central points of the module is the possibility of evaluating the nic
 
 
 
-## Twelfth module: Connectivity
+## Thirteenth module: Connectivity
 
 Landscape connectivity refers to the degree to which an environment facilitates or impedes the movement of organisms between different locations (Taylor et al., 1993; Tischendorf and Fahrig, 2000). In EcoNiches, users can generate ecological connectivity models by creating flow maps. The connectivity analysis uses habitat suitability as a resistance surface and employs conductance analysis through the gdistance package (van Etten, 2017). Users need species occurrence data and a resistance raster, which may contain species distribution model data or landscape elements with resistance values. The module splits the data into 80% for training and 20% for testing (Joseph, 2022). The resulting flow maps integrate least-cost path analysis and Circuitscape-type analyses to evaluate potential connectivity, identifying the shortest possible paths between locations within the area of interest. [rgeos](https://www.rdocumentation.org/packages/rgeos/versions/0.6-4) and [gdistance](https://cgspace.cgiar.org/items/87e6fd8b-53ff-4d61-9581-8cc83272ff73). 
 > [!WARNING]
