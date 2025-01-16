@@ -494,7 +494,7 @@ This module performs an analysis using least-cost maps to visualize optimal path
 
 #### Please cite as:
 
-The EconNicheS package:
+The EcoNicheS package:
 
 Marmolejo C, Bolom-Huet R, López-Vidal R, Angela P. Cuervo-Robayo, Sunny A (2024). EcoNicheS: enhancing ecological niche modeling, niche overlap and connectivity analysis using shiny dashboard and R Package. GitHub. https://github.com/armandosunny/EcoNicheS
 
