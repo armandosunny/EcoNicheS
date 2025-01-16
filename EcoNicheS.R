@@ -55,7 +55,6 @@ library(readr)
 library(MIAmaxent)
 library(rgeos)
 
-
 # Definir UI de la aplicación principal
 ui <- dashboardPage(
   dashboardHeader(title = 'EcoNicheS',
@@ -783,30 +782,36 @@ tabItem(tabName = "tab8",
       ),
       #            
       
-      tabItem(tabName = "tab11",
-              fluidPage(
-                titlePanel("Calculate area"),
-                column(width = 4,
-                       box(
-                         title = div("Data", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Upload a raster file for the calculation of the area of ​​suitability. The allowed formats are '.tiff', '.tif', '.asc', and '.bil'.")),
-                         width = NULL,
-                         condition = "input.opcionAnalisis == 'Calculate area'",
-                         fileInput("archivoRaster", "Select raster file", accept = c('.tiff','.tif', '.asc', '.bil')),
-                         numericInput("umbralSuitability", "Suitability Threshold:", value = 0.7, min = 0, max = 1, step = 0.01),
-                         actionButton("calcularArea", "Calculate Area of Suitability")
-                       )
-                ),
-                column(width = 8,
-                       box(
-                         title = "Result",
-                         width = NULL, 
-                         verbatimTextOutput("Result")
-                       ),
-                )
-              )
-      ),
+      tabItem(
+  tabName = "tab11",
+  fluidPage(
+    titlePanel("Calculate area"),
+    column(
+      width = 4,
+      box(
+        title = div("Data", tags$i(class = "fas fa-question-circle", 
+          "data-toggle" = "tooltip", 
+          "title" = "Upload a raster file for the calculation of the area of suitability. The allowed formats are '.tiff', '.tif', '.asc', and '.bil'.")),
+        width = NULL,
+        condition = "input.opcionAnalisis == 'Calculate area'",
+        fileInput("archivoRaster", "Select raster file", accept = c('.tiff', '.tif', '.asc', '.bil')),
+        numericInput("umbralSuitability", "Suitability Threshold:", value = 0.7, min = 0, max = 1, step = 0.01),
+        actionButton("calcularArea", "Calculate Area of Suitability")
+      )
+    ),
+    column(
+      width = 8,
+      box(
+        title = "Result",
+        width = NULL,
+        verbatimTextOutput("Result"),    # Display numerical area result
+        plotOutput("areaMap")           # Display raster map highlighting the suitable area
+      )
+    )
+  )
+),
       
-      #
+      
       
       tabItem(tabName = "tab12",
               fluidPage(
@@ -3406,8 +3411,8 @@ server <- function(input, output, session) {
   
   #############################3 remove urban
   
-  # Calculate Area
-  observeEvent(input$calcularArea, {
+  # Calculate Area and Visualize on Map
+observeEvent(input$calcularArea, {
   tryCatch({ 
     req(input$archivoRaster)
     req(input$umbralSuitability)
@@ -3443,6 +3448,14 @@ server <- function(input, output, session) {
       output$Result <- renderPrint({
         paste("Area of Suitability in km²:", round(areaSuitability, 2))
       })
+      
+      # Graficar el área seleccionada en el mapa
+      output$areaMap <- renderPlot({
+        plot(rasterData, 
+             main = "Suitability Area", 
+             col = terrain.colors(10), 
+             legend.args = list(text = "Suitability", side = 4, line = 2))
+      })
     })
   }, error = function(e) {
     showModal(
@@ -3455,6 +3468,7 @@ server <- function(input, output, session) {
     )
   })
 })
+
   ############################# present future
   
   
@@ -4709,3 +4723,4 @@ observeEvent(input$runLCP, {
 
 # Ejecutar la aplicación
 shinyApp(ui = ui, server = server)
+
