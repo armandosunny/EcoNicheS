@@ -407,7 +407,7 @@ Result
 ## Tenth module: Calculate area
 This tab enables you to calculate the suitability area for the species of interest by uploading a .asc, tif and bil file generated in the previous tab or an existing file if applicable. The Suitability Threshold can be adjusted based on the specific requirements of your study. In addition to providing a numerical result, the module also visualizes the remaining suitable area on a map, allowing you to clearly see the regions that meet the selected threshold. The results, including the legend and map, are displayed in the main panel below for easy interpretation.
 
-<img width="1144" alt="Captura de pantalla 2025-01-16 a la(s) 1 27 38 p m" src="https://github.com/user-attachments/assets/206717a6-00ca-4b14-be79-8c8e457b7da9" /
+<img width="1144" alt="Captura de pantalla 2025-01-16 a la(s) 1 27 38 p m" src="https://github.com/user-attachments/assets/9ed2ae0b-4d6c-45ee-9184-bb66e96a9717" />
 
 
 
