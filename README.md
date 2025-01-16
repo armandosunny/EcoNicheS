@@ -414,9 +414,10 @@ This tab allows you to obtain the area of suitability of the species of interest
 
 ## Eleventh module: Gains and losses plot
 
-This tab requires two files, the only acceptable format of which is .asc. The first of these raster files must correspond to a file with the characteristics or geographical data of the area of interest. The second file corresponds to a future prediction of the conditions of the landscape.
+This tab requires two input files in .asc, .tiff, or .bil format. It allows you to analyze changes between two raster maps, highlighting variable gains and losses. To use this module, you need to provide a map from the initial time point (Time 1) and another from the subsequent time point (Time 2). The resulting analysis will help you visualize the changes that occurred in the area over time.
 
-<img width="1057" alt="Captura de pantalla 2024-09-22 a la(s) 12 50 55 p m" src="https://github.com/user-attachments/assets/904640e1-f6e5-4910-8297-c619dfee0098">
+<img width="1143" alt="Captura de pantalla 2025-01-16 a la(s) 8 51 33 a m" src="https://github.com/user-attachments/assets/491248fe-cb28-46a3-8926-e7b25e47e052" />
+
 
 ## Twelfth module: ENMTools
 
