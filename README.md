@@ -64,7 +64,7 @@ The **`rgeos`** package is no longer available on CRAN because its functionality
 - Development has shifted toward packages such as **`sf`** and **`s2`**, which offer more modern and comprehensive spatial functionality.
 - As a result, **`rgeos`** was archived on CRAN, and you must now install it manually from the CRAN Archive.
 
-## 3. Install from Source in R
+## 2.2 Install from Source in R
 
 Open R (or RStudio) and run:
 
@@ -75,7 +75,7 @@ install.packages(
   type = "source"
 )
 ```
-### 2.2 GitHub Libraries
+### 2.3 GitHub Libraries
 Some libraries are not available on CRAN and must be installed from GitHub. Run the following commands in your R console:
 
 ```
