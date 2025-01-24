@@ -10,8 +10,16 @@ Need Help or Found a Bug?
 For any questions, comments, or to report bugs related to EcoNicheS, feel free to:
 
 Send an email to: econichesapp@gmail.com
+
 Leave a message in the Issues section of the repository.
 We value your feedback and are here to help!
+
+You can also watch a tutorial video on YouTube here:
+[YouTube Tutorial](https://www.youtube.com/watch?v=fLul1kkZhfI&t=27s)
+
+Visit our official website for more information:
+[EcoNicheS Website](https://armandosunny.github.io/EcoNicheS/)
+
 
 -----
 #### Schematic description of the ecological niche modeling process, and steps that can be performed using the EcoNicheS package.
