@@ -55,6 +55,8 @@ library(readr)
 library(MIAmaxent)
 library(rgeos)
 
+
+
 # Definir UI de la aplicación principal
 ui <- dashboardPage(
   dashboardHeader(title = 'EcoNicheS',
@@ -3411,7 +3413,10 @@ server <- function(input, output, session) {
   
   #############################3 remove urban
   
-  # Calculate Area and Visualize on Map
+  # Create reactive values to store raster and results
+reactiveRaster <- reactiveValues(data = NULL)
+
+# Calculate Area and Visualize on Map
 observeEvent(input$calcularArea, {
   tryCatch({ 
     req(input$archivoRaster)
@@ -3421,41 +3426,44 @@ observeEvent(input$calcularArea, {
     output$Result <- renderPrint({ NULL })
     
     withProgress(message = 'Calculating...', value = 0, {
-      total_iterationsarea <- 1
-      total_progressarea <- 1
+      archivoRaster <- input$archivoRaster$datapath
+      umbralSuitability <- input$umbralSuitability
       
-      for (i in 1:total_iterationsarea) {
-        archivoRaster <- input$archivoRaster$datapath
-        umbralSuitability <- input$umbralSuitability
-        
-        incProgress(2/10, detail = "Loading raster data...")
-        rasterData <- raster(archivoRaster)
-        
-        incProgress(2/10, detail = "Applying threshold...")
-        rasterData[rasterData <= umbralSuitability] <- NA
-        
-        incProgress(2/10, detail = "Calculating cell areas...")
-        cell_size <- area(rasterData, na.rm = TRUE, weights = FALSE)
-        
-        incProgress(2/10, detail = "Calculating total area...")
-        cell_size1 <- cell_size[!is.na(cell_size)]
-        areaSuitability <- length(cell_size1) * median(cell_size1)
-        
-        incProgress(2/10, detail = "Finalizing...")
-      }
+      incProgress(2/10, detail = "Loading raster data...")
+      rasterData <- raster(archivoRaster)  # Reload raster every time the function runs
       
-      # Actualizar el resultado al final del cálculo
+      incProgress(2/10, detail = "Applying threshold...")
+      rasterFiltered <- rasterData  # Create a new copy of the raster to modify
+      rasterFiltered[rasterFiltered <= umbralSuitability] <- NA  # Apply threshold
+
+      incProgress(2/10, detail = "Calculating cell areas...")
+      cell_size <- area(rasterFiltered, na.rm = TRUE, weights = FALSE)
+      
+      incProgress(2/10, detail = "Calculating total area...")
+      cell_size1 <- cell_size[!is.na(cell_size)]
+      areaSuitability <- length(cell_size1) * median(cell_size1)
+      
+      incProgress(2/10, detail = "Finalizing...")
+      
+      # Store the new raster data
+      reactiveRaster$data <- rasterFiltered
+      
+      # Actualizar el resultado en el panel
       output$Result <- renderPrint({
         paste("Area of Suitability in km²:", round(areaSuitability, 2))
       })
       
       # Graficar el área seleccionada en el mapa
       output$areaMap <- renderPlot({
-        plot(rasterData, 
-             main = "Suitability Area", 
+        req(reactiveRaster$data)  # Ensure the raster is available
+        plot(reactiveRaster$data, 
+             main = "Updated Suitability Area", 
              col = terrain.colors(10), 
              legend.args = list(text = "Suitability", side = 4, line = 2))
       })
+      
+      # Force UI update
+      invalidateLater(500, session)
     })
   }, error = function(e) {
     showModal(
@@ -3826,618 +3834,618 @@ tableroc <- suroc_df %>%
   
   
   observeEvent(input$run_enmtools, {
+
+tryCatch({ 
+
+    if (is.null(input$sp1_enmtools) || is.null(input$sp2_enmtools) || is.null(input$layerFilesENM) || is.null(input$model_niche) || length(input$model_niche) == 0 || is.null(input$options_rblmodel)) {
+      showModal(modalDialog(
+        title = "Error",
+        "You need to fill out the required fields to continue."
+      ))
+
+    } else {
+
+    withProgress(message = 'Loading maps...', value = 0, {
+                 total_iterationsurb <- 1
+                                    total_progressurb <- 1
+                 # Aquí va el código para realizar el análisis
+                 # Actualiza el valor de la barra de progreso en porcentaje
+                 for (i in 1:total_iterationsurb) {
+
+                       incProgress(1/10, detail = "Ploting...")
+
+    req(input$layerFilesENM)
     
-    tryCatch({ 
-      
-      if (is.null(input$sp1_enmtools) || is.null(input$sp2_enmtools) || is.null(input$layerFilesENM) || is.null(input$model_niche) || length(input$model_niche) == 0 || is.null(input$options_rblmodel)) {
-        showModal(modalDialog(
-          title = "Error",
-          "You need to fill out the required fields to continue."
-        ))
-        
-      } else {
-        
-        withProgress(message = 'Loading maps...', value = 0, {
-          total_iterationsurb <- 1
-          total_progressurb <- 1
-          # Aquí va el código para realizar el análisis
-          # Actualiza el valor de la barra de progreso en porcentaje
-          for (i in 1:total_iterationsurb) {
-            
-            incProgress(1/10, detail = "Ploting...")
-            
-            req(input$layerFilesENM)
-            
-            # Leer todos los archivos .asc seleccionados
-            env <- lapply(input$layerFilesENM$datapath, terra::rast)
-            
-            # Apilar las capas raster en un objeto 'SpatRaster'
-            env <- do.call(c, env)
-            
-            # Asignar nombres a las capas
-            names(env) <- input$layerFilesENM$name
-            
-            env <- setMinMax(env)
-            env <- check.env(env)
-            
-            incProgress(1/10, detail = "Ploting...")
-            
-            # Cargar el archivo csv
-            datosBP_input <- input$sp1_enmtools
-            datosBP <- read.csv(datosBP_input$datapath)
-            
-            
-            # Filtrar las filas donde Response sea 0
-            datos_filtradosPP <- subset(datosBP, Response == 1)
-            
-            # Renombrar las columnas a lon y lat
-            names(datos_filtradosPP)[names(datos_filtradosPP) == "X"] <- "lon"
-            names(datos_filtradosPP)[names(datos_filtradosPP) == "Y"] <- "lat"
-            
-            # Crear el objeto species para ENMTools
-            sp1 <- enmtools.species(species.name = "sp1", 
-                                    presence.points = vect(datos_filtradosPP[, c("lon", "lat")]))
-            
-            
-            
-            datos_filtradosBP <- subset(datosBP, Response == 0)
-            names(datos_filtradosBP)[names(datos_filtradosBP) == "X"] <- "lon"
-            names(datos_filtradosBP)[names(datos_filtradosBP) == "Y"] <- "lat"
-            crs(sp1$presence.points) <- crs(env)
-            sp1$range <- background.raster.buffer(sp1$presence.points, 50000, mask = env)
-            
-            
-            background_sp <- SpatialPoints(coords = datos_filtradosBP[, c("lon", "lat")])
-            
-            crs(background_sp) <- crs(env)
-            
-            bp_spatvector <- as(background_sp, "SpatVector")
-            
-            sp1$background.points <- bp_spatvector
-            sp1 <- check.species(sp1) 
-            
-            
-            incProgress(1/10, detail = "Ploting...")
-            
-            
-            
-            ############3ESPECIE 2
-            datosBP2_input <- input$sp2_enmtools
-            datosBP2 <- read.csv(datosBP2_input$datapath)
-            
-            # Filtrar las filas donde Response sea 0
-            datos_filtradosPP_2 <- subset(datosBP2, Response == 1)
-            
-            # Renombrar las columnas a lon y lat
-            names(datos_filtradosPP_2)[names(datos_filtradosPP_2) == "X"] <- "lon"
-            names(datos_filtradosPP_2)[names(datos_filtradosPP_2) == "Y"] <- "lat"
-            
-            # Crear el objeto species para ENMTools
-            sp2 <- enmtools.species(species.name = "sp2", 
-                                    presence.points = vect(datos_filtradosPP_2[, c("lon", "lat")]))
-            
-            
-            
-            datos_filtradosBP_2 <- subset(datosBP2, Response == 0)
-            names(datos_filtradosBP_2)[names(datos_filtradosBP_2) == "X"] <- "lon"
-            names(datos_filtradosBP_2)[names(datos_filtradosBP_2) == "Y"] <- "lat"
-            crs(sp2$presence.points) <- crs(env)
-            sp2$range <- background.raster.buffer(sp2$presence.points, 50000, mask = env)
-            
-            
-            background_sp_2 <- SpatialPoints(coords = datos_filtradosBP_2[, c("lon", "lat")])
-            
-            crs(background_sp_2) <- crs(env)
-            
-            bp_spatvector_2 <- as(background_sp_2, "SpatVector")
-            
-            sp2$background.points <- bp_spatvector_2
-            sp2 <- check.species(sp2) 
-            
-            incProgress(1/10, detail = "Ploting...")
-            
-            
-            ##########
-            
-            ### sp1
-            map <- leaflet() %>%
-              # Añadir mapa base
-              addProviderTiles("OpenStreetMap.Mapnik") %>%
-              # Añadir el rango de la especie
-              addRasterImage(sp1$range, colors = "green", opacity = 0.5) %>%
-              # Añadir los puntos de presencia
-              addCircleMarkers(data = sp1$presence.points, color = "red", radius = 3, group = "Presence Points") %>%
-              # Añadir los puntos de fondo
-              addCircleMarkers(data = sp1$background.points, color = "blue", radius = 3, group = "Background Points") %>%
-              # Añadir capas de control para activar/desactivar las capas
-              addLayersControl(overlayGroups = c("Presence Points", "Background Points"),
-                               options = layersControlOptions(collapsed = FALSE))
-            
-            
-            output$map_sp1 <- renderLeaflet({    
-              map
-            })
-            
-            ###sp2
-            map2 <- leaflet() %>%
-              # Añadir map2a base
-              addProviderTiles("OpenStreetMap.Mapnik") %>%
-              # Añadir el rango de la especie
-              addRasterImage(sp2$range, colors = "green", opacity = 0.5) %>%
-              # Añadir los puntos de presencia
-              addCircleMarkers(data = sp2$presence.points, color = "red", radius = 3, group = "Presence Points") %>%
-              # Añadir los puntos de fondo
-              addCircleMarkers(data = sp2$background.points, color = "blue", radius = 3, group = "Background Points") %>%
-              #Añadir capas de control para activar/desactivar las capas
-              addLayersControl(overlayGroups = c("Presence Points", "Background Points"),
-                               options = layersControlOptions(collapsed = FALSE))
-            
-            
-            output$map_sp2 <- renderLeaflet({    
-              map2
-            })
-            
-            ####################################3 modelos
-            #especie 1
-            if (input$options_species_model == 1) {
-              
-              models_selected <- input$model_niche
-              
-              if ("glm" %in% models_selected) {
-                sp1.glm <- enmtools.glm(species = sp1, env = env, test.prop = 0.2)
-                output$modelPlot_glm <- renderPlot({ sp1.glm })
-                output$modelSummary_glm <- renderPrint({ sp1.glm })
-                output$resp_plot_glm <- renderPlot({sp1.glm$response.plots})
-                output$test_data_glm <- renderPlot({
-                  visualize.enm(sp1.glm, env, plot.test.data = TRUE)
-                })
-                
-                output$downloadPdf_glmmodel <- downloadHandler(
-                  filename = function() {
-                    "GLM Model.pdf"
-                  },
-                  content = function(file) {
-                    glm_plot_pdf<-plot(sp1.glm)
-                    ggsave(file, plot = glm_plot_pdf, device = "pdf")
-                  }
-                )
-              }
-              
-              if ("gam" %in% models_selected) {
-                sp1.gam <- enmtools.gam(sp1, env, test.prop = 0.2)
-                output$modelPlot_gam <- renderPlot({ sp1.gam })
-                output$modelSummary_gam <- renderPrint({ sp1.gam })
-                output$resp_plot_gam <- renderPlot({sp1.gam$response.plots})
-                output$test_data_gam <- renderPlot({
-                  visualize.enm(sp1.gam, env, plot.test.data = TRUE)
-                })
-                output$downloadPdf_gammodel <- downloadHandler(
-                  filename = function() {
-                    "GAM Model.pdf"
-                  },
-                  content = function(file) {
-                    gam_plot_pdf<-plot(sp1.gam)
-                    ggsave(file, plot = gam_plot_pdf, device = "pdf")
-                  }
-                )
-                
-              }
-              
-              if ("dm" %in% models_selected) {
-                sp1.dm <- enmtools.dm(sp1, env, test.prop = 0.2)
-                output$modelPlot_dm <- renderPlot({ sp1.dm })
-                output$modelSummary_dm <- renderPrint({ sp1.dm })
-                output$resp_plot_dm <- renderPlot({sp1.dm$response.plots})
-                output$test_data_dm <- renderPlot({
-                  visualize.enm(sp1.dm, env, plot.test.data = TRUE)
-                })
-                
-                output$downloadPdf_dmmodel <- downloadHandler(
-                  filename = function() {
-                    "DM Model.pdf"
-                  },
-                  content = function(file) {
-                    dm_plot_pdf<-plot(sp1.dm)
-                    ggsave(file, plot = dm_plot_pdf, device = "pdf")
-                  }
-                )
-              }
-              
-              if ("bc" %in% models_selected) {
-                sp1.bc <- enmtools.bc(sp1, env, test.prop = 0.2)
-                output$modelPlot_bc <- renderPlot({ sp1.bc })
-                output$modelSummary_bc <- renderPrint({ sp1.bc })
-                output$resp_plot_bc <- renderPlot({sp1.bc$response.plots})
-                output$test_data_bc <- renderPlot({
-                  visualize.enm(sp1.bc, env, plot.test.data = TRUE)
-                })
-                output$downloadPdf_bcmodel <- downloadHandler(
-                  filename = function() {
-                    "BC Model.pdf"
-                  },
-                  content = function(file) {
-                    bc_plot_pdf<-plot(sp1.bc)
-                    ggsave(file, plot = bc_plot_pdf, device = "pdf")
-                  }
-                )
-              }
-              
-              if ("mx" %in% models_selected) {
-                sp1.mx <- enmtools.maxent(sp1, env, test.prop = 0.2)
-                output$modelPlot_mx <- renderPlot({ sp1.mx })
-                output$modelSummary_mx <- renderPrint({ sp1.mx })
-                output$resp_plot_mx <- renderPlot({sp1.mx$response.plots})
-                output$test_data_mx <- renderPlot({
-                  visualize.enm(sp1.mx, env, plot.test.data = TRUE)
-                })
-                output$downloadPdf_mxmodel <- downloadHandler(
-                  filename = function() {
-                    "Maxent Model.pdf"
-                  },
-                  content = function(file) {
-                    mx_plot_pdf<-plot(sp1.mx)
-                    ggsave(file, plot = mx_plot_pdf, device = "pdf")
-                  }
-                )
-              }
-              
-            } # especie 1
-            
-            
-            #
-            #especie 2
-            if (input$options_species_model == 2) {
-              
-              #especie 1
-              
-              models_selected <- input$model_niche
-              
-              if ("glm" %in% models_selected) {
-                sp1.glm <- enmtools.glm(species = sp1, env = env, test.prop = 0.2)
-                output$modelPlot_glm <- renderPlot({ sp1.glm })
-                output$modelSummary_glm <- renderPrint({ sp1.glm })
-                output$resp_plot_glm <- renderPlot({sp1.glm$response.plots})
-                output$test_data_glm <- renderPlot({
-                  visualize.enm(sp1.glm, env, plot.test.data = TRUE)
-                })
-                
-                output$downloadPdf_glmmodel <- downloadHandler(
-                  filename = function() {
-                    "GLM Model.pdf"
-                  },
-                  content = function(file) {
-                    glm_plot_pdf<-plot(sp1.glm)
-                    ggsave(file, plot = glm_plot_pdf, device = "pdf")
-                  }
-                )
-              }
-              
-              if ("gam" %in% models_selected) {
-                sp1.gam <- enmtools.gam(sp1, env, test.prop = 0.2)
-                output$modelPlot_gam <- renderPlot({ sp1.gam })
-                output$modelSummary_gam <- renderPrint({ sp1.gam })
-                output$resp_plot_gam <- renderPlot({sp1.gam$response.plots})
-                output$test_data_gam <- renderPlot({
-                  visualize.enm(sp1.gam, env, plot.test.data = TRUE)
-                })
-                output$downloadPdf_gammodel <- downloadHandler(
-                  filename = function() {
-                    "GAM Model.pdf"
-                  },
-                  content = function(file) {
-                    gam_plot_pdf<-plot(sp1.gam)
-                    ggsave(file, plot = gam_plot_pdf, device = "pdf")
-                  }
-                )
-                
-              }
-              
-              if ("dm" %in% models_selected) {
-                sp1.dm <- enmtools.dm(sp1, env, test.prop = 0.2)
-                output$modelPlot_dm <- renderPlot({ sp1.dm })
-                output$modelSummary_dm <- renderPrint({ sp1.dm })
-                output$resp_plot_dm <- renderPlot({sp1.dm$response.plots})
-                output$test_data_dm <- renderPlot({
-                  visualize.enm(sp1.dm, env, plot.test.data = TRUE)
-                })
-                
-                output$downloadPdf_dmmodel <- downloadHandler(
-                  filename = function() {
-                    "DM Model.pdf"
-                  },
-                  content = function(file) {
-                    dm_plot_pdf<-plot(sp1.dm)
-                    ggsave(file, plot = dm_plot_pdf, device = "pdf")
-                  }
-                )
-              }
-              
-              if ("bc" %in% models_selected) {
-                sp1.bc <- enmtools.bc(sp1, env, test.prop = 0.2)
-                output$modelPlot_bc <- renderPlot({ sp1.bc })
-                output$modelSummary_bc <- renderPrint({ sp1.bc })
-                output$resp_plot_bc <- renderPlot({sp1.bc$response.plots})
-                output$test_data_bc <- renderPlot({
-                  visualize.enm(sp1.bc, env, plot.test.data = TRUE)
-                })
-                output$downloadPdf_bcmodel <- downloadHandler(
-                  filename = function() {
-                    "BC Model.pdf"
-                  },
-                  content = function(file) {
-                    bc_plot_pdf<-plot(sp1.bc)
-                    ggsave(file, plot = bc_plot_pdf, device = "pdf")
-                  }
-                )
-              }
-              
-              if ("maxent" %in% models_selected) {
-                sp1.mx <- enmtools.maxent(sp1, env, test.prop = 0.2)
-                output$modelPlot_mx <- renderPlot({ sp1.mx })
-                output$modelSummary_mx <- renderPrint({ sp1.mx })
-                output$resp_plot_mx <- renderPlot({sp1.mx$response.plots})
-                output$test_data_mx <- renderPlot({
-                  visualize.enm(sp1.mx, env, plot.test.data = TRUE)
-                })
-                output$downloadPdf_mxmodel <- downloadHandler(
-                  filename = function() {
-                    "Maxent Model.pdf"
-                  },
-                  content = function(file) {
-                    mx_plot_pdf<-plot(sp1.mx)
-                    ggsave(file, plot = mx_plot_pdf, device = "pdf")
-                  }
-                )
-              }
-              
-              # especie 2
-              
-              
-              models_selected <- input$model_niche
-              
-              if ("glm" %in% models_selected) {
-                sp2.glm <- enmtools.glm(species = sp2, env = env, test.prop = 0.2)
-                output$modelPlot_glm2 <- renderPlot({ sp2.glm })
-                output$modelSummary_glm2 <- renderPrint({ sp2.glm })
-                output$resp_plot_glm2 <- renderPlot({sp2.glm$response.plots})
-                output$test_data_glm2 <- renderPlot({
-                  visualize.enm(sp2.glm, env, plot.test.data = TRUE)
-                })
-                
-                output$downloadPdf_glmmodel <- downloadHandler(
-                  filename = function() {
-                    "GLM Model sp2.pdf"
-                  },
-                  content = function(file) {
-                    glm_plot_pdf2<-plot(sp2.glm)
-                    ggsave(file, plot = glm_plot_pdf2, device = "pdf")
-                  }
-                )
-              }
-              
-              if ("gam" %in% models_selected) {
-                sp2.gam <- enmtools.gam(sp2, env, test.prop = 0.2)
-                output$modelPlot_gam2 <- renderPlot({ sp2.gam })
-                output$modelSummary_gam2 <- renderPrint({ sp2.gam })
-                output$resp_plot_gam2 <- renderPlot({sp2.gam$response.plots})
-                output$test_data_gam2 <- renderPlot({
-                  visualize.enm(sp2.gam, env, plot.test.data = TRUE)
-                })
-                output$downloadPdf_gammodel2 <- downloadHandler(
-                  filename = function() {
-                    "GAM Model sp2.pdf"
-                  },
-                  content = function(file) {
-                    gam_plot_pdf2<-plot(sp2.gam)
-                    ggsave(file, plot = gam_plot_pdf2, device = "pdf")
-                  }
-                )
-                
-              }
-              
-              if ("dm" %in% models_selected) {
-                sp2.dm <- enmtools.dm(sp2, env, test.prop = 0.2)
-                output$modelPlot_dm2 <- renderPlot({ sp2.dm })
-                output$modelSummary_dm2 <- renderPrint({ sp2.dm })
-                output$resp_plot_dm2 <- renderPlot({sp2.dm$response.plots})
-                output$test_data_dm2 <- renderPlot({
-                  visualize.enm(sp2.dm, env, plot.test.data = TRUE)
-                })
-                
-                output$downloadPdf_dmmodel <- downloadHandler(
-                  filename = function() {
-                    "DM Model sp2.pdf"
-                  },
-                  content = function(file) {
-                    dm_plot_pdf2<-plot(sp2.dm)
-                    ggsave(file, plot = dm_plot_pdf2, device = "pdf")
-                  }
-                )
-              }
-              
-              if ("bc" %in% models_selected) {
-                sp2.bc <- enmtools.bc(sp2, env, test.prop = 0.2)
-                output$modelPlot_bc2 <- renderPlot({ sp2.bc })
-                output$modelSummary_bc2 <- renderPrint({ sp2.bc })
-                output$resp_plot_bc2 <- renderPlot({sp2.bc$response.plots})
-                output$test_data_bc2 <- renderPlot({
-                  visualize.enm(sp2.bc, env, plot.test.data = TRUE)
-                })
-                output$downloadPdf_bcmodel <- downloadHandler(
-                  filename = function() {
-                    "BC Model sp2.pdf"
-                  },
-                  content = function(file) {
-                    bc_plot_pdf2<-plot(sp2.bc)
-                    ggsave(file, plot = bc_plot_pdf2, device = "pdf")
-                  }
-                )
-              }
-              
-              if ("mx" %in% models_selected) {
-                sp2.mx <- enmtools.maxent(sp2, env, test.prop = 0.2)
-                output$modelPlot_mx2 <- renderPlot({ sp2.mx })
-                output$modelSummary_mx2 <- renderPrint({ sp2.mx })
-                output$resp_plot_mx2 <- renderPlot({sp2.mx$response.plots})
-                output$test_data_mx2 <- renderPlot({
-                  visualize.enm(sp2.mx, env, plot.test.data = TRUE)
-                })
-                output$downloadPdf_mxmodel <- downloadHandler(
-                  filename = function() {
-                    "Maxent Model sp2.pdf"
-                  },
-                  content = function(file) {
-                    mx_plot_pdf2<-plot(sp2.mx)
-                    ggsave(file, plot = mx_plot_pdf2, device = "pdf")
-                  }
-                )
-              }
-              
-              # especie 2
-            }
-            
-            
-            
-            
-            #######################3 modelos
-            if (1 %in% input$checkbox_opciones) {
-              # Realizar Niche identity or equivalency test
-              id.glm <- identity.test(species.1 = sp1, species.2 = sp2, env = env, type = input$model_niche_s, nreps = 4)
-              
-              output$summary_idtest <- renderPrint({
-                id.glm
-              })
-              # Mostrar los resultados en la UI
-              output$plot_idtest <- renderPlot({
-                id.glm
-              })
-            }
-            
-            if (2 %in% input$checkbox_opciones) {
-              # Realizar Background or similarity test (Asymmetric)
-              bg.bc.asym <- background.test(species.1 = sp1, species.2 = sp2, env = env, type = input$model_niche_s, nreps = 4, test.type = "asymmetric")
-              
-              output$summary_bctest <- renderPrint({
-                bg.bc.asym
-              })
-              # # Mostrar los resultados en la UI
-              output$plot_bctest <- renderPlot({
-                bg.bc.asym
-              })
-            }
-            
-            if (3 %in% input$checkbox_opciones) {
-              # Realizar Background or similarity test (Symmetric)
-              bg.dm.sym <- background.test(species.1 = sp1, species.2 = sp2, env = env, type = input$model_niche_s, nreps = 4, test.type = "symmetric")
-              output$summary_sym <- renderPrint({
-                bg.dm.sym
-              })
-              # Mostrar los resultados en la UI
-              output$plot_sym <- renderPlot({
-                bg.dm.sym
-              })
-            }
-            
-            
-            model_type_rbl <- switch(input$options_rblmodel,
-                                     "1" = "glm",
-                                     "2" = "gam",
-                                     "3" = "dm",
-                                     "4" = "bc",
-                                     "5" = "mx")
-            
-            rbl.glm <- rangebreak.linear(sp1, sp2, env, type = model_type_rbl, nreps = 10)
-            
-            
-            esp.bg.sym <- enmtools.ecospat.bg(sp1, sp2, env, test.type = "symmetric")
-            incProgress(1/10, detail = "Ploting...")
-            
-            output$summary_nicheover <- renderPrint({
-              esp.bg.sym
-            })
-            
-            
-            # Mostrar los resultados en la UI
-            output$plot1 <- renderPlot({
-              print(esp.bg.sym)
-            })
-            
-            
-            
-            
-            output$downloadPdf_ecospat <- downloadHandler(
-              filename = function() {
-                paste("mi_plot_esp_bg_sym", Sys.Date(), ".pdf", sep = "")
-              },
-              content = function(file) {
-                # Abre el dispositivo gráfico PDF
-                pdf(file)
-                
-                # Genera el gráfico
-                plot(esp.bg.sym)
-                
-                # Cierra el dispositivo gráfico PDF
-                dev.off()
-              }
-            )
-            
-            
-            
-            output$summary_rbl <- renderPrint({
-              rbl.glm
-            })
-            
-            
-            # Mostrar los resultados en la UI
-            output$plot_rbl <- renderPlot({
-              rbl.glm
-            })
-            
-            
-            
-            
-            output$downloadPdf_rbl <- downloadHandler(
-              filename = function() {
-                paste("Rangebreak tests", Sys.Date(), ".pdf", sep = "")
-              },
-              content = function(file) {
-                # Abre el dispositivo gráfico PDF
-                pdf(file)
-                
-                # Genera el gráfico
-                plot(rbl.glm)
-                
-                # Cierra el dispositivo gráfico PDF
-                dev.off()
-              }
-            )
-            
-            incProgress(1/10, detail = "Ploting...")
-            incProgress(total_progressurb, detail = "Proceso completado")
-            
-          }
-        }) #withprogress
-        
-        
-      } #upload
-      
-    }, error = function(e) {
-      # Error handling for a bad internet connection
-      if (inherits(e, "error")) {
-        
-        showModal(
-          modalDialog(
-            title = "Error",
-            paste("Something went wrong.", e$message),
-            easyClose = TRUE,
-            footer = NULL
-          )
-        )
-      }
-    }) #######trycatch
+    # Leer todos los archivos .asc seleccionados
+    env <- lapply(input$layerFilesENM$datapath, terra::rast)
     
-  })
+    # Apilar las capas raster en un objeto 'SpatRaster'
+    env <- do.call(c, env)
+    
+    # Asignar nombres a las capas
+    names(env) <- input$layerFilesENM$name
+    
+    env <- setMinMax(env)
+    env <- check.env(env)
+    
+                       incProgress(1/10, detail = "Ploting...")
+    
+    # Cargar el archivo csv
+    datosBP_input <- input$sp1_enmtools
+    datosBP <- read.csv(datosBP_input$datapath)
+    
+
+# Filtrar las filas donde Response sea 0
+datos_filtradosPP <- subset(datosBP, Response == 1)
+
+# Renombrar las columnas a lon y lat
+names(datos_filtradosPP)[names(datos_filtradosPP) == "X"] <- "lon"
+names(datos_filtradosPP)[names(datos_filtradosPP) == "Y"] <- "lat"
+
+# Crear el objeto species para ENMTools
+sp1 <- enmtools.species(species.name = "sp1", 
+                        presence.points = vect(datos_filtradosPP[, c("lon", "lat")]))
+
+
+
+datos_filtradosBP <- subset(datosBP, Response == 0)
+ names(datos_filtradosBP)[names(datos_filtradosBP) == "X"] <- "lon"
+ names(datos_filtradosBP)[names(datos_filtradosBP) == "Y"] <- "lat"
+ crs(sp1$presence.points) <- crs(env)
+ sp1$range <- background.raster.buffer(sp1$presence.points, 50000, mask = env)
+ 
+ 
+ background_sp <- SpatialPoints(coords = datos_filtradosBP[, c("lon", "lat")])
+
+crs(background_sp) <- crs(env)
+
+bp_spatvector <- as(background_sp, "SpatVector")
+
+sp1$background.points <- bp_spatvector
+sp1 <- check.species(sp1) 
+
+
+                       incProgress(1/10, detail = "Ploting...")
+
+
+
+    ############3ESPECIE 2
+    datosBP2_input <- input$sp2_enmtools
+    datosBP2 <- read.csv(datosBP2_input$datapath)
+    
+# Filtrar las filas donde Response sea 0
+datos_filtradosPP_2 <- subset(datosBP2, Response == 1)
+
+# Renombrar las columnas a lon y lat
+names(datos_filtradosPP_2)[names(datos_filtradosPP_2) == "X"] <- "lon"
+names(datos_filtradosPP_2)[names(datos_filtradosPP_2) == "Y"] <- "lat"
+
+# Crear el objeto species para ENMTools
+sp2 <- enmtools.species(species.name = "sp2", 
+                        presence.points = vect(datos_filtradosPP_2[, c("lon", "lat")]))
+
+
+
+datos_filtradosBP_2 <- subset(datosBP2, Response == 0)
+ names(datos_filtradosBP_2)[names(datos_filtradosBP_2) == "X"] <- "lon"
+ names(datos_filtradosBP_2)[names(datos_filtradosBP_2) == "Y"] <- "lat"
+ crs(sp2$presence.points) <- crs(env)
+ sp2$range <- background.raster.buffer(sp2$presence.points, 50000, mask = env)
+ 
+ 
+ background_sp_2 <- SpatialPoints(coords = datos_filtradosBP_2[, c("lon", "lat")])
+
+crs(background_sp_2) <- crs(env)
+
+bp_spatvector_2 <- as(background_sp_2, "SpatVector")
+
+sp2$background.points <- bp_spatvector_2
+sp2 <- check.species(sp2) 
+
+                       incProgress(1/10, detail = "Ploting...")
+
+
+##########
+
+### sp1
+map <- leaflet() %>%
+  # Añadir mapa base
+  addProviderTiles("OpenStreetMap.Mapnik") %>%
+  # Añadir el rango de la especie
+  addRasterImage(sp1$range, colors = "green", opacity = 0.5) %>%
+  # Añadir los puntos de presencia
+  addCircleMarkers(data = sp1$presence.points, color = "red", radius = 3, group = "Presence Points") %>%
+  # Añadir los puntos de fondo
+  addCircleMarkers(data = sp1$background.points, color = "blue", radius = 3, group = "Background Points") %>%
+  # Añadir capas de control para activar/desactivar las capas
+  addLayersControl(overlayGroups = c("Presence Points", "Background Points"),
+                   options = layersControlOptions(collapsed = FALSE))
+
   
+  output$map_sp1 <- renderLeaflet({    
+    map
+  })
+
+###sp2
+map2 <- leaflet() %>%
+  # Añadir map2a base
+  addProviderTiles("OpenStreetMap.Mapnik") %>%
+  # Añadir el rango de la especie
+  addRasterImage(sp2$range, colors = "green", opacity = 0.5) %>%
+  # Añadir los puntos de presencia
+  addCircleMarkers(data = sp2$presence.points, color = "red", radius = 3, group = "Presence Points") %>%
+  # Añadir los puntos de fondo
+  addCircleMarkers(data = sp2$background.points, color = "blue", radius = 3, group = "Background Points") %>%
+   #Añadir capas de control para activar/desactivar las capas
+  addLayersControl(overlayGroups = c("Presence Points", "Background Points"),
+                   options = layersControlOptions(collapsed = FALSE))
+
+  
+  output$map_sp2 <- renderLeaflet({    
+    map2
+  })
+
+####################################3 modelos
+#especie 1
+    if (input$options_species_model == 1) {
+
+models_selected <- input$model_niche
+
+          if ("glm" %in% models_selected) {
+            sp1.glm <- enmtools.glm(species = sp1, env = env, test.prop = 0.2)
+            output$modelPlot_glm <- renderPlot({ sp1.glm })
+            output$modelSummary_glm <- renderPrint({ sp1.glm })
+	    output$resp_plot_glm <- renderPlot({sp1.glm$response.plots})
+output$test_data_glm <- renderPlot({
+visualize.enm(sp1.glm, env, plot.test.data = TRUE)
+})
+
+      output$downloadPdf_glmmodel <- downloadHandler(
+        filename = function() {
+          "GLM Model.pdf"
+        },
+  content = function(file) {
+glm_plot_pdf<-plot(sp1.glm)
+    ggsave(file, plot = glm_plot_pdf, device = "pdf")
+  }
+)
+          }
+
+          if ("gam" %in% models_selected) {
+            sp1.gam <- enmtools.gam(sp1, env, test.prop = 0.2)
+            output$modelPlot_gam <- renderPlot({ sp1.gam })
+            output$modelSummary_gam <- renderPrint({ sp1.gam })
+	    output$resp_plot_gam <- renderPlot({sp1.gam$response.plots})
+output$test_data_gam <- renderPlot({
+visualize.enm(sp1.gam, env, plot.test.data = TRUE)
+})
+      output$downloadPdf_gammodel <- downloadHandler(
+        filename = function() {
+          "GAM Model.pdf"
+        },
+  content = function(file) {
+gam_plot_pdf<-plot(sp1.gam)
+    ggsave(file, plot = gam_plot_pdf, device = "pdf")
+  }
+)
+
+          }
+
+          if ("dm" %in% models_selected) {
+            sp1.dm <- enmtools.dm(sp1, env, test.prop = 0.2)
+            output$modelPlot_dm <- renderPlot({ sp1.dm })
+            output$modelSummary_dm <- renderPrint({ sp1.dm })
+	    output$resp_plot_dm <- renderPlot({sp1.dm$response.plots})
+output$test_data_dm <- renderPlot({
+visualize.enm(sp1.dm, env, plot.test.data = TRUE)
+})
+
+      output$downloadPdf_dmmodel <- downloadHandler(
+        filename = function() {
+          "DM Model.pdf"
+        },
+  content = function(file) {
+dm_plot_pdf<-plot(sp1.dm)
+    ggsave(file, plot = dm_plot_pdf, device = "pdf")
+  }
+)
+          }
+
+          if ("bc" %in% models_selected) {
+            sp1.bc <- enmtools.bc(sp1, env, test.prop = 0.2)
+            output$modelPlot_bc <- renderPlot({ sp1.bc })
+            output$modelSummary_bc <- renderPrint({ sp1.bc })
+	    output$resp_plot_bc <- renderPlot({sp1.bc$response.plots})
+output$test_data_bc <- renderPlot({
+visualize.enm(sp1.bc, env, plot.test.data = TRUE)
+})
+      output$downloadPdf_bcmodel <- downloadHandler(
+        filename = function() {
+          "BC Model.pdf"
+        },
+  content = function(file) {
+bc_plot_pdf<-plot(sp1.bc)
+    ggsave(file, plot = bc_plot_pdf, device = "pdf")
+  }
+)
+          }
+
+          if ("maxent" %in% models_selected) {
+            sp1.mx <- enmtools.maxent(sp1, env, test.prop = 0.2)
+            output$modelPlot_mx <- renderPlot({ sp1.mx })
+            output$modelSummary_mx <- renderPrint({ sp1.mx })
+	    output$resp_plot_mx <- renderPlot({sp1.mx$response.plots})
+output$test_data_mx <- renderPlot({
+visualize.enm(sp1.mx, env, plot.test.data = TRUE)
+})
+      output$downloadPdf_mxmodel <- downloadHandler(
+        filename = function() {
+          "Maxent Model.pdf"
+        },
+  content = function(file) {
+mx_plot_pdf<-plot(sp1.mx)
+    ggsave(file, plot = mx_plot_pdf, device = "pdf")
+  }
+)
+          }
+
+} # especie 1
+
+
+#
+#especie 2
+    if (input$options_species_model == 2) {
+
+#especie 1
+
+models_selected <- input$model_niche
+
+          if ("glm" %in% models_selected) {
+            sp1.glm <- enmtools.glm(species = sp1, env = env, test.prop = 0.2)
+            output$modelPlot_glm <- renderPlot({ sp1.glm })
+            output$modelSummary_glm <- renderPrint({ sp1.glm })
+	    output$resp_plot_glm <- renderPlot({sp1.glm$response.plots})
+output$test_data_glm <- renderPlot({
+visualize.enm(sp1.glm, env, plot.test.data = TRUE)
+})
+
+      output$downloadPdf_glmmodel <- downloadHandler(
+        filename = function() {
+          "GLM Model.pdf"
+        },
+  content = function(file) {
+glm_plot_pdf<-plot(sp1.glm)
+    ggsave(file, plot = glm_plot_pdf, device = "pdf")
+  }
+)
+          }
+
+          if ("gam" %in% models_selected) {
+            sp1.gam <- enmtools.gam(sp1, env, test.prop = 0.2)
+            output$modelPlot_gam <- renderPlot({ sp1.gam })
+            output$modelSummary_gam <- renderPrint({ sp1.gam })
+	    output$resp_plot_gam <- renderPlot({sp1.gam$response.plots})
+output$test_data_gam <- renderPlot({
+visualize.enm(sp1.gam, env, plot.test.data = TRUE)
+})
+      output$downloadPdf_gammodel <- downloadHandler(
+        filename = function() {
+          "GAM Model.pdf"
+        },
+  content = function(file) {
+gam_plot_pdf<-plot(sp1.gam)
+    ggsave(file, plot = gam_plot_pdf, device = "pdf")
+  }
+)
+
+          }
+
+          if ("dm" %in% models_selected) {
+            sp1.dm <- enmtools.dm(sp1, env, test.prop = 0.2)
+            output$modelPlot_dm <- renderPlot({ sp1.dm })
+            output$modelSummary_dm <- renderPrint({ sp1.dm })
+	    output$resp_plot_dm <- renderPlot({sp1.dm$response.plots})
+output$test_data_dm <- renderPlot({
+visualize.enm(sp1.dm, env, plot.test.data = TRUE)
+})
+
+      output$downloadPdf_dmmodel <- downloadHandler(
+        filename = function() {
+          "DM Model.pdf"
+        },
+  content = function(file) {
+dm_plot_pdf<-plot(sp1.dm)
+    ggsave(file, plot = dm_plot_pdf, device = "pdf")
+  }
+)
+          }
+
+          if ("bc" %in% models_selected) {
+            sp1.bc <- enmtools.bc(sp1, env, test.prop = 0.2)
+            output$modelPlot_bc <- renderPlot({ sp1.bc })
+            output$modelSummary_bc <- renderPrint({ sp1.bc })
+	    output$resp_plot_bc <- renderPlot({sp1.bc$response.plots})
+output$test_data_bc <- renderPlot({
+visualize.enm(sp1.bc, env, plot.test.data = TRUE)
+})
+      output$downloadPdf_bcmodel <- downloadHandler(
+        filename = function() {
+          "BC Model.pdf"
+        },
+  content = function(file) {
+bc_plot_pdf<-plot(sp1.bc)
+    ggsave(file, plot = bc_plot_pdf, device = "pdf")
+  }
+)
+          }
+
+          if ("maxent" %in% models_selected) {
+            sp1.mx <- enmtools.maxent(sp1, env, test.prop = 0.2)
+            output$modelPlot_mx <- renderPlot({ sp1.mx })
+            output$modelSummary_mx <- renderPrint({ sp1.mx })
+	    output$resp_plot_mx <- renderPlot({sp1.mx$response.plots})
+output$test_data_mx <- renderPlot({
+visualize.enm(sp1.mx, env, plot.test.data = TRUE)
+})
+      output$downloadPdf_mxmodel <- downloadHandler(
+        filename = function() {
+          "Maxent Model.pdf"
+        },
+  content = function(file) {
+mx_plot_pdf<-plot(sp1.mx)
+    ggsave(file, plot = mx_plot_pdf, device = "pdf")
+  }
+)
+          }
+
+# especie 2
+
+
+models_selected <- input$model_niche
+
+          if ("glm" %in% models_selected) {
+            sp2.glm <- enmtools.glm(species = sp2, env = env, test.prop = 0.2)
+            output$modelPlot_glm2 <- renderPlot({ sp2.glm })
+            output$modelSummary_glm2 <- renderPrint({ sp2.glm })
+	    output$resp_plot_glm2 <- renderPlot({sp2.glm$response.plots})
+output$test_data_glm2 <- renderPlot({
+visualize.enm(sp2.glm, env, plot.test.data = TRUE)
+})
+
+      output$downloadPdf_glmmodel <- downloadHandler(
+        filename = function() {
+          "GLM Model sp2.pdf"
+        },
+  content = function(file) {
+glm_plot_pdf2<-plot(sp2.glm)
+    ggsave(file, plot = glm_plot_pdf2, device = "pdf")
+  }
+)
+          }
+
+          if ("gam" %in% models_selected) {
+            sp2.gam <- enmtools.gam(sp2, env, test.prop = 0.2)
+            output$modelPlot_gam2 <- renderPlot({ sp2.gam })
+            output$modelSummary_gam2 <- renderPrint({ sp2.gam })
+	    output$resp_plot_gam2 <- renderPlot({sp2.gam$response.plots})
+output$test_data_gam2 <- renderPlot({
+visualize.enm(sp2.gam, env, plot.test.data = TRUE)
+})
+      output$downloadPdf_gammodel2 <- downloadHandler(
+        filename = function() {
+          "GAM Model sp2.pdf"
+        },
+  content = function(file) {
+gam_plot_pdf2<-plot(sp2.gam)
+    ggsave(file, plot = gam_plot_pdf2, device = "pdf")
+  }
+)
+
+          }
+
+          if ("dm" %in% models_selected) {
+            sp2.dm <- enmtools.dm(sp2, env, test.prop = 0.2)
+            output$modelPlot_dm2 <- renderPlot({ sp2.dm })
+            output$modelSummary_dm2 <- renderPrint({ sp2.dm })
+	    output$resp_plot_dm2 <- renderPlot({sp2.dm$response.plots})
+output$test_data_dm2 <- renderPlot({
+visualize.enm(sp2.dm, env, plot.test.data = TRUE)
+})
+
+      output$downloadPdf_dmmodel <- downloadHandler(
+        filename = function() {
+          "DM Model sp2.pdf"
+        },
+  content = function(file) {
+dm_plot_pdf2<-plot(sp2.dm)
+    ggsave(file, plot = dm_plot_pdf2, device = "pdf")
+  }
+)
+          }
+
+          if ("bc" %in% models_selected) {
+            sp2.bc <- enmtools.bc(sp2, env, test.prop = 0.2)
+            output$modelPlot_bc2 <- renderPlot({ sp2.bc })
+            output$modelSummary_bc2 <- renderPrint({ sp2.bc })
+	    output$resp_plot_bc2 <- renderPlot({sp2.bc$response.plots})
+output$test_data_bc2 <- renderPlot({
+visualize.enm(sp2.bc, env, plot.test.data = TRUE)
+})
+      output$downloadPdf_bcmodel <- downloadHandler(
+        filename = function() {
+          "BC Model sp2.pdf"
+        },
+  content = function(file) {
+bc_plot_pdf2<-plot(sp2.bc)
+    ggsave(file, plot = bc_plot_pdf2, device = "pdf")
+  }
+)
+          }
+
+          if ("maxent" %in% models_selected) {
+            sp2.mx <- enmtools.maxent(sp2, env, test.prop = 0.2)
+            output$modelPlot_mx2 <- renderPlot({ sp2.mx })
+            output$modelSummary_mx2 <- renderPrint({ sp2.mx })
+	    output$resp_plot_mx2 <- renderPlot({sp2.mx$response.plots})
+output$test_data_mx2 <- renderPlot({
+visualize.enm(sp2.mx, env, plot.test.data = TRUE)
+})
+      output$downloadPdf_mxmodel <- downloadHandler(
+        filename = function() {
+          "Maxent Model sp2.pdf"
+        },
+  content = function(file) {
+mx_plot_pdf2<-plot(sp2.mx)
+    ggsave(file, plot = mx_plot_pdf2, device = "pdf")
+  }
+)
+          }
+
+# especie 2
+}
+
+
+
+
+#######################3 modelos
+ if (1 %in% input$checkbox_opciones) {
+      # Realizar Niche identity or equivalency test
+      id.glm <- identity.test(species.1 = sp1, species.2 = sp2, env = env, type = input$model_niche_s, nreps = 4)
+ 
+   output$summary_idtest <- renderPrint({
+  id.glm
+})
+   # Mostrar los resultados en la UI
+    output$plot_idtest <- renderPlot({
+    id.glm
+    })
+    }
+    
+    if (2 %in% input$checkbox_opciones) {
+      # Realizar Background or similarity test (Asymmetric)
+      bg.bc.asym <- background.test(species.1 = sp1, species.2 = sp2, env = env, type = input$model_niche_s, nreps = 4, test.type = "asymmetric")
+
+    output$summary_bctest <- renderPrint({
+  bg.bc.asym
+})
+   # # Mostrar los resultados en la UI
+    output$plot_bctest <- renderPlot({
+    bg.bc.asym
+    })
+    }
+    
+    if (3 %in% input$checkbox_opciones) {
+      # Realizar Background or similarity test (Symmetric)
+      bg.dm.sym <- background.test(species.1 = sp1, species.2 = sp2, env = env, type = input$model_niche_s, nreps = 4, test.type = "symmetric")
+    output$summary_sym <- renderPrint({
+  bg.dm.sym
+})
+    # Mostrar los resultados en la UI
+    output$plot_sym <- renderPlot({
+    bg.dm.sym
+    })
+    }
+
+
+    model_type_rbl <- switch(input$options_rblmodel,
+                         "1" = "glm",
+                         "2" = "gam",
+                         "3" = "dm",
+                         "4" = "bc",
+                         "5" = "maxent")
+    
+rbl.glm <- rangebreak.linear(sp1, sp2, env, type = model_type_rbl, nreps = 4)
+
+
+    esp.bg.sym <- enmtools.ecospat.bg(sp1, sp2, env, test.type = "symmetric")
+                       incProgress(1/10, detail = "Ploting...")
+
+    output$summary_nicheover <- renderPrint({
+  esp.bg.sym
+})
+
+
+    # Mostrar los resultados en la UI
+    output$plot1 <- renderPlot({
+    print(esp.bg.sym)
+    })
+
+
+
+
+  output$downloadPdf_ecospat <- downloadHandler(
+    filename = function() {
+      paste("mi_plot_esp_bg_sym", Sys.Date(), ".pdf", sep = "")
+    },
+    content = function(file) {
+      # Abre el dispositivo gráfico PDF
+      pdf(file)
+      
+      # Genera el gráfico
+      plot(esp.bg.sym)
+      
+      # Cierra el dispositivo gráfico PDF
+      dev.off()
+    }
+  )
+
+
+
+    output$summary_rbl <- renderPrint({
+  rbl.glm
+})
+
+
+    # Mostrar los resultados en la UI
+    output$plot_rbl <- renderPlot({
+    rbl.glm
+    })
+
+
+
+
+  output$downloadPdf_rbl <- downloadHandler(
+    filename = function() {
+      paste("Rangebreak tests", Sys.Date(), ".pdf", sep = "")
+    },
+    content = function(file) {
+      # Abre el dispositivo gráfico PDF
+      pdf(file)
+      
+      # Genera el gráfico
+      plot(rbl.glm)
+      
+      # Cierra el dispositivo gráfico PDF
+      dev.off()
+    }
+  )
+
+                       incProgress(1/10, detail = "Ploting...")
+                   incProgress(total_progressurb, detail = "Proceso completado")
+
+}
+}) #withprogress
+
+
+} #upload
+
+}, error = function(e) {
+  # Error handling for a bad internet connection
+  if (inherits(e, "error")) {
+    
+    showModal(
+      modalDialog(
+        title = "Error",
+        paste("Something went wrong.", e$message),
+        easyClose = TRUE,
+        footer = NULL
+      )
+    )
+  }
+}) #######trycatch
+
+    })
+
   
   
   
@@ -4456,102 +4464,114 @@ tableroc <- suroc_df %>%
   #################################################################################################################
   
   
-  observeEvent(input$run_connectivity, {
-    withProgress(message = 'Executing connectivity analysis...', value = 0, {
-      total_iterations_mask <- 1
-      total_progress_mask <- 1
-      
-      for (i in 1:total_iterations_mask) {
-        tryCatch({
-          # Step 1: Load and process coordinates
-          incProgress(1/10, detail = "Loading and processing coordinates...")
-          coords_df <- read.csv(input$points_connectivity$datapath)
-          coords_df <- coords_df %>% rename(x = X, y = Y)
-          
-          # Convert data frame to SpatialPoints
-          coordinates(coords_df) <- ~x + y
-          proj4string(coords_df) <- CRS("+proj=longlat +datum=WGS84")
-          Pj_sp <- coords_df
-          
-          # Extract coordinates
-          Pj_coords <- Pj_sp@coords
-          
-          # Create convex hull and buffer
-          Pj_chull <- chull(Pj_sp@coords)
-          Pj_chull_ends <- Pj_sp@coords[c(Pj_chull, Pj_chull[1]),]
-          Pj_poly <- SpatialPolygons(list(Polygons(list(Polygon(Pj_chull_ends)), ID = 1)), 
-                                     proj4string = CRS(proj4string(Pj_sp)))
-          Pj_poly_buff <- gBuffer(Pj_poly, width = 0.05, byid = TRUE)
-          
-          # Step 2: Load and process potential habitat map
-          incProgress(1/10, detail = "Loading and processing habitat map...")
-          potential_habitat <- raster(input$pot_map_connectivity$datapath)
-          
-          # Ensure CRS matches with the points
-          proj4string(potential_habitat) <- CRS(proj4string(Pj_sp))
-          
-          # Process the habitat map
-          habitat_mask <- potential_habitat %>% crop(Pj_poly_buff) %>% mask(Pj_poly_buff)
-          
-          # Create bounding box from habitat map
-          bbox <- as(extent(habitat_mask), "SpatialPolygons")
-          proj4string(bbox) <- CRS(proj4string(Pj_sp))
-          se <- bbox
-          
-          # Sample points
-          set.seed(6)
-          Pj_sample <- Pj_coords[sample(nrow(Pj_coords), input$number_points),]
-          
-          incProgress(1/10, detail = "Sampling points...")
-          
-          # Step 3: Calculate passage probabilities
-          Pj_combn <- combn(nrow(Pj_sample), 2) %>%
-            t() %>%
-            as.matrix()
-          
-          transition_raster <- habitat_mask  # Replace with relevant raster if needed
-          transition_function <- function(x) { 1 / mean(x) }  # Replace with appropriate function
-          
-          transition_matrix <- transition(transition_raster, transition_function, 8) %>%
-            geoCorrection(type = "c", multpl = FALSE)
-          
-          passages <- list()
-          system.time(
-            for (i in 1:nrow(Pj_combn)) {
-              locations <- SpatialPoints(rbind(Pj_sample[Pj_combn[i, 1], 1:2],
-                                               Pj_sample[Pj_combn[i, 2], 1:2]), 
-                                         proj4string = CRS(proj4string(Pj_sp)))
-              passages[[i]] <- passage(transition_matrix, origin = locations[1], 
-                                       goal = locations[2], theta = 0.00001)
-              print(paste((i / nrow(Pj_combn)) * 100, "% complete"))
-            }
-          )
-          
-          incProgress(1/10, detail = "Calculating passage probabilities...")
-          
-       
-   # Stack the passage probabilities and calculate the overlay
-          passages <- stack(passages)
-          passages_overlay <- sum(passages) / nrow(Pj_combn)
-          
-          incProgress(1/10, detail = "Generating output...")
-          
-          # Step 4: Save the result as a .TIF file in My Documents
-          my_documents_path <- file.path(Sys.getenv("USERPROFILE"), "Documents")
-          output_tif_path <- file.path(my_documents_path, "ConnectivityAnalysisOutput.tif")
-          writeRaster(passages_overlay, output_tif_path, format = "GTiff", overwrite = TRUE)
-          
-          # Step 5: Visualize the result
-          output$connectivity_output <- renderPlot({
-            plot(passages_overlay, main = "Connectivity Analysis Output")
-          })
-        }, error = function(e) {
-          showNotification("An error occurred during the connectivity analysis.", type = "error")
+  # Connectivity Analysis Observer
+observeEvent(input$run_connectivity, {
+  withProgress(message = 'Executing connectivity analysis...', value = 0, {
+    total_iterations_mask <- 1
+    total_progress_mask <- 1
+    
+    for (i in 1:total_iterations_mask) {
+      tryCatch({
+        # Step 1: Load and process coordinates
+        incProgress(1/10, detail = "Loading and processing coordinates...")
+        coords_df <- read.csv(input$points_connectivity$datapath)
+        coords_df <- coords_df %>% rename(x = X, y = Y)
+        
+        # Convert data frame to SpatialPoints
+        coordinates(coords_df) <- ~x + y
+        proj4string(coords_df) <- CRS("+proj=longlat +datum=WGS84")
+        Pj_sp <- coords_df
+        
+        # Extract coordinates
+        Pj_coords <- Pj_sp@coords
+        
+        # Create convex hull and buffer
+        Pj_chull <- chull(Pj_sp@coords)
+        Pj_chull_ends <- Pj_sp@coords[c(Pj_chull, Pj_chull[1]),]
+        Pj_poly <- SpatialPolygons(list(Polygons(list(Polygon(Pj_chull_ends)), ID = 1)), 
+                                   proj4string = CRS(proj4string(Pj_sp)))
+        Pj_poly_buff <- gBuffer(Pj_poly, width = 0.05, byid = TRUE)
+        
+        # Step 2: Load and process potential habitat map
+        incProgress(1/10, detail = "Loading and processing habitat map...")
+        potential_habitat <- raster(input$pot_map_connectivity$datapath)
+        
+        # Ensure CRS matches with the points
+        proj4string(potential_habitat) <- CRS(proj4string(Pj_sp))
+        
+        # Process the habitat map
+        habitat_mask <- potential_habitat %>% crop(Pj_poly_buff) %>% mask(Pj_poly_buff)
+        
+        # Create bounding box from habitat map
+        bbox <- as(extent(habitat_mask), "SpatialPolygons")
+        proj4string(bbox) <- CRS(proj4string(Pj_sp))
+        se <- bbox
+        
+        # Sample points
+        set.seed(6)
+        Pj_sample <- Pj_coords[sample(nrow(Pj_coords), input$number_points),]
+        
+        incProgress(1/10, detail = "Sampling points...")
+        
+        # Step 3: Calculate passage probabilities
+        Pj_combn <- combn(nrow(Pj_sample), 2) %>%
+          t() %>%
+          as.matrix()
+        
+        transition_raster <- habitat_mask  # Replace with relevant raster if needed
+        transition_function <- function(x) { 1 / mean(x) }  # Replace with appropriate function
+        
+        transition_matrix <- transition(transition_raster, transition_function, 8) %>%
+          geoCorrection(type = "c", multpl = FALSE)
+        
+        passages <- list()
+        system.time(
+          for (i in 1:nrow(Pj_combn)) {
+            locations <- SpatialPoints(rbind(Pj_sample[Pj_combn[i, 1], 1:2],
+                                             Pj_sample[Pj_combn[i, 2], 1:2]), 
+                                       proj4string = CRS(proj4string(Pj_sp)))
+            passages[[i]] <- passage(transition_matrix, origin = locations[1], 
+                                     goal = locations[2], theta = 0.00001)
+            print(paste((i / nrow(Pj_combn)) * 100, "% complete"))
+          }
+        )
+        
+        incProgress(1/10, detail = "Calculating passage probabilities...")
+        
+        # Stack the passage probabilities and calculate the overlay
+        passages <- stack(passages)
+        passages_overlay <- sum(passages) / nrow(Pj_combn)
+        
+        incProgress(1/10, detail = "Generating output...")
+        
+        # Step 4: Save the result as a .TIF file in My Documents
+        my_documents_path <- file.path(Sys.getenv("USERPROFILE"), "Documents")
+        output_tif_path <- file.path(my_documents_path, "ConnectivityAnalysisOutput.tif")
+        writeRaster(passages_overlay, output_tif_path, format = "GTiff", overwrite = TRUE)
+        
+        # Step 5: Visualize the result
+        output$connectivity_output <- renderPlot({
+          plot(passages_overlay, main = "Connectivity Analysis Output")
         })
-      }
-    })
+        
+        # Save the map for downloading
+        output$download_pdf <- downloadHandler(
+          filename = function() {
+            paste("Connectivity_Map_", Sys.Date(), ".pdf", sep = "")
+          },
+          content = function(file) {
+            pdf(file)
+            plot(passages_overlay, main = "Connectivity Analysis Output")
+            dev.off()
+          }
+        )
+      }, error = function(e) {
+        showNotification("An error occurred during the connectivity analysis.", type = "error")
+      })
+    }
   })
-  
+})
+
 
 #########################################333
 ############################################3
@@ -4715,7 +4735,7 @@ observeEvent(input$runLCP, {
   }) #trycatch  
 })
 
-###################333
+###################
   
   
   
@@ -4723,4 +4743,3 @@ observeEvent(input$runLCP, {
 
 # Ejecutar la aplicación
 shinyApp(ui = ui, server = server)
-
