@@ -128,40 +128,6 @@ options(shiny.maxRequestSize = 6000*1024^2)
 
 ---
 
-## Full Code to Install All Required Libraries
-
-### CRAN Libraries
-
-```
-# Increase memory for Java
-options(shiny.maxRequestSize = 6000*1024^2)
-
-# Install CRAN libraries
-install.packages(c(
-  "shiny", "terra", "usdm", "ENMTools", "biomod2", "RColorBrewer",
-  "dismo", "tiff", "rJava", "tidyterra", "shinydashboard", "pROC",
-  "R.utils", "countrycode", "CoordinateCleaner", "dplyr", "ggplot2",
-  "rgbif", "sf", "rnaturalearthdata", "spThin", "shinyjs", "leaflet",
-  "DT", "shinyBS", "prettymapr", "gt", "tidyverse", "gtExtras",
-  "MIAmaxent", "leaflet.extras", "geodata", "viridis", "ggthemes",
-  "sp", "gdistance", "foreach", "doParallel", "raster",
-  "progress", "readr"
-))
-```
-
-### GitHub Libraries
-
-```
-if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
-remotes::install_github("luismurao/ntbox")
-remotes::install_github("rspatial/terra")
-remotes::install_github("danlwarren/ENMTools")
-```
-
-> **Note for Mac ARM64 users**:  
-> Skip the `rgeos` library if you're using a Mac with M1/M2.
-
-
 > [!IMPORTANT]
 > ## "If you are unable to install EcoNicheS, please download the EcoNicheS.R file, open it in a text editor, and run it directly in the R console. We apologize for the inconvenience of not being able to run the command directly from GitHub at this time, but we are working to resolve the issue as soon as possible."
 
