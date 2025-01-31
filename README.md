@@ -50,10 +50,10 @@ EcoNicheS requires 64-bit Java. Download and install it from [Oracle Java](https
 EcoNicheS depends on several R libraries. Copy and paste the following command into your R console to install them all at once:
 
 ```
-# Instalación de paquetes necesarios en R
+# Installation of Required R Packages
 
-# Lista de paquetes
-paquetes <- c("shiny", "terra", "usdm", "ENMTools", "biomod2", "RColorBrewer", 
+# List of packages
+packages <- c("shiny", "terra", "usdm", "ENMTools", "biomod2", "RColorBrewer", 
              "dismo", "tiff", "rJava", "tidyterra", "shinydashboard", "pROC", 
              "R.utils", "countrycode", "CoordinateCleaner", "dplyr", "ggplot2", 
              "rgbif", "sf", "rnaturalearthdata", "spThin", "shinyjs", "leaflet", 
@@ -62,15 +62,15 @@ paquetes <- c("shiny", "terra", "usdm", "ENMTools", "biomod2", "RColorBrewer",
              "earth", "xgboost", "gdistance", "foreach", "doParallel", "raster", 
              "progress", "readr", "MIAmaxent", "shiny", "terra", "sf", "gdistance", "viridis")
 
-# Instalar paquetes que no estén ya instalados
-paquetes_no_instalados <- paquetes[!(paquetes %in% installed.packages()[,"Package"])]
+# Install missing packages
+missing_packages <- packages[!(packages %in% installed.packages()[,"Package"])]
 
-if(length(paquetes_no_instalados)) {
-  install.packages(paquetes_no_instalados, dependencies = TRUE)
+if(length(missing_packages)) {
+  install.packages(missing_packages, dependencies = TRUE)
 }
 
-# Cargar los paquetes
-lapply(paquetes, library, character.only = TRUE)
+# Load all packages
+lapply(packages, library, character.only = TRUE)
 ```
 
 ### 3 GitHub Libraries
