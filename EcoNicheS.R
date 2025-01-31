@@ -53,13 +53,16 @@ library(raster)
 library(progress)
 library(readr)
 library(MIAmaxent)
-library(rgeos)
-
+library(shiny)
+library(terra)
+library(sf)
+library(gdistance)
+library(viridis)
 
 
 # Definir UI de la aplicación principal
 ui <- dashboardPage(
-  dashboardHeader(title = 'EcoNicheS',
+  dashboardHeader(title = 'EcoNicheS V. 1.1.0',
                   tags$li(class = "dropdown",
                           tags$style(HTML("
              .skin-pink .main-header {
@@ -261,7 +264,7 @@ ui <- dashboardPage(
                 img(src = "https://armandosunny.weebly.com/uploads/9/8/0/6/98067990/published/logo-shiny2.png?1721439587", height = "250px",  style = "display: block; margin: 0 auto;"),
                 p("Thanks for using our app! We hope you enjoy your experience.", style = "font-size: 36px; text-align: center;font-family: Arial;"),
                 p("Please cite as:", style = "font-size: 24px; text-align: center;font-weight: bold; font-family: Arial;"),
-                p("Marmolejo C, Bolom-Huet R, López-Vidal R, Angela P. Cuervo-Robayo, Sunny A (2024). EcoNicheS: enhancing ecological niche modeling, niche overlap and connectivity analysis using shiny dashboard and R Package. GitHub. https://github.com/armandosunny/EcoNicheS", style = "font-size: 16px; text-align: center;font-family: Arial;")
+                p("Marmolejo C, Bolom-Huet R, López-Vidal R, Angela P. Cuervo-Robayo, Sunny A (2025). EcoNicheS V.1.1.0: enhancing ecological niche modeling, niche overlap and connectivity analysis using shiny dashboard and R Package. GitHub. https://github.com/armandosunny/EcoNicheS", style = "font-size: 16px; text-align: center;font-family: Arial;")
                 ## creo que estos parentesis de abajo son los que cierran el tab
               )
       ),
@@ -485,7 +488,7 @@ ui <- dashboardPage(
       
       
       ######################################################################################
-      #############3333
+      #############
       tabItem(tabName = "subtab2",
               fluidPage(
                 titlePanel("Clean my own database"),
@@ -523,7 +526,7 @@ ui <- dashboardPage(
                 ) #fluidrow
               ) #fluidpage
       ), #tabitem
-      ##########################################################3
+      ##########################################################
       #############################################################
       
       tabItem(tabName = "tab4",
@@ -554,8 +557,8 @@ ui <- dashboardPage(
                        ))
               ) #fluidpage
       ), #tabitem
-      ##################################################3
-      ##########################################33
+      ##################################################
+      ##########################################
       
       tabItem(tabName = "tab5",
               fluidPage(
@@ -584,8 +587,8 @@ ui <- dashboardPage(
                 ) #column
               ) #fluidpage
       ),  
-      ##################################################3
-      ##########################################33
+      ##################################################
+      ##########################################
       
       
       tabItem(tabName = "tab6",
@@ -688,8 +691,8 @@ ui <- dashboardPage(
       
       
       #################################
-      #############################################3
-      #######################################################3
+      #############################################
+      #######################################################
       
 tabItem(tabName = "tab8",
               fluidPage(
@@ -714,8 +717,8 @@ tabItem(tabName = "tab8",
       ),
       
       #################################
-      #############################################3
-      #######################################################3
+      #############################################
+      #######################################################
       
      tabItem(tabName = "tab9",
         fluidPage(
@@ -747,7 +750,9 @@ tabItem(tabName = "tab8",
       
       
       #
-      
+       #################################
+      #############################################
+      #######################################################
       tabItem(tabName = "tab10",
               fluidPage(
                 titlePanel("Remove urbanization"),
@@ -783,7 +788,9 @@ tabItem(tabName = "tab8",
               ) #fluidpage
       ),
       #            
-      
+       #################################
+      #############################################
+      #######################################################
       tabItem(
   tabName = "tab11",
   fluidPage(
@@ -798,7 +805,10 @@ tabItem(tabName = "tab8",
         condition = "input.opcionAnalisis == 'Calculate area'",
         fileInput("archivoRaster", "Select raster file", accept = c('.tiff', '.tif', '.asc', '.bil')),
         numericInput("umbralSuitability", "Suitability Threshold:", value = 0.7, min = 0, max = 1, step = 0.01),
-        actionButton("calcularArea", "Calculate Area of Suitability")
+        actionButton("calcularArea", "Calculate Area of Suitability"),
+        br(), br(),
+        downloadButton("downloadAscThreshold", "Download Map (.asc)"),
+        downloadButton("downloadPdfThreshold", "Download Map (PDF)")
       )
     ),
     column(
@@ -812,8 +822,10 @@ tabItem(tabName = "tab8",
     )
   )
 ),
-      
-      
+    
+       #################################
+      #############################################
+      #######################################################
       
       tabItem(tabName = "tab12",
               fluidPage(
@@ -853,7 +865,9 @@ tabItem(tabName = "tab8",
                 ) #column
               )
       ),
-      
+       #################################
+      #############################################
+      #######################################################
       tabItem(tabName = "tab13",
               fluidPage(
                 titlePanel("Niche Overlap Analysis via ENMTools"),
@@ -1162,34 +1176,72 @@ tabItem(tabName = "tab8",
       
       
       
-      tabItem(tabName = "tab14",
-              fluidPage(
-                titlePanel("Ecological connectivity"),
-                fluidRow(
-                  column(width = 4,
-                         box(
-                           width = NULL,
-                           title = div("Environmental and biological data", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Section where you can upload the geographic distribution data and the potential distribution map necessary to perform the connectivity analysis which allows you to obtain the ecological flow of your species. This analysis requires high computing power, see the user manual for more details.")), 
-                           fileInput("points_connectivity", div("Geographic distribution data", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Upload the database with points of presence of your study species (.csv)")), accept = ".csv", multiple = FALSE),
-                           fileInput("pot_map_connectivity", div("Potential distribution map", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Upload the file with the environmental distribution of your species. It is the .tif file that contains the consensus of the models used in the biomod2 section. Please refer to the user manual for more details. Allowed formats are '.tiff','.tif', '.asc' and '.bil'.")), accept = c('.tiff','.tif', '.asc', '.bil')),
-                           numericInput("number_points", "Data Split Percentage", value = 80),
-                           actionButton("run_connectivity", "Obtain")
-                         )
-                  ),
-                  column(width = 8,
-                         box(
-                           width = NULL,
-                           title = "Ecological Flow Map", 
-                           plotOutput("connectivity_output"),
-                           conditionalPanel(
-                             condition = "output.connectivity_output !== undefined && connectivity_output !== null", 
-                             downloadButton("download_pdf_connec", "Download Map as PDF", disabled = FALSE))
-                         )
-                  )
-                )
-              ) #deberia ser fluipage
-      ),      #tabitem14
+       #################################
+      #############################################
+      #######################################################
+########################################################Circuit Theory Analysis
+    
 
+
+tabItem(
+  tabName = "tab14",
+  fluidPage(
+    titlePanel("Ecological connectivity"),
+    
+    fluidRow(
+      column(
+        width = 4,
+        box(
+          width = NULL,
+          title = div("Environmental and biological data", 
+                      tags$i(class = "fas fa-question-circle", 
+                             "data-toggle" = "tooltip", 
+                             "title" = "Section where you can upload the geographic distribution data and the potential distribution map necessary to perform the connectivity analysis, which allows you to obtain the ecological flow of your species. This analysis requires high computing power, see the user manual for more details.")),
+          
+          # Cargar datos de distribución geográfica
+          fileInput("points_connectivity", 
+                    div("Geographic distribution data", 
+                        tags$i(class = "fas fa-question-circle", 
+                               "data-toggle" = "tooltip", 
+                               "title" = "Upload the database with points of presence of your study species (.csv)")), 
+                    accept = ".csv", multiple = FALSE),
+          
+          # Cargar el mapa de distribución potencial
+          fileInput("pot_map_connectivity", 
+                    div("Potential distribution map", 
+                        tags$i(class = "fas fa-question-circle", 
+                               "data-toggle" = "tooltip", 
+                               "title" = "Upload the file with the environmental distribution of your species. It is the .tif file that contains the consensus of the models used in the biomod2 section. Allowed formats are '.tiff','.tif', '.asc' and '.bil'.")), 
+                    accept = c('.tiff', '.tif', '.asc', '.bil')),
+          
+          # Botón para ejecutar el análisis de conectividad
+          actionButton("run_connectivity", "Run Analysis")
+        ) # box
+      ), # column
+      
+      column(
+        width = 8,
+        box(
+          width = NULL,
+          title = "Ecological Flow Map", 
+          
+          # Salida gráfica del mapa de conectividad
+          plotOutput("connectivity_output"),
+          
+          # Botón de descarga condicional para exportar el mapa en PDF
+          conditionalPanel(
+            condition = "output.connectivity_output !== undefined && connectivity_output !== null", 
+            downloadButton("download_pdf_connec", "Download Map as PDF", disabled = FALSE)
+          )
+        ) # box
+      ) # column
+    ) # fluidRow
+  ) # fluidPage
+), # tabItem
+
+ #################################
+      #############################################
+      #######################################################
 #########################################################
 
       tabItem(
@@ -1219,34 +1271,72 @@ plotOutput("invertedRasterPlot")) #box
         ) #fluidpagee
       ), #tabitem
 #########################################################
-       
+ #################################
+      #############################################
+      #######################################################       
   tabItem(
-        tabName = "lcp_analysis",
-              fluidPage(
-                titlePanel("LCP Corridors"),
-          	column(width = 4,
-			box(
-                         title = div("Databases", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "This section allows you to ... Below you can upload the necessary files.")),
-                         width = NULL,
-                 fileInput("pointsCSV", "Coordinates CSV for LCP", accept = ".csv"),
-                 fileInput("resistanceRasterLCP", "Resistance ASC file for LCP", accept = ".asc"),
-                 actionButton("runLCP", "Run Corridor Analysis"),
-                 downloadButton("downloadRoutesCSV", "Download Corridor Information (.csv)"),
-                 downloadButton("downloadLCPMapASC", "Download LCP Map (.asc)"),
-                 downloadButton("downloadCorridorsPDF", "Download Corridors Map (PDF)")
-) #box
-          ), #column
-          column(width = 8,
-                 box(
-title = div("Resistance Map with Important Corridors", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Visualization of the map.")),
-                         width = NULL,
-plotOutput("resistancePlot"),
-                 tableOutput("routesTable"),
-          uiOutput("lcpProgress") # Progress bar   ##### REVISAR
-          ) #box
-        ) #column
-      ) #fluidpage
-) #tabitem
+  tabName = "lcp_analysis",
+  fluidPage(
+    titlePanel("LCP Corridors"),
+    
+    fluidRow(
+      column(
+        width = 4,
+        box(
+          title = div("Databases", 
+                      tags$i(class = "fas fa-question-circle", 
+                             "data-toggle" = "tooltip", 
+                             "title" = "This section allows you to upload the necessary files for the Least Cost Path (LCP) corridor analysis.")),
+          width = NULL,
+          
+          # Entrada de archivo CSV para coordenadas
+          fileInput("pointsCSV", "Coordinates CSV for LCP", accept = c(".csv")),
+          
+          # Entrada de archivo para el raster de resistencia con múltiples formatos permitidos
+          fileInput("resistanceRasterLCP", "Resistance Raster for LCP", 
+                    accept = c('.asc', '.tif', '.tiff', '.bil')),
+          
+          # Botón para ejecutar el análisis
+          actionButton("runLCP", "Run Corridor Analysis"),
+          br(), br(),
+          
+          # Botones de descarga
+          downloadButton("downloadRoutesCSV", "Download Corridor Information (.csv)"),
+          downloadButton("downloadLCPMapASC", "Download LCP Map (.asc)"),
+          downloadButton("downloadCorridorsPDF", "Download Corridors Map (PDF)")
+        ) # box
+      ), # column
+      
+      column(
+        width = 8,
+        box(
+          title = div("Resistance Map with Important Corridors", 
+                      tags$i(class = "fas fa-question-circle", 
+                             "data-toggle" = "tooltip", 
+                             "title" = "Visualization of the resistance map with identified important corridors.")),
+          width = NULL,
+          
+          # Salida gráfica para el mapa de resistencia y corredores
+          plotOutput("resistancePlot"),
+          br(),
+          
+          # Tabla con información de los corredores generados
+          tableOutput("routesTable"),
+          br(),
+          
+          # Barra de progreso del análisis
+          uiOutput("lcpProgress")
+        ) # box
+      ) # column
+    ) # fluidRow
+  ) # fluidPage
+) # tabItem
+
+
+
+ #################################
+      #############################################
+      #######################################################
 #########################################################
       
     ) #tabitems
@@ -1255,6 +1345,13 @@ plotOutput("resistancePlot"),
 
 
 server <- function(input, output, session) {
+  
+  routes_data <- reactiveVal(NULL)  # Almacena los datos de los corredores
+  route_list <- reactiveVal(list())  # Almacena las rutas generadas
+  corridors_raster <- reactiveVal(NULL)  # Almacena el raster con corredores
+
+  
+  
   
   #### empieza environmental
   
@@ -2457,110 +2554,98 @@ server <- function(input, output, session) {
   
   
   observeEvent(input$load_leaflet_button, {
-    #############Inicia aquí
-    
-    tryCatch({ 
+  tryCatch({ 
+    if (is.null(input$file_maps)) {
+      showModal(modalDialog(
+        title = "Error",
+        "You need to upload a database to continue."
+      ))
+    } else {
       
-      if (is.null(input$file_maps)) {
-        showModal(modalDialog(
-          title = "Error",
-          "You need to upload a database to continue."
-        ))
-      } else {
+      withProgress(message = 'Loading maps...', value = 0, {
+        total_iterations_leaf1 <- 1
+        total_progress_leaf1 <- 1
+
+        for (i in 1:total_iterations_leaf1) {
+          incProgress(5/10, detail = "Loading for viewing...")
+          
+          # Reactive values for Leaflet map
+          leaflet_data <- reactiveValues(map = NULL)
+          
+          output$leaflet_map <- renderLeaflet({
+            leaflet_data$map
+          })
+          
+          incProgress(5/10, detail = "Loading for viewing...")
+          incProgress(total_progress_leaf1, detail = "Finished")
+        }
+      })
+
+      output$mapPlot <- renderPlot({
+        req(input$file_maps)
         
         withProgress(message = 'Loading maps...', value = 0, {
-          total_iterations_leaf1 <- 1
-          total_progress_leaf1 <- 1
-          # Aquí va el código para realizar el análisis
-          # Actualiza el valor de la barra de progreso en porcentaje
-          for (i in 1:total_iterations_leaf1) {
+          total_iterations_leaf11 <- 1
+          total_progress_leaf11 <- 1
+
+          for (i in 1:total_iterations_leaf11) {
             incProgress(5/10, detail = "Loading for viewing...")
             
-            ############pausa
-            leaflet_data <- reactiveValues(map = NULL)
+            # Read raster file using terra
+            raster_file <- rast(input$file_maps$datapath)
             
-            output$leaflet_map <- renderLeaflet({
-              leaflet_data$map
-            })
-            
+            # Plot the map
+            plot(raster_file, main = "Raster Map")
+
             incProgress(5/10, detail = "Loading for viewing...")
-            incProgress(total_progress_leaf1, detail = "Finished")
-          }
-        })
-        
-        
-        output$mapPlot <- renderPlot({
-          req(input$file_maps)
-          
-          withProgress(message = 'Loading maps...', value = 0, {
-            total_iterations_leaf11 <- 1
-            total_progress_leaf11 <- 1
-            # Aquí va el código para realizar el análisis
-            # Actualiza el valor de la barra de progreso en porcentaje
-            for (i in 1:total_iterations_leaf11) {
-              incProgress(5/10, detail = "Loading for viewing...")
-              
-              # Read raster file
-              raster_file <- raster(input$file_maps$datapath)
-              
-              # Plot the map
-              plot(raster_file)
-              
-              incProgress(5/10, detail = "Loading for viewing...")
-              # If a Leaflet map is loaded, overlay it
-              if (!is.null(leaflet_data$map)) {
-                
-                leafletProxy("leaflet_map") %>%
-                  addRasterImage(raster_file)
-                
-                
-              }
-              incProgress(5/10, detail = "Loading for viewing...")
-              incProgress(total_progress_leaf11, detail = "Finished")
+            
+            # If a Leaflet map is loaded, overlay it
+            if (!is.null(leaflet_data$map)) {
+              leafletProxy("leaflet_map") %>%
+                addRasterImage(raster_file, colors = colorNumeric("viridis", values(raster_file), na.color = "transparent"))
             }
-          })
-        })
-        
-        #######Pausa2
-        leaflet_data$map <- leaflet() %>%
-          addTiles() %>%
-          setView(0, 0, zoom = 1)
-        
-        ###pausa3 pausa 3
-        observeEvent(input$file_maps, {
-          shinyjs::toggleState("download_pdf_button", !is.null(input$file_maps))
-        })
-        
-        output$download_pdf_button <- downloadHandler(
-          filename = function() {
-            paste(gsub("\\.[^.]*$", "", input$file_maps$name), ".pdf")
-          },
-          content = function(file) {
-            pdf(file)
-            plot(raster(input$file_maps$datapath))
-            dev.off()
+
+            incProgress(5/10, detail = "Loading for viewing...")
+            incProgress(total_progress_leaf11, detail = "Finished")
           }
-        )
-        
-      }
-      
-    }, error = function(e) {
-      # Error handling for a bad internet connection
-      if (inherits(e, "error")) {
-        
-        showModal(
-          modalDialog(
-            title = "Error",
-            paste("Something went wrong:", e$message),
-            easyClose = TRUE,
-            footer = NULL
-          )
-        )
-      }
-    })
-    #################3termina aqui leaf
+        })
+      })
+
+      # Initialize Leaflet map
+      leaflet_data$map <- leaflet() %>%
+        addTiles() %>%
+        setView(0, 0, zoom = 1)
+
+      # Enable download button when file is uploaded
+      observeEvent(input$file_maps, {
+        shinyjs::toggleState("download_pdf_button", !is.null(input$file_maps))
+      })
+
+      # Download raster as PDF
+      output$download_pdf_button <- downloadHandler(
+        filename = function() {
+          paste(gsub("\\.[^.]*$", "", input$file_maps$name), ".pdf")
+        },
+        content = function(file) {
+          pdf(file)
+          plot(rast(input$file_maps$datapath), main = "Raster Map") # Replaced raster() with rast()
+          dev.off()
+        }
+      )
+    }
+  }, error = function(e) {
+    showModal(
+      modalDialog(
+        title = "Error",
+        paste("Something went wrong:", e$message),
+        easyClose = TRUE,
+        footer = NULL
+      )
+    )
   })
-  
+})
+    #################3termina aqui leaf
+ 
   
   ####################################--------------------------------
   ####################################-------------------------------------------------
@@ -3410,59 +3495,62 @@ server <- function(input, output, session) {
     })
     
   })
-  
   #############################3 remove urban
   
-  # Create reactive values to store raster and results
-reactiveRaster <- reactiveValues(data = NULL)
+ 
+#################################################
+#################################################
+################################################# Calculate area
 
-# Calculate Area and Visualize on Map
+library(shiny)
+library(terra)
+library(viridis)
+
+# Calcular Área y Visualizar en el Mapa con `terra`
 observeEvent(input$calcularArea, {
   tryCatch({ 
     req(input$archivoRaster)
     req(input$umbralSuitability)
-    
-    # Reiniciar el resultado al inicio del evento
-    output$Result <- renderPrint({ NULL })
-    
+
     withProgress(message = 'Calculating...', value = 0, {
       archivoRaster <- input$archivoRaster$datapath
       umbralSuitability <- input$umbralSuitability
       
       incProgress(2/10, detail = "Loading raster data...")
-      rasterData <- raster(archivoRaster)  # Reload raster every time the function runs
+      rasterData <- rast(archivoRaster)  # Cargar raster con `terra`
       
       incProgress(2/10, detail = "Applying threshold...")
-      rasterFiltered <- rasterData  # Create a new copy of the raster to modify
-      rasterFiltered[rasterFiltered <= umbralSuitability] <- NA  # Apply threshold
+      rasterFiltered <- rasterData  # Crear copia para modificar
+      
+      # Convertir a NA todos los valores por debajo del threshold seleccionado
+      rasterFiltered[rasterFiltered < umbralSuitability] <- NA  
 
       incProgress(2/10, detail = "Calculating cell areas...")
-      cell_size <- area(rasterFiltered, na.rm = TRUE, weights = FALSE)
+      cell_size <- cellSize(rasterFiltered, mask = TRUE)  # Calcular tamaño de celda donde hay datos
       
       incProgress(2/10, detail = "Calculating total area...")
-      cell_size1 <- cell_size[!is.na(cell_size)]
-      areaSuitability <- length(cell_size1) * median(cell_size1)
-      
+      areaSuitability <- global(cell_size, fun = "sum", na.rm = TRUE)[1, 1]  # Calcular área total en km²
+
       incProgress(2/10, detail = "Finalizing...")
       
-      # Store the new raster data
+      # Almacenar el nuevo raster procesado
       reactiveRaster$data <- rasterFiltered
       
       # Actualizar el resultado en el panel
       output$Result <- renderPrint({
-        paste("Area of Suitability in km²:", round(areaSuitability, 2))
+        paste("Area of Suitability above", umbralSuitability, ":", round(areaSuitability, 2), "km²")
       })
       
-      # Graficar el área seleccionada en el mapa
+      # Graficar el área seleccionada en el mapa con `viridis`
       output$areaMap <- renderPlot({
-        req(reactiveRaster$data)  # Ensure the raster is available
+        req(reactiveRaster$data)  # Asegurar que el raster esté disponible
         plot(reactiveRaster$data, 
-             main = "Updated Suitability Area", 
-             col = terrain.colors(10), 
+             main = paste("Suitability Area (Threshold:", umbralSuitability, ")"),
+             col = viridis(10, option = "D"),  # Aplicar paleta de colores viridis
              legend.args = list(text = "Suitability", side = 4, line = 2))
       })
       
-      # Force UI update
+      # Forzar actualización de la UI
       invalidateLater(500, session)
     })
   }, error = function(e) {
@@ -3477,58 +3565,120 @@ observeEvent(input$calcularArea, {
   })
 })
 
+# Descargar el mapa de áreas adecuadas en formato .asc
+output$downloadAscThreshold <- downloadHandler(
+  filename = function() { "suitability_map.asc" },
+  content = function(file) {
+    req(reactiveRaster$data)  # Asegurar que el raster esté disponible
+    writeRaster(reactiveRaster$data, file, overwrite = TRUE)
+  }
+)
+
+# Descargar el mapa de áreas adecuadas en formato PDF
+output$downloadPdfThreshold <- downloadHandler(
+  filename = function() { "suitability_map.pdf" },
+  content = function(file) {
+    req(reactiveRaster$data)  # Asegurar que el raster esté disponible
+    pdf(file, width = 8, height = 6)
+    plot(reactiveRaster$data, 
+         main = paste("Suitability Area (Threshold:", input$umbralSuitability, ")"),
+         col = viridis(10, option = "D"),  
+         legend.args = list(text = "Suitability", side = 4, line = 2))
+    dev.off()
+  }
+)
+
   ############################# present future
+  #############################
+  #############################
+  #############################
   
   
-  present_map <- reactiveVal(NULL)
-  future_map <- reactiveVal(NULL)
+# Crear valores reactivos para almacenar los mapas
+present_map <- reactiveVal(NULL)
+future_map <- reactiveVal(NULL)
+
+# Cargar el mapa presente
+observeEvent(input$mapa_presente_input, {
+  req(input$mapa_presente_input)  # Asegura que el archivo no esté vacío
+  present <- rast(input$mapa_presente_input$datapath)
+  print("Present map loaded")  # Debugging
+  present_map(present)
+})
+
+# Cargar el mapa futuro y asegurar compatibilidad
+observeEvent(input$mapa_futuro_input, {
+  req(input$mapa_futuro_input)  # Asegura que el archivo no esté vacío
+  future <- rast(input$mapa_futuro_input$datapath)
   
-  observeEvent(input$mapa_presente_input, {
-    present_map(raster(input$mapa_presente_input$datapath))
-  })
-  
-  observeEvent(input$mapa_futuro_input, {
-    future_map(raster(input$mapa_futuro_input$datapath))
-  })
-  
-  observeEvent(input$run_analysis_btn, {
-    if (!is.null(present_map()) && !is.null(future_map())) {
-      Gains <- future_map() - present_map()
-      Losses <- present_map() - future_map()
-      
-      output$Gains_plot <- renderPlot({
-        plot(Gains, main = "Gains: Map 2 - Map 1")
-      })
-      
-      output$Losses_plot <- renderPlot({
-        plot(Losses, main = "Losses: Map 1 - Map 2")
-      })
-    }
-  })
-  
-  output$download_Gains <- downloadHandler(
-    filename = function() {
-      "Gains.asc"
-    },
-    content = function(file) {
-      if (!is.null(present_map()) && !is.null(future_map())) {
-        Gains <- future_map() - present_map()
-        writeRaster(Gains, file)
+  # Ajustar la proyección y resolución para que coincidan con el mapa presente
+  if (!is.null(present_map())) {
+    tryCatch({
+      if (crs(future) != crs(present_map())) {
+        future <- project(future, crs(present_map()))
       }
-    }
-  )
-  
-  output$download_Losses <- downloadHandler(
-    filename = function() {
-      "Losses.asc"
-    },
-    content = function(file) {
-      if (!is.null(present_map()) && !is.null(future_map())) {
-        Losses <- present_map() - future_map()
-        writeRaster(Losses, file)
+      if (!all(res(future) == res(present_map()))) {
+        future <- resample(future, present_map(), method = "bilinear")  # ✅ Corrección
       }
-    }
-  )
+      print("Future map loaded and aligned")  # Debugging
+    }, error = function(e) {
+      print(paste("Error processing future map:", e$message))  # Evitar que la app se cierre
+    })
+  }
+  
+  future_map(future)
+})
+
+# Realizar análisis y visualizar resultados
+observeEvent(input$run_analysis_btn, {
+  req(present_map(), future_map())  # Asegurar que los mapas no sean NULL
+
+  print("Running analysis...")  # Debugging
+
+  Gains <- future_map() - present_map()
+  Losses <- present_map() - future_map()
+
+  print("Analysis completed")  # Debugging
+
+  # Graficar los mapas
+  output$Gains_plot <- renderPlot({
+    req(Gains)
+    plot(Gains, main = "Gains: Future - Present", col = terrain.colors(10))
+  })
+
+  output$Losses_plot <- renderPlot({
+    req(Losses)
+    plot(Losses, main = "Losses: Present - Future", col = terrain.colors(10))
+  })
+
+  # Agregar invalidación para asegurar que se actualicen los gráficos
+  invalidateLater(1000)
+})
+
+# Descargar Mapa de Ganancias en formato .asc
+output$download_Gains <- downloadHandler(
+  filename = function() {
+    "Gains.asc"
+  },
+  content = function(file) {
+    req(present_map(), future_map())  # Evita errores si los mapas no están cargados
+    Gains <- future_map() - present_map()
+    writeRaster(Gains, file, overwrite = TRUE)
+  }
+)
+
+# Descargar Mapa de Pérdidas en formato .asc
+output$download_Losses <- downloadHandler(
+  filename = function() {
+    "Losses.asc"
+  },
+  content = function(file) {
+    req(present_map(), future_map())
+    Losses <- present_map() - future_map()
+    writeRaster(Losses, file, overwrite = TRUE)
+  }
+)
+
   
   
   #################################
@@ -4462,120 +4612,119 @@ rbl.glm <- rangebreak.linear(sp1, sp2, env, type = model_type_rbl, nreps = 4)
   #################################################################################################################
   ###############################################Connectivity######################################################
   #################################################################################################################
-  
-  
-  # Connectivity Analysis Observer
+
+
+
+
+
 observeEvent(input$run_connectivity, {
   withProgress(message = 'Executing connectivity analysis...', value = 0, {
-    total_iterations_mask <- 1
-    total_progress_mask <- 1
-    
-    for (i in 1:total_iterations_mask) {
-      tryCatch({
-        # Step 1: Load and process coordinates
-        incProgress(1/10, detail = "Loading and processing coordinates...")
-        coords_df <- read.csv(input$points_connectivity$datapath)
-        coords_df <- coords_df %>% rename(x = X, y = Y)
-        
-        # Convert data frame to SpatialPoints
-        coordinates(coords_df) <- ~x + y
-        proj4string(coords_df) <- CRS("+proj=longlat +datum=WGS84")
-        Pj_sp <- coords_df
-        
-        # Extract coordinates
-        Pj_coords <- Pj_sp@coords
-        
-        # Create convex hull and buffer
-        Pj_chull <- chull(Pj_sp@coords)
-        Pj_chull_ends <- Pj_sp@coords[c(Pj_chull, Pj_chull[1]),]
-        Pj_poly <- SpatialPolygons(list(Polygons(list(Polygon(Pj_chull_ends)), ID = 1)), 
-                                   proj4string = CRS(proj4string(Pj_sp)))
-        Pj_poly_buff <- gBuffer(Pj_poly, width = 0.05, byid = TRUE)
-        
-        # Step 2: Load and process potential habitat map
-        incProgress(1/10, detail = "Loading and processing habitat map...")
-        potential_habitat <- raster(input$pot_map_connectivity$datapath)
-        
-        # Ensure CRS matches with the points
-        proj4string(potential_habitat) <- CRS(proj4string(Pj_sp))
-        
-        # Process the habitat map
-        habitat_mask <- potential_habitat %>% crop(Pj_poly_buff) %>% mask(Pj_poly_buff)
-        
-        # Create bounding box from habitat map
-        bbox <- as(extent(habitat_mask), "SpatialPolygons")
-        proj4string(bbox) <- CRS(proj4string(Pj_sp))
-        se <- bbox
-        
-        # Sample points
-        set.seed(6)
-        Pj_sample <- Pj_coords[sample(nrow(Pj_coords), input$number_points),]
-        
-        incProgress(1/10, detail = "Sampling points...")
-        
-        # Step 3: Calculate passage probabilities
-        Pj_combn <- combn(nrow(Pj_sample), 2) %>%
-          t() %>%
-          as.matrix()
-        
-        transition_raster <- habitat_mask  # Replace with relevant raster if needed
-        transition_function <- function(x) { 1 / mean(x) }  # Replace with appropriate function
-        
-        transition_matrix <- transition(transition_raster, transition_function, 8) %>%
-          geoCorrection(type = "c", multpl = FALSE)
-        
-        passages <- list()
-        system.time(
-          for (i in 1:nrow(Pj_combn)) {
-            locations <- SpatialPoints(rbind(Pj_sample[Pj_combn[i, 1], 1:2],
-                                             Pj_sample[Pj_combn[i, 2], 1:2]), 
-                                       proj4string = CRS(proj4string(Pj_sp)))
-            passages[[i]] <- passage(transition_matrix, origin = locations[1], 
-                                     goal = locations[2], theta = 0.00001)
-            print(paste((i / nrow(Pj_combn)) * 100, "% complete"))
-          }
-        )
-        
-        incProgress(1/10, detail = "Calculating passage probabilities...")
-        
-        # Stack the passage probabilities and calculate the overlay
-        passages <- stack(passages)
-        passages_overlay <- sum(passages) / nrow(Pj_combn)
-        
-        incProgress(1/10, detail = "Generating output...")
-        
-        # Step 4: Save the result as a .TIF file in My Documents
-        my_documents_path <- file.path(Sys.getenv("USERPROFILE"), "Documents")
-        output_tif_path <- file.path(my_documents_path, "ConnectivityAnalysisOutput.tif")
-        writeRaster(passages_overlay, output_tif_path, format = "GTiff", overwrite = TRUE)
-        
-        # Step 5: Visualize the result
-        output$connectivity_output <- renderPlot({
-          plot(passages_overlay, main = "Connectivity Analysis Output")
-        })
-        
-        # Save the map for downloading
-        output$download_pdf <- downloadHandler(
-          filename = function() {
-            paste("Connectivity_Map_", Sys.Date(), ".pdf", sep = "")
-          },
-          content = function(file) {
-            pdf(file)
-            plot(passages_overlay, main = "Connectivity Analysis Output")
-            dev.off()
-          }
-        )
-      }, error = function(e) {
-        showNotification("An error occurred during the connectivity analysis.", type = "error")
+    tryCatch({
+      # Step 1: Cargar y procesar coordenadas
+      incProgress(1/5, detail = "Loading coordinates...")
+      coords_df <- read.csv(input$points_connectivity$datapath)
+
+      if (!all(c("X", "Y", "Response") %in% colnames(coords_df))) {
+        stop("The input file must contain 'X', 'Y', and 'Response' columns.")
+      }
+
+      coords_df <- coords_df %>% filter(Response == 1) %>% na.omit()
+      coords_sf <- st_as_sf(coords_df, coords = c("X", "Y"), crs = 4326)
+
+      if (nrow(coords_sf) < 2) stop("At least two points are required for connectivity analysis.")
+
+      # Step 2: Cargar y procesar el mapa de hábitat
+      incProgress(1/5, detail = "Processing habitat map...")
+      habitat_raster <- raster(input$pot_map_connectivity$datapath)
+
+      if (is.na(crs(habitat_raster))) crs(habitat_raster) <- CRS("+proj=longlat +datum=WGS84")
+
+      # **AUMENTAR RESOLUCIÓN** 
+      habitat_raster <- disaggregate(habitat_raster, fact = 2)  # Más resolución
+
+      # Extraer coordenadas de los puntos
+      Pj_sample <- st_coordinates(coords_sf)
+
+      # Validar que los puntos estén dentro del área del raster
+      values_at_points <- raster::extract(habitat_raster, Pj_sample)
+
+      if (any(is.na(values_at_points))) {
+        print("Some points fall outside the habitat raster. Removing them...")
+        valid_points <- !is.na(values_at_points)
+        Pj_sample <- Pj_sample[valid_points, , drop = FALSE]
+      }
+
+      if (nrow(Pj_sample) < 2) stop("Not enough valid points for connectivity analysis.")
+
+      # Step 3: Calcular probabilidades de paso
+      incProgress(1/5, detail = "Calculating connectivity...")
+
+      if (nrow(Pj_sample) < 2) stop("Insufficient points for connectivity analysis.")
+      Pj_combn <- combn(nrow(Pj_sample), 2, simplify = TRUE) %>% t()
+
+      transition_function <- function(x) {
+        mean_value <- mean(x, na.rm = TRUE)
+        if (is.na(mean_value) || mean_value == 0) return(1)  
+        1 / mean_value
+      }
+
+      transition_matrix <- transition(habitat_raster, transition_function, directions = 8)
+      transition_matrix <- geoCorrection(transition_matrix, type = "c", multpl = FALSE)
+
+      passages <- list()
+      for (i in 1:nrow(Pj_combn)) {
+        locations <- Pj_sample[Pj_combn[i, ], , drop = FALSE]
+        print(paste("Processing pair:", i, "of", nrow(Pj_combn)))
+        if (any(is.na(locations))) next
+        passages[[i]] <- passage(transition_matrix, origin = locations[1, ], 
+                                 goal = locations[2, ], theta = 0.00001)
+        print(paste((i / nrow(Pj_combn)) * 100, "% complete"))
+      }
+
+      incProgress(1/5, detail = "Finalizing output...")
+
+      # **AUMENTAR RESOLUCIÓN EN EL MAPA DE CONECTIVIDAD**
+      passages_stack <- stack(passages)
+      passages_overlay <- stackApply(passages_stack, indices = rep(1, nlayers(passages_stack)), fun = mean, na.rm = TRUE)
+      passages_overlay <- disaggregate(passages_overlay, fact = 2)  # Más resolución
+
+      # Guardar resultado para descarga en .asc
+      output$download_asc_connec <- downloadHandler(
+        filename = function() { "Connectivity_Analysis.asc" },
+        content = function(file) {
+          writeRaster(passages_overlay, file, format = "ascii", overwrite = TRUE)
+        }
+      )
+
+      # **Graficar la conectividad sobre el mapa original**
+      output$connectivity_output <- renderPlot({
+        plot(habitat_raster, main = "Connectivity Analysis Output", col = terrain.colors(10))  
+        plot(passages_overlay, add = TRUE, alpha = 0.6)  
+        points(Pj_sample, col = "blue", pch = 16)  
       })
-    }
+
+      # Guardar resultado en PDF
+      output$download_pdf_connec <- downloadHandler(
+        filename = function() { "Connectivity_Map.pdf" },
+        content = function(file) {
+          pdf(file)
+          plot(habitat_raster, main = "Connectivity Analysis Output", col = terrain.colors(10))
+          plot(passages_overlay, add = TRUE, alpha = 0.6)
+          points(Pj_sample, col = "blue", pch = 16)
+          dev.off()
+        }
+      )
+
+    }, error = function(e) {
+      showModal(modalDialog(title = "Error", paste("Something went wrong:", e$message), easyClose = TRUE))
+    })
   })
 })
 
 
-#########################################333
-############################################3
-##########################################3
+###################################
+############################################
+##########################################
 
 # Map Inversion in the Map Inverter Tab
 observeEvent(input$invertRasterFile, {
@@ -4621,120 +4770,171 @@ observeEvent(input$invertRasterFile, {
 
 
 ################################3
-
-# Corridor Analysis in the LCP Corridors Tab
 observeEvent(input$runLCP, {
-  tryCatch({  
-  req(input$pointsCSV, input$resistanceRasterLCP)
-  
-  output$lcpProgress <- renderUI({withProgress(message = 'Running LCP corridor analysis...', value = 0, {
-    pointsData <- read_csv(input$pointsCSV$datapath)
-    points <- tryCatch({
-      SpatialPoints(cbind(pointsData$x, pointsData$y), proj4string = CRS("+proj=longlat +datum=WGS84"))
-    }, error = function(e) {
-      showNotification("Error processing coordinates. Ensure your CSV contains valid ' (x)Longitude' and '(y)Latitude' columns.", type = "error")
-      return(NULL)
-    })
-    
-    resistance <- tryCatch({
-      rast(input$resistanceRasterLCP$datapath)
-    }, error = function(e) {
-      showNotification("Error loading resistance raster. Please ensure the file is a valid ASC file.", type = "error")
-      return(NULL)
-    })
-    
-    # Convert `SpatRaster` to `RasterLayer` for compatibility with `gdistance`
-    resistance_raster <- raster::raster(resistance)
-    
-    # Exit if any error occurred
-    if (is.null(points) || is.null(resistance_raster)) return(NULL)
-    
-    tr <- transition(1 / resistance_raster, transitionFunction = mean, directions = 8)
-    tr <- geoCorrection(tr, type = "c")
-    
-    route_list <- list()
-    
-    incProgress(0.3)
-    for (i in 1:(length(points) - 1)) {
-      for (j in (i + 1):length(points)) {
-        route <- shortestPath(tr, points[i], points[j], output="SpatialLines")
-        total_cost <- costDistance(tr, points[i], points[j])
-        distance <- sp::SpatialLinesLengths(route, longlat=TRUE)
-        importance <- 1 / total_cost
-        route$cost <- total_cost
-        route$distance <- distance
-        route$importance <- importance
-        route_list <- append(route_list, list(route))
-      }
-    }
-    
-    incProgress(0.7)
-    output$resistancePlot <- renderPlot({
-      plot(resistance_raster, main="Resistance Map with Important Corridors")
-      colors <- colorRampPalette(c("red", "yellow", "green"))(100)
-      thresholds <- quantile(sapply(route_list, function(route) route$cost), probs = seq(0, 1, length.out = 101))
-      for (i in 1:length(route_list)) {
-        route <- route_list[[i]]
-        color <- colors[findInterval(route$cost, thresholds)]
-        lines(route, col = color, lwd = 2)
-      }
-      points(points, col = "blue", pch = 16)
-    })
-    
-    routes_df <- data.frame(
-      corridor = 1:length(route_list),
-      cost = sapply(route_list, function(route) route$cost),
-      distance_km2 = sapply(route_list, function(route) route$distance),
-      importance = sapply(route_list, function(route) route$importance)
-    )
-    
-    output$routesTable <- renderTable(routes_df)
-    
-    # Download CSV with corridor information
-    output$downloadRoutesCSV <- downloadHandler(
-      filename = function() { "corridors_info.csv" },
-      content = function(file) {
-        write_csv(routes_df, file)
-      }
-    )
-    
-    # Save LCP map as .asc with important corridors overlaid
-    output$downloadLCPMapASC <- downloadHandler(
-      filename = function() { "lcp_resistance_map.asc" },
-      content = function(file) {
-        # Overlay corridors on the resistance map
-        lcp_raster <- raster(resistance_raster)
-        for (route in route_list) {
-          lcp_raster <- rasterize(route, lcp_raster, field = 1, update = TRUE)
-        }
-        writeRaster(lcp_raster, file, format = "ascii", overwrite = TRUE)
-      }
-    )
-    
-    # Download PDF with resistance map and corridors
-    output$downloadCorridorsPDF <- downloadHandler(
-      filename = function() { "resistance_map_with_corridors.pdf" },
-      content = function(file) {
-        pdf(file, width = 8, height = 6)
-        plot(resistance_raster, main="Resistance Map with Important Corridors")
-        colors <- colorRampPalette(c("red", "yellow", "green"))(100)
-        thresholds <- quantile(sapply(route_list, function(route) route$cost), probs = seq(0, 1, length.out = 101))
-        for (i in 1:length(route_list)) {
-          route <- route_list[[i]]
-          color <- colors[findInterval(route$cost, thresholds)]
-          lines(route, col = color, lwd = 2)
-        }
-        points(points, col = "blue", pch = 16)
-        dev.off()
-      }
-    )
-  })})
-  #trycatch
-  }, error = function(e) {
-    showNotification("An error occurred during the corridor analysis.", type = "error")
-  }) #trycatch  
-})
+    req(input$pointsCSV, input$resistanceRasterLCP)  
 
+    output$lcpProgress <- renderUI({
+      withProgress(message = 'Running LCP corridor analysis...', value = 0, {
+        tryCatch({
+          
+          incProgress(1/5, detail = "Loading coordinates...")
+          print("Cargando CSV...") 
+          
+          coords_df <- read_csv(input$pointsCSV$datapath, show_col_types = FALSE) %>%
+            select(X, Y, Response) %>%
+            filter(Response == 1) %>%
+            select(X, Y) %>%
+            drop_na()
+          
+          if (nrow(coords_df) < 2) stop("Se necesitan al menos dos puntos para el análisis.")
+          
+          coords_sf <- st_as_sf(coords_df, coords = c("X", "Y"), crs = 4326)
+          coords_sp <- as(coords_sf, "Spatial")  
+
+          print("Estructura de los puntos después de conversión:")
+          print(coords_sp)
+
+          incProgress(1/5, detail = "Loading resistance raster...")
+          print("Cargando raster de resistencia...") 
+          
+          raster_path <- input$resistanceRasterLCP$datapath
+          raster_ext <- tools::file_ext(raster_path)
+          
+          if (raster_ext %in% c("asc", "bil", "tif", "tiff")) {
+            resistance <- raster(raster_path)
+          } else {
+            stop("Formato de raster no soportado. Use .tiff, .tif, .asc, o .bil")
+          }
+          
+          if (!inherits(resistance, "RasterLayer")) {
+            stop("Error: El archivo cargado no es un RasterLayer válido.")
+          }
+          
+          print("Verificando CRS del raster...")
+          if (is.na(crs(resistance))) {
+            crs(resistance) <- CRS("+proj=longlat +datum=WGS84")
+          }
+
+          print("Revisando valores NA en el raster...")
+          if (any(is.na(getValues(resistance)))) {
+            print("Warning: Raster contiene NA. Se reemplazarán.")
+            na_value <- max(getValues(resistance), na.rm = TRUE)
+            resistance[is.na(resistance)] <- na_value
+          }
+          
+          print("Aumentando resolución del raster...")
+          resistance <- disaggregate(resistance, fact = 2)  
+          
+          print("Verificando que los puntos estén dentro del raster...")
+          Pj_sample <- coordinates(coords_sp)
+
+          values_at_points <- raster::extract(resistance, Pj_sample)
+
+          if (any(is.na(values_at_points))) {
+            print("Algunos puntos están fuera del raster. Eliminándolos...")
+            valid_points <- !is.na(values_at_points)
+            Pj_sample <- Pj_sample[valid_points, , drop = FALSE]
+          }
+
+          if (nrow(Pj_sample) < 2) stop("No hay suficientes puntos válidos para el análisis.")
+
+          incProgress(1/5, detail = "Creating transition matrix...")
+          print("Creando matriz de transición...") 
+
+          tr <- transition(1 / resistance, transitionFunction = mean, directions = 8)
+          tr <- geoCorrection(tr, type = "c")
+
+          incProgress(1/5, detail = "Calculating least-cost paths...")
+          
+          routes <- list()
+          for (i in 1:(nrow(Pj_sample) - 1)) {
+            for (j in (i + 1):nrow(Pj_sample)) {
+              print(paste("Calculando ruta entre puntos", i, "y", j))
+
+              route <- shortestPath(tr, Pj_sample[i, , drop = FALSE], Pj_sample[j, , drop = FALSE], output = "SpatialLines")
+              total_cost <- costDistance(tr, Pj_sample[i, , drop = FALSE], Pj_sample[j, , drop = FALSE])
+              distance <- sp::SpatialLinesLengths(route, longlat = TRUE)
+              importance <- 1 / total_cost
+              
+              route$cost <- total_cost
+              route$distance <- distance
+              route$importance <- importance
+              routes <- append(routes, list(route))
+            }
+          }
+
+          route_list(routes)  
+
+          incProgress(1/5, detail = "Plotting results...")
+
+          lcp_raster <- raster(resistance)
+          for (route in routes) {
+            lcp_raster <- rasterize(route, lcp_raster, field = 1, update = TRUE)
+          }
+          
+          corridors_raster(lcp_raster)  
+
+          output$resistancePlot <- renderPlot({
+            plot(resistance, main = "Resistance Map with Important Corridors", col = terrain.colors(10))
+            colors <- colorRampPalette(c("red", "yellow", "green"))(100)
+            thresholds <- quantile(sapply(route_list(), function(route) route$cost), probs = seq(0, 1, length.out = 101))
+            for (i in 1:length(route_list())) {
+              route <- route_list()[[i]]
+              color <- colors[findInterval(route$cost, thresholds)]
+              lines(route, col = color, lwd = 2)
+            }
+            points(Pj_sample, col = "blue", pch = 16)
+          })
+
+          routes_df <- data.frame(
+            corridor = 1:length(routes),
+            cost = sapply(routes, function(route) route$cost),
+            distance_km2 = sapply(routes, function(route) route$distance),
+            importance = sapply(routes, function(route) route$importance)
+          )
+          
+          routes_data(routes_df)
+
+          output$downloadRoutesCSV <- downloadHandler(
+            filename = function() { "corridors_info.csv" },
+            content = function(file) {
+              write_csv(routes_data(), file)
+            }
+          )
+
+          output$downloadLCPMapASC <- downloadHandler(
+            filename = function() { "lcp_resistance_map.asc" },
+            content = function(file) {
+              writeRaster(corridors_raster(), file, format = "ascii", overwrite = TRUE)
+            }
+          )
+
+          output$downloadCorridorsPDF <- downloadHandler(
+            filename = function() { "resistance_map_with_corridors.pdf" },
+            content = function(file) {
+              pdf(file, width = 8, height = 6)
+              plot(resistance, main = "Resistance Map with Important Corridors", col = terrain.colors(10))
+              colors <- colorRampPalette(c("red", "yellow", "green"))(100)
+              thresholds <- quantile(sapply(route_list(), function(route) route$cost), probs = seq(0, 1, length.out = 101))
+              for (i in 1:length(route_list())) {
+                route <- route_list()[[i]]
+                color <- colors[findInterval(route$cost, thresholds)]
+                lines(route, col = color, lwd = 2)
+              }
+              points(Pj_sample, col = "red", pch = 16)
+              dev.off()
+            }
+          )
+
+        }, error = function(e) {
+          showModal(modalDialog(title = "Error", paste("Error:", e$message), easyClose = TRUE))
+        })
+      })
+    })
+  })
+}
+
+shinyApp(ui, server)
 ###################
   
   
