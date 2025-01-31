@@ -46,45 +46,34 @@ EcoNicheS requires 64-bit Java. Download and install it from [Oracle Java](https
 
 ## Step 2: Install EcoNicheS Dependencies
 
-### 2.1 CRAN Libraries
+### CRAN Libraries
 EcoNicheS depends on several R libraries. Copy and paste the following command into your R console to install them all at once:
 
 ```
-install.packages(c(
-  "shiny", "terra", "usdm", "ENMTools", "biomod2", "RColorBrewer",
-  "dismo", "tiff", "rJava", "tidyterra", "shinydashboard", "pROC",
-  "R.utils", "countrycode", "CoordinateCleaner", "dplyr", "ggplot2",
-  "rgbif", "sf", "rnaturalearthdata", "spThin", "shinyjs", "leaflet",
-  "DT", "shinyBS", "prettymapr", "gt", "tidyverse", "gtExtras",
-  "MIAmaxent", "leaflet.extras", "geodata", "viridis", "ggthemes",
-  "sp", "gdistance", "foreach", "doParallel", "raster",
-  "progress", "readr"
-))
+# Instalación de paquetes necesarios en R
+
+# Lista de paquetes
+paquetes <- c("shiny", "terra", "usdm", "ENMTools", "biomod2", "RColorBrewer", 
+             "dismo", "tiff", "rJava", "tidyterra", "shinydashboard", "pROC", 
+             "R.utils", "countrycode", "CoordinateCleaner", "dplyr", "ggplot2", 
+             "rgbif", "sf", "rnaturalearthdata", "spThin", "shinyjs", "leaflet", 
+             "DT", "shinyBS", "prettymapr", "ntbox", "gt", "tidyverse", "gtExtras", 
+             "shinyBS", "leaflet.extras", "geodata", "viridis", "ggthemes", "sp", 
+             "earth", "xgboost", "gdistance", "foreach", "doParallel", "raster", 
+             "progress", "readr", "MIAmaxent", "shiny", "terra", "sf", "gdistance", "viridis")
+
+# Instalar paquetes que no estén ya instalados
+paquetes_no_instalados <- paquetes[!(paquetes %in% installed.packages()[,"Package"])]
+
+if(length(paquetes_no_instalados)) {
+  install.packages(paquetes_no_instalados, dependencies = TRUE)
+}
+
+# Cargar los paquetes
+lapply(paquetes, library, character.only = TRUE)
 ```
 
-
-# Installing `rgeos` from Source
-
-The **`rgeos`** package is no longer available on CRAN because its functionality is being superseded by other packages like [`sf`](https://cran.r-project.org/package=sf) and [`s2`](https://cran.r-project.org/package=s2). If you still need to install **`rgeos`**, you can do so by downloading it from the CRAN archives and installing from source.
-
-## Why `rgeos` Is No Longer on CRAN
-
-- **`rgeos`** relies on the external **GEOS** library.
-- Development has shifted toward packages such as **`sf`** and **`s2`**, which offer more modern and comprehensive spatial functionality.
-- As a result, **`rgeos`** was archived on CRAN, and you must now install it manually from the CRAN Archive.
-
-## 2.2 Install from Source in R
-
-Open R (or RStudio) and run:
-
-```r
-install.packages(
-  "https://cran.r-project.org/src/contrib/Archive/rgeos/rgeos_0.6-3.tar.gz",
-  repos = NULL,
-  type = "source"
-)
-```
-### 2.3 GitHub Libraries
+### 3 GitHub Libraries
 Some libraries are not available on CRAN and must be installed from GitHub. Run the following commands in your R console:
 
 ```
@@ -101,15 +90,6 @@ remotes::install_github("danlwarren/ENMTools")
 ```
 
 ---
-
-## Step 3: Special Instructions for Mac ARM64 Users
-
-If you're using a Mac with an ARM64 processor (e.g., M1/M2 chip), the `rgeos` library is not supported. To avoid errors:
-
-1. Skip the installation of `rgeos` by removing it from the list of libraries.
-2. When running the EcoNicheS script, delete or comment out the line `library(rgeos)`.
-
-The rest of the application will work without issues.
 
 ---
 
