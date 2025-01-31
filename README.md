@@ -4,7 +4,8 @@
 ### EcoNicheS: Enhancing Ecological Niche Modeling, Niche Overlap, and Connectivity Analysis Using Shiny Dashboard and R Package
 
 
-An R library that enables Ecological Niche Modeling, Niche Overlap, and Connectivity Analysis Using Shiny Dashboard and R Package. ### This is Version 1.1.0, last updated on January 31, 2025. Future versions will include additional analyses and enhancements.
+An R library that enables Ecological Niche Modeling, Niche Overlap, and Connectivity Analysis Using Shiny Dashboard and R Package. 
+### This is Version 1.1.0, last updated on January 31, 2025. Future versions will include additional analyses and enhancements.
 
 Need Help or Found a Bug?
 For any questions, comments, or to report bugs related to EcoNicheS, feel free to:
