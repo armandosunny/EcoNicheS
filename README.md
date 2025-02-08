@@ -88,22 +88,6 @@ if(length(missing_packages)) {
 lapply(packages, library, character.only = TRUE)
 ```
 
-### 3 GitHub Libraries
-Some libraries are not available on CRAN and must be installed from GitHub. Run the following commands in your R console:
-
-```
-if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
-
-# Install ntbox
-remotes::install_github("luismurao/ntbox")
-
-# Install tidyterra (latest version)
-remotes::install_github("rspatial/terra")
-
-# Install ENMTools
-remotes::install_github("danlwarren/ENMTools")
-```
-
 ---
 
 ---
