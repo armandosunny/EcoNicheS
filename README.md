@@ -424,10 +424,7 @@ One of the central points of the module is the possibility of evaluating the nic
 
 ## Thirteenth module: Connectivity
 
-Landscape connectivity refers to the degree to which an environment facilitates or impedes the movement of organisms between different locations (Taylor et al., 1993; Tischendorf and Fahrig, 2000). In EcoNiches, users can generate ecological connectivity models by creating flow maps. The connectivity analysis uses habitat suitability as a resistance surface and employs conductance analysis through the gdistance package (van Etten, 2017). Users need species occurrence data and a resistance raster, which may contain species distribution model data or landscape elements with resistance values. The module splits the data into 80% for training and 20% for testing (Joseph, 2022). The resulting flow maps integrate least-cost path analysis and Circuitscape-type analyses to evaluate potential connectivity, identifying the shortest possible paths between locations within the area of interest. [rgeos](https://www.rdocumentation.org/packages/rgeos/versions/0.6-4) and [gdistance](https://cgspace.cgiar.org/items/87e6fd8b-53ff-4d61-9581-8cc83272ff73). 
-> [!WARNING]
-> Note: This module does not run on ARM64 Macs.
-
+Landscape connectivity refers to the degree to which an environment facilitates or impedes the movement of organisms between different locations (Taylor et al., 1993; Tischendorf and Fahrig, 2000). In EcoNiches, users can generate ecological connectivity models by creating flow maps. The connectivity analysis uses habitat suitability as a resistance surface and employs conductance analysis through the gdistance package (van Etten, 2017). Users need species occurrence data and a resistance raster, which may contain species distribution model data or landscape elements with resistance values. The module splits the data into 80% for training and 20% for testing (Joseph, 2022). The resulting flow maps integrate least-cost path analysis and Circuitscape-type analyses to evaluate potential connectivity, identifying the shortest possible paths between locations within the area of interest. 
 
 ## Map inverter: 
 
