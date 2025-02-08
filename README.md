@@ -128,7 +128,7 @@ options(shiny.maxRequestSize = 6000*1024^2)
 ---
 
 > [!IMPORTANT]
-> ## "If you are unable to install EcoNicheS, please download the EcoNicheS.R file, open it in a text editor, and run it directly in the R console. We apologize for the inconvenience of not being able to run the command directly from GitHub at this time, but we are working to resolve the issue as soon as possible."
+> ## We apologize for the inconvenience of not being able to run the command directly from GitHub at this time, but we are working to resolve the issue as soon as possible."
 
 
 
