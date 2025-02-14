@@ -96,9 +96,9 @@ ui <- dashboardPage(
       menuItem(text = HTML("<i class='fas fa-chart-line'></i> Gains and Losses Plot"), tabName = "tab12"),
       menuItem(text = HTML("<i class='fa-solid fa-mountain'></i> ENMTools"), tabName = "tab13"),
       menuItem(text = HTML("<i class='fa-solid fa-route'></i> Functional Connectivity"), tabName = "tabC",
-                menuSubItem("Map Inverter", tabName = "invert_raster"),
-		menuSubItem("Connectivity Circuit theory", tabName = "tab14"),
-              	menuSubItem("LCP Corridors", tabName = "lcp_analysis"))
+               menuSubItem("Map Inverter", tabName = "invert_raster"),
+               menuSubItem("Connectivity Circuit theory", tabName = "tab14"),
+               menuSubItem("LCP Corridors", tabName = "lcp_analysis"))
     )
   ),
   dashboardBody(
@@ -694,7 +694,7 @@ ui <- dashboardPage(
       #############################################
       #######################################################
       
-tabItem(tabName = "tab8",
+      tabItem(tabName = "tab8",
               fluidPage(
                 titlePanel("Load and Plot Maps"),
                 column(width = 4,
@@ -720,37 +720,37 @@ tabItem(tabName = "tab8",
       #############################################
       #######################################################
       
-     tabItem(tabName = "tab9",
-        fluidPage(
-          titlePanel("Partial ROC Analysis"),
-          column(width = 4,
-                 box(
-                   title = div("Upload your databases", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "This is a tooltip for the title")),
-                   width = NULL,
-                   fileInput("sdm_mod", div("Upload prediction raster", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Upload the consensus map obtained during the Ecological Niche Modeling. Visit the user manual for more information.")), accept = c('.tiff','.tif', '.asc')),
-                   fileInput("occ_proc", div("Upload Validation Data", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Upload the file that contains only the presence points of the species of interest. The format must be (.csv).")), accept = ".csv"),
-                   numericInput("iter", div("Number of bootstrap iterations ", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Iterations to be performed. Visit the user manual for more information.")), value = 500),
-                   numericInput("omission", "Threshold", value = 5),
-                   numericInput("randper", "Percent", value = 50),
-                   actionButton("runButtonEnmEval", "Run ROC (0-1)"),
-                   actionButton("runButtonBiomod2", "Run ROC (0-100)")
-                 ) #box
-          ), #column
-          column(width = 8,
-                 box(
-                   title = "Results",
-                   width = NULL,
-                   verbatimTextOutput("errorMessage"),
-                   tableOutput("summaryroc"),
-                   dataTableOutput("resultsroc")
-                 ) #box
-          ) #column
-        ) #fluidpage
-),
+      tabItem(tabName = "tab9",
+              fluidPage(
+                titlePanel("Partial ROC Analysis"),
+                column(width = 4,
+                       box(
+                         title = div("Upload your databases", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "This is a tooltip for the title")),
+                         width = NULL,
+                         fileInput("sdm_mod", div("Upload prediction raster", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Upload the consensus map obtained during the Ecological Niche Modeling. Visit the user manual for more information.")), accept = c('.tiff','.tif', '.asc')),
+                         fileInput("occ_proc", div("Upload Validation Data", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Upload the file that contains only the presence points of the species of interest. The format must be (.csv).")), accept = ".csv"),
+                         numericInput("iter", div("Number of bootstrap iterations ", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Iterations to be performed. Visit the user manual for more information.")), value = 500),
+                         numericInput("omission", "Threshold", value = 5),
+                         numericInput("randper", "Percent", value = 50),
+                         actionButton("runButtonEnmEval", "Run ROC (0-1)"),
+                         actionButton("runButtonBiomod2", "Run ROC (0-100)")
+                       ) #box
+                ), #column
+                column(width = 8,
+                       box(
+                         title = "Results",
+                         width = NULL,
+                         verbatimTextOutput("errorMessage"),
+                         tableOutput("summaryroc"),
+                         dataTableOutput("resultsroc")
+                       ) #box
+                ) #column
+              ) #fluidpage
+      ),
       
       
       #
-       #################################
+      #################################
       #############################################
       #######################################################
       tabItem(tabName = "tab10",
@@ -788,42 +788,42 @@ tabItem(tabName = "tab8",
               ) #fluidpage
       ),
       #            
-       #################################
+      #################################
       #############################################
       #######################################################
       tabItem(
-  tabName = "tab11",
-  fluidPage(
-    titlePanel("Calculate area"),
-    column(
-      width = 4,
-      box(
-        title = div("Data", tags$i(class = "fas fa-question-circle", 
-          "data-toggle" = "tooltip", 
-          "title" = "Upload a raster file for the calculation of the area of suitability. The allowed formats are '.tiff', '.tif', '.asc', and '.bil'.")),
-        width = NULL,
-        condition = "input.opcionAnalisis == 'Calculate area'",
-        fileInput("archivoRaster", "Select raster file", accept = c('.tiff', '.tif', '.asc', '.bil')),
-        numericInput("umbralSuitability", "Suitability Threshold:", value = 0.7, min = 0, max = 1, step = 0.01),
-        actionButton("calcularArea", "Calculate Area of Suitability"),
-        br(), br(),
-        downloadButton("downloadAscThreshold", "Download Map (.asc)"),
-        downloadButton("downloadPdfThreshold", "Download Map (PDF)")
-      )
-    ),
-    column(
-      width = 8,
-      box(
-        title = "Result",
-        width = NULL,
-        verbatimTextOutput("Result"),    # Display numerical area result
-        plotOutput("areaMap")           # Display raster map highlighting the suitable area
-      )
-    )
-  )
-),
-    
-       #################################
+        tabName = "tab11",
+        fluidPage(
+          titlePanel("Calculate area"),
+          column(
+            width = 4,
+            box(
+              title = div("Data", tags$i(class = "fas fa-question-circle", 
+                                         "data-toggle" = "tooltip", 
+                                         "title" = "Upload a raster file for the calculation of the area of suitability. The allowed formats are '.tiff', '.tif', '.asc', and '.bil'.")),
+              width = NULL,
+              condition = "input.opcionAnalisis == 'Calculate area'",
+              fileInput("archivoRaster", "Select raster file", accept = c('.tiff', '.tif', '.asc', '.bil')),
+              numericInput("umbralSuitability", "Suitability Threshold:", value = 0.7, min = 0, max = 1, step = 0.01),
+              actionButton("calcularArea", "Calculate Area of Suitability"),
+              br(), br(),
+              downloadButton("downloadAscThreshold", "Download Map (.asc)"),
+              downloadButton("downloadPdfThreshold", "Download Map (PDF)")
+            )
+          ),
+          column(
+            width = 8,
+            box(
+              title = "Result",
+              width = NULL,
+              verbatimTextOutput("Result"),    # Display numerical area result
+              plotOutput("areaMap")           # Display raster map highlighting the suitable area
+            )
+          )
+        )
+      ),
+      
+      #################################
       #############################################
       #######################################################
       
@@ -865,7 +865,7 @@ tabItem(tabName = "tab8",
                 ) #column
               )
       ),
-       #################################
+      #################################
       #############################################
       #######################################################
       tabItem(tabName = "tab13",
@@ -874,470 +874,470 @@ tabItem(tabName = "tab8",
                 fluidRow(
                   column(width = 4,
                          box(
-                    title = div("Upload data for analysis", 
-                                tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", 
-                                       "title" = "Provides the databases for the analysis and construction of models and niche overlap analysis through ENMTools.")),
-                    width = NULL,
-                    fileInput("sp1_enmtools", 
-                              div("Distribution data of Species 1", 
-                                  tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", 
-                                         "title" = "Database with the points of presence and pseudo-absences of species 1 in .csv format. The column names should be Species, X and Y. X refers to the longitude data and Y to the latitude data.")), 
-                              accept = ".csv"),
-                    fileInput("sp2_enmtools", 
-                              div("Distribution data of Species 2", 
-                                  tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", 
-                                         "title" = "Database with the points of presence and pseudo-absences of species 2 in .csv format. The column names should be Species, X and Y. X refers to the longitude data and Y to the latitude data.")), 
-                              accept = ".csv"),
-                    fileInput("layerFilesENM", 
-                              div("Upload environmental layers", 
-                                  tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", 
-                                         "title" = "Upload the environmental variables relevant to your study (evaluated through correlation).")), 
-                              multiple = TRUE, accept = c('.tiff', '.tif', '.asc', '.bil')),
-                    selectInput("model_niche", 
-                                div("Select Model(s)", 
-                                    tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", 
-                                           "title" = "Model for the construction and projection of ENMs. You can select multiple models; the selection will apply to both species.")),
-                                choices = c('glm', 'gam', 'dm', 'bc', 'mx'), 
-                                multiple = TRUE),
-                    radioButtons("options_species_model", 
-                                 "Would you like to build an ENM for both species?",
-                                 choices = list("Yes" = 1, "No, species 2 data is for overlap analysis only." = 2), 
-                                 selected = 1)
-                ),
-                box(
-                    title = div("Hypothesis testing", 
-                                tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", 
-                                       "title" = "Different tests can be performed to evaluate niche overlap. Go to the user manual or visit ENMTools on GitHub.")),
-                    width = NULL,
-                    solidHeader = TRUE,
-                    checkboxGroupInput("checkbox_opciones", 
-                                       "Select the analyzes to perform:", 
-                                       choices = list("Niche identity or equivalency test" = 1, "Background or similarity test (Asymmetric)" = 2, "Background or similarity test (Symmetric)" = 3), 
-                                       selected = 1),
-                    selectInput("model_niche_s", 
-                                div("Select Model(s)", 
-                                    tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", 
-                                           "title" = "Type of model to be built for the selected tests.")), 
-                                choices = c('glm', 'gam', 'dm', 'bc', 'mx'), 
-                                multiple = TRUE)
-                ),
-                box(
-                    title = div("Rangebreak tests", 
-                                tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", 
-                                       "title" = "Select a model to carry out the test according to Glor and Warren (2011). For questions and details, refer to the user manual or GitHub.")),
-                    width = NULL,
-                    solidHeader = TRUE,
-                    radioButtons("options_rblmodel", 
-                                 "Select an option:", 
-                                 choices = list("GLM" = 1, "GAM" = 2, "DM" = 3, "BC" = 4, "MAXENT" = 5), 
-                                 selected = 1)
-                ),
-                box(
-                    width = NULL,
-                    solidHeader = TRUE,
-                    actionButton("run_enmtools", "Run ENMTools")
-                )
-            ),
-            column(width = 8,
-                box(
-                    title = "Model Results",
-                    width = NULL,
-                    tabsetPanel(
-                        tabPanel("Model Summary Sp1",
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('glm')",
-                                box(title = "GLM model",
-                                    width = NULL,
-                                    plotOutput("modelPlot_glm"),
-                                    downloadButton("downloadPdf_glmmodel", "Download PDF"),
-                                    verbatimTextOutput("modelSummary_glm")
-                                )
-                            ),
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('gam')",
-                                box(title = "GAM model",
-                                    width = NULL,
-                                    plotOutput("modelPlot_gam"),
-                                    downloadButton("downloadPdf_gammodel", "Download PDF"),
-                                    verbatimTextOutput("modelSummary_gam")
-                                )
-                            ),
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('dm')",
-                                box(title = "DM model",
-                                    width = NULL,
-                                    plotOutput("modelPlot_dm"),
-                                    downloadButton("downloadPdf_dmmodel", "Download PDF"),
-                                    verbatimTextOutput("modelSummary_dm")
-                                )
-                            ),
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('bc')",
-                                box(title = "BC model",
-                                    width = NULL,
-                                    plotOutput("modelPlot_bc"),
-                                    downloadButton("downloadPdf_bcmodel", "Download PDF"),
-                                    verbatimTextOutput("modelSummary_bc")
-                                )
-                            ),
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('mx')",
-                                box(title = "MX model",
-                                    width = NULL,
-                                    plotOutput("modelPlot_mx"),
-                                    downloadButton("downloadPdf_mxmodel", "Download PDF"),
-                                    verbatimTextOutput("modelSummary_mx")
-                                )
-                            )
-                        ),
-                        tabPanel("Model responses Sp1",
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('glm')",
-                                box(title = "GLM model",
-                                    width = NULL,
-                                    plotOutput("resp_plot_glm"),
-                                    plotOutput("test_data_glm")
-                                )
-                            ),
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('gam')",
-                                box(title = "GAM model",
-                                    width = NULL,
-                                    plotOutput("resp_plot_gam"),
-                                    plotOutput("test_data_gam")
-                                )
-                            ),
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('dm')",
-                                box(title = "DM model",
-                                    width = NULL,
-                                    plotOutput("resp_plot_dm"),
-                                    plotOutput("test_data_dm")
-                                )
-                            ),
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('bc')",
-                                box(title = "BC model",
-                                    width = NULL,
-                                    plotOutput("resp_plot_bc"),
-                                    plotOutput("test_data_bc")
-                                )
-                            ),
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('mx')",
-                                box(title = "MX model",
-                                    width = NULL,
-                                    plotOutput("resp_plot_mx"),
-                                    plotOutput("test_data_mx")
-                                )
-                            )
-                        ),
-                        tabPanel("Model Summary Sp2",
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('glm')",
-                                box(title = "GLM model",
-                                    width = NULL,
-                                    plotOutput("modelPlot_glm2"),
-                                    downloadButton("downloadPdf_glmmodel2", "Download PDF"),
-                                    verbatimTextOutput("modelSummary_glm2")
-                                )
-                            ),
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('gam')",
-                                box(title = "GAM model",
-                                    width = NULL,
-                                    plotOutput("modelPlot_gam2"),
-                                    downloadButton("downloadPdf_gammodel2", "Download PDF"),
-                                    verbatimTextOutput("modelSummary_gam2")
-                                )
-                            ),
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('dm')",
-                                box(title = "DM model",
-                                    width = NULL,
-                                    plotOutput("modelPlot_dm2"),
-                                    downloadButton("downloadPdf_dmmodel2", "Download PDF"),
-                                    verbatimTextOutput("modelSummary_dm2")
-                                )
-                            ),
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('bc')",
-                                box(title = "BC model",
-                                    width = NULL,
-                                    plotOutput("modelPlot_bc2"),
-                                    downloadButton("downloadPdf_bcmodel2", "Download PDF"),
-                                    verbatimTextOutput("modelSummary_bc2")
-                                )
-                            ),
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('mx')",
-                                box(title = "MX model",
-                                    width = NULL,
-                                    plotOutput("modelPlot_mx2"),
-                                    downloadButton("downloadPdf_mxmodel2", "Download PDF"),
-                                    verbatimTextOutput("modelSummary_mx2")
-                                )
-                            )
-                        ),
-                        tabPanel("Model responses Sp2",
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('glm')",
-                                box(title = "GLM model",
-                                    width = NULL,
-                                    plotOutput("resp_plot_glm2"),
-                                    plotOutput("test_data_glm2")
-                                )
-                            ),
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('gam')",
-                                box(title = "GAM model",
-                                    width = NULL,
-                                    plotOutput("resp_plot_gam2"),
-                                    plotOutput("test_data_gam2")
-                                )
-                            ),
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('dm')",
-                                box(title = "DM model",
-                                    width = NULL,
-                                    plotOutput("resp_plot_dm2"),
-                                    plotOutput("test_data_dm2")
-                                )
-                            ),
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('bc')",
-                                box(title = "BC model",
-                                    width = NULL,
-                                    plotOutput("resp_plot_bc2"),
-                                    plotOutput("test_data_bc2")
-                                )
-                            ),
-                            conditionalPanel(
-                                condition = "input.model_niche.includes('mx')",
-                                box(title = "MX model",
-                                    width = NULL,
-                                    plotOutput("resp_plot_mx2"),
-                                    plotOutput("test_data_mx2")
-                                )
-                            )
-                        ),
-                        tabPanel("Points",
-                            tags$h3(style = "color: black; font-size: 16px;", "Species 1"),
-                            leafletOutput("map_sp1"),
-                            tags$h3(style = "color: black; font-size: 16px;", "Species 2"),
-                            leafletOutput("map_sp2")
-                        ),
-                        tabPanel("Hypothesis testing",
-                            conditionalPanel(
-                                condition = "input.checkbox_opciones.includes('1')",
-                                box(title = "MX model",
-                                    width = NULL,
-                                    plotOutput("plot_idtest"),
-                                    verbatimTextOutput("summary_idtest")
-                                )
-                            ),
-                            conditionalPanel(
-                                condition = "input.checkbox_opciones.includes('2')",
-                                box(title = "MX model",
-                                    width = NULL,
-                                    plotOutput("plot_bctest"),
-                                    verbatimTextOutput("summary_bctest")
-                                )
-                            ),
-                            conditionalPanel(
-                                condition = "input.checkbox_opciones.includes('3')",
-                                box(title = "MX model",
-                                    width = NULL,
-                                    plotOutput("plot_sym"),
-                                    verbatimTextOutput("summary_sym")
-                                )
-                            )
-                        ),
-                        tabPanel("Ecospat test",
-                            plotOutput("plot1"),
-                            conditionalPanel(
-                                condition = "output.plot1 !== undefined && output.plot1 !== null",
-                                downloadButton("downloadPdf_ecospat", "Download PDF")
-                            ),
-                            verbatimTextOutput("summary_nicheover"),
-                            plotOutput("plot_rbl"),
-                            conditionalPanel(
-                                condition = "output.plot_rbl !== undefined && output.plot_rbl !== null",
-                                downloadButton("downloadPdf_rbl", "Download PDF")
-                            ),
-                            verbatimTextOutput("summary_rbl")
-                        )
-                    )) #box
-            )#column
-            ###cambio aqui resultados
+                           title = div("Upload data for analysis", 
+                                       tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", 
+                                              "title" = "Provides the databases for the analysis and construction of models and niche overlap analysis through ENMTools.")),
+                           width = NULL,
+                           fileInput("sp1_enmtools", 
+                                     div("Distribution data of Species 1", 
+                                         tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", 
+                                                "title" = "Database with the points of presence and pseudo-absences of species 1 in .csv format. The column names should be Species, X and Y. X refers to the longitude data and Y to the latitude data.")), 
+                                     accept = ".csv"),
+                           fileInput("sp2_enmtools", 
+                                     div("Distribution data of Species 2", 
+                                         tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", 
+                                                "title" = "Database with the points of presence and pseudo-absences of species 2 in .csv format. The column names should be Species, X and Y. X refers to the longitude data and Y to the latitude data.")), 
+                                     accept = ".csv"),
+                           fileInput("layerFilesENM", 
+                                     div("Upload environmental layers", 
+                                         tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", 
+                                                "title" = "Upload the environmental variables relevant to your study (evaluated through correlation).")), 
+                                     multiple = TRUE, accept = c('.tiff', '.tif', '.asc', '.bil')),
+                           selectInput("model_niche", 
+                                       div("Select Model(s)", 
+                                           tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", 
+                                                  "title" = "Model for the construction and projection of ENMs. You can select multiple models; the selection will apply to both species.")),
+                                       choices = c('glm', 'gam', 'dm', 'bc', 'mx'), 
+                                       multiple = TRUE),
+                           radioButtons("options_species_model", 
+                                        "Would you like to build an ENM for both species?",
+                                        choices = list("Yes" = 1, "No, species 2 data is for overlap analysis only." = 2), 
+                                        selected = 1)
+                         ),
+                         box(
+                           title = div("Hypothesis testing", 
+                                       tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", 
+                                              "title" = "Different tests can be performed to evaluate niche overlap. Go to the user manual or visit ENMTools on GitHub.")),
+                           width = NULL,
+                           solidHeader = TRUE,
+                           checkboxGroupInput("checkbox_opciones", 
+                                              "Select the analyzes to perform:", 
+                                              choices = list("Niche identity or equivalency test" = 1, "Background or similarity test (Asymmetric)" = 2, "Background or similarity test (Symmetric)" = 3), 
+                                              selected = 1),
+                           selectInput("model_niche_s", 
+                                       div("Select Model(s)", 
+                                           tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", 
+                                                  "title" = "Type of model to be built for the selected tests.")), 
+                                       choices = c('glm', 'gam', 'dm', 'bc', 'mx'), 
+                                       multiple = TRUE)
+                         ),
+                         box(
+                           title = div("Rangebreak tests", 
+                                       tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", 
+                                              "title" = "Select a model to carry out the test according to Glor and Warren (2011). For questions and details, refer to the user manual or GitHub.")),
+                           width = NULL,
+                           solidHeader = TRUE,
+                           radioButtons("options_rblmodel", 
+                                        "Select an option:", 
+                                        choices = list("GLM" = 1, "GAM" = 2, "DM" = 3, "BC" = 4, "MAXENT" = 5), 
+                                        selected = 1)
+                         ),
+                         box(
+                           width = NULL,
+                           solidHeader = TRUE,
+                           actionButton("run_enmtools", "Run ENMTools")
+                         )
+                  ),
+                  column(width = 8,
+                         box(
+                           title = "Model Results",
+                           width = NULL,
+                           tabsetPanel(
+                             tabPanel("Model Summary Sp1",
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('glm')",
+                                        box(title = "GLM model",
+                                            width = NULL,
+                                            plotOutput("modelPlot_glm"),
+                                            downloadButton("downloadPdf_glmmodel", "Download PDF"),
+                                            verbatimTextOutput("modelSummary_glm")
+                                        )
+                                      ),
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('gam')",
+                                        box(title = "GAM model",
+                                            width = NULL,
+                                            plotOutput("modelPlot_gam"),
+                                            downloadButton("downloadPdf_gammodel", "Download PDF"),
+                                            verbatimTextOutput("modelSummary_gam")
+                                        )
+                                      ),
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('dm')",
+                                        box(title = "DM model",
+                                            width = NULL,
+                                            plotOutput("modelPlot_dm"),
+                                            downloadButton("downloadPdf_dmmodel", "Download PDF"),
+                                            verbatimTextOutput("modelSummary_dm")
+                                        )
+                                      ),
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('bc')",
+                                        box(title = "BC model",
+                                            width = NULL,
+                                            plotOutput("modelPlot_bc"),
+                                            downloadButton("downloadPdf_bcmodel", "Download PDF"),
+                                            verbatimTextOutput("modelSummary_bc")
+                                        )
+                                      ),
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('mx')",
+                                        box(title = "MX model",
+                                            width = NULL,
+                                            plotOutput("modelPlot_mx"),
+                                            downloadButton("downloadPdf_mxmodel", "Download PDF"),
+                                            verbatimTextOutput("modelSummary_mx")
+                                        )
+                                      )
+                             ),
+                             tabPanel("Model responses Sp1",
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('glm')",
+                                        box(title = "GLM model",
+                                            width = NULL,
+                                            plotOutput("resp_plot_glm"),
+                                            plotOutput("test_data_glm")
+                                        )
+                                      ),
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('gam')",
+                                        box(title = "GAM model",
+                                            width = NULL,
+                                            plotOutput("resp_plot_gam"),
+                                            plotOutput("test_data_gam")
+                                        )
+                                      ),
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('dm')",
+                                        box(title = "DM model",
+                                            width = NULL,
+                                            plotOutput("resp_plot_dm"),
+                                            plotOutput("test_data_dm")
+                                        )
+                                      ),
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('bc')",
+                                        box(title = "BC model",
+                                            width = NULL,
+                                            plotOutput("resp_plot_bc"),
+                                            plotOutput("test_data_bc")
+                                        )
+                                      ),
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('mx')",
+                                        box(title = "MX model",
+                                            width = NULL,
+                                            plotOutput("resp_plot_mx"),
+                                            plotOutput("test_data_mx")
+                                        )
+                                      )
+                             ),
+                             tabPanel("Model Summary Sp2",
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('glm')",
+                                        box(title = "GLM model",
+                                            width = NULL,
+                                            plotOutput("modelPlot_glm2"),
+                                            downloadButton("downloadPdf_glmmodel2", "Download PDF"),
+                                            verbatimTextOutput("modelSummary_glm2")
+                                        )
+                                      ),
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('gam')",
+                                        box(title = "GAM model",
+                                            width = NULL,
+                                            plotOutput("modelPlot_gam2"),
+                                            downloadButton("downloadPdf_gammodel2", "Download PDF"),
+                                            verbatimTextOutput("modelSummary_gam2")
+                                        )
+                                      ),
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('dm')",
+                                        box(title = "DM model",
+                                            width = NULL,
+                                            plotOutput("modelPlot_dm2"),
+                                            downloadButton("downloadPdf_dmmodel2", "Download PDF"),
+                                            verbatimTextOutput("modelSummary_dm2")
+                                        )
+                                      ),
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('bc')",
+                                        box(title = "BC model",
+                                            width = NULL,
+                                            plotOutput("modelPlot_bc2"),
+                                            downloadButton("downloadPdf_bcmodel2", "Download PDF"),
+                                            verbatimTextOutput("modelSummary_bc2")
+                                        )
+                                      ),
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('mx')",
+                                        box(title = "MX model",
+                                            width = NULL,
+                                            plotOutput("modelPlot_mx2"),
+                                            downloadButton("downloadPdf_mxmodel2", "Download PDF"),
+                                            verbatimTextOutput("modelSummary_mx2")
+                                        )
+                                      )
+                             ),
+                             tabPanel("Model responses Sp2",
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('glm')",
+                                        box(title = "GLM model",
+                                            width = NULL,
+                                            plotOutput("resp_plot_glm2"),
+                                            plotOutput("test_data_glm2")
+                                        )
+                                      ),
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('gam')",
+                                        box(title = "GAM model",
+                                            width = NULL,
+                                            plotOutput("resp_plot_gam2"),
+                                            plotOutput("test_data_gam2")
+                                        )
+                                      ),
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('dm')",
+                                        box(title = "DM model",
+                                            width = NULL,
+                                            plotOutput("resp_plot_dm2"),
+                                            plotOutput("test_data_dm2")
+                                        )
+                                      ),
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('bc')",
+                                        box(title = "BC model",
+                                            width = NULL,
+                                            plotOutput("resp_plot_bc2"),
+                                            plotOutput("test_data_bc2")
+                                        )
+                                      ),
+                                      conditionalPanel(
+                                        condition = "input.model_niche.includes('mx')",
+                                        box(title = "MX model",
+                                            width = NULL,
+                                            plotOutput("resp_plot_mx2"),
+                                            plotOutput("test_data_mx2")
+                                        )
+                                      )
+                             ),
+                             tabPanel("Points",
+                                      tags$h3(style = "color: black; font-size: 16px;", "Species 1"),
+                                      leafletOutput("map_sp1"),
+                                      tags$h3(style = "color: black; font-size: 16px;", "Species 2"),
+                                      leafletOutput("map_sp2")
+                             ),
+                             tabPanel("Hypothesis testing",
+                                      conditionalPanel(
+                                        condition = "input.checkbox_opciones.includes('1')",
+                                        box(title = "MX model",
+                                            width = NULL,
+                                            plotOutput("plot_idtest"),
+                                            verbatimTextOutput("summary_idtest")
+                                        )
+                                      ),
+                                      conditionalPanel(
+                                        condition = "input.checkbox_opciones.includes('2')",
+                                        box(title = "MX model",
+                                            width = NULL,
+                                            plotOutput("plot_bctest"),
+                                            verbatimTextOutput("summary_bctest")
+                                        )
+                                      ),
+                                      conditionalPanel(
+                                        condition = "input.checkbox_opciones.includes('3')",
+                                        box(title = "MX model",
+                                            width = NULL,
+                                            plotOutput("plot_sym"),
+                                            verbatimTextOutput("summary_sym")
+                                        )
+                                      )
+                             ),
+                             tabPanel("Ecospat test",
+                                      plotOutput("plot1"),
+                                      conditionalPanel(
+                                        condition = "output.plot1 !== undefined && output.plot1 !== null",
+                                        downloadButton("downloadPdf_ecospat", "Download PDF")
+                                      ),
+                                      verbatimTextOutput("summary_nicheover"),
+                                      plotOutput("plot_rbl"),
+                                      conditionalPanel(
+                                        condition = "output.plot_rbl !== undefined && output.plot_rbl !== null",
+                                        downloadButton("downloadPdf_rbl", "Download PDF")
+                                      ),
+                                      verbatimTextOutput("summary_rbl")
+                             )
+                           )) #box
+                  )#column
+                  ###cambio aqui resultados
                 ) #fluidrow
               ) #fluidpage
       ), #tabitem
       
       
       
-       #################################
+      #################################
       #############################################
       #######################################################
-########################################################Circuit Theory Analysis
-    
-
-
-tabItem(
-  tabName = "tab14",
-  fluidPage(
-    titlePanel("Ecological connectivity"),
-    
-    fluidRow(
-      column(
-        width = 4,
-        box(
-          width = NULL,
-          title = div("Environmental and biological data", 
-                      tags$i(class = "fas fa-question-circle", 
-                             "data-toggle" = "tooltip", 
-                             "title" = "Section where you can upload the geographic distribution data and the potential distribution map necessary to perform the connectivity analysis, which allows you to obtain the ecological flow of your species. This analysis requires high computing power, see the user manual for more details.")),
-          
-          # Cargar datos de distribución geográfica
-          fileInput("points_connectivity", 
-                    div("Geographic distribution data", 
-                        tags$i(class = "fas fa-question-circle", 
-                               "data-toggle" = "tooltip", 
-                               "title" = "Upload the database with points of presence of your study species (.csv)")), 
-                    accept = ".csv", multiple = FALSE),
-          
-          # Cargar el mapa de distribución potencial
-          fileInput("pot_map_connectivity", 
-                    div("Potential distribution map", 
-                        tags$i(class = "fas fa-question-circle", 
-                               "data-toggle" = "tooltip", 
-                               "title" = "Upload the file with the environmental distribution of your species. It is the .tif file that contains the consensus of the models used in the biomod2 section. Allowed formats are '.tiff','.tif', '.asc' and '.bil'.")), 
-                    accept = c('.tiff', '.tif', '.asc', '.bil')),
-          
-          # Botón para ejecutar el análisis de conectividad
-          actionButton("run_connectivity", "Run Analysis")
-        ) # box
-      ), # column
+      ########################################################Circuit Theory Analysis
       
-      column(
-        width = 8,
-        box(
-          width = NULL,
-          title = "Ecological Flow Map", 
+      
+      
+      tabItem(
+        tabName = "tab14",
+        fluidPage(
+          titlePanel("Ecological connectivity"),
           
-          # Salida gráfica del mapa de conectividad
-          plotOutput("connectivity_output"),
-          
-          # Botón de descarga condicional para exportar el mapa en PDF
-          conditionalPanel(
-            condition = "output.connectivity_output !== undefined && connectivity_output !== null", 
-            downloadButton("download_pdf_connec", "Download Map as PDF", disabled = FALSE)
-          )
-        ) # box
-      ) # column
-    ) # fluidRow
-  ) # fluidPage
-), # tabItem
-
- #################################
+          fluidRow(
+            column(
+              width = 4,
+              box(
+                width = NULL,
+                title = div("Environmental and biological data", 
+                            tags$i(class = "fas fa-question-circle", 
+                                   "data-toggle" = "tooltip", 
+                                   "title" = "Section where you can upload the geographic distribution data and the potential distribution map necessary to perform the connectivity analysis, which allows you to obtain the ecological flow of your species. This analysis requires high computing power, see the user manual for more details.")),
+                
+                # Cargar datos de distribución geográfica
+                fileInput("points_connectivity", 
+                          div("Geographic distribution data", 
+                              tags$i(class = "fas fa-question-circle", 
+                                     "data-toggle" = "tooltip", 
+                                     "title" = "Upload the database with points of presence of your study species (.csv)")), 
+                          accept = ".csv", multiple = FALSE),
+                
+                # Cargar el mapa de distribución potencial
+                fileInput("pot_map_connectivity", 
+                          div("Potential distribution map", 
+                              tags$i(class = "fas fa-question-circle", 
+                                     "data-toggle" = "tooltip", 
+                                     "title" = "Upload the file with the environmental distribution of your species. It is the .tif file that contains the consensus of the models used in the biomod2 section. Allowed formats are '.tiff','.tif', '.asc' and '.bil'.")), 
+                          accept = c('.tiff', '.tif', '.asc', '.bil')),
+                
+                # Botón para ejecutar el análisis de conectividad
+                actionButton("run_connectivity", "Run Analysis")
+              ) # box
+            ), # column
+            
+            column(
+              width = 8,
+              box(
+                width = NULL,
+                title = "Ecological Flow Map", 
+                
+                # Salida gráfica del mapa de conectividad
+                plotOutput("connectivity_output"),
+                
+                # Botón de descarga condicional para exportar el mapa en PDF
+                conditionalPanel(
+                  condition = "output.connectivity_output !== undefined && connectivity_output !== null", 
+                  downloadButton("download_pdf_connec", "Download Map as PDF", disabled = FALSE)
+                )
+              ) # box
+            ) # column
+          ) # fluidRow
+        ) # fluidPage
+      ), # tabItem
+      
+      #################################
       #############################################
       #######################################################
-#########################################################
-
+      #########################################################
+      
       tabItem(
         tabName = "invert_raster",
-              fluidPage(
-                titlePanel("Map Inverter"),
-          	column(width = 4,
-			box(
-                         title = div("Databases", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "This section allows you to ... Below you can upload the necessary files.")),
-                         width = NULL,
-                 fileInput("invertRasterFile", "Select ASC file to invert", accept = c('.tiff','.tif', '.asc', '.bil')),
-                 actionButton("invertRaster", "Invert Raster"),
-                 downloadButton("downloadInvertedRaster", "Download Inverted Raster (.asc)"),
-                 uiOutput("invertProgress") # Progress bar
- ) #box
+        fluidPage(
+          titlePanel("Map Inverter"),
+          column(width = 4,
+                 box(
+                   title = div("Databases", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "This section allows you to ... Below you can upload the necessary files.")),
+                   width = NULL,
+                   fileInput("invertRasterFile", "Select ASC file to invert", accept = c('.tiff','.tif', '.asc', '.bil')),
+                   actionButton("invertRaster", "Invert Raster"),
+                   downloadButton("downloadInvertedRaster", "Download Inverted Raster (.asc)"),
+                   uiOutput("invertProgress") # Progress bar
+                 ) #box
           ), #column
           column(width = 8,
                  box(
-title = div("Loaded Raster Map", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Visualization of the loaded raster map.")),
-                         width = NULL,
-plotOutput("loadedRasterPlot")), #box
+                   title = div("Loaded Raster Map", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Visualization of the loaded raster map.")),
+                   width = NULL,
+                   plotOutput("loadedRasterPlot")), #box
                  box(
-title = div("Inverted Raster Map", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Visualization of the Inverted Raster Map.")),
-                         width = NULL,
-plotOutput("invertedRasterPlot")) #box
+                   title = div("Inverted Raster Map", tags$i(class = "fas fa-question-circle", "data-toggle" = "tooltip", "title" = "Visualization of the Inverted Raster Map.")),
+                   width = NULL,
+                   plotOutput("invertedRasterPlot")) #box
           ) # column
         ) #fluidpagee
       ), #tabitem
-#########################################################
- #################################
+      #########################################################
+      #################################
       #############################################
       #######################################################       
-  tabItem(
-  tabName = "lcp_analysis",
-  fluidPage(
-    titlePanel("LCP Corridors"),
-    
-    fluidRow(
-      column(
-        width = 4,
-        box(
-          title = div("Databases", 
-                      tags$i(class = "fas fa-question-circle", 
-                             "data-toggle" = "tooltip", 
-                             "title" = "This section allows you to upload the necessary files for the Least Cost Path (LCP) corridor analysis.")),
-          width = NULL,
+      tabItem(
+        tabName = "lcp_analysis",
+        fluidPage(
+          titlePanel("LCP Corridors"),
           
-          # Entrada de archivo CSV para coordenadas
-          fileInput("pointsCSV", "Coordinates CSV for LCP", accept = c(".csv")),
-          
-          # Entrada de archivo para el raster de resistencia con múltiples formatos permitidos
-          fileInput("resistanceRasterLCP", "Resistance Raster for LCP", 
-                    accept = c('.asc', '.tif', '.tiff', '.bil')),
-          
-          # Botón para ejecutar el análisis
-          actionButton("runLCP", "Run Corridor Analysis"),
-          br(), br(),
-          
-          # Botones de descarga
-          downloadButton("downloadRoutesCSV", "Download Corridor Information (.csv)"),
-          downloadButton("downloadLCPMapASC", "Download LCP Map (.asc)"),
-          downloadButton("downloadCorridorsPDF", "Download Corridors Map (PDF)")
-        ) # box
-      ), # column
+          fluidRow(
+            column(
+              width = 4,
+              box(
+                title = div("Databases", 
+                            tags$i(class = "fas fa-question-circle", 
+                                   "data-toggle" = "tooltip", 
+                                   "title" = "This section allows you to upload the necessary files for the Least Cost Path (LCP) corridor analysis.")),
+                width = NULL,
+                
+                # Entrada de archivo CSV para coordenadas
+                fileInput("pointsCSV", "Coordinates CSV for LCP", accept = c(".csv")),
+                
+                # Entrada de archivo para el raster de resistencia con múltiples formatos permitidos
+                fileInput("resistanceRasterLCP", "Resistance Raster for LCP", 
+                          accept = c('.asc', '.tif', '.tiff', '.bil')),
+                
+                # Botón para ejecutar el análisis
+                actionButton("runLCP", "Run Corridor Analysis"),
+                br(), br(),
+                
+                # Botones de descarga
+                downloadButton("downloadRoutesCSV", "Download Corridor Information (.csv)"),
+                downloadButton("downloadLCPMapASC", "Download LCP Map (.asc)"),
+                downloadButton("downloadCorridorsPDF", "Download Corridors Map (PDF)")
+              ) # box
+            ), # column
+            
+            column(
+              width = 8,
+              box(
+                title = div("Resistance Map with Important Corridors", 
+                            tags$i(class = "fas fa-question-circle", 
+                                   "data-toggle" = "tooltip", 
+                                   "title" = "Visualization of the resistance map with identified important corridors.")),
+                width = NULL,
+                
+                # Salida gráfica para el mapa de resistencia y corredores
+                plotOutput("resistancePlot"),
+                br(),
+                
+                # Tabla con información de los corredores generados
+                tableOutput("routesTable"),
+                br(),
+                
+                # Barra de progreso del análisis
+                uiOutput("lcpProgress")
+              ) # box
+            ) # column
+          ) # fluidRow
+        ) # fluidPage
+      ) # tabItem
       
-      column(
-        width = 8,
-        box(
-          title = div("Resistance Map with Important Corridors", 
-                      tags$i(class = "fas fa-question-circle", 
-                             "data-toggle" = "tooltip", 
-                             "title" = "Visualization of the resistance map with identified important corridors.")),
-          width = NULL,
-          
-          # Salida gráfica para el mapa de resistencia y corredores
-          plotOutput("resistancePlot"),
-          br(),
-          
-          # Tabla con información de los corredores generados
-          tableOutput("routesTable"),
-          br(),
-          
-          # Barra de progreso del análisis
-          uiOutput("lcpProgress")
-        ) # box
-      ) # column
-    ) # fluidRow
-  ) # fluidPage
-) # tabItem
-
-
-
- #################################
+      
+      
+      #################################
       #############################################
       #######################################################
-#########################################################
+      #########################################################
       
     ) #tabitems
   )
@@ -1349,7 +1349,7 @@ server <- function(input, output, session) {
   routes_data <- reactiveVal(NULL)  # Almacena los datos de los corredores
   route_list <- reactiveVal(list())  # Almacena las rutas generadas
   corridors_raster <- reactiveVal(NULL)  # Almacena el raster con corredores
-
+  
   
   
   
@@ -2554,98 +2554,98 @@ server <- function(input, output, session) {
   
   
   observeEvent(input$load_leaflet_button, {
-  tryCatch({ 
-    if (is.null(input$file_maps)) {
-      showModal(modalDialog(
-        title = "Error",
-        "You need to upload a database to continue."
-      ))
-    } else {
-      
-      withProgress(message = 'Loading maps...', value = 0, {
-        total_iterations_leaf1 <- 1
-        total_progress_leaf1 <- 1
-
-        for (i in 1:total_iterations_leaf1) {
-          incProgress(5/10, detail = "Loading for viewing...")
-          
-          # Reactive values for Leaflet map
-          leaflet_data <- reactiveValues(map = NULL)
-          
-          output$leaflet_map <- renderLeaflet({
-            leaflet_data$map
-          })
-          
-          incProgress(5/10, detail = "Loading for viewing...")
-          incProgress(total_progress_leaf1, detail = "Finished")
-        }
-      })
-
-      output$mapPlot <- renderPlot({
-        req(input$file_maps)
+    tryCatch({ 
+      if (is.null(input$file_maps)) {
+        showModal(modalDialog(
+          title = "Error",
+          "You need to upload a database to continue."
+        ))
+      } else {
         
         withProgress(message = 'Loading maps...', value = 0, {
-          total_iterations_leaf11 <- 1
-          total_progress_leaf11 <- 1
-
-          for (i in 1:total_iterations_leaf11) {
+          total_iterations_leaf1 <- 1
+          total_progress_leaf1 <- 1
+          
+          for (i in 1:total_iterations_leaf1) {
             incProgress(5/10, detail = "Loading for viewing...")
             
-            # Read raster file using terra
-            raster_file <- rast(input$file_maps$datapath)
+            # Reactive values for Leaflet map
+            leaflet_data <- reactiveValues(map = NULL)
             
-            # Plot the map
-            plot(raster_file, main = "Raster Map")
-
-            incProgress(5/10, detail = "Loading for viewing...")
+            output$leaflet_map <- renderLeaflet({
+              leaflet_data$map
+            })
             
-            # If a Leaflet map is loaded, overlay it
-            if (!is.null(leaflet_data$map)) {
-              leafletProxy("leaflet_map") %>%
-                addRasterImage(raster_file, colors = colorNumeric("viridis", values(raster_file), na.color = "transparent"))
-            }
-
             incProgress(5/10, detail = "Loading for viewing...")
-            incProgress(total_progress_leaf11, detail = "Finished")
+            incProgress(total_progress_leaf1, detail = "Finished")
           }
         })
-      })
-
-      # Initialize Leaflet map
-      leaflet_data$map <- leaflet() %>%
-        addTiles() %>%
-        setView(0, 0, zoom = 1)
-
-      # Enable download button when file is uploaded
-      observeEvent(input$file_maps, {
-        shinyjs::toggleState("download_pdf_button", !is.null(input$file_maps))
-      })
-
-      # Download raster as PDF
-      output$download_pdf_button <- downloadHandler(
-        filename = function() {
-          paste(gsub("\\.[^.]*$", "", input$file_maps$name), ".pdf")
-        },
-        content = function(file) {
-          pdf(file)
-          plot(rast(input$file_maps$datapath), main = "Raster Map") # Replaced raster() with rast()
-          dev.off()
-        }
+        
+        output$mapPlot <- renderPlot({
+          req(input$file_maps)
+          
+          withProgress(message = 'Loading maps...', value = 0, {
+            total_iterations_leaf11 <- 1
+            total_progress_leaf11 <- 1
+            
+            for (i in 1:total_iterations_leaf11) {
+              incProgress(5/10, detail = "Loading for viewing...")
+              
+              # Read raster file using terra
+              raster_file <- rast(input$file_maps$datapath)
+              
+              # Plot the map
+              plot(raster_file, main = "Raster Map")
+              
+              incProgress(5/10, detail = "Loading for viewing...")
+              
+              # If a Leaflet map is loaded, overlay it
+              if (!is.null(leaflet_data$map)) {
+                leafletProxy("leaflet_map") %>%
+                  addRasterImage(raster_file, colors = colorNumeric("viridis", values(raster_file), na.color = "transparent"))
+              }
+              
+              incProgress(5/10, detail = "Loading for viewing...")
+              incProgress(total_progress_leaf11, detail = "Finished")
+            }
+          })
+        })
+        
+        # Initialize Leaflet map
+        leaflet_data$map <- leaflet() %>%
+          addTiles() %>%
+          setView(0, 0, zoom = 1)
+        
+        # Enable download button when file is uploaded
+        observeEvent(input$file_maps, {
+          shinyjs::toggleState("download_pdf_button", !is.null(input$file_maps))
+        })
+        
+        # Download raster as PDF
+        output$download_pdf_button <- downloadHandler(
+          filename = function() {
+            paste(gsub("\\.[^.]*$", "", input$file_maps$name), ".pdf")
+          },
+          content = function(file) {
+            pdf(file)
+            plot(rast(input$file_maps$datapath), main = "Raster Map") # Replaced raster() with rast()
+            dev.off()
+          }
+        )
+      }
+    }, error = function(e) {
+      showModal(
+        modalDialog(
+          title = "Error",
+          paste("Something went wrong:", e$message),
+          easyClose = TRUE,
+          footer = NULL
+        )
       )
-    }
-  }, error = function(e) {
-    showModal(
-      modalDialog(
-        title = "Error",
-        paste("Something went wrong:", e$message),
-        easyClose = TRUE,
-        footer = NULL
-      )
-    )
+    })
   })
-})
-    #################3termina aqui leaf
- 
+  #################3termina aqui leaf
+  
   
   ####################################--------------------------------
   ####################################-------------------------------------------------
@@ -3345,66 +3345,66 @@ server <- function(input, output, session) {
   
   
   observeEvent(input$load_leaflet_button_2, {
-  tryCatch({
-    if (is.null(input$file_maps2)) {
-      showModal(modalDialog(
-        title = "Error",
-        "You need to upload a database to continue."
-      ))
-      return()
-    }
-
-    withProgress(message = 'Loading maps...', value = 0, {
-
-      incProgress(0.3, detail = "Reading raster file...")
-
-      # Leer el archivo raster
-      raster_file <- tryCatch({
-        raster(input$file_maps2$datapath)
-      }, error = function(e) {
+    tryCatch({
+      if (is.null(input$file_maps2)) {
         showModal(modalDialog(
           title = "Error",
-          paste("Error loading raster file:", e$message)
+          "You need to upload a database to continue."
         ))
-        return(NULL)
-      })
-
-      if (is.null(raster_file)) {
         return()
       }
-
-      # Visualizar en Leaflet con opciones mejoradas
-      output$leaflet_map_2 <- renderLeaflet({
-        leaflet() %>%
-          addProviderTiles(providers$Esri.WorldImagery, group = "Satellite") %>%
-          addProviderTiles(providers$OpenStreetMap, group = "OSM") %>%
-          addRasterImage(raster_file, opacity = 0.8, colors = colorNumeric("viridis", values(raster_file), na.color = "transparent"), group = "Raster") %>%
-          addLayersControl(
-            baseGroups = c("Satellite", "OSM"),
-            overlayGroups = c("Raster"),
-            options = layersControlOptions(collapsed = FALSE)
-          ) %>%
-          addLegend(pal = colorNumeric("viridis", values(raster_file), na.color = "transparent"),
-                    values = values(raster_file),
-                    title = "Raster Values",
-                    position = "bottomright")
+      
+      withProgress(message = 'Loading maps...', value = 0, {
+        
+        incProgress(0.3, detail = "Reading raster file...")
+        
+        # Leer el archivo raster
+        raster_file <- tryCatch({
+          raster(input$file_maps2$datapath)
+        }, error = function(e) {
+          showModal(modalDialog(
+            title = "Error",
+            paste("Error loading raster file:", e$message)
+          ))
+          return(NULL)
+        })
+        
+        if (is.null(raster_file)) {
+          return()
+        }
+        
+        # Visualizar en Leaflet con opciones mejoradas
+        output$leaflet_map_2 <- renderLeaflet({
+          leaflet() %>%
+            addProviderTiles(providers$Esri.WorldImagery, group = "Satellite") %>%
+            addProviderTiles(providers$OpenStreetMap, group = "OSM") %>%
+            addRasterImage(raster_file, opacity = 0.8, colors = colorNumeric("viridis", values(raster_file), na.color = "transparent"), group = "Raster") %>%
+            addLayersControl(
+              baseGroups = c("Satellite", "OSM"),
+              overlayGroups = c("Raster"),
+              options = layersControlOptions(collapsed = FALSE)
+            ) %>%
+            addLegend(pal = colorNumeric("viridis", values(raster_file), na.color = "transparent"),
+                      values = values(raster_file),
+                      title = "Raster Values",
+                      position = "bottomright")
+        })
+        
+        incProgress(1, detail = "Map loaded successfully.")
+        
       })
-
-      incProgress(1, detail = "Map loaded successfully.")
-
-    })
-
-  }, error = function(e) {
-    showModal(
-      modalDialog(
-        title = "Error",
-        paste("Something went wrong:", e$message),
-        easyClose = TRUE,
-        footer = NULL
+      
+    }, error = function(e) {
+      showModal(
+        modalDialog(
+          title = "Error",
+          paste("Something went wrong:", e$message),
+          easyClose = TRUE,
+          footer = NULL
+        )
       )
-    )
+    })
   })
-})
   ####################################--------------------------------
   ####################################-------------------------------------------------
   ####################################-------------------------------------------------
@@ -3497,188 +3497,192 @@ server <- function(input, output, session) {
   })
   #############################3 remove urban
   
- 
-#################################################
-#################################################
-################################################# Calculate area
-
-library(shiny)
-library(terra)
-library(viridis)
-
-# Calcular Área y Visualizar en el Mapa con `terra`
-observeEvent(input$calcularArea, {
-  tryCatch({ 
-    req(input$archivoRaster)
-    req(input$umbralSuitability)
-
-    withProgress(message = 'Calculating...', value = 0, {
-      archivoRaster <- input$archivoRaster$datapath
-      umbralSuitability <- input$umbralSuitability
+  
+  #################################################
+  #################################################
+  ################################################# Calculate area
+  
+  # Load necessary libraries
+  library(shiny)
+  library(terra)
+  library(viridis)
+  
+  # Define a reactiveValues object to store the raster
+  reactiveRaster <- reactiveValues(data = NULL)
+  
+  # Calculate Area and Display on Map using `terra`
+  observeEvent(input$calcularArea, {
+    tryCatch({ 
+      req(input$archivoRaster)
+      req(input$umbralSuitability)
       
-      incProgress(2/10, detail = "Loading raster data...")
-      rasterData <- rast(archivoRaster)  # Cargar raster con `terra`
-      
-      incProgress(2/10, detail = "Applying threshold...")
-      rasterFiltered <- rasterData  # Crear copia para modificar
-      
-      # Convertir a NA todos los valores por debajo del threshold seleccionado
-      rasterFiltered[rasterFiltered < umbralSuitability] <- NA  
-
-      incProgress(2/10, detail = "Calculating cell areas...")
-      cell_size <- cellSize(rasterFiltered, mask = TRUE)  # Calcular tamaño de celda donde hay datos
-      
-      incProgress(2/10, detail = "Calculating total area...")
-      areaSuitability <- global(cell_size, fun = "sum", na.rm = TRUE)[1, 1]  # Calcular área total en km²
-
-      incProgress(2/10, detail = "Finalizing...")
-      
-      # Almacenar el nuevo raster procesado
-      reactiveRaster$data <- rasterFiltered
-      
-      # Actualizar el resultado en el panel
-      output$Result <- renderPrint({
-        paste("Area of Suitability above", umbralSuitability, ":", round(areaSuitability, 2), "km²")
+      withProgress(message = 'Calculating...', value = 0, {
+        archivoRaster <- input$archivoRaster$datapath
+        umbralSuitability <- input$umbralSuitability
+        
+        incProgress(2/10, detail = "Loading raster data...")
+        rasterData <- rast(archivoRaster)  # Load raster with `terra`
+        
+        incProgress(2/10, detail = "Applying threshold...")
+        rasterFiltered <- rasterData  # Copy raster
+        
+        # Set values below threshold to NA
+        rasterFiltered[rasterFiltered < umbralSuitability] <- NA  
+        
+        incProgress(2/10, detail = "Calculating cell areas...")
+        cell_size <- cellSize(rasterFiltered, mask = TRUE)  # Compute cell sizes
+        
+        incProgress(2/10, detail = "Calculating total area...")
+        areaSuitability <- global(cell_size, fun = "sum", na.rm = TRUE)[1, 1]  # Compute total area
+        
+        incProgress(2/10, detail = "Finalizing...")
+        
+        # Store the processed raster
+        reactiveRaster$data <- rasterFiltered
+        
+        # Update the result output
+        output$Result <- renderPrint({
+          paste("Area of Suitability above", umbralSuitability, ":", round(areaSuitability, 2), "km²")
+        })
+        
+        # Render suitability area map
+        output$areaMap <- renderPlot({
+          req(reactiveRaster$data)  
+          plot(reactiveRaster$data, 
+               main = paste("Suitability Area (Threshold:", umbralSuitability, ")"),
+               col = viridis(10, option = "D"),  
+               legend.args = list(text = "Suitability", side = 4, line = 2))
+        })
+        
+        # Force UI update
+        invalidateLater(500, session)
       })
-      
-      # Graficar el área seleccionada en el mapa con `viridis`
-      output$areaMap <- renderPlot({
-        req(reactiveRaster$data)  # Asegurar que el raster esté disponible
-        plot(reactiveRaster$data, 
-             main = paste("Suitability Area (Threshold:", umbralSuitability, ")"),
-             col = viridis(10, option = "D"),  # Aplicar paleta de colores viridis
-             legend.args = list(text = "Suitability", side = 4, line = 2))
-      })
-      
-      # Forzar actualización de la UI
-      invalidateLater(500, session)
-    })
-  }, error = function(e) {
-    showModal(
-      modalDialog(
-        title = "Error",
-        paste("Something went wrong:", e$message),
-        easyClose = TRUE,
-        footer = NULL
+    }, error = function(e) {
+      showModal(
+        modalDialog(
+          title = "Error",
+          paste("Something went wrong:", e$message),
+          easyClose = TRUE,
+          footer = NULL
+        )
       )
-    )
+    })
   })
-})
-
-# Descargar el mapa de áreas adecuadas en formato .asc
-output$downloadAscThreshold <- downloadHandler(
-  filename = function() { "suitability_map.asc" },
-  content = function(file) {
-    req(reactiveRaster$data)  # Asegurar que el raster esté disponible
-    writeRaster(reactiveRaster$data, file, overwrite = TRUE)
-  }
-)
-
-# Descargar el mapa de áreas adecuadas en formato PDF
-output$downloadPdfThreshold <- downloadHandler(
-  filename = function() { "suitability_map.pdf" },
-  content = function(file) {
-    req(reactiveRaster$data)  # Asegurar que el raster esté disponible
-    pdf(file, width = 8, height = 6)
-    plot(reactiveRaster$data, 
-         main = paste("Suitability Area (Threshold:", input$umbralSuitability, ")"),
-         col = viridis(10, option = "D"),  
-         legend.args = list(text = "Suitability", side = 4, line = 2))
-    dev.off()
-  }
-)
-
+  
+  # Download the thresholded suitability map as .asc
+  output$downloadAscThreshold <- downloadHandler(
+    filename = function() { "suitability_map.asc" },
+    content = function(file) {
+      req(reactiveRaster$data)  
+      writeRaster(reactiveRaster$data, file, overwrite = TRUE)
+    }
+  )
+  
+  # Download the suitability map as PDF
+  output$downloadPdfThreshold <- downloadHandler(
+    filename = function() { "suitability_map.pdf" },
+    content = function(file) {
+      req(reactiveRaster$data)  
+      pdf(file, width = 8, height = 6)
+      plot(reactiveRaster$data, 
+           main = paste("Suitability Area (Threshold:", input$umbralSuitability, ")"),
+           col = viridis(10, option = "D"),  
+           legend.args = list(text = "Suitability", side = 4, line = 2))
+      dev.off()
+    }
+  )
+  
   ############################# present future
   #############################
   #############################
   #############################
   
   
-# Crear valores reactivos para almacenar los mapas
-present_map <- reactiveVal(NULL)
-future_map <- reactiveVal(NULL)
-
-# Cargar el mapa presente
-observeEvent(input$mapa_presente_input, {
-  req(input$mapa_presente_input)  # Asegura que el archivo no esté vacío
-  present <- rast(input$mapa_presente_input$datapath)
-  print("Present map loaded")  # Debugging
-  present_map(present)
-})
-
-# Cargar el mapa futuro y asegurar compatibilidad
-observeEvent(input$mapa_futuro_input, {
-  req(input$mapa_futuro_input)  # Asegura que el archivo no esté vacío
-  future <- rast(input$mapa_futuro_input$datapath)
+  # Crear valores reactivos para almacenar los mapas
+  present_map <- reactiveVal(NULL)
+  future_map <- reactiveVal(NULL)
   
-  # Ajustar la proyección y resolución para que coincidan con el mapa presente
-  if (!is.null(present_map())) {
-    tryCatch({
-      if (crs(future) != crs(present_map())) {
-        future <- project(future, crs(present_map()))
-      }
-      if (!all(res(future) == res(present_map()))) {
-        future <- resample(future, present_map(), method = "bilinear")  # ✅ Corrección
-      }
-      print("Future map loaded and aligned")  # Debugging
-    }, error = function(e) {
-      print(paste("Error processing future map:", e$message))  # Evitar que la app se cierre
-    })
-  }
+  # Cargar el mapa presente
+  observeEvent(input$mapa_presente_input, {
+    req(input$mapa_presente_input)  # Asegura que el archivo no esté vacío
+    present <- rast(input$mapa_presente_input$datapath)
+    print("Present map loaded")  # Debugging
+    present_map(present)
+  })
   
-  future_map(future)
-})
-
-# Realizar análisis y visualizar resultados
-observeEvent(input$run_analysis_btn, {
-  req(present_map(), future_map())  # Asegurar que los mapas no sean NULL
-
-  print("Running analysis...")  # Debugging
-
-  Gains <- future_map() - present_map()
-  Losses <- present_map() - future_map()
-
-  print("Analysis completed")  # Debugging
-
-  # Graficar los mapas
-  output$Gains_plot <- renderPlot({
-    req(Gains)
-    plot(Gains, main = "Gains: Future - Present", col = terrain.colors(10))
+  # Cargar el mapa futuro y asegurar compatibilidad
+  observeEvent(input$mapa_futuro_input, {
+    req(input$mapa_futuro_input)  # Asegura que el archivo no esté vacío
+    future <- rast(input$mapa_futuro_input$datapath)
+    
+    # Ajustar la proyección y resolución para que coincidan con el mapa presente
+    if (!is.null(present_map())) {
+      tryCatch({
+        if (crs(future) != crs(present_map())) {
+          future <- project(future, crs(present_map()))
+        }
+        if (!all(res(future) == res(present_map()))) {
+          future <- resample(future, present_map(), method = "bilinear")  # ✅ Corrección
+        }
+        print("Future map loaded and aligned")  # Debugging
+      }, error = function(e) {
+        print(paste("Error processing future map:", e$message))  # Evitar que la app se cierre
+      })
+    }
+    
+    future_map(future)
   })
-
-  output$Losses_plot <- renderPlot({
-    req(Losses)
-    plot(Losses, main = "Losses: Present - Future", col = terrain.colors(10))
-  })
-
-  # Agregar invalidación para asegurar que se actualicen los gráficos
-  invalidateLater(1000)
-})
-
-# Descargar Mapa de Ganancias en formato .asc
-output$download_Gains <- downloadHandler(
-  filename = function() {
-    "Gains.asc"
-  },
-  content = function(file) {
-    req(present_map(), future_map())  # Evita errores si los mapas no están cargados
+  
+  # Realizar análisis y visualizar resultados
+  observeEvent(input$run_analysis_btn, {
+    req(present_map(), future_map())  # Asegurar que los mapas no sean NULL
+    
+    print("Running analysis...")  # Debugging
+    
     Gains <- future_map() - present_map()
-    writeRaster(Gains, file, overwrite = TRUE)
-  }
-)
-
-# Descargar Mapa de Pérdidas en formato .asc
-output$download_Losses <- downloadHandler(
-  filename = function() {
-    "Losses.asc"
-  },
-  content = function(file) {
-    req(present_map(), future_map())
     Losses <- present_map() - future_map()
-    writeRaster(Losses, file, overwrite = TRUE)
-  }
-)
-
+    
+    print("Analysis completed")  # Debugging
+    
+    # Graficar los mapas
+    output$Gains_plot <- renderPlot({
+      req(Gains)
+      plot(Gains, main = "Gains: Future - Present", col = terrain.colors(10))
+    })
+    
+    output$Losses_plot <- renderPlot({
+      req(Losses)
+      plot(Losses, main = "Losses: Present - Future", col = terrain.colors(10))
+    })
+    
+    # Agregar invalidación para asegurar que se actualicen los gráficos
+    invalidateLater(1000)
+  })
+  
+  # Descargar Mapa de Ganancias en formato .asc
+  output$download_Gains <- downloadHandler(
+    filename = function() {
+      "Gains.asc"
+    },
+    content = function(file) {
+      req(present_map(), future_map())  # Evita errores si los mapas no están cargados
+      Gains <- future_map() - present_map()
+      writeRaster(Gains, file, overwrite = TRUE)
+    }
+  )
+  
+  # Descargar Mapa de Pérdidas en formato .asc
+  output$download_Losses <- downloadHandler(
+    filename = function() {
+      "Losses.asc"
+    },
+    content = function(file) {
+      req(present_map(), future_map())
+      Losses <- present_map() - future_map()
+      writeRaster(Losses, file, overwrite = TRUE)
+    }
+  )
+  
   
   
   #################################
@@ -3687,289 +3691,289 @@ output$download_Losses <- downloadHandler(
   ######################################### Partial roc
   
   observeEvent(input$runButtonEnmEval, {
-
-  tryCatch({ 
-
-    withProgress(message = 'Carrying out statistical evaluations...', value = 0, {
+    
+    tryCatch({ 
       
-      incProgress(1/10, detail = "Validating inputs...")
+      withProgress(message = 'Carrying out statistical evaluations...', value = 0, {
+        
+        incProgress(1/10, detail = "Validating inputs...")
+        
+        # Validar archivo CSV
+        if (is.null(input$occ_proc$datapath) || input$occ_proc$datapath == "") {
+          stop("Validation data file not uploaded or invalid.")
+        }
+        
+        test_data <- read.csv(input$occ_proc$datapath)
+        
+        if (nrow(test_data) == 0) {
+          stop("The uploaded CSV file is empty.")
+        }
+        
+        # Validar columnas esperadas
+        if (!all(c("X", "Y") %in% colnames(test_data))) {
+          stop("The CSV file must contain columns named 'X' and 'Y'.")
+        }
+        
+        # Renombrar columnas
+        colnames(test_data)[colnames(test_data) == "X"] <- "longitude"
+        colnames(test_data)[colnames(test_data) == "Y"] <- "latitude"
+        
+        # Filtrar solo las columnas necesarias
+        test_data <- test_data[, c("longitude", "latitude")]
+        
+        # Validar que ahora solo tenga dos columnas
+        if (ncol(test_data) != 2) {
+          stop("The processed validation data must contain exactly two columns: 'longitude' and 'latitude'.")
+        }
+        
+        # Validar archivo raster
+        if (is.null(input$sdm_mod$datapath) || input$sdm_mod$datapath == "") {
+          stop("Prediction raster file not uploaded or invalid.")
+        }
+        
+        # Cargar el raster
+        continuous_mod <- tryCatch({
+          rast <- raster(input$sdm_mod$datapath)
+          if (is.null(values(rast))) {
+            stop("The raster has no associated values.")
+          }
+          rast
+        }, error = function(e) {
+          stop("Error loading raster: ", e$message)
+        })
+        
+        if (is.null(continuous_mod)) {
+          stop("The uploaded raster file is not valid.")
+        }
+        
+        # Validar si las coordenadas están dentro del área del raster
+        ext <- extent(continuous_mod)
+        if (any(test_data$longitude < ext@xmin | test_data$longitude > ext@xmax |
+                test_data$latitude < ext@ymin | test_data$latitude > ext@ymax)) {
+          stop("Some coordinates in the validation data are outside the raster extent.")
+        }
+        
+        incProgress(2/10, detail = "Inputs validated...")
+        
+        # Validar valores numéricos
+        if (is.null(input$iter) || input$iter <= 0) {
+          stop("Number of iterations must be greater than 0.")
+        }
+        
+        if (is.null(input$omission) || input$omission < 0 || input$omission > 100) {
+          stop("Omission threshold must be between 0 and 100.")
+        }
+        
+        if (is.null(input$randper) || input$randper <= 0 || input$randper > 100) {
+          stop("Percent for bootstrap must be between 1 and 100.")
+        }
+        
+        # Realizar el análisis
+        incProgress(3/10, detail = "Starting analysis...")
+        
+        analisisproc <- tryCatch({
+          if (!inherits(continuous_mod, "RasterLayer")) {
+            stop("The raster input is not a valid RasterLayer object.")
+          }
+          
+          if (!inherits(test_data, "data.frame") || ncol(test_data) != 2) {
+            stop("The test data must be a data frame with exactly two columns: 'longitude' and 'latitude'.")
+          }
+          
+          pROC(
+            continuous_mod,
+            test_data,
+            n_iter = input$iter,
+            E_percent = input$omission,
+            boost_percent = input$randper,
+            parallel = FALSE,
+            ncores = 4,
+            rseed = FALSE,
+            sub_sample = FALSE,
+            sub_sample_size = 10000
+          )
+        }, error = function(e) {
+          stop("Error during pROC analysis: ", e$message)
+        })
+        
+        incProgress(6/10, detail = "Analysis in progress...")
+        
+        # Mostrar resultados
+        output$summaryroc <- renderUI({
+          suroc <- analisisproc$pROC_summary
+          suroc_df <- as.data.frame(t(suroc))
+          
+          tableroc <- suroc_df %>%
+            gt() %>%
+            gt_highlight_rows(rows = 1, font_weight = "normal")
+          
+          tableroc
+        })
+        
+        output$resultsroc <- renderDataTable({
+          analisisproc$pROC_results
+        })
+        
+        incProgress(9/10, detail = "Finalizing analysis...")
+        
+      }) # withProgress
       
-      # Validar archivo CSV
-      if (is.null(input$occ_proc$datapath) || input$occ_proc$datapath == "") {
-        stop("Validation data file not uploaded or invalid.")
-      }
-
-      test_data <- read.csv(input$occ_proc$datapath)
-
-      if (nrow(test_data) == 0) {
-        stop("The uploaded CSV file is empty.")
-      }
-
-      # Validar columnas esperadas
-      if (!all(c("X", "Y") %in% colnames(test_data))) {
-        stop("The CSV file must contain columns named 'X' and 'Y'.")
-      }
-
-      # Renombrar columnas
-      colnames(test_data)[colnames(test_data) == "X"] <- "longitude"
-      colnames(test_data)[colnames(test_data) == "Y"] <- "latitude"
-
-      # Filtrar solo las columnas necesarias
-      test_data <- test_data[, c("longitude", "latitude")]
-
-      # Validar que ahora solo tenga dos columnas
-      if (ncol(test_data) != 2) {
-        stop("The processed validation data must contain exactly two columns: 'longitude' and 'latitude'.")
-      }
-
-      # Validar archivo raster
-      if (is.null(input$sdm_mod$datapath) || input$sdm_mod$datapath == "") {
-        stop("Prediction raster file not uploaded or invalid.")
-      }
-
-      # Cargar el raster
-      continuous_mod <- tryCatch({
-        rast <- raster(input$sdm_mod$datapath)
-        if (is.null(values(rast))) {
-          stop("The raster has no associated values.")
-        }
-        rast
-      }, error = function(e) {
-        stop("Error loading raster: ", e$message)
-      })
-
-      if (is.null(continuous_mod)) {
-        stop("The uploaded raster file is not valid.")
-      }
-
-      # Validar si las coordenadas están dentro del área del raster
-      ext <- extent(continuous_mod)
-      if (any(test_data$longitude < ext@xmin | test_data$longitude > ext@xmax |
-              test_data$latitude < ext@ymin | test_data$latitude > ext@ymax)) {
-        stop("Some coordinates in the validation data are outside the raster extent.")
-      }
-
-      incProgress(2/10, detail = "Inputs validated...")
-
-      # Validar valores numéricos
-      if (is.null(input$iter) || input$iter <= 0) {
-        stop("Number of iterations must be greater than 0.")
-      }
-
-      if (is.null(input$omission) || input$omission < 0 || input$omission > 100) {
-        stop("Omission threshold must be between 0 and 100.")
-      }
-
-      if (is.null(input$randper) || input$randper <= 0 || input$randper > 100) {
-        stop("Percent for bootstrap must be between 1 and 100.")
-      }
-
-      # Realizar el análisis
-      incProgress(3/10, detail = "Starting analysis...")
-
-      analisisproc <- tryCatch({
-        if (!inherits(continuous_mod, "RasterLayer")) {
-          stop("The raster input is not a valid RasterLayer object.")
-        }
-
-        if (!inherits(test_data, "data.frame") || ncol(test_data) != 2) {
-          stop("The test data must be a data frame with exactly two columns: 'longitude' and 'latitude'.")
-        }
-
-        pROC(
-          continuous_mod,
-          test_data,
-          n_iter = input$iter,
-          E_percent = input$omission,
-          boost_percent = input$randper,
-          parallel = FALSE,
-          ncores = 4,
-          rseed = FALSE,
-          sub_sample = FALSE,
-          sub_sample_size = 10000
+    }, error = function(e) {
+      # Manejo de errores
+      showModal(
+        modalDialog(
+          title = "Error",
+          paste("Something went wrong:", e$message),
+          easyClose = TRUE,
+          footer = NULL
         )
-      }, error = function(e) {
-        stop("Error during pROC analysis: ", e$message)
-      })
-
-      incProgress(6/10, detail = "Analysis in progress...")
-
-      # Mostrar resultados
-      output$summaryroc <- renderUI({
-        suroc <- analisisproc$pROC_summary
-        suroc_df <- as.data.frame(t(suroc))
-
-        tableroc <- suroc_df %>%
-          gt() %>%
-          gt_highlight_rows(rows = 1, font_weight = "normal")
-
-        tableroc
-      })
-
-      output$resultsroc <- renderDataTable({
-        analisisproc$pROC_results
-      })
-
-      incProgress(9/10, detail = "Finalizing analysis...")
-
-    }) # withProgress
-
-  }, error = function(e) {
-    # Manejo de errores
-    showModal(
-      modalDialog(
-        title = "Error",
-        paste("Something went wrong:", e$message),
-        easyClose = TRUE,
-        footer = NULL
       )
-    )
-  })
-
-}) # observeEvent
-
-observeEvent(input$runButtonBiomod2, {
-
-  tryCatch({ 
-
-    withProgress(message = 'Carrying out statistical evaluations...', value = 0, {
+    })
+    
+  }) # observeEvent
+  
+  observeEvent(input$runButtonBiomod2, {
+    
+    tryCatch({ 
       
-      incProgress(1/10, detail = "Validating inputs...")
+      withProgress(message = 'Carrying out statistical evaluations...', value = 0, {
+        
+        incProgress(1/10, detail = "Validating inputs...")
+        
+        # Validar archivo CSV
+        if (is.null(input$occ_proc$datapath) || input$occ_proc$datapath == "") {
+          stop("Validation data file not uploaded or invalid.")
+        }
+        
+        test_data <- read.csv(input$occ_proc$datapath)
+        
+        if (nrow(test_data) == 0) {
+          stop("The uploaded CSV file is empty.")
+        }
+        
+        # Validar columnas esperadas
+        if (!all(c("X", "Y") %in% colnames(test_data))) {
+          stop("The CSV file must contain columns named 'X' and 'Y'.")
+        }
+        
+        # Renombrar columnas
+        colnames(test_data)[colnames(test_data) == "X"] <- "longitude"
+        colnames(test_data)[colnames(test_data) == "Y"] <- "latitude"
+        
+        # Filtrar solo las columnas necesarias
+        test_data <- test_data[, c("longitude", "latitude")]
+        
+        # Validar que ahora solo tenga dos columnas
+        if (ncol(test_data) != 2) {
+          stop("The processed validation data must contain exactly two columns: 'longitude' and 'latitude'.")
+        }
+        
+        # Validar archivo raster
+        if (is.null(input$sdm_mod$datapath) || input$sdm_mod$datapath == "") {
+          stop("Prediction raster file not uploaded or invalid.")
+        }
+        
+        # Cargar el raster y escalar valores (0-100 a 0-1)
+        continuous_mod <- tryCatch({
+          rast <- raster(input$sdm_mod$datapath)
+          
+          if (maxValue(rast) > 1) {
+            rast <- calc(rast, function(x) x / 100)
+          }
+          
+          rast
+        }, error = function(e) {
+          stop("Error loading or scaling raster: ", e$message)
+        })
+        
+        if (is.null(continuous_mod)) {
+          stop("The uploaded raster file is not valid.")
+        }
+        
+        # Validar si las coordenadas están dentro del área del raster
+        ext <- extent(continuous_mod)
+        if (any(test_data$longitude < ext@xmin | test_data$longitude > ext@xmax |
+                test_data$latitude < ext@ymin | test_data$latitude > ext@ymax)) {
+          stop("Some coordinates in the validation data are outside the raster extent.")
+        }
+        
+        incProgress(2/10, detail = "Inputs validated...")
+        
+        # Validar valores numéricos
+        if (is.null(input$iter) || input$iter <= 0) {
+          stop("Number of iterations must be greater than 0.")
+        }
+        
+        if (is.null(input$omission) || input$omission < 0 || input$omission > 100) {
+          stop("Omission threshold must be between 0 and 100.")
+        }
+        
+        if (is.null(input$randper) || input$randper <= 0 || input$randper > 100) {
+          stop("Percent for bootstrap must be between 1 and 100.")
+        }
+        
+        # Realizar el análisis
+        incProgress(3/10, detail = "Starting analysis...")
+        
+        analisisproc <- tryCatch({
+          if (!inherits(continuous_mod, "RasterLayer")) {
+            stop("The raster input is not a valid RasterLayer object.")
+          }
+          
+          if (!inherits(test_data, "data.frame") || ncol(test_data) != 2) {
+            stop("The test data must be a data frame with exactly two columns: 'longitude' and 'latitude'.")
+          }
+          
+          pROC(
+            continuous_mod,
+            test_data,
+            n_iter = input$iter,
+            E_percent = input$omission,
+            boost_percent = input$randper,
+            parallel = FALSE,
+            ncores = 4,
+            rseed = FALSE,
+            sub_sample = FALSE,
+            sub_sample_size = 10000
+          )
+        }, error = function(e) {
+          stop("Error during pROC analysis: ", e$message)
+        })
+        
+        incProgress(6/10, detail = "Analysis in progress...")
+        
+        # Mostrar resultados
+        output$summaryroc <- renderUI({
+          suroc <- analisisproc$pROC_summary
+          suroc_df <- as.data.frame(t(suroc))
+          tableroc <- suroc_df %>%
+            gt() %>%
+            gt_highlight_rows(rows = 1, font_weight = "normal")
+          
+          tableroc
+        })
+        
+        output$resultsroc <- renderDataTable({
+          analisisproc$pROC_results
+        })
+        
+        incProgress(9/10, detail = "Finalizing analysis...")
+        
+      }) # withProgress
       
-      # Validar archivo CSV
-      if (is.null(input$occ_proc$datapath) || input$occ_proc$datapath == "") {
-        stop("Validation data file not uploaded or invalid.")
-      }
-
-      test_data <- read.csv(input$occ_proc$datapath)
-
-      if (nrow(test_data) == 0) {
-        stop("The uploaded CSV file is empty.")
-      }
-
-      # Validar columnas esperadas
-      if (!all(c("X", "Y") %in% colnames(test_data))) {
-        stop("The CSV file must contain columns named 'X' and 'Y'.")
-      }
-
-      # Renombrar columnas
-      colnames(test_data)[colnames(test_data) == "X"] <- "longitude"
-      colnames(test_data)[colnames(test_data) == "Y"] <- "latitude"
-
-      # Filtrar solo las columnas necesarias
-      test_data <- test_data[, c("longitude", "latitude")]
-
-      # Validar que ahora solo tenga dos columnas
-      if (ncol(test_data) != 2) {
-        stop("The processed validation data must contain exactly two columns: 'longitude' and 'latitude'.")
-      }
-
-      # Validar archivo raster
-      if (is.null(input$sdm_mod$datapath) || input$sdm_mod$datapath == "") {
-        stop("Prediction raster file not uploaded or invalid.")
-      }
-
-      # Cargar el raster y escalar valores (0-100 a 0-1)
-      continuous_mod <- tryCatch({
-        rast <- raster(input$sdm_mod$datapath)
-
-        if (maxValue(rast) > 1) {
-          rast <- calc(rast, function(x) x / 100)
-        }
-
-        rast
-      }, error = function(e) {
-        stop("Error loading or scaling raster: ", e$message)
-      })
-
-      if (is.null(continuous_mod)) {
-        stop("The uploaded raster file is not valid.")
-      }
-
-      # Validar si las coordenadas están dentro del área del raster
-      ext <- extent(continuous_mod)
-      if (any(test_data$longitude < ext@xmin | test_data$longitude > ext@xmax |
-              test_data$latitude < ext@ymin | test_data$latitude > ext@ymax)) {
-        stop("Some coordinates in the validation data are outside the raster extent.")
-      }
-
-      incProgress(2/10, detail = "Inputs validated...")
-
-      # Validar valores numéricos
-      if (is.null(input$iter) || input$iter <= 0) {
-        stop("Number of iterations must be greater than 0.")
-      }
-
-      if (is.null(input$omission) || input$omission < 0 || input$omission > 100) {
-        stop("Omission threshold must be between 0 and 100.")
-      }
-
-      if (is.null(input$randper) || input$randper <= 0 || input$randper > 100) {
-        stop("Percent for bootstrap must be between 1 and 100.")
-      }
-
-      # Realizar el análisis
-      incProgress(3/10, detail = "Starting analysis...")
-
-      analisisproc <- tryCatch({
-        if (!inherits(continuous_mod, "RasterLayer")) {
-          stop("The raster input is not a valid RasterLayer object.")
-        }
-
-        if (!inherits(test_data, "data.frame") || ncol(test_data) != 2) {
-          stop("The test data must be a data frame with exactly two columns: 'longitude' and 'latitude'.")
-        }
-
-        pROC(
-          continuous_mod,
-          test_data,
-          n_iter = input$iter,
-          E_percent = input$omission,
-          boost_percent = input$randper,
-          parallel = FALSE,
-          ncores = 4,
-          rseed = FALSE,
-          sub_sample = FALSE,
-          sub_sample_size = 10000
+    }, error = function(e) {
+      # Manejo de errores
+      showModal(
+        modalDialog(
+          title = "Error",
+          paste("Something went wrong:", e$message),
+          easyClose = TRUE,
+          footer = NULL
         )
-      }, error = function(e) {
-        stop("Error during pROC analysis: ", e$message)
-      })
-
-      incProgress(6/10, detail = "Analysis in progress...")
-
-      # Mostrar resultados
-      output$summaryroc <- renderUI({
-        suroc <- analisisproc$pROC_summary
-        suroc_df <- as.data.frame(t(suroc))
-tableroc <- suroc_df %>%
-          gt() %>%
-          gt_highlight_rows(rows = 1, font_weight = "normal")
-
-        tableroc
-      })
-
-      output$resultsroc <- renderDataTable({
-        analisisproc$pROC_results
-      })
-
-      incProgress(9/10, detail = "Finalizing analysis...")
-
-    }) # withProgress
-
-  }, error = function(e) {
-    # Manejo de errores
-    showModal(
-      modalDialog(
-        title = "Error",
-        paste("Something went wrong:", e$message),
-        easyClose = TRUE,
-        footer = NULL
       )
-    )
-  })
-
-}) # observeEvent
+    })
+    
+  }) # observeEvent
   
   
   #################################
@@ -3984,618 +3988,618 @@ tableroc <- suroc_df %>%
   
   
   observeEvent(input$run_enmtools, {
-
-tryCatch({ 
-
-    if (is.null(input$sp1_enmtools) || is.null(input$sp2_enmtools) || is.null(input$layerFilesENM) || is.null(input$model_niche) || length(input$model_niche) == 0 || is.null(input$options_rblmodel)) {
-      showModal(modalDialog(
-        title = "Error",
-        "You need to fill out the required fields to continue."
-      ))
-
-    } else {
-
-    withProgress(message = 'Loading maps...', value = 0, {
-                 total_iterationsurb <- 1
-                                    total_progressurb <- 1
-                 # Aquí va el código para realizar el análisis
-                 # Actualiza el valor de la barra de progreso en porcentaje
-                 for (i in 1:total_iterationsurb) {
-
-                       incProgress(1/10, detail = "Ploting...")
-
-    req(input$layerFilesENM)
     
-    # Leer todos los archivos .asc seleccionados
-    env <- lapply(input$layerFilesENM$datapath, terra::rast)
+    tryCatch({ 
+      
+      if (is.null(input$sp1_enmtools) || is.null(input$sp2_enmtools) || is.null(input$layerFilesENM) || is.null(input$model_niche) || length(input$model_niche) == 0 || is.null(input$options_rblmodel)) {
+        showModal(modalDialog(
+          title = "Error",
+          "You need to fill out the required fields to continue."
+        ))
+        
+      } else {
+        
+        withProgress(message = 'Loading maps...', value = 0, {
+          total_iterationsurb <- 1
+          total_progressurb <- 1
+          # Aquí va el código para realizar el análisis
+          # Actualiza el valor de la barra de progreso en porcentaje
+          for (i in 1:total_iterationsurb) {
+            
+            incProgress(1/10, detail = "Ploting...")
+            
+            req(input$layerFilesENM)
+            
+            # Leer todos los archivos .asc seleccionados
+            env <- lapply(input$layerFilesENM$datapath, terra::rast)
+            
+            # Apilar las capas raster en un objeto 'SpatRaster'
+            env <- do.call(c, env)
+            
+            # Asignar nombres a las capas
+            names(env) <- input$layerFilesENM$name
+            
+            env <- setMinMax(env)
+            env <- check.env(env)
+            
+            incProgress(1/10, detail = "Ploting...")
+            
+            # Cargar el archivo csv
+            datosBP_input <- input$sp1_enmtools
+            datosBP <- read.csv(datosBP_input$datapath)
+            
+            
+            # Filtrar las filas donde Response sea 0
+            datos_filtradosPP <- subset(datosBP, Response == 1)
+            
+            # Renombrar las columnas a lon y lat
+            names(datos_filtradosPP)[names(datos_filtradosPP) == "X"] <- "lon"
+            names(datos_filtradosPP)[names(datos_filtradosPP) == "Y"] <- "lat"
+            
+            # Crear el objeto species para ENMTools
+            sp1 <- enmtools.species(species.name = "sp1", 
+                                    presence.points = vect(datos_filtradosPP[, c("lon", "lat")]))
+            
+            
+            
+            datos_filtradosBP <- subset(datosBP, Response == 0)
+            names(datos_filtradosBP)[names(datos_filtradosBP) == "X"] <- "lon"
+            names(datos_filtradosBP)[names(datos_filtradosBP) == "Y"] <- "lat"
+            crs(sp1$presence.points) <- crs(env)
+            sp1$range <- background.raster.buffer(sp1$presence.points, 50000, mask = env)
+            
+            
+            background_sp <- SpatialPoints(coords = datos_filtradosBP[, c("lon", "lat")])
+            
+            crs(background_sp) <- crs(env)
+            
+            bp_spatvector <- as(background_sp, "SpatVector")
+            
+            sp1$background.points <- bp_spatvector
+            sp1 <- check.species(sp1) 
+            
+            
+            incProgress(1/10, detail = "Ploting...")
+            
+            
+            
+            ############3ESPECIE 2
+            datosBP2_input <- input$sp2_enmtools
+            datosBP2 <- read.csv(datosBP2_input$datapath)
+            
+            # Filtrar las filas donde Response sea 0
+            datos_filtradosPP_2 <- subset(datosBP2, Response == 1)
+            
+            # Renombrar las columnas a lon y lat
+            names(datos_filtradosPP_2)[names(datos_filtradosPP_2) == "X"] <- "lon"
+            names(datos_filtradosPP_2)[names(datos_filtradosPP_2) == "Y"] <- "lat"
+            
+            # Crear el objeto species para ENMTools
+            sp2 <- enmtools.species(species.name = "sp2", 
+                                    presence.points = vect(datos_filtradosPP_2[, c("lon", "lat")]))
+            
+            
+            
+            datos_filtradosBP_2 <- subset(datosBP2, Response == 0)
+            names(datos_filtradosBP_2)[names(datos_filtradosBP_2) == "X"] <- "lon"
+            names(datos_filtradosBP_2)[names(datos_filtradosBP_2) == "Y"] <- "lat"
+            crs(sp2$presence.points) <- crs(env)
+            sp2$range <- background.raster.buffer(sp2$presence.points, 50000, mask = env)
+            
+            
+            background_sp_2 <- SpatialPoints(coords = datos_filtradosBP_2[, c("lon", "lat")])
+            
+            crs(background_sp_2) <- crs(env)
+            
+            bp_spatvector_2 <- as(background_sp_2, "SpatVector")
+            
+            sp2$background.points <- bp_spatvector_2
+            sp2 <- check.species(sp2) 
+            
+            incProgress(1/10, detail = "Ploting...")
+            
+            
+            ##########
+            
+            ### sp1
+            map <- leaflet() %>%
+              # Añadir mapa base
+              addProviderTiles("OpenStreetMap.Mapnik") %>%
+              # Añadir el rango de la especie
+              addRasterImage(sp1$range, colors = "green", opacity = 0.5) %>%
+              # Añadir los puntos de presencia
+              addCircleMarkers(data = sp1$presence.points, color = "red", radius = 3, group = "Presence Points") %>%
+              # Añadir los puntos de fondo
+              addCircleMarkers(data = sp1$background.points, color = "blue", radius = 3, group = "Background Points") %>%
+              # Añadir capas de control para activar/desactivar las capas
+              addLayersControl(overlayGroups = c("Presence Points", "Background Points"),
+                               options = layersControlOptions(collapsed = FALSE))
+            
+            
+            output$map_sp1 <- renderLeaflet({    
+              map
+            })
+            
+            ###sp2
+            map2 <- leaflet() %>%
+              # Añadir map2a base
+              addProviderTiles("OpenStreetMap.Mapnik") %>%
+              # Añadir el rango de la especie
+              addRasterImage(sp2$range, colors = "green", opacity = 0.5) %>%
+              # Añadir los puntos de presencia
+              addCircleMarkers(data = sp2$presence.points, color = "red", radius = 3, group = "Presence Points") %>%
+              # Añadir los puntos de fondo
+              addCircleMarkers(data = sp2$background.points, color = "blue", radius = 3, group = "Background Points") %>%
+              #Añadir capas de control para activar/desactivar las capas
+              addLayersControl(overlayGroups = c("Presence Points", "Background Points"),
+                               options = layersControlOptions(collapsed = FALSE))
+            
+            
+            output$map_sp2 <- renderLeaflet({    
+              map2
+            })
+            
+            ####################################3 modelos
+            #especie 1
+            if (input$options_species_model == 1) {
+              
+              models_selected <- input$model_niche
+              
+              if ("glm" %in% models_selected) {
+                sp1.glm <- enmtools.glm(species = sp1, env = env, test.prop = 0.2)
+                output$modelPlot_glm <- renderPlot({ sp1.glm })
+                output$modelSummary_glm <- renderPrint({ sp1.glm })
+                output$resp_plot_glm <- renderPlot({sp1.glm$response.plots})
+                output$test_data_glm <- renderPlot({
+                  visualize.enm(sp1.glm, env, plot.test.data = TRUE)
+                })
+                
+                output$downloadPdf_glmmodel <- downloadHandler(
+                  filename = function() {
+                    "GLM Model.pdf"
+                  },
+                  content = function(file) {
+                    glm_plot_pdf<-plot(sp1.glm)
+                    ggsave(file, plot = glm_plot_pdf, device = "pdf")
+                  }
+                )
+              }
+              
+              if ("gam" %in% models_selected) {
+                sp1.gam <- enmtools.gam(sp1, env, test.prop = 0.2)
+                output$modelPlot_gam <- renderPlot({ sp1.gam })
+                output$modelSummary_gam <- renderPrint({ sp1.gam })
+                output$resp_plot_gam <- renderPlot({sp1.gam$response.plots})
+                output$test_data_gam <- renderPlot({
+                  visualize.enm(sp1.gam, env, plot.test.data = TRUE)
+                })
+                output$downloadPdf_gammodel <- downloadHandler(
+                  filename = function() {
+                    "GAM Model.pdf"
+                  },
+                  content = function(file) {
+                    gam_plot_pdf<-plot(sp1.gam)
+                    ggsave(file, plot = gam_plot_pdf, device = "pdf")
+                  }
+                )
+                
+              }
+              
+              if ("dm" %in% models_selected) {
+                sp1.dm <- enmtools.dm(sp1, env, test.prop = 0.2)
+                output$modelPlot_dm <- renderPlot({ sp1.dm })
+                output$modelSummary_dm <- renderPrint({ sp1.dm })
+                output$resp_plot_dm <- renderPlot({sp1.dm$response.plots})
+                output$test_data_dm <- renderPlot({
+                  visualize.enm(sp1.dm, env, plot.test.data = TRUE)
+                })
+                
+                output$downloadPdf_dmmodel <- downloadHandler(
+                  filename = function() {
+                    "DM Model.pdf"
+                  },
+                  content = function(file) {
+                    dm_plot_pdf<-plot(sp1.dm)
+                    ggsave(file, plot = dm_plot_pdf, device = "pdf")
+                  }
+                )
+              }
+              
+              if ("bc" %in% models_selected) {
+                sp1.bc <- enmtools.bc(sp1, env, test.prop = 0.2)
+                output$modelPlot_bc <- renderPlot({ sp1.bc })
+                output$modelSummary_bc <- renderPrint({ sp1.bc })
+                output$resp_plot_bc <- renderPlot({sp1.bc$response.plots})
+                output$test_data_bc <- renderPlot({
+                  visualize.enm(sp1.bc, env, plot.test.data = TRUE)
+                })
+                output$downloadPdf_bcmodel <- downloadHandler(
+                  filename = function() {
+                    "BC Model.pdf"
+                  },
+                  content = function(file) {
+                    bc_plot_pdf<-plot(sp1.bc)
+                    ggsave(file, plot = bc_plot_pdf, device = "pdf")
+                  }
+                )
+              }
+              
+              if ("maxent" %in% models_selected) {
+                sp1.mx <- enmtools.maxent(sp1, env, test.prop = 0.2)
+                output$modelPlot_mx <- renderPlot({ sp1.mx })
+                output$modelSummary_mx <- renderPrint({ sp1.mx })
+                output$resp_plot_mx <- renderPlot({sp1.mx$response.plots})
+                output$test_data_mx <- renderPlot({
+                  visualize.enm(sp1.mx, env, plot.test.data = TRUE)
+                })
+                output$downloadPdf_mxmodel <- downloadHandler(
+                  filename = function() {
+                    "Maxent Model.pdf"
+                  },
+                  content = function(file) {
+                    mx_plot_pdf<-plot(sp1.mx)
+                    ggsave(file, plot = mx_plot_pdf, device = "pdf")
+                  }
+                )
+              }
+              
+            } # especie 1
+            
+            
+            #
+            #especie 2
+            if (input$options_species_model == 2) {
+              
+              #especie 1
+              
+              models_selected <- input$model_niche
+              
+              if ("glm" %in% models_selected) {
+                sp1.glm <- enmtools.glm(species = sp1, env = env, test.prop = 0.2)
+                output$modelPlot_glm <- renderPlot({ sp1.glm })
+                output$modelSummary_glm <- renderPrint({ sp1.glm })
+                output$resp_plot_glm <- renderPlot({sp1.glm$response.plots})
+                output$test_data_glm <- renderPlot({
+                  visualize.enm(sp1.glm, env, plot.test.data = TRUE)
+                })
+                
+                output$downloadPdf_glmmodel <- downloadHandler(
+                  filename = function() {
+                    "GLM Model.pdf"
+                  },
+                  content = function(file) {
+                    glm_plot_pdf<-plot(sp1.glm)
+                    ggsave(file, plot = glm_plot_pdf, device = "pdf")
+                  }
+                )
+              }
+              
+              if ("gam" %in% models_selected) {
+                sp1.gam <- enmtools.gam(sp1, env, test.prop = 0.2)
+                output$modelPlot_gam <- renderPlot({ sp1.gam })
+                output$modelSummary_gam <- renderPrint({ sp1.gam })
+                output$resp_plot_gam <- renderPlot({sp1.gam$response.plots})
+                output$test_data_gam <- renderPlot({
+                  visualize.enm(sp1.gam, env, plot.test.data = TRUE)
+                })
+                output$downloadPdf_gammodel <- downloadHandler(
+                  filename = function() {
+                    "GAM Model.pdf"
+                  },
+                  content = function(file) {
+                    gam_plot_pdf<-plot(sp1.gam)
+                    ggsave(file, plot = gam_plot_pdf, device = "pdf")
+                  }
+                )
+                
+              }
+              
+              if ("dm" %in% models_selected) {
+                sp1.dm <- enmtools.dm(sp1, env, test.prop = 0.2)
+                output$modelPlot_dm <- renderPlot({ sp1.dm })
+                output$modelSummary_dm <- renderPrint({ sp1.dm })
+                output$resp_plot_dm <- renderPlot({sp1.dm$response.plots})
+                output$test_data_dm <- renderPlot({
+                  visualize.enm(sp1.dm, env, plot.test.data = TRUE)
+                })
+                
+                output$downloadPdf_dmmodel <- downloadHandler(
+                  filename = function() {
+                    "DM Model.pdf"
+                  },
+                  content = function(file) {
+                    dm_plot_pdf<-plot(sp1.dm)
+                    ggsave(file, plot = dm_plot_pdf, device = "pdf")
+                  }
+                )
+              }
+              
+              if ("bc" %in% models_selected) {
+                sp1.bc <- enmtools.bc(sp1, env, test.prop = 0.2)
+                output$modelPlot_bc <- renderPlot({ sp1.bc })
+                output$modelSummary_bc <- renderPrint({ sp1.bc })
+                output$resp_plot_bc <- renderPlot({sp1.bc$response.plots})
+                output$test_data_bc <- renderPlot({
+                  visualize.enm(sp1.bc, env, plot.test.data = TRUE)
+                })
+                output$downloadPdf_bcmodel <- downloadHandler(
+                  filename = function() {
+                    "BC Model.pdf"
+                  },
+                  content = function(file) {
+                    bc_plot_pdf<-plot(sp1.bc)
+                    ggsave(file, plot = bc_plot_pdf, device = "pdf")
+                  }
+                )
+              }
+              
+              if ("maxent" %in% models_selected) {
+                sp1.mx <- enmtools.maxent(sp1, env, test.prop = 0.2)
+                output$modelPlot_mx <- renderPlot({ sp1.mx })
+                output$modelSummary_mx <- renderPrint({ sp1.mx })
+                output$resp_plot_mx <- renderPlot({sp1.mx$response.plots})
+                output$test_data_mx <- renderPlot({
+                  visualize.enm(sp1.mx, env, plot.test.data = TRUE)
+                })
+                output$downloadPdf_mxmodel <- downloadHandler(
+                  filename = function() {
+                    "Maxent Model.pdf"
+                  },
+                  content = function(file) {
+                    mx_plot_pdf<-plot(sp1.mx)
+                    ggsave(file, plot = mx_plot_pdf, device = "pdf")
+                  }
+                )
+              }
+              
+              # especie 2
+              
+              
+              models_selected <- input$model_niche
+              
+              if ("glm" %in% models_selected) {
+                sp2.glm <- enmtools.glm(species = sp2, env = env, test.prop = 0.2)
+                output$modelPlot_glm2 <- renderPlot({ sp2.glm })
+                output$modelSummary_glm2 <- renderPrint({ sp2.glm })
+                output$resp_plot_glm2 <- renderPlot({sp2.glm$response.plots})
+                output$test_data_glm2 <- renderPlot({
+                  visualize.enm(sp2.glm, env, plot.test.data = TRUE)
+                })
+                
+                output$downloadPdf_glmmodel <- downloadHandler(
+                  filename = function() {
+                    "GLM Model sp2.pdf"
+                  },
+                  content = function(file) {
+                    glm_plot_pdf2<-plot(sp2.glm)
+                    ggsave(file, plot = glm_plot_pdf2, device = "pdf")
+                  }
+                )
+              }
+              
+              if ("gam" %in% models_selected) {
+                sp2.gam <- enmtools.gam(sp2, env, test.prop = 0.2)
+                output$modelPlot_gam2 <- renderPlot({ sp2.gam })
+                output$modelSummary_gam2 <- renderPrint({ sp2.gam })
+                output$resp_plot_gam2 <- renderPlot({sp2.gam$response.plots})
+                output$test_data_gam2 <- renderPlot({
+                  visualize.enm(sp2.gam, env, plot.test.data = TRUE)
+                })
+                output$downloadPdf_gammodel2 <- downloadHandler(
+                  filename = function() {
+                    "GAM Model sp2.pdf"
+                  },
+                  content = function(file) {
+                    gam_plot_pdf2<-plot(sp2.gam)
+                    ggsave(file, plot = gam_plot_pdf2, device = "pdf")
+                  }
+                )
+                
+              }
+              
+              if ("dm" %in% models_selected) {
+                sp2.dm <- enmtools.dm(sp2, env, test.prop = 0.2)
+                output$modelPlot_dm2 <- renderPlot({ sp2.dm })
+                output$modelSummary_dm2 <- renderPrint({ sp2.dm })
+                output$resp_plot_dm2 <- renderPlot({sp2.dm$response.plots})
+                output$test_data_dm2 <- renderPlot({
+                  visualize.enm(sp2.dm, env, plot.test.data = TRUE)
+                })
+                
+                output$downloadPdf_dmmodel <- downloadHandler(
+                  filename = function() {
+                    "DM Model sp2.pdf"
+                  },
+                  content = function(file) {
+                    dm_plot_pdf2<-plot(sp2.dm)
+                    ggsave(file, plot = dm_plot_pdf2, device = "pdf")
+                  }
+                )
+              }
+              
+              if ("bc" %in% models_selected) {
+                sp2.bc <- enmtools.bc(sp2, env, test.prop = 0.2)
+                output$modelPlot_bc2 <- renderPlot({ sp2.bc })
+                output$modelSummary_bc2 <- renderPrint({ sp2.bc })
+                output$resp_plot_bc2 <- renderPlot({sp2.bc$response.plots})
+                output$test_data_bc2 <- renderPlot({
+                  visualize.enm(sp2.bc, env, plot.test.data = TRUE)
+                })
+                output$downloadPdf_bcmodel <- downloadHandler(
+                  filename = function() {
+                    "BC Model sp2.pdf"
+                  },
+                  content = function(file) {
+                    bc_plot_pdf2<-plot(sp2.bc)
+                    ggsave(file, plot = bc_plot_pdf2, device = "pdf")
+                  }
+                )
+              }
+              
+              if ("maxent" %in% models_selected) {
+                sp2.mx <- enmtools.maxent(sp2, env, test.prop = 0.2)
+                output$modelPlot_mx2 <- renderPlot({ sp2.mx })
+                output$modelSummary_mx2 <- renderPrint({ sp2.mx })
+                output$resp_plot_mx2 <- renderPlot({sp2.mx$response.plots})
+                output$test_data_mx2 <- renderPlot({
+                  visualize.enm(sp2.mx, env, plot.test.data = TRUE)
+                })
+                output$downloadPdf_mxmodel <- downloadHandler(
+                  filename = function() {
+                    "Maxent Model sp2.pdf"
+                  },
+                  content = function(file) {
+                    mx_plot_pdf2<-plot(sp2.mx)
+                    ggsave(file, plot = mx_plot_pdf2, device = "pdf")
+                  }
+                )
+              }
+              
+              # especie 2
+            }
+            
+            
+            
+            
+            #######################3 modelos
+            if (1 %in% input$checkbox_opciones) {
+              # Realizar Niche identity or equivalency test
+              id.glm <- identity.test(species.1 = sp1, species.2 = sp2, env = env, type = input$model_niche_s, nreps = 4)
+              
+              output$summary_idtest <- renderPrint({
+                id.glm
+              })
+              # Mostrar los resultados en la UI
+              output$plot_idtest <- renderPlot({
+                id.glm
+              })
+            }
+            
+            if (2 %in% input$checkbox_opciones) {
+              # Realizar Background or similarity test (Asymmetric)
+              bg.bc.asym <- background.test(species.1 = sp1, species.2 = sp2, env = env, type = input$model_niche_s, nreps = 4, test.type = "asymmetric")
+              
+              output$summary_bctest <- renderPrint({
+                bg.bc.asym
+              })
+              # # Mostrar los resultados en la UI
+              output$plot_bctest <- renderPlot({
+                bg.bc.asym
+              })
+            }
+            
+            if (3 %in% input$checkbox_opciones) {
+              # Realizar Background or similarity test (Symmetric)
+              bg.dm.sym <- background.test(species.1 = sp1, species.2 = sp2, env = env, type = input$model_niche_s, nreps = 4, test.type = "symmetric")
+              output$summary_sym <- renderPrint({
+                bg.dm.sym
+              })
+              # Mostrar los resultados en la UI
+              output$plot_sym <- renderPlot({
+                bg.dm.sym
+              })
+            }
+            
+            
+            model_type_rbl <- switch(input$options_rblmodel,
+                                     "1" = "glm",
+                                     "2" = "gam",
+                                     "3" = "dm",
+                                     "4" = "bc",
+                                     "5" = "maxent")
+            
+            rbl.glm <- rangebreak.linear(sp1, sp2, env, type = model_type_rbl, nreps = 4)
+            
+            
+            esp.bg.sym <- enmtools.ecospat.bg(sp1, sp2, env, test.type = "symmetric")
+            incProgress(1/10, detail = "Ploting...")
+            
+            output$summary_nicheover <- renderPrint({
+              esp.bg.sym
+            })
+            
+            
+            # Mostrar los resultados en la UI
+            output$plot1 <- renderPlot({
+              print(esp.bg.sym)
+            })
+            
+            
+            
+            
+            output$downloadPdf_ecospat <- downloadHandler(
+              filename = function() {
+                paste("mi_plot_esp_bg_sym", Sys.Date(), ".pdf", sep = "")
+              },
+              content = function(file) {
+                # Abre el dispositivo gráfico PDF
+                pdf(file)
+                
+                # Genera el gráfico
+                plot(esp.bg.sym)
+                
+                # Cierra el dispositivo gráfico PDF
+                dev.off()
+              }
+            )
+            
+            
+            
+            output$summary_rbl <- renderPrint({
+              rbl.glm
+            })
+            
+            
+            # Mostrar los resultados en la UI
+            output$plot_rbl <- renderPlot({
+              rbl.glm
+            })
+            
+            
+            
+            
+            output$downloadPdf_rbl <- downloadHandler(
+              filename = function() {
+                paste("Rangebreak tests", Sys.Date(), ".pdf", sep = "")
+              },
+              content = function(file) {
+                # Abre el dispositivo gráfico PDF
+                pdf(file)
+                
+                # Genera el gráfico
+                plot(rbl.glm)
+                
+                # Cierra el dispositivo gráfico PDF
+                dev.off()
+              }
+            )
+            
+            incProgress(1/10, detail = "Ploting...")
+            incProgress(total_progressurb, detail = "Proceso completado")
+            
+          }
+        }) #withprogress
+        
+        
+      } #upload
+      
+    }, error = function(e) {
+      # Error handling for a bad internet connection
+      if (inherits(e, "error")) {
+        
+        showModal(
+          modalDialog(
+            title = "Error",
+            paste("Something went wrong.", e$message),
+            easyClose = TRUE,
+            footer = NULL
+          )
+        )
+      }
+    }) #######trycatch
     
-    # Apilar las capas raster en un objeto 'SpatRaster'
-    env <- do.call(c, env)
-    
-    # Asignar nombres a las capas
-    names(env) <- input$layerFilesENM$name
-    
-    env <- setMinMax(env)
-    env <- check.env(env)
-    
-                       incProgress(1/10, detail = "Ploting...")
-    
-    # Cargar el archivo csv
-    datosBP_input <- input$sp1_enmtools
-    datosBP <- read.csv(datosBP_input$datapath)
-    
-
-# Filtrar las filas donde Response sea 0
-datos_filtradosPP <- subset(datosBP, Response == 1)
-
-# Renombrar las columnas a lon y lat
-names(datos_filtradosPP)[names(datos_filtradosPP) == "X"] <- "lon"
-names(datos_filtradosPP)[names(datos_filtradosPP) == "Y"] <- "lat"
-
-# Crear el objeto species para ENMTools
-sp1 <- enmtools.species(species.name = "sp1", 
-                        presence.points = vect(datos_filtradosPP[, c("lon", "lat")]))
-
-
-
-datos_filtradosBP <- subset(datosBP, Response == 0)
- names(datos_filtradosBP)[names(datos_filtradosBP) == "X"] <- "lon"
- names(datos_filtradosBP)[names(datos_filtradosBP) == "Y"] <- "lat"
- crs(sp1$presence.points) <- crs(env)
- sp1$range <- background.raster.buffer(sp1$presence.points, 50000, mask = env)
- 
- 
- background_sp <- SpatialPoints(coords = datos_filtradosBP[, c("lon", "lat")])
-
-crs(background_sp) <- crs(env)
-
-bp_spatvector <- as(background_sp, "SpatVector")
-
-sp1$background.points <- bp_spatvector
-sp1 <- check.species(sp1) 
-
-
-                       incProgress(1/10, detail = "Ploting...")
-
-
-
-    ############3ESPECIE 2
-    datosBP2_input <- input$sp2_enmtools
-    datosBP2 <- read.csv(datosBP2_input$datapath)
-    
-# Filtrar las filas donde Response sea 0
-datos_filtradosPP_2 <- subset(datosBP2, Response == 1)
-
-# Renombrar las columnas a lon y lat
-names(datos_filtradosPP_2)[names(datos_filtradosPP_2) == "X"] <- "lon"
-names(datos_filtradosPP_2)[names(datos_filtradosPP_2) == "Y"] <- "lat"
-
-# Crear el objeto species para ENMTools
-sp2 <- enmtools.species(species.name = "sp2", 
-                        presence.points = vect(datos_filtradosPP_2[, c("lon", "lat")]))
-
-
-
-datos_filtradosBP_2 <- subset(datosBP2, Response == 0)
- names(datos_filtradosBP_2)[names(datos_filtradosBP_2) == "X"] <- "lon"
- names(datos_filtradosBP_2)[names(datos_filtradosBP_2) == "Y"] <- "lat"
- crs(sp2$presence.points) <- crs(env)
- sp2$range <- background.raster.buffer(sp2$presence.points, 50000, mask = env)
- 
- 
- background_sp_2 <- SpatialPoints(coords = datos_filtradosBP_2[, c("lon", "lat")])
-
-crs(background_sp_2) <- crs(env)
-
-bp_spatvector_2 <- as(background_sp_2, "SpatVector")
-
-sp2$background.points <- bp_spatvector_2
-sp2 <- check.species(sp2) 
-
-                       incProgress(1/10, detail = "Ploting...")
-
-
-##########
-
-### sp1
-map <- leaflet() %>%
-  # Añadir mapa base
-  addProviderTiles("OpenStreetMap.Mapnik") %>%
-  # Añadir el rango de la especie
-  addRasterImage(sp1$range, colors = "green", opacity = 0.5) %>%
-  # Añadir los puntos de presencia
-  addCircleMarkers(data = sp1$presence.points, color = "red", radius = 3, group = "Presence Points") %>%
-  # Añadir los puntos de fondo
-  addCircleMarkers(data = sp1$background.points, color = "blue", radius = 3, group = "Background Points") %>%
-  # Añadir capas de control para activar/desactivar las capas
-  addLayersControl(overlayGroups = c("Presence Points", "Background Points"),
-                   options = layersControlOptions(collapsed = FALSE))
-
-  
-  output$map_sp1 <- renderLeaflet({    
-    map
   })
-
-###sp2
-map2 <- leaflet() %>%
-  # Añadir map2a base
-  addProviderTiles("OpenStreetMap.Mapnik") %>%
-  # Añadir el rango de la especie
-  addRasterImage(sp2$range, colors = "green", opacity = 0.5) %>%
-  # Añadir los puntos de presencia
-  addCircleMarkers(data = sp2$presence.points, color = "red", radius = 3, group = "Presence Points") %>%
-  # Añadir los puntos de fondo
-  addCircleMarkers(data = sp2$background.points, color = "blue", radius = 3, group = "Background Points") %>%
-   #Añadir capas de control para activar/desactivar las capas
-  addLayersControl(overlayGroups = c("Presence Points", "Background Points"),
-                   options = layersControlOptions(collapsed = FALSE))
-
   
-  output$map_sp2 <- renderLeaflet({    
-    map2
-  })
-
-####################################3 modelos
-#especie 1
-    if (input$options_species_model == 1) {
-
-models_selected <- input$model_niche
-
-          if ("glm" %in% models_selected) {
-            sp1.glm <- enmtools.glm(species = sp1, env = env, test.prop = 0.2)
-            output$modelPlot_glm <- renderPlot({ sp1.glm })
-            output$modelSummary_glm <- renderPrint({ sp1.glm })
-	    output$resp_plot_glm <- renderPlot({sp1.glm$response.plots})
-output$test_data_glm <- renderPlot({
-visualize.enm(sp1.glm, env, plot.test.data = TRUE)
-})
-
-      output$downloadPdf_glmmodel <- downloadHandler(
-        filename = function() {
-          "GLM Model.pdf"
-        },
-  content = function(file) {
-glm_plot_pdf<-plot(sp1.glm)
-    ggsave(file, plot = glm_plot_pdf, device = "pdf")
-  }
-)
-          }
-
-          if ("gam" %in% models_selected) {
-            sp1.gam <- enmtools.gam(sp1, env, test.prop = 0.2)
-            output$modelPlot_gam <- renderPlot({ sp1.gam })
-            output$modelSummary_gam <- renderPrint({ sp1.gam })
-	    output$resp_plot_gam <- renderPlot({sp1.gam$response.plots})
-output$test_data_gam <- renderPlot({
-visualize.enm(sp1.gam, env, plot.test.data = TRUE)
-})
-      output$downloadPdf_gammodel <- downloadHandler(
-        filename = function() {
-          "GAM Model.pdf"
-        },
-  content = function(file) {
-gam_plot_pdf<-plot(sp1.gam)
-    ggsave(file, plot = gam_plot_pdf, device = "pdf")
-  }
-)
-
-          }
-
-          if ("dm" %in% models_selected) {
-            sp1.dm <- enmtools.dm(sp1, env, test.prop = 0.2)
-            output$modelPlot_dm <- renderPlot({ sp1.dm })
-            output$modelSummary_dm <- renderPrint({ sp1.dm })
-	    output$resp_plot_dm <- renderPlot({sp1.dm$response.plots})
-output$test_data_dm <- renderPlot({
-visualize.enm(sp1.dm, env, plot.test.data = TRUE)
-})
-
-      output$downloadPdf_dmmodel <- downloadHandler(
-        filename = function() {
-          "DM Model.pdf"
-        },
-  content = function(file) {
-dm_plot_pdf<-plot(sp1.dm)
-    ggsave(file, plot = dm_plot_pdf, device = "pdf")
-  }
-)
-          }
-
-          if ("bc" %in% models_selected) {
-            sp1.bc <- enmtools.bc(sp1, env, test.prop = 0.2)
-            output$modelPlot_bc <- renderPlot({ sp1.bc })
-            output$modelSummary_bc <- renderPrint({ sp1.bc })
-	    output$resp_plot_bc <- renderPlot({sp1.bc$response.plots})
-output$test_data_bc <- renderPlot({
-visualize.enm(sp1.bc, env, plot.test.data = TRUE)
-})
-      output$downloadPdf_bcmodel <- downloadHandler(
-        filename = function() {
-          "BC Model.pdf"
-        },
-  content = function(file) {
-bc_plot_pdf<-plot(sp1.bc)
-    ggsave(file, plot = bc_plot_pdf, device = "pdf")
-  }
-)
-          }
-
-          if ("maxent" %in% models_selected) {
-            sp1.mx <- enmtools.maxent(sp1, env, test.prop = 0.2)
-            output$modelPlot_mx <- renderPlot({ sp1.mx })
-            output$modelSummary_mx <- renderPrint({ sp1.mx })
-	    output$resp_plot_mx <- renderPlot({sp1.mx$response.plots})
-output$test_data_mx <- renderPlot({
-visualize.enm(sp1.mx, env, plot.test.data = TRUE)
-})
-      output$downloadPdf_mxmodel <- downloadHandler(
-        filename = function() {
-          "Maxent Model.pdf"
-        },
-  content = function(file) {
-mx_plot_pdf<-plot(sp1.mx)
-    ggsave(file, plot = mx_plot_pdf, device = "pdf")
-  }
-)
-          }
-
-} # especie 1
-
-
-#
-#especie 2
-    if (input$options_species_model == 2) {
-
-#especie 1
-
-models_selected <- input$model_niche
-
-          if ("glm" %in% models_selected) {
-            sp1.glm <- enmtools.glm(species = sp1, env = env, test.prop = 0.2)
-            output$modelPlot_glm <- renderPlot({ sp1.glm })
-            output$modelSummary_glm <- renderPrint({ sp1.glm })
-	    output$resp_plot_glm <- renderPlot({sp1.glm$response.plots})
-output$test_data_glm <- renderPlot({
-visualize.enm(sp1.glm, env, plot.test.data = TRUE)
-})
-
-      output$downloadPdf_glmmodel <- downloadHandler(
-        filename = function() {
-          "GLM Model.pdf"
-        },
-  content = function(file) {
-glm_plot_pdf<-plot(sp1.glm)
-    ggsave(file, plot = glm_plot_pdf, device = "pdf")
-  }
-)
-          }
-
-          if ("gam" %in% models_selected) {
-            sp1.gam <- enmtools.gam(sp1, env, test.prop = 0.2)
-            output$modelPlot_gam <- renderPlot({ sp1.gam })
-            output$modelSummary_gam <- renderPrint({ sp1.gam })
-	    output$resp_plot_gam <- renderPlot({sp1.gam$response.plots})
-output$test_data_gam <- renderPlot({
-visualize.enm(sp1.gam, env, plot.test.data = TRUE)
-})
-      output$downloadPdf_gammodel <- downloadHandler(
-        filename = function() {
-          "GAM Model.pdf"
-        },
-  content = function(file) {
-gam_plot_pdf<-plot(sp1.gam)
-    ggsave(file, plot = gam_plot_pdf, device = "pdf")
-  }
-)
-
-          }
-
-          if ("dm" %in% models_selected) {
-            sp1.dm <- enmtools.dm(sp1, env, test.prop = 0.2)
-            output$modelPlot_dm <- renderPlot({ sp1.dm })
-            output$modelSummary_dm <- renderPrint({ sp1.dm })
-	    output$resp_plot_dm <- renderPlot({sp1.dm$response.plots})
-output$test_data_dm <- renderPlot({
-visualize.enm(sp1.dm, env, plot.test.data = TRUE)
-})
-
-      output$downloadPdf_dmmodel <- downloadHandler(
-        filename = function() {
-          "DM Model.pdf"
-        },
-  content = function(file) {
-dm_plot_pdf<-plot(sp1.dm)
-    ggsave(file, plot = dm_plot_pdf, device = "pdf")
-  }
-)
-          }
-
-          if ("bc" %in% models_selected) {
-            sp1.bc <- enmtools.bc(sp1, env, test.prop = 0.2)
-            output$modelPlot_bc <- renderPlot({ sp1.bc })
-            output$modelSummary_bc <- renderPrint({ sp1.bc })
-	    output$resp_plot_bc <- renderPlot({sp1.bc$response.plots})
-output$test_data_bc <- renderPlot({
-visualize.enm(sp1.bc, env, plot.test.data = TRUE)
-})
-      output$downloadPdf_bcmodel <- downloadHandler(
-        filename = function() {
-          "BC Model.pdf"
-        },
-  content = function(file) {
-bc_plot_pdf<-plot(sp1.bc)
-    ggsave(file, plot = bc_plot_pdf, device = "pdf")
-  }
-)
-          }
-
-          if ("maxent" %in% models_selected) {
-            sp1.mx <- enmtools.maxent(sp1, env, test.prop = 0.2)
-            output$modelPlot_mx <- renderPlot({ sp1.mx })
-            output$modelSummary_mx <- renderPrint({ sp1.mx })
-	    output$resp_plot_mx <- renderPlot({sp1.mx$response.plots})
-output$test_data_mx <- renderPlot({
-visualize.enm(sp1.mx, env, plot.test.data = TRUE)
-})
-      output$downloadPdf_mxmodel <- downloadHandler(
-        filename = function() {
-          "Maxent Model.pdf"
-        },
-  content = function(file) {
-mx_plot_pdf<-plot(sp1.mx)
-    ggsave(file, plot = mx_plot_pdf, device = "pdf")
-  }
-)
-          }
-
-# especie 2
-
-
-models_selected <- input$model_niche
-
-          if ("glm" %in% models_selected) {
-            sp2.glm <- enmtools.glm(species = sp2, env = env, test.prop = 0.2)
-            output$modelPlot_glm2 <- renderPlot({ sp2.glm })
-            output$modelSummary_glm2 <- renderPrint({ sp2.glm })
-	    output$resp_plot_glm2 <- renderPlot({sp2.glm$response.plots})
-output$test_data_glm2 <- renderPlot({
-visualize.enm(sp2.glm, env, plot.test.data = TRUE)
-})
-
-      output$downloadPdf_glmmodel <- downloadHandler(
-        filename = function() {
-          "GLM Model sp2.pdf"
-        },
-  content = function(file) {
-glm_plot_pdf2<-plot(sp2.glm)
-    ggsave(file, plot = glm_plot_pdf2, device = "pdf")
-  }
-)
-          }
-
-          if ("gam" %in% models_selected) {
-            sp2.gam <- enmtools.gam(sp2, env, test.prop = 0.2)
-            output$modelPlot_gam2 <- renderPlot({ sp2.gam })
-            output$modelSummary_gam2 <- renderPrint({ sp2.gam })
-	    output$resp_plot_gam2 <- renderPlot({sp2.gam$response.plots})
-output$test_data_gam2 <- renderPlot({
-visualize.enm(sp2.gam, env, plot.test.data = TRUE)
-})
-      output$downloadPdf_gammodel2 <- downloadHandler(
-        filename = function() {
-          "GAM Model sp2.pdf"
-        },
-  content = function(file) {
-gam_plot_pdf2<-plot(sp2.gam)
-    ggsave(file, plot = gam_plot_pdf2, device = "pdf")
-  }
-)
-
-          }
-
-          if ("dm" %in% models_selected) {
-            sp2.dm <- enmtools.dm(sp2, env, test.prop = 0.2)
-            output$modelPlot_dm2 <- renderPlot({ sp2.dm })
-            output$modelSummary_dm2 <- renderPrint({ sp2.dm })
-	    output$resp_plot_dm2 <- renderPlot({sp2.dm$response.plots})
-output$test_data_dm2 <- renderPlot({
-visualize.enm(sp2.dm, env, plot.test.data = TRUE)
-})
-
-      output$downloadPdf_dmmodel <- downloadHandler(
-        filename = function() {
-          "DM Model sp2.pdf"
-        },
-  content = function(file) {
-dm_plot_pdf2<-plot(sp2.dm)
-    ggsave(file, plot = dm_plot_pdf2, device = "pdf")
-  }
-)
-          }
-
-          if ("bc" %in% models_selected) {
-            sp2.bc <- enmtools.bc(sp2, env, test.prop = 0.2)
-            output$modelPlot_bc2 <- renderPlot({ sp2.bc })
-            output$modelSummary_bc2 <- renderPrint({ sp2.bc })
-	    output$resp_plot_bc2 <- renderPlot({sp2.bc$response.plots})
-output$test_data_bc2 <- renderPlot({
-visualize.enm(sp2.bc, env, plot.test.data = TRUE)
-})
-      output$downloadPdf_bcmodel <- downloadHandler(
-        filename = function() {
-          "BC Model sp2.pdf"
-        },
-  content = function(file) {
-bc_plot_pdf2<-plot(sp2.bc)
-    ggsave(file, plot = bc_plot_pdf2, device = "pdf")
-  }
-)
-          }
-
-          if ("maxent" %in% models_selected) {
-            sp2.mx <- enmtools.maxent(sp2, env, test.prop = 0.2)
-            output$modelPlot_mx2 <- renderPlot({ sp2.mx })
-            output$modelSummary_mx2 <- renderPrint({ sp2.mx })
-	    output$resp_plot_mx2 <- renderPlot({sp2.mx$response.plots})
-output$test_data_mx2 <- renderPlot({
-visualize.enm(sp2.mx, env, plot.test.data = TRUE)
-})
-      output$downloadPdf_mxmodel <- downloadHandler(
-        filename = function() {
-          "Maxent Model sp2.pdf"
-        },
-  content = function(file) {
-mx_plot_pdf2<-plot(sp2.mx)
-    ggsave(file, plot = mx_plot_pdf2, device = "pdf")
-  }
-)
-          }
-
-# especie 2
-}
-
-
-
-
-#######################3 modelos
- if (1 %in% input$checkbox_opciones) {
-      # Realizar Niche identity or equivalency test
-      id.glm <- identity.test(species.1 = sp1, species.2 = sp2, env = env, type = input$model_niche_s, nreps = 4)
- 
-   output$summary_idtest <- renderPrint({
-  id.glm
-})
-   # Mostrar los resultados en la UI
-    output$plot_idtest <- renderPlot({
-    id.glm
-    })
-    }
-    
-    if (2 %in% input$checkbox_opciones) {
-      # Realizar Background or similarity test (Asymmetric)
-      bg.bc.asym <- background.test(species.1 = sp1, species.2 = sp2, env = env, type = input$model_niche_s, nreps = 4, test.type = "asymmetric")
-
-    output$summary_bctest <- renderPrint({
-  bg.bc.asym
-})
-   # # Mostrar los resultados en la UI
-    output$plot_bctest <- renderPlot({
-    bg.bc.asym
-    })
-    }
-    
-    if (3 %in% input$checkbox_opciones) {
-      # Realizar Background or similarity test (Symmetric)
-      bg.dm.sym <- background.test(species.1 = sp1, species.2 = sp2, env = env, type = input$model_niche_s, nreps = 4, test.type = "symmetric")
-    output$summary_sym <- renderPrint({
-  bg.dm.sym
-})
-    # Mostrar los resultados en la UI
-    output$plot_sym <- renderPlot({
-    bg.dm.sym
-    })
-    }
-
-
-    model_type_rbl <- switch(input$options_rblmodel,
-                         "1" = "glm",
-                         "2" = "gam",
-                         "3" = "dm",
-                         "4" = "bc",
-                         "5" = "maxent")
-    
-rbl.glm <- rangebreak.linear(sp1, sp2, env, type = model_type_rbl, nreps = 4)
-
-
-    esp.bg.sym <- enmtools.ecospat.bg(sp1, sp2, env, test.type = "symmetric")
-                       incProgress(1/10, detail = "Ploting...")
-
-    output$summary_nicheover <- renderPrint({
-  esp.bg.sym
-})
-
-
-    # Mostrar los resultados en la UI
-    output$plot1 <- renderPlot({
-    print(esp.bg.sym)
-    })
-
-
-
-
-  output$downloadPdf_ecospat <- downloadHandler(
-    filename = function() {
-      paste("mi_plot_esp_bg_sym", Sys.Date(), ".pdf", sep = "")
-    },
-    content = function(file) {
-      # Abre el dispositivo gráfico PDF
-      pdf(file)
-      
-      # Genera el gráfico
-      plot(esp.bg.sym)
-      
-      # Cierra el dispositivo gráfico PDF
-      dev.off()
-    }
-  )
-
-
-
-    output$summary_rbl <- renderPrint({
-  rbl.glm
-})
-
-
-    # Mostrar los resultados en la UI
-    output$plot_rbl <- renderPlot({
-    rbl.glm
-    })
-
-
-
-
-  output$downloadPdf_rbl <- downloadHandler(
-    filename = function() {
-      paste("Rangebreak tests", Sys.Date(), ".pdf", sep = "")
-    },
-    content = function(file) {
-      # Abre el dispositivo gráfico PDF
-      pdf(file)
-      
-      # Genera el gráfico
-      plot(rbl.glm)
-      
-      # Cierra el dispositivo gráfico PDF
-      dev.off()
-    }
-  )
-
-                       incProgress(1/10, detail = "Ploting...")
-                   incProgress(total_progressurb, detail = "Proceso completado")
-
-}
-}) #withprogress
-
-
-} #upload
-
-}, error = function(e) {
-  # Error handling for a bad internet connection
-  if (inherits(e, "error")) {
-    
-    showModal(
-      modalDialog(
-        title = "Error",
-        paste("Something went wrong.", e$message),
-        easyClose = TRUE,
-        footer = NULL
-      )
-    )
-  }
-}) #######trycatch
-
-    })
-
   
   
   
@@ -4612,167 +4616,167 @@ rbl.glm <- rangebreak.linear(sp1, sp2, env, type = model_type_rbl, nreps = 4)
   #################################################################################################################
   ###############################################Connectivity######################################################
   #################################################################################################################
-
-
-
-
-
-observeEvent(input$run_connectivity, {
-  withProgress(message = 'Executing connectivity analysis...', value = 0, {
-    tryCatch({
-      # Step 1: Cargar y procesar coordenadas
-      incProgress(1/5, detail = "Loading coordinates...")
-      coords_df <- read.csv(input$points_connectivity$datapath)
-
-      if (!all(c("X", "Y", "Response") %in% colnames(coords_df))) {
-        stop("The input file must contain 'X', 'Y', and 'Response' columns.")
-      }
-
-      coords_df <- coords_df %>% filter(Response == 1) %>% na.omit()
-      coords_sf <- st_as_sf(coords_df, coords = c("X", "Y"), crs = 4326)
-
-      if (nrow(coords_sf) < 2) stop("At least two points are required for connectivity analysis.")
-
-      # Step 2: Cargar y procesar el mapa de hábitat
-      incProgress(1/5, detail = "Processing habitat map...")
-      habitat_raster <- raster(input$pot_map_connectivity$datapath)
-
-      if (is.na(crs(habitat_raster))) crs(habitat_raster) <- CRS("+proj=longlat +datum=WGS84")
-
-      # **AUMENTAR RESOLUCIÓN** 
-      habitat_raster <- disaggregate(habitat_raster, fact = 2)  # Más resolución
-
-      # Extraer coordenadas de los puntos
-      Pj_sample <- st_coordinates(coords_sf)
-
-      # Validar que los puntos estén dentro del área del raster
-      values_at_points <- raster::extract(habitat_raster, Pj_sample)
-
-      if (any(is.na(values_at_points))) {
-        print("Some points fall outside the habitat raster. Removing them...")
-        valid_points <- !is.na(values_at_points)
-        Pj_sample <- Pj_sample[valid_points, , drop = FALSE]
-      }
-
-      if (nrow(Pj_sample) < 2) stop("Not enough valid points for connectivity analysis.")
-
-      # Step 3: Calcular probabilidades de paso
-      incProgress(1/5, detail = "Calculating connectivity...")
-
-      if (nrow(Pj_sample) < 2) stop("Insufficient points for connectivity analysis.")
-      Pj_combn <- combn(nrow(Pj_sample), 2, simplify = TRUE) %>% t()
-
-      transition_function <- function(x) {
-        mean_value <- mean(x, na.rm = TRUE)
-        if (is.na(mean_value) || mean_value == 0) return(1)  
-        1 / mean_value
-      }
-
-      transition_matrix <- transition(habitat_raster, transition_function, directions = 8)
-      transition_matrix <- geoCorrection(transition_matrix, type = "c", multpl = FALSE)
-
-      passages <- list()
-      for (i in 1:nrow(Pj_combn)) {
-        locations <- Pj_sample[Pj_combn[i, ], , drop = FALSE]
-        print(paste("Processing pair:", i, "of", nrow(Pj_combn)))
-        if (any(is.na(locations))) next
-        passages[[i]] <- passage(transition_matrix, origin = locations[1, ], 
-                                 goal = locations[2, ], theta = 0.00001)
-        print(paste((i / nrow(Pj_combn)) * 100, "% complete"))
-      }
-
-      incProgress(1/5, detail = "Finalizing output...")
-
-      # **AUMENTAR RESOLUCIÓN EN EL MAPA DE CONECTIVIDAD**
-      passages_stack <- stack(passages)
-      passages_overlay <- stackApply(passages_stack, indices = rep(1, nlayers(passages_stack)), fun = mean, na.rm = TRUE)
-      passages_overlay <- disaggregate(passages_overlay, fact = 2)  # Más resolución
-
-      # Guardar resultado para descarga en .asc
-      output$download_asc_connec <- downloadHandler(
-        filename = function() { "Connectivity_Analysis.asc" },
-        content = function(file) {
-          writeRaster(passages_overlay, file, format = "ascii", overwrite = TRUE)
+  
+  
+  
+  
+  
+  observeEvent(input$run_connectivity, {
+    withProgress(message = 'Executing connectivity analysis...', value = 0, {
+      tryCatch({
+        # Step 1: Cargar y procesar coordenadas
+        incProgress(1/5, detail = "Loading coordinates...")
+        coords_df <- read.csv(input$points_connectivity$datapath)
+        
+        if (!all(c("X", "Y", "Response") %in% colnames(coords_df))) {
+          stop("The input file must contain 'X', 'Y', and 'Response' columns.")
         }
-      )
-
-      # **Graficar la conectividad sobre el mapa original**
-      output$connectivity_output <- renderPlot({
-        plot(habitat_raster, main = "Connectivity Analysis Output", col = terrain.colors(10))  
-        plot(passages_overlay, add = TRUE, alpha = 0.6)  
-        points(Pj_sample, col = "blue", pch = 16)  
+        
+        coords_df <- coords_df %>% filter(Response == 1) %>% na.omit()
+        coords_sf <- st_as_sf(coords_df, coords = c("X", "Y"), crs = 4326)
+        
+        if (nrow(coords_sf) < 2) stop("At least two points are required for connectivity analysis.")
+        
+        # Step 2: Cargar y procesar el mapa de hábitat
+        incProgress(1/5, detail = "Processing habitat map...")
+        habitat_raster <- raster(input$pot_map_connectivity$datapath)
+        
+        if (is.na(crs(habitat_raster))) crs(habitat_raster) <- CRS("+proj=longlat +datum=WGS84")
+        
+        # **AUMENTAR RESOLUCIÓN** 
+        habitat_raster <- disaggregate(habitat_raster, fact = 2)  # Más resolución
+        
+        # Extraer coordenadas de los puntos
+        Pj_sample <- st_coordinates(coords_sf)
+        
+        # Validar que los puntos estén dentro del área del raster
+        values_at_points <- raster::extract(habitat_raster, Pj_sample)
+        
+        if (any(is.na(values_at_points))) {
+          print("Some points fall outside the habitat raster. Removing them...")
+          valid_points <- !is.na(values_at_points)
+          Pj_sample <- Pj_sample[valid_points, , drop = FALSE]
+        }
+        
+        if (nrow(Pj_sample) < 2) stop("Not enough valid points for connectivity analysis.")
+        
+        # Step 3: Calcular probabilidades de paso
+        incProgress(1/5, detail = "Calculating connectivity...")
+        
+        if (nrow(Pj_sample) < 2) stop("Insufficient points for connectivity analysis.")
+        Pj_combn <- combn(nrow(Pj_sample), 2, simplify = TRUE) %>% t()
+        
+        transition_function <- function(x) {
+          mean_value <- mean(x, na.rm = TRUE)
+          if (is.na(mean_value) || mean_value == 0) return(1)  
+          1 / mean_value
+        }
+        
+        transition_matrix <- transition(habitat_raster, transition_function, directions = 8)
+        transition_matrix <- geoCorrection(transition_matrix, type = "c", multpl = FALSE)
+        
+        passages <- list()
+        for (i in 1:nrow(Pj_combn)) {
+          locations <- Pj_sample[Pj_combn[i, ], , drop = FALSE]
+          print(paste("Processing pair:", i, "of", nrow(Pj_combn)))
+          if (any(is.na(locations))) next
+          passages[[i]] <- passage(transition_matrix, origin = locations[1, ], 
+                                   goal = locations[2, ], theta = 0.00001)
+          print(paste((i / nrow(Pj_combn)) * 100, "% complete"))
+        }
+        
+        incProgress(1/5, detail = "Finalizing output...")
+        
+        # **AUMENTAR RESOLUCIÓN EN EL MAPA DE CONECTIVIDAD**
+        passages_stack <- stack(passages)
+        passages_overlay <- stackApply(passages_stack, indices = rep(1, nlayers(passages_stack)), fun = mean, na.rm = TRUE)
+        passages_overlay <- disaggregate(passages_overlay, fact = 2)  # Más resolución
+        
+        # Guardar resultado para descarga en .asc
+        output$download_asc_connec <- downloadHandler(
+          filename = function() { "Connectivity_Analysis.asc" },
+          content = function(file) {
+            writeRaster(passages_overlay, file, format = "ascii", overwrite = TRUE)
+          }
+        )
+        
+        # **Graficar la conectividad sobre el mapa original**
+        output$connectivity_output <- renderPlot({
+          plot(habitat_raster, main = "Connectivity Analysis Output", col = terrain.colors(10))  
+          plot(passages_overlay, add = TRUE, alpha = 0.6)  
+          points(Pj_sample, col = "blue", pch = 16)  
+        })
+        
+        # Guardar resultado en PDF
+        output$download_pdf_connec <- downloadHandler(
+          filename = function() { "Connectivity_Map.pdf" },
+          content = function(file) {
+            pdf(file)
+            plot(habitat_raster, main = "Connectivity Analysis Output", col = terrain.colors(10))
+            plot(passages_overlay, add = TRUE, alpha = 0.6)
+            points(Pj_sample, col = "blue", pch = 16)
+            dev.off()
+          }
+        )
+        
+      }, error = function(e) {
+        showModal(modalDialog(title = "Error", paste("Something went wrong:", e$message), easyClose = TRUE))
       })
-
-      # Guardar resultado en PDF
-      output$download_pdf_connec <- downloadHandler(
-        filename = function() { "Connectivity_Map.pdf" },
-        content = function(file) {
-          pdf(file)
-          plot(habitat_raster, main = "Connectivity Analysis Output", col = terrain.colors(10))
-          plot(passages_overlay, add = TRUE, alpha = 0.6)
-          points(Pj_sample, col = "blue", pch = 16)
-          dev.off()
-        }
-      )
-
-    }, error = function(e) {
-      showModal(modalDialog(title = "Error", paste("Something went wrong:", e$message), easyClose = TRUE))
     })
   })
-})
-
-
-###################################
-############################################
-##########################################
-
-# Map Inversion in the Map Inverter Tab
-observeEvent(input$invertRasterFile, {
-  tryCatch({
-    req(input$invertRasterFile)
-    
-    # Display loaded raster only in the Map Inverter tab
-    raster_map <- rast(input$invertRasterFile$datapath)
-    output$loadedRasterPlot <- renderPlot({
-      plot(raster_map, main = "Loaded Raster Map")
-    })
-  }, error = function(e) {
-    showNotification("An error occurred during the connectivity analysis.", type = "error")
-  }) #trycatch
+  
+  
+  ###################################
+  ############################################
+  ##########################################
+  
+  # Map Inversion in the Map Inverter Tab
+  observeEvent(input$invertRasterFile, {
+    tryCatch({
+      req(input$invertRasterFile)
+      
+      # Display loaded raster only in the Map Inverter tab
+      raster_map <- rast(input$invertRasterFile$datapath)
+      output$loadedRasterPlot <- renderPlot({
+        plot(raster_map, main = "Loaded Raster Map")
+      })
+    }, error = function(e) {
+      showNotification("An error occurred during the connectivity analysis.", type = "error")
+    }) #trycatch
   })
   
   observeEvent(input$invertRaster, {
     tryCatch({
-    req(input$invertRasterFile)
-    
-    output$invertProgress <- renderUI({withProgress(message = 'Inverting raster...', value = 0, {
-      raster_map <- rast(input$invertRasterFile$datapath)
-      inverted_raster <- raster_map * -1
+      req(input$invertRasterFile)
       
-      incProgress(1)
-      output$invertedRasterPlot <- renderPlot({
-        plot(inverted_raster, main = "Inverted Raster Map")
-      })
-      
-      # Download the inverted raster in .asc format
-      output$downloadInvertedRaster <- downloadHandler(
-        filename = function() { "inverted_raster.asc" },
-        content = function(file) {
-          writeRaster(inverted_raster, file, overwrite = TRUE)
-        }
-      )
-    })})
-    #trycatch
-  }, error = function(e) {
-    showNotification("An error occurred during the connectivity analysis.", type = "error")
-  }) #trycatch
-})
-
-
-################################3
-observeEvent(input$runLCP, {
+      output$invertProgress <- renderUI({withProgress(message = 'Inverting raster...', value = 0, {
+        raster_map <- rast(input$invertRasterFile$datapath)
+        inverted_raster <- raster_map * -1
+        
+        incProgress(1)
+        output$invertedRasterPlot <- renderPlot({
+          plot(inverted_raster, main = "Inverted Raster Map")
+        })
+        
+        # Download the inverted raster in .asc format
+        output$downloadInvertedRaster <- downloadHandler(
+          filename = function() { "inverted_raster.asc" },
+          content = function(file) {
+            writeRaster(inverted_raster, file, overwrite = TRUE)
+          }
+        )
+      })})
+      #trycatch
+    }, error = function(e) {
+      showNotification("An error occurred during the connectivity analysis.", type = "error")
+    }) #trycatch
+  })
+  
+  
+  ################################3
+  observeEvent(input$runLCP, {
     req(input$pointsCSV, input$resistanceRasterLCP)  
-
+    
     output$lcpProgress <- renderUI({
       withProgress(message = 'Running LCP corridor analysis...', value = 0, {
         tryCatch({
@@ -4790,10 +4794,10 @@ observeEvent(input$runLCP, {
           
           coords_sf <- st_as_sf(coords_df, coords = c("X", "Y"), crs = 4326)
           coords_sp <- as(coords_sf, "Spatial")  
-
+          
           print("Estructura de los puntos después de conversión:")
           print(coords_sp)
-
+          
           incProgress(1/5, detail = "Loading resistance raster...")
           print("Cargando raster de resistencia...") 
           
@@ -4814,7 +4818,7 @@ observeEvent(input$runLCP, {
           if (is.na(crs(resistance))) {
             crs(resistance) <- CRS("+proj=longlat +datum=WGS84")
           }
-
+          
           print("Revisando valores NA en el raster...")
           if (any(is.na(getValues(resistance)))) {
             print("Warning: Raster contiene NA. Se reemplazarán.")
@@ -4827,30 +4831,30 @@ observeEvent(input$runLCP, {
           
           print("Verificando que los puntos estén dentro del raster...")
           Pj_sample <- coordinates(coords_sp)
-
+          
           values_at_points <- raster::extract(resistance, Pj_sample)
-
+          
           if (any(is.na(values_at_points))) {
             print("Algunos puntos están fuera del raster. Eliminándolos...")
             valid_points <- !is.na(values_at_points)
             Pj_sample <- Pj_sample[valid_points, , drop = FALSE]
           }
-
+          
           if (nrow(Pj_sample) < 2) stop("No hay suficientes puntos válidos para el análisis.")
-
+          
           incProgress(1/5, detail = "Creating transition matrix...")
           print("Creando matriz de transición...") 
-
+          
           tr <- transition(1 / resistance, transitionFunction = mean, directions = 8)
           tr <- geoCorrection(tr, type = "c")
-
+          
           incProgress(1/5, detail = "Calculating least-cost paths...")
           
           routes <- list()
           for (i in 1:(nrow(Pj_sample) - 1)) {
             for (j in (i + 1):nrow(Pj_sample)) {
               print(paste("Calculando ruta entre puntos", i, "y", j))
-
+              
               route <- shortestPath(tr, Pj_sample[i, , drop = FALSE], Pj_sample[j, , drop = FALSE], output = "SpatialLines")
               total_cost <- costDistance(tr, Pj_sample[i, , drop = FALSE], Pj_sample[j, , drop = FALSE])
               distance <- sp::SpatialLinesLengths(route, longlat = TRUE)
@@ -4862,18 +4866,18 @@ observeEvent(input$runLCP, {
               routes <- append(routes, list(route))
             }
           }
-
+          
           route_list(routes)  
-
+          
           incProgress(1/5, detail = "Plotting results...")
-
+          
           lcp_raster <- raster(resistance)
           for (route in routes) {
             lcp_raster <- rasterize(route, lcp_raster, field = 1, update = TRUE)
           }
           
           corridors_raster(lcp_raster)  
-
+          
           output$resistancePlot <- renderPlot({
             plot(resistance, main = "Resistance Map with Important Corridors", col = terrain.colors(10))
             colors <- colorRampPalette(c("red", "yellow", "green"))(100)
@@ -4885,7 +4889,7 @@ observeEvent(input$runLCP, {
             }
             points(Pj_sample, col = "blue", pch = 16)
           })
-
+          
           routes_df <- data.frame(
             corridor = 1:length(routes),
             cost = sapply(routes, function(route) route$cost),
@@ -4894,21 +4898,21 @@ observeEvent(input$runLCP, {
           )
           
           routes_data(routes_df)
-
+          
           output$downloadRoutesCSV <- downloadHandler(
             filename = function() { "corridors_info.csv" },
             content = function(file) {
               write_csv(routes_data(), file)
             }
           )
-
+          
           output$downloadLCPMapASC <- downloadHandler(
             filename = function() { "lcp_resistance_map.asc" },
             content = function(file) {
               writeRaster(corridors_raster(), file, format = "ascii", overwrite = TRUE)
             }
           )
-
+          
           output$downloadCorridorsPDF <- downloadHandler(
             filename = function() { "resistance_map_with_corridors.pdf" },
             content = function(file) {
@@ -4925,7 +4929,7 @@ observeEvent(input$runLCP, {
               dev.off()
             }
           )
-
+          
         }, error = function(e) {
           showModal(modalDialog(title = "Error", paste("Error:", e$message), easyClose = TRUE))
         })
@@ -4936,9 +4940,9 @@ observeEvent(input$runLCP, {
 
 shinyApp(ui, server)
 ###################
-  
-  
-  
+
+
+
 }
 
 # Ejecutar la aplicación
