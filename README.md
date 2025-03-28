@@ -6,13 +6,12 @@
 Please Cite this as:
 Sunny A, Marmolejo C, Vidal-López R, Falconi-Briones FA, Cuervo-Robayo ÁP, Bolom-Huet R. 2025. EcoNicheS: enhancing ecological niche modeling, niche overlap and connectivity analysis using the shiny dashboard and R package. PeerJ 13:e19136 https://doi.org/10.7717/peerj.19136 
 
-An R library that enables Ecological Niche Modeling, Niche Overlap, and Connectivity Analysis Using Shiny Dashboard and R Package. 
 ### This is Version 1.1.0, last updated on January 31, 2025. Future versions will include additional analyses and enhancements.
 
 Need Help or Found a Bug?
 For any questions, comments, or to report bugs related to EcoNicheS, feel free to:
 
-Send an email to: econichesapp@gmail.com
+Send an email to: econichesapp@gmail.com, sunny.biologia@gmail.com
 
 Leave a message in the Issues section of the repository.
 We value your feedback and are here to help!
