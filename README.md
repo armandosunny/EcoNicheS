@@ -472,7 +472,7 @@ The EcoNicheS package:
 
 Marmolejo C, Bolom-Huet R, López-Vidal R, Angela P. Cuervo-Robayo, Sunny A (2024). EcoNicheS: enhancing ecological niche modeling, niche overlap and connectivity analysis using shiny dashboard and R Package. GitHub. https://github.com/armandosunny/EcoNicheS
 
-The manuscript: 
+The Paper: 
 
 Sunny A, Marmolejo C, Vidal-López R, Falconi-Briones FA, Cuervo-Robayo ÁP, Bolom-Huet R. 2025. EcoNicheS: enhancing ecological niche modeling, niche overlap and connectivity analysis using the shiny dashboard and R package. PeerJ 13:e19136 https://doi.org/10.7717/peerj.19136 
 
