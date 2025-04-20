@@ -519,48 +519,35 @@ GBIF: The Global Biodiversity Information Facility (2024) What is GBIF?. Availab
 
 GBIF.org (2024) *Data quality requirements: Occurrence datasets*. Available from [https://www.gbif.org/what-is-gbif](https://www.gbif.org/data-quality-requirements-occurrences#dcUncertainty) [28 July 2024].
 
-  Hernangomez D (2023). tidyterra: tidyverse Methods and ggplot2 Helpers for terra
-  Objects. <https://doi.org/10.5281/zenodo.6572471>,
-  <https://dieghernan.github.io/tidyterra/>
+Hernangomez D (2023). tidyterra: tidyverse Methods and ggplot2 Helpers for terra Objects. <https://doi.org/10.5281/zenodo.6572471>, <https://dieghernan.github.io/tidyterra/>
 
 Hernangómez D (2023). Using the tidyverse with terra objects: the tidyterra package. Journal of Open Source Software, 8(91), 5751, https://doi.org/10.21105/joss.05751.
 
-Hijmans R (2023). _raster: Geographic Data Analysis and Modeling_. R package version
-  3.6-23, <https://CRAN.R-project.org/package=raster>.
+Hijmans R (2023). _raster: Geographic Data Analysis and Modeling_. R package version 3.6-23, <https://CRAN.R-project.org/package=raster>.
 
-  Hijmans R (2023). _terra: Spatial Data Analysis_. R package version 1.7-46,
-  <https://CRAN.R-project.org/package=terra>.
+  Hijmans R (2023). _terra: Spatial Data Analysis_. R package version 1.7-46,  <https://CRAN.R-project.org/package=terra>.
 
-Hijmans RJ, Phillips S, Leathwick J, Elith J (2023). _dismo: Species Distribution
-  Modeling_. R package version 1.3-14, <https://CRAN.R-project.org/package=dismo>.
+Hijmans RJ, Phillips S, Leathwick J, Elith J (2023). _dismo: Species Distribution Modeling_. R package version 1.3-14, <https://CRAN.R-project.org/package=dismo>.
 
 Huang D, An Q, Huang S, Tan G, Quan H, Chen Y, Zhou J, Liao H. (2023). biomod2 modeling for predicting the potential ecological distribution of three Fritillaria species under climate change. _Scientific reports_, 13(1), 18801. https://doi.org/10.1038/s41598-023-45887-6
 
-  Naimi B, Hamm Na, Groen TA, Skidmore AK, Toxopeus AG (2014). “Where is positional
-  uncertainty a problem for species distribution modelling.” _Ecography_, *37*, 191-203.
-  <https://doi.org/10.1111/j.1600-0587.2013.00205.x>.
+  Naimi B, Hamm Na, Groen TA, Skidmore AK, Toxopeus AG (2014). “Where is positional uncertainty a problem for species distribution modelling.” _Ecography_, *37*, 191-203. <https://doi.org/10.1111/j.1600-0587.2013.00205.x>.
 
-  Neuwirth E (2022). _RColorBrewer: ColorBrewer Palettes_. R package version 1.1-3,
-  <https://CRAN.R-project.org/package=RColorBrewer>.
+  Neuwirth E (2022). _RColorBrewer: ColorBrewer Palettes_. R package version 1.1-3, <https://CRAN.R-project.org/package=RColorBrewer>.
 
 Osorio-Olvera L, Lira-Noriega A, Soberón J, et al. (2020) ntbox: An r package with graphical user interface for modelling and evaluating multidimensional ecological niches. Methods Ecol Evol. 11: 1199–1206. https://doi.org/10.1111/2041-210X.13452
 
-  R Core Team (2023). _R: A Language and Environment for Statistical Computing_. R
-  Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>.
+  R Core Team (2023). _R: A Language and Environment for Statistical Computing_. R Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>.
 
   Robin X, Turck N, Hainard A, Tiberti N, Lisacek F, Sanchez JC, Müller M. (2011). pROC: an open-source package for R and S+ to analyze and compare ROC curves. BMC Bioinformatics 12, 77 https://doi.org/10.1186/1471-2105-12-77
 
   Steven J. Phillips, Miroslav Dudík, Robert E. Schapire. [Internet] Maxent software for modeling species niches and distributions (Version 3.4.1). Available from url: http://biodiversityinformatics.amnh.org/open_source/maxent/. Accessed on 2024-1-11.
 
-  Thuiller W, Georges D, Gueguen M, Engler R, Breiner F, Lafourcade B, Patin R (2023).
-  _biomod2: Ensemble Platform for Species Distribution Modeling_. R package version
-  4.2-4, <https://CRAN.R-project.org/package=biomod2>.
+  Thuiller W, Georges D, Gueguen M, Engler R, Breiner F, Lafourcade B, Patin R (2023)._biomod2: Ensemble Platform for Species Distribution Modeling_. R package version 4.2-4, <https://CRAN.R-project.org/package=biomod2>.
 
-  Urbanek S (2021). _rJava: Low-Level R to Java Interface_. R package version 1.0-6,
-  <https://CRAN.R-project.org/package=rJava>.
+  Urbanek S (2021). _rJava: Low-Level R to Java Interface_. R package version 1.0-6, <https://CRAN.R-project.org/package=rJava>.
 
-  Urbanek S, Johnson K (2022). _tiff: Read and Write TIFF Images_. R package version
-  0.1-11, <https://CRAN.R-project.org/package=tiff>.
+  Urbanek S, Johnson K (2022). _tiff: Read and Write TIFF Images_. R package version 0.1-11, <https://CRAN.R-project.org/package=tiff>.
 
 Warren DL, Matzke NJ, Cardillo M, Baumgartner JB, Beaumont LJ, Turelli M, Glor RE, Huron NA, Simões M, Iglesias TL Piquet JC, Dinnage R (2021). ENMTools 1.0: an R package for comparative ecological biogeography. Ecography, 44(4), pp.504-511.
 
@@ -573,11 +560,23 @@ Zizka A, Silvestro D, Andermann T, Azevedo J, Duarte Ritter C, Edler D, Farooq H
 <img width="1052" alt="Captura de pantalla 2024-09-22 a la(s) 2 04 08 p m" src="https://github.com/user-attachments/assets/e109813b-8e60-4f34-b134-01cb406419eb">
 
 -----
-Centro de Investigación en Ciencias Biológicas Aplicadas, Facultad de Ciencias, UAEMex.
+Centro de Investigación en Ciencias Biológicas Aplicadas, Facultad de Ciencias, Universidad Autónoma del Estado de México, Toluca, Estado de México, Mexico
 
-Centro de Innovación Digital "Mandra" Laboratorio Nacional de SuperCómputo, CONAHCYT-Facultad de Ciencias, UAEMex.
+Centro de Innovación Digital “Mandra” Laboratorio Nacional de Enseñanza e Innovación
+aplicando Cómputo de Alto Rendimiento (EICAR), CONAHCyT, Universidad Autónoma del Estado de México, Toluca, Estado de México, Mexico
 
-<img width="871" alt="Captura de pantalla 2024-09-22 a la(s) 9 15 13 a m" src="https://github.com/user-attachments/assets/41890ef3-0cb4-4060-bc3d-dd764be96cdf">
+Departamento de Conservación de la Biodiversidad, El Colegio de la Frontera Sur, San Cristóbal de Las Casas, Chiapas, Mexico
+
+Laboratorio Nacional Conahcyt de Biología del Cambio Climático, CONAHCyT, Mexico City,
+Mexico
+
+Departamento de Zoología, Instituto de Biología, Universidad Nacional Autónoma de México,
+Mexico City, Mexico
+
+![Captura de pantalla 2025-04-19 a la(s) 6 18 39 p m](https://github.com/user-attachments/assets/8728e8a0-cceb-4b1e-b6bc-3c3933116460)
+
+
+
 
 
 
