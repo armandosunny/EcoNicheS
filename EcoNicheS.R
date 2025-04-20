@@ -264,7 +264,7 @@ ui <- dashboardPage(
                 img(src = "https://armandosunny.weebly.com/uploads/9/8/0/6/98067990/published/logo-shiny2.png?1721439587", height = "250px",  style = "display: block; margin: 0 auto;"),
                 p("Thanks for using our app! We hope you enjoy your experience.", style = "font-size: 36px; text-align: center;font-family: Arial;"),
                 p("Please cite as:", style = "font-size: 24px; text-align: center;font-weight: bold; font-family: Arial;"),
-                p("Marmolejo C, Bolom-Huet R, López-Vidal R, Angela P. Cuervo-Robayo, Sunny A (2025). EcoNicheS V.1.1.0: enhancing ecological niche modeling, niche overlap and connectivity analysis using shiny dashboard and R Package. GitHub. https://github.com/armandosunny/EcoNicheS", style = "font-size: 16px; text-align: center;font-family: Arial;")
+                p("Sunny A, Marmolejo C, Vidal-López R, Falconi-Briones FA, Cuervo-Robayo ÁP, Bolom-Huet R. 2025. EcoNicheS: enhancing ecological niche modeling, niche overlap and connectivity analysis using the shiny dashboard and R package. PeerJ 13:e19136 https://doi.org/10.7717/peerj.19136. GitHub. https://github.com/armandosunny/EcoNicheS", style = "font-size: 16px; text-align: center;font-family: Arial;")
                 ## creo que estos parentesis de abajo son los que cierran el tab
               )
       ),
