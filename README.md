@@ -574,7 +574,7 @@ Departamento de Zoología, Instituto de Biología, Universidad Nacional Autónom
 Mexico City, Mexico
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/8728e8a0-cceb-4b1e-b6bc-3c3933116460" alt="Captura de pantalla 2025-04-19 a la(s) 6:18:39 p. m." width="200"/>
+  <img src="https://github.com/user-attachments/assets/8728e8a0-cceb-4b1e-b6bc-3c3933116460" alt="Captura de pantalla 2025-04-19 a la(s) 6:18:39 p. m." width="300"/>
 </div>
 
 
