@@ -56,9 +56,6 @@ if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
 # Install ntbox
 remotes::install_github("luismurao/ntbox")
 
-# Install tidyterra (latest version)
-remotes::install_github("rspatial/terra")
-
 # Install ENMTools
 remotes::install_github("danlwarren/ENMTools")
 ```
