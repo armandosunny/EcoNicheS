@@ -553,6 +553,21 @@ Zizka A, Silvestro D, Andermann T, Azevedo J, Duarte Ritter C, Edler D, Farooq H
 
 <img width="1052" alt="Captura de pantalla 2024-09-22 a la(s) 2 04 08 p m" src="https://github.com/user-attachments/assets/e109813b-8e60-4f34-b134-01cb406419eb">
 
+# Problems reported by users and possible solutions
+
+
+![Eco0](https://github.com/user-attachments/assets/72b54bc2-69aa-487c-844b-969b720d44e6)
+
+
+![Eco2](https://github.com/user-attachments/assets/85654fcf-17f6-47b2-9472-e998f8c20d41)
+
+
+![Eco1](https://github.com/user-attachments/assets/2996a24d-261e-45c7-8c31-2d85ff0be4d5)
+
+
+
+
+
 -----
 Centro de Investigación en Ciencias Biológicas Aplicadas, Facultad de Ciencias, Universidad Autónoma del Estado de México, Toluca, Estado de México, Mexico
 
