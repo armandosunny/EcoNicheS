@@ -562,6 +562,7 @@ Zizka A, Silvestro D, Andermann T, Azevedo J, Duarte Ritter C, Edler D, Farooq H
 ![Eco1](https://github.com/user-attachments/assets/2996a24d-261e-45c7-8c31-2d85ff0be4d5)
 
 
+![Captura de pantalla 2025-05-15 a la(s) 1 35 30 p m](https://github.com/user-attachments/assets/04e91d2f-6f35-459e-b994-9d6d529283c3)
 
 
 
