@@ -140,7 +140,8 @@ options(shiny.maxRequestSize = 6000*1024^2)
 
 
 
-<img width="855" alt="Captura de pantalla 2024-12-02 a la(s) 11 12 12 a m" src="https://github.com/user-attachments/assets/fcff4065-0467-4ed8-abc2-f9d547c55612">
+![Captura de pantalla 2025-05-17 a la(s) 7 41 41 a m](https://github.com/user-attachments/assets/1f2e564b-1044-4c10-a7ff-31d0fb67b129)
+
 
 
 
