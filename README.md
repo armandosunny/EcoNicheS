@@ -19,7 +19,8 @@ We value your feedback and are here to help!
 
 Infographic Support on Facebook
 To help users troubleshoot common errors and improve their experience with EcoNicheS, we will be uploading infographics and tips based on user-reported issues on our Facebook page:
-👉 [Visit our Facebook page for infographics and tips](https://www.facebook.com/profile.php?id=61572266648336)
+👉 
+[Visit our Facebook page for infographics and tips](https://www.facebook.com/profile.php?id=61572266648336)
 
 Feel free to follow the page and share your questions or suggestions!
 
