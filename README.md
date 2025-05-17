@@ -555,6 +555,8 @@ Zizka A, Silvestro D, Andermann T, Azevedo J, Duarte Ritter C, Edler D, Farooq H
 
 ![Eco0](https://github.com/user-attachments/assets/72b54bc2-69aa-487c-844b-969b720d44e6)
 
+![Captura de pantalla 2025-05-17 a la(s) 6 43 43 a m](https://github.com/user-attachments/assets/2eea6f4d-7212-422c-b337-34f91d69479f)
+
 
 ![Eco2](https://github.com/user-attachments/assets/85654fcf-17f6-47b2-9472-e998f8c20d41)
 
