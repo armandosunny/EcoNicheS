@@ -17,6 +17,14 @@ Send an email to: econichesapp@gmail.com, sunny.biologia@gmail.com
 Leave a message in the Issues section of the repository.
 We value your feedback and are here to help!
 
+Infographic Support on Facebook
+To help users troubleshoot common errors and improve their experience with EcoNicheS, we will be uploading infographics and tips based on user-reported issues on our Facebook page:
+👉 https://www.facebook.com/profile.php?id=61572266648336
+
+Feel free to follow the page and share your questions or suggestions!
+
+
+
 You can also watch a tutorial video on YouTube here:
 [YouTube Tutorial](https://www.youtube.com/watch?v=fLul1kkZhfI&t=27s)
 
