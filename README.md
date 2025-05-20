@@ -583,6 +583,8 @@ Zizka A, Silvestro D, Andermann T, Azevedo J, Duarte Ritter C, Edler D, Farooq H
 
 ![Captura de pantalla 2025-05-17 a la(s) 6 27 14 a m](https://github.com/user-attachments/assets/30c6d3d8-1624-4908-8d9f-5485fa62c790)
 
+![Captura de pantalla 2025-05-20 a la(s) 1 15 01 p m](https://github.com/user-attachments/assets/fcb82f79-28cf-4078-b44a-021c1ba1b3ad)
+
 -----
 Centro de Investigación en Ciencias Biológicas Aplicadas, Facultad de Ciencias, Universidad Autónoma del Estado de México, Toluca, Estado de México, Mexico
 
