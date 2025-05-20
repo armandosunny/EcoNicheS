@@ -1343,16 +1343,20 @@ ui <- dashboardPage(
   )
 )
 
+# ====================================
+# Server logic CORREGIDO
+# ====================================
 
-server <- function(input, output, session) {
+
   
-  routes_data <- reactiveVal(NULL)  # Almacena los datos de los corredores
-  route_list <- reactiveVal(list())  # Almacena las rutas generadas
-  corridors_raster <- reactiveVal(NULL)  # Almacena el raster con corredores
+  server <- function(input, output, session) {
   
-  
-  
-  
+  # ✅ Variables reactivas bien definidas
+  reactiveRaster <- reactiveVal(NULL)
+  routes_data <- reactiveVal(NULL)
+  route_list <- reactiveVal(list())
+  corridors_raster <- reactiveVal(NULL)
+
   #### empieza environmental
   
   
@@ -3501,481 +3505,91 @@ server <- function(input, output, session) {
   #################################################
   #################################################
   ################################################# Calculate area
-  
-  # Load necessary libraries
-  library(shiny)
-  library(terra)
-  library(viridis)
-  
-  # Define a reactiveValues object to store the raster
-  reactiveRaster <- reactiveValues(data = NULL)
-  
-  # Calculate Area and Display on Map using `terra`
-  observeEvent(input$calcularArea, {
-    tryCatch({ 
-      req(input$archivoRaster)
-      req(input$umbralSuitability)
-      
-      withProgress(message = 'Calculating...', value = 0, {
-        archivoRaster <- input$archivoRaster$datapath
-        umbralSuitability <- input$umbralSuitability
-        
-        incProgress(2/10, detail = "Loading raster data...")
-        rasterData <- rast(archivoRaster)  # Load raster with `terra`
-        
-        incProgress(2/10, detail = "Applying threshold...")
-        rasterFiltered <- rasterData  # Copy raster
-        
-        # Set values below threshold to NA
-        rasterFiltered[rasterFiltered < umbralSuitability] <- NA  
-        
-        incProgress(2/10, detail = "Calculating cell areas...")
-        cell_size <- cellSize(rasterFiltered, mask = TRUE)  # Compute cell sizes
-        
-        incProgress(2/10, detail = "Calculating total area...")
-        areaSuitability <- global(cell_size, fun = "sum", na.rm = TRUE)[1, 1]  # Compute total area
-        
-        incProgress(2/10, detail = "Finalizing...")
-        
-        # Store the processed raster
-        reactiveRaster$data <- rasterFiltered
-        
-        # Update the result output
-        output$Result <- renderPrint({
-          paste("Area of Suitability above", umbralSuitability, ":", round(areaSuitability, 2), "km²")
-        })
-        
-        # Render suitability area map
-        output$areaMap <- renderPlot({
-          req(reactiveRaster$data)  
-          plot(reactiveRaster$data, 
-               main = paste("Suitability Area (Threshold:", umbralSuitability, ")"),
-               col = viridis(10, option = "D"),  
-               legend.args = list(text = "Suitability", side = 4, line = 2))
-        })
-        
-        # Force UI update
-        invalidateLater(500, session)
+
+
+# Load necessary libraries
+library(shiny)
+library(terra)
+library(viridis)
+
+# Define a reactiveValues object to store the raster
+reactiveRaster <- reactiveValues(data = NULL)
+
+# Calculate Area and Display on Map using `terra`
+observeEvent(input$calcularArea, {
+  tryCatch({
+    req(input$archivoRaster)
+    req(input$umbralSuitability)
+
+    withProgress(message = 'Calculating...', value = 0, {
+      archivoRaster <- input$archivoRaster$datapath
+      umbralSuitability <- as.numeric(input$umbralSuitability)
+
+      incProgress(2/10, detail = "Loading raster data...")
+      rasterData <- rast(archivoRaster)[[1]]  # Load only the first band
+
+      incProgress(2/10, detail = "Applying threshold...")
+      rasterFiltered <- rasterData
+      rasterFiltered[rasterFiltered < umbralSuitability] <- NA  # Apply threshold filter
+
+      incProgress(2/10, detail = "Calculating cell area...")
+      cell_area_m2 <- cellSize(rasterFiltered, unit = "m", mask = TRUE)
+
+      incProgress(2/10, detail = "Summing suitable area...")
+      areaSuitability <- global(cell_area_m2, fun = "sum", na.rm = TRUE)[1, 1] / 1e6  # km²
+
+      incProgress(2/10, detail = "Finalizing...")
+      reactiveRaster$data <- rasterFiltered  # Store for plotting/export
+
+      # Output numerical result
+      output$Result <- renderPrint({
+        paste("Area of Suitability above", umbralSuitability, ":", round(areaSuitability, 2), "km²")
       })
-    }, error = function(e) {
-      showModal(
-        modalDialog(
-          title = "Error",
-          paste("Something went wrong:", e$message),
-          easyClose = TRUE,
-          footer = NULL
-        )
-      )
-    })
-  })
-  
-  # Download the thresholded suitability map as .asc
-  output$downloadAscThreshold <- downloadHandler(
-    filename = function() { "suitability_map.asc" },
-    content = function(file) {
-      req(reactiveRaster$data)  
-      writeRaster(reactiveRaster$data, file, overwrite = TRUE)
-    }
-  )
-  
-  # Download the suitability map as PDF
-  output$downloadPdfThreshold <- downloadHandler(
-    filename = function() { "suitability_map.pdf" },
-    content = function(file) {
-      req(reactiveRaster$data)  
-      pdf(file, width = 8, height = 6)
-      plot(reactiveRaster$data, 
-           main = paste("Suitability Area (Threshold:", input$umbralSuitability, ")"),
-           col = viridis(10, option = "D"),  
-           legend.args = list(text = "Suitability", side = 4, line = 2))
-      dev.off()
-    }
-  )
-  
-  ############################# present future
-  #############################
-  #############################
-  #############################
-  
-  
-  # Crear valores reactivos para almacenar los mapas
-  present_map <- reactiveVal(NULL)
-  future_map <- reactiveVal(NULL)
-  
-  # Cargar el mapa presente
-  observeEvent(input$mapa_presente_input, {
-    req(input$mapa_presente_input)  # Asegura que el archivo no esté vacío
-    present <- rast(input$mapa_presente_input$datapath)
-    print("Present map loaded")  # Debugging
-    present_map(present)
-  })
-  
-  # Cargar el mapa futuro y asegurar compatibilidad
-  observeEvent(input$mapa_futuro_input, {
-    req(input$mapa_futuro_input)  # Asegura que el archivo no esté vacío
-    future <- rast(input$mapa_futuro_input$datapath)
-    
-    # Ajustar la proyección y resolución para que coincidan con el mapa presente
-    if (!is.null(present_map())) {
-      tryCatch({
-        if (crs(future) != crs(present_map())) {
-          future <- project(future, crs(present_map()))
-        }
-        if (!all(res(future) == res(present_map()))) {
-          future <- resample(future, present_map(), method = "bilinear")  # ✅ Corrección
-        }
-        print("Future map loaded and aligned")  # Debugging
-      }, error = function(e) {
-        print(paste("Error processing future map:", e$message))  # Evitar que la app se cierre
+
+      # Output filtered map
+      output$areaMap <- renderPlot({
+        req(reactiveRaster$data)
+        plot(reactiveRaster$data,
+             main = paste("Suitability Area (Threshold:", umbralSuitability, ")"),
+             col = viridis(10, option = "D"),
+             legend.args = list(text = "Suitability", side = 4, line = 2))
       })
-    }
-    
-    future_map(future)
+
+      invalidateLater(1000, session)
+    })
+  }, error = function(e) {
+    showModal(modalDialog(
+      title = "Error",
+      paste("Something went wrong:", e$message),
+      easyClose = TRUE,
+      footer = NULL
+    ))
   })
-  
-  # Realizar análisis y visualizar resultados
-  observeEvent(input$run_analysis_btn, {
-    req(present_map(), future_map())  # Asegurar que los mapas no sean NULL
-    
-    print("Running analysis...")  # Debugging
-    
-    Gains <- future_map() - present_map()
-    Losses <- present_map() - future_map()
-    
-    print("Analysis completed")  # Debugging
-    
-    # Graficar los mapas
-    output$Gains_plot <- renderPlot({
-      req(Gains)
-      plot(Gains, main = "Gains: Future - Present", col = terrain.colors(10))
-    })
-    
-    output$Losses_plot <- renderPlot({
-      req(Losses)
-      plot(Losses, main = "Losses: Present - Future", col = terrain.colors(10))
-    })
-    
-    # Agregar invalidación para asegurar que se actualicen los gráficos
-    invalidateLater(1000)
-  })
-  
-  # Descargar Mapa de Ganancias en formato .asc
-  output$download_Gains <- downloadHandler(
-    filename = function() {
-      "Gains.asc"
-    },
-    content = function(file) {
-      req(present_map(), future_map())  # Evita errores si los mapas no están cargados
-      Gains <- future_map() - present_map()
-      writeRaster(Gains, file, overwrite = TRUE)
-    }
-  )
-  
-  # Descargar Mapa de Pérdidas en formato .asc
-  output$download_Losses <- downloadHandler(
-    filename = function() {
-      "Losses.asc"
-    },
-    content = function(file) {
-      req(present_map(), future_map())
-      Losses <- present_map() - future_map()
-      writeRaster(Losses, file, overwrite = TRUE)
-    }
-  )
-  
-  
-  
-  #################################
-  #############################################3
-  #######################################################3
-  ######################################### Partial roc
-  
-  observeEvent(input$runButtonEnmEval, {
-    
-    tryCatch({ 
-      
-      withProgress(message = 'Carrying out statistical evaluations...', value = 0, {
-        
-        incProgress(1/10, detail = "Validating inputs...")
-        
-        # Validar archivo CSV
-        if (is.null(input$occ_proc$datapath) || input$occ_proc$datapath == "") {
-          stop("Validation data file not uploaded or invalid.")
-        }
-        
-        test_data <- read.csv(input$occ_proc$datapath)
-        
-        if (nrow(test_data) == 0) {
-          stop("The uploaded CSV file is empty.")
-        }
-        
-        # Validar columnas esperadas
-        if (!all(c("X", "Y") %in% colnames(test_data))) {
-          stop("The CSV file must contain columns named 'X' and 'Y'.")
-        }
-        
-        # Renombrar columnas
-        colnames(test_data)[colnames(test_data) == "X"] <- "longitude"
-        colnames(test_data)[colnames(test_data) == "Y"] <- "latitude"
-        
-        # Filtrar solo las columnas necesarias
-        test_data <- test_data[, c("longitude", "latitude")]
-        
-        # Validar que ahora solo tenga dos columnas
-        if (ncol(test_data) != 2) {
-          stop("The processed validation data must contain exactly two columns: 'longitude' and 'latitude'.")
-        }
-        
-        # Validar archivo raster
-        if (is.null(input$sdm_mod$datapath) || input$sdm_mod$datapath == "") {
-          stop("Prediction raster file not uploaded or invalid.")
-        }
-        
-        # Cargar el raster
-        continuous_mod <- tryCatch({
-          rast <- raster(input$sdm_mod$datapath)
-          if (is.null(values(rast))) {
-            stop("The raster has no associated values.")
-          }
-          rast
-        }, error = function(e) {
-          stop("Error loading raster: ", e$message)
-        })
-        
-        if (is.null(continuous_mod)) {
-          stop("The uploaded raster file is not valid.")
-        }
-        
-        # Validar si las coordenadas están dentro del área del raster
-        ext <- extent(continuous_mod)
-        if (any(test_data$longitude < ext@xmin | test_data$longitude > ext@xmax |
-                test_data$latitude < ext@ymin | test_data$latitude > ext@ymax)) {
-          stop("Some coordinates in the validation data are outside the raster extent.")
-        }
-        
-        incProgress(2/10, detail = "Inputs validated...")
-        
-        # Validar valores numéricos
-        if (is.null(input$iter) || input$iter <= 0) {
-          stop("Number of iterations must be greater than 0.")
-        }
-        
-        if (is.null(input$omission) || input$omission < 0 || input$omission > 100) {
-          stop("Omission threshold must be between 0 and 100.")
-        }
-        
-        if (is.null(input$randper) || input$randper <= 0 || input$randper > 100) {
-          stop("Percent for bootstrap must be between 1 and 100.")
-        }
-        
-        # Realizar el análisis
-        incProgress(3/10, detail = "Starting analysis...")
-        
-        analisisproc <- tryCatch({
-          if (!inherits(continuous_mod, "RasterLayer")) {
-            stop("The raster input is not a valid RasterLayer object.")
-          }
-          
-          if (!inherits(test_data, "data.frame") || ncol(test_data) != 2) {
-            stop("The test data must be a data frame with exactly two columns: 'longitude' and 'latitude'.")
-          }
-          
-          pROC(
-            continuous_mod,
-            test_data,
-            n_iter = input$iter,
-            E_percent = input$omission,
-            boost_percent = input$randper,
-            parallel = FALSE,
-            ncores = 4,
-            rseed = FALSE,
-            sub_sample = FALSE,
-            sub_sample_size = 10000
-          )
-        }, error = function(e) {
-          stop("Error during pROC analysis: ", e$message)
-        })
-        
-        incProgress(6/10, detail = "Analysis in progress...")
-        
-        # Mostrar resultados
-        output$summaryroc <- renderUI({
-          suroc <- analisisproc$pROC_summary
-          suroc_df <- as.data.frame(t(suroc))
-          
-          tableroc <- suroc_df %>%
-            gt() %>%
-            gt_highlight_rows(rows = 1, font_weight = "normal")
-          
-          tableroc
-        })
-        
-        output$resultsroc <- renderDataTable({
-          analisisproc$pROC_results
-        })
-        
-        incProgress(9/10, detail = "Finalizing analysis...")
-        
-      }) # withProgress
-      
-    }, error = function(e) {
-      # Manejo de errores
-      showModal(
-        modalDialog(
-          title = "Error",
-          paste("Something went wrong:", e$message),
-          easyClose = TRUE,
-          footer = NULL
-        )
-      )
-    })
-    
-  }) # observeEvent
-  
-  observeEvent(input$runButtonBiomod2, {
-    
-    tryCatch({ 
-      
-      withProgress(message = 'Carrying out statistical evaluations...', value = 0, {
-        
-        incProgress(1/10, detail = "Validating inputs...")
-        
-        # Validar archivo CSV
-        if (is.null(input$occ_proc$datapath) || input$occ_proc$datapath == "") {
-          stop("Validation data file not uploaded or invalid.")
-        }
-        
-        test_data <- read.csv(input$occ_proc$datapath)
-        
-        if (nrow(test_data) == 0) {
-          stop("The uploaded CSV file is empty.")
-        }
-        
-        # Validar columnas esperadas
-        if (!all(c("X", "Y") %in% colnames(test_data))) {
-          stop("The CSV file must contain columns named 'X' and 'Y'.")
-        }
-        
-        # Renombrar columnas
-        colnames(test_data)[colnames(test_data) == "X"] <- "longitude"
-        colnames(test_data)[colnames(test_data) == "Y"] <- "latitude"
-        
-        # Filtrar solo las columnas necesarias
-        test_data <- test_data[, c("longitude", "latitude")]
-        
-        # Validar que ahora solo tenga dos columnas
-        if (ncol(test_data) != 2) {
-          stop("The processed validation data must contain exactly two columns: 'longitude' and 'latitude'.")
-        }
-        
-        # Validar archivo raster
-        if (is.null(input$sdm_mod$datapath) || input$sdm_mod$datapath == "") {
-          stop("Prediction raster file not uploaded or invalid.")
-        }
-        
-        # Cargar el raster y escalar valores (0-100 a 0-1)
-        continuous_mod <- tryCatch({
-          rast <- raster(input$sdm_mod$datapath)
-          
-          if (maxValue(rast) > 1) {
-            rast <- calc(rast, function(x) x / 100)
-          }
-          
-          rast
-        }, error = function(e) {
-          stop("Error loading or scaling raster: ", e$message)
-        })
-        
-        if (is.null(continuous_mod)) {
-          stop("The uploaded raster file is not valid.")
-        }
-        
-        # Validar si las coordenadas están dentro del área del raster
-        ext <- extent(continuous_mod)
-        if (any(test_data$longitude < ext@xmin | test_data$longitude > ext@xmax |
-                test_data$latitude < ext@ymin | test_data$latitude > ext@ymax)) {
-          stop("Some coordinates in the validation data are outside the raster extent.")
-        }
-        
-        incProgress(2/10, detail = "Inputs validated...")
-        
-        # Validar valores numéricos
-        if (is.null(input$iter) || input$iter <= 0) {
-          stop("Number of iterations must be greater than 0.")
-        }
-        
-        if (is.null(input$omission) || input$omission < 0 || input$omission > 100) {
-          stop("Omission threshold must be between 0 and 100.")
-        }
-        
-        if (is.null(input$randper) || input$randper <= 0 || input$randper > 100) {
-          stop("Percent for bootstrap must be between 1 and 100.")
-        }
-        
-        # Realizar el análisis
-        incProgress(3/10, detail = "Starting analysis...")
-        
-        analisisproc <- tryCatch({
-          if (!inherits(continuous_mod, "RasterLayer")) {
-            stop("The raster input is not a valid RasterLayer object.")
-          }
-          
-          if (!inherits(test_data, "data.frame") || ncol(test_data) != 2) {
-            stop("The test data must be a data frame with exactly two columns: 'longitude' and 'latitude'.")
-          }
-          
-          pROC(
-            continuous_mod,
-            test_data,
-            n_iter = input$iter,
-            E_percent = input$omission,
-            boost_percent = input$randper,
-            parallel = FALSE,
-            ncores = 4,
-            rseed = FALSE,
-            sub_sample = FALSE,
-            sub_sample_size = 10000
-          )
-        }, error = function(e) {
-          stop("Error during pROC analysis: ", e$message)
-        })
-        
-        incProgress(6/10, detail = "Analysis in progress...")
-        
-        # Mostrar resultados
-        output$summaryroc <- renderUI({
-          suroc <- analisisproc$pROC_summary
-          suroc_df <- as.data.frame(t(suroc))
-          tableroc <- suroc_df %>%
-            gt() %>%
-            gt_highlight_rows(rows = 1, font_weight = "normal")
-          
-          tableroc
-        })
-        
-        output$resultsroc <- renderDataTable({
-          analisisproc$pROC_results
-        })
-        
-        incProgress(9/10, detail = "Finalizing analysis...")
-        
-      }) # withProgress
-      
-    }, error = function(e) {
-      # Manejo de errores
-      showModal(
-        modalDialog(
-          title = "Error",
-          paste("Something went wrong:", e$message),
-          easyClose = TRUE,
-          footer = NULL
-        )
-      )
-    })
-    
-  }) # observeEvent
-  
-  
+})
+
+# Download the thresholded suitability map as .asc
+output$downloadAscThreshold <- downloadHandler(
+  filename = function() { "suitability_map.asc" },
+  content = function(file) {
+    req(reactiveRaster$data)
+    writeRaster(reactiveRaster$data, file, overwrite = TRUE)
+  }
+)
+
+# Download the suitability map as PDF
+output$downloadPdfThreshold <- downloadHandler(
+  filename = function() { "suitability_map.pdf" },
+  content = function(file) {
+    req(reactiveRaster$data)
+    pdf(file, width = 8, height = 6)
+    plot(reactiveRaster$data,
+         main = paste("Suitability Area (Threshold:", input$umbralSuitability, ")"),
+         col = viridis(10, option = "D"),
+         legend.args = list(text = "Suitability", side = 4, line = 2))
+    dev.off()
+  }
+)
+
   #################################
   #############################################3
   #######################################################3
@@ -4936,7 +4550,6 @@ server <- function(input, output, session) {
       })
     })
   })
-}
 
 shinyApp(ui, server)
 ###################
