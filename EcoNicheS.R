@@ -16,7 +16,6 @@ library(spatstat.explore)
 library(spatstat.model)
 library(spatstat.geom)
 library(spatstat.geom)
-library(spatstat.core)
 library(gam)
 library(ENMTools)
 library(biomod2)
@@ -4568,4 +4567,5 @@ shinyApp(ui, server)
 
 # Ejecutar la aplicación
 shinyApp(ui = ui, server = server)
+
 
