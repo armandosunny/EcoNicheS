@@ -11,6 +11,13 @@ options(shiny.maxRequestSize = 80000*1024^2)
 library(shiny)
 library(terra)
 library(usdm)
+library(spatstat.univar)
+library(spatstat.explore)
+library(spatstat.model)
+library(spatstat.geom)
+library(spatstat.geom)
+library(spatstat.core)
+library(gam)
 library(ENMTools)
 library(biomod2)
 library(RColorBrewer)
@@ -58,6 +65,7 @@ library(terra)
 library(sf)
 library(gdistance)
 library(viridis)
+
 
 
 # Definir UI de la aplicación principal
@@ -4560,3 +4568,4 @@ shinyApp(ui, server)
 
 # Ejecutar la aplicación
 shinyApp(ui = ui, server = server)
+
