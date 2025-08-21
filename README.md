@@ -65,7 +65,7 @@ EcoNicheS depends on several R libraries. Copy and paste the following command i
 
 # List of packages
 packages <- c("shiny", "terra", "usdm", "spatstat.univar", "spatstat.explore", "spatstat.model", 
-  "spatstat.geom", "spatstat.core","ENMTools", "biomod2", "RColorBrewer", 
+  "spatstat.geom", "spatstat.core","ENMTools", "gam", "biomod2", "RColorBrewer", 
              "dismo", "tiff", "rJava", "tidyterra", "shinydashboard", "pROC", 
              "R.utils", "countrycode", "CoordinateCleaner", "dplyr", "ggplot2", 
              "rgbif", "sf", "rnaturalearthdata", "spThin", "shinyjs", "leaflet", 
