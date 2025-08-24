@@ -133,8 +133,8 @@ You can run **EcoNicheS** in two different ways, depending on your preference.
 2. Double-click the file to open it in **RStudio**.  
 3. In RStudio, click the **"Run App"** button (located at the top right of the script editor window).  
 4. EcoNicheS will launch automatically in the **RStudio Viewer** or in your default web browser.  
-<img width="271" height="352" alt="Captura de pantalla 2025-08-24 a la(s) 7 26 43 a m" src="https://github.com/user-attachments/assets/7a7f845a-e1fb-4a8f-8117-20c15a1dfc7b" />
 
+<img width="271" height="352" alt="Captura de pantalla 2025-08-24 a la(s) 7 32 31 a m" src="https://github.com/user-attachments/assets/0400e75b-5fac-4118-a735-2fff867bb68d" />
 
 
 
