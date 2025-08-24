@@ -113,16 +113,30 @@ options(shiny.maxRequestSize = 6000*1024^2)
 
 ---
 
-## Step 5: Running EcoNicheS
+﻿## Step 5: Running EcoNicheS
 
-### 5.1 Download the EcoNicheS Script
-1. Go to the [EcoNicheS GitHub Repository](https://github.com/armandosunny/EcoNicheS).
-2. Download the `EcoNicheS.R` file.
+You can run **EcoNicheS** in two different ways, depending on your preference.
 
-### 5.2 Run the Script
-1. Open the `EcoNicheS.R` file in a text editor (e.g., Notepad).
-2. Copy all the code.
-3. Paste it into the R console and press Enter to run the script.
+---
+
+### 5.1 Method 1: Running from the R Console
+1. Go to the [EcoNicheS GitHub Repository](https://github.com/armandosunny/EcoNicheS).  
+2. Download the `EcoNicheS.R` file.  
+3. Open the file in any text editor (e.g., Notepad).  
+4. Copy all the code.  
+5. Paste it into the **R console** and press **Enter** to run the script.  
+
+---
+
+### 5.2 Method 2: Running in RStudio
+1. Download the `EcoNicheS.R` file from the [GitHub Repository](https://github.com/armandosunny/EcoNicheS).  
+2. Double-click the file to open it in **RStudio**.  
+3. In RStudio, click the **"Run App"** button (located at the top right of the script editor window).  
+4. EcoNicheS will launch automatically in the **RStudio Viewer** or in your default web browser.  
+
+---
+
+✅ That’s it! You are now ready to use **EcoNicheS**.  
 
 ---
 
