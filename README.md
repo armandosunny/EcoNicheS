@@ -496,7 +496,7 @@ This module performs an analysis using least-cost maps to visualize optimal path
 -Diana M Ochoa-Sanz and Esmar O Guzmán-Díaz: Contributed to improving and maintaining the application code.
 
 
-<img width="1672" height="708" alt="Captura de pantalla 2025-09-03 a la(s) 2 59 07 p m" src="https://github.com/user-attachments/assets/65544c89-06bf-401a-b1f7-43d96830c271" />
+<img width="1672" height="708" alt="Captura de pantalla 2025-09-03 a la(s) 2 59 07 p m" src="https://github.com/user-attachments/assets/65544c89-06bf-401a-b1f7-43d96830c271">
 
   
 # Citation
@@ -627,7 +627,7 @@ Departamento de Zoología, Instituto de Biología, Universidad Nacional Autónom
 INECOL, Instituto de Ecología, A.C. Ciudad de Xalapa, Veracruz, Mexico.
 
 <div align="center">
-  <img width="2016" height="1166" alt="Captura de pantalla 2025-09-03 a la(s) 2 51 28 p m" src="https://github.com/user-attachments/assets/6e513e8d-ee26-4e50-9df4-612a67c7497d" />
+  <img width="2016" height="1166" alt="Captura de pantalla 2025-09-03 a la(s) 2 51 28 p m" src="https://github.com/user-attachments/assets/6e513e8d-ee26-4e50-9df4-612a67c7497d">
 </div>
 
 
