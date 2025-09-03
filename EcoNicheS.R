@@ -1237,7 +1237,8 @@ ui <- dashboardPage(
                 
                 # Botón de descarga condicional para exportar el mapa en PDF
                 conditionalPanel(
-                  condition = "output.connectivity_output !== undefined && connectivity_output !== null", 
+                  condition = "output.connectivity_output !== undefined && connectivity_output !== null",
+                  downloadButton("download_asc_connec", "Download Connectivity Map (.asc)"),
                   downloadButton("download_pdf_connec", "Download Map as PDF", disabled = FALSE)
                 )
               ) # box
