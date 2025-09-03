@@ -496,8 +496,7 @@ This module performs an analysis using least-cost maps to visualize optimal path
 -Diana M Ochoa-Sanz and Esmar O Guzmán-Díaz: Contributed to improving and maintaining the application code.
 
 
-<img width="904" height="1166" alt="Captura de pantalla 2025-09-03 a la(s) 2 48 07 p m" src="https://github.com/user-attachments/assets/a401a34f-4fe1-49a4-8783-0e1409d80edb" />
-
+<img width="1672" height="708" alt="Captura de pantalla 2025-09-03 a la(s) 2 59 07 p m" src="https://github.com/user-attachments/assets/65544c89-06bf-401a-b1f7-43d96830c271" />
 
   
 # Citation
@@ -619,26 +618,17 @@ Zizka A, Silvestro D, Andermann T, Azevedo J, Duarte Ritter C, Edler D, Farooq H
 -----
 Centro de Investigación en Ciencias Biológicas Aplicadas, Facultad de Ciencias, Universidad Autónoma del Estado de México, Toluca, Estado de México, Mexico
 
-Centro de Innovación Digital “Mandra” Laboratorio Nacional de Enseñanza e Innovación
-aplicando Cómputo de Alto Rendimiento (EICAR), CONAHCyT, Universidad Autónoma del Estado de México, Toluca, Estado de México, Mexico
-
 Departamento de Conservación de la Biodiversidad, El Colegio de la Frontera Sur, San Cristóbal de Las Casas, Chiapas, Mexico
 
-Laboratorio Nacional Conahcyt de Biología del Cambio Climático, CONAHCyT, Mexico City,
-Mexico
+Laboratorio Nacional Conahcyt de Biología del Cambio Climático, CONAHCyT, Mexico City, Mexico
 
-Departamento de Zoología, Instituto de Biología, Universidad Nacional Autónoma de México,
-Mexico City, Mexico
+Departamento de Zoología, Instituto de Biología, Universidad Nacional Autónoma de México, Mexico City, Mexico
+
+INECOL, Instituto de Ecología, A.C. Ciudad de Xalapa, Veracruz, Mexico.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/8728e8a0-cceb-4b1e-b6bc-3c3933116460" alt="Captura de pantalla 2025-04-19 a la(s) 6:18:39 p. m." width="300"/>
+  <img width="2016" height="1166" alt="Captura de pantalla 2025-09-03 a la(s) 2 51 28 p m" src="https://github.com/user-attachments/assets/6e513e8d-ee26-4e50-9df4-612a67c7497d" />
 </div>
-
-
-
-
-
-
 
 
 
