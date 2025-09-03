@@ -493,6 +493,8 @@ This module performs an analysis using least-cost maps to visualize optimal path
 
 -Armando Sunny: Offered financial support, enabling the successful realization of the project.
 
+-Diana M Ochoa-Sanz and Esmar O Guzmán-Díaz: Contributed to improving and maintaining the application code.
+
 <img width="904" alt="Captura de pantalla 2024-12-02 a la(s) 10 54 30 a m" src="https://github.com/user-attachments/assets/cc40a304-ba91-46ef-ae2d-1a05901fd3bf">
 
 
