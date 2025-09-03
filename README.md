@@ -495,7 +495,8 @@ This module performs an analysis using least-cost maps to visualize optimal path
 
 -Diana M Ochoa-Sanz and Esmar O Guzmán-Díaz: Contributed to improving and maintaining the application code.
 
-<img width="904" alt="Captura de pantalla 2024-12-02 a la(s) 10 54 30 a m" src="https://github.com/user-attachments/assets/cc40a304-ba91-46ef-ae2d-1a05901fd3bf">
+
+<img width="904" height="1166" alt="Captura de pantalla 2025-09-03 a la(s) 2 48 07 p m" src="https://github.com/user-attachments/assets/a401a34f-4fe1-49a4-8783-0e1409d80edb" />
 
 
   
