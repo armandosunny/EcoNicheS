@@ -7,7 +7,9 @@ Please Cite this as:
 Sunny A, Marmolejo C, Vidal-López R, Falconi-Briones FA, Cuervo-Robayo ÁP, Bolom-Huet R. 2025. EcoNicheS: enhancing ecological niche modeling, niche overlap and connectivity analysis using the shiny dashboard and R package. PeerJ 13:e19136 https://doi.org/10.7717/peerj.19136 
 ![Captura de pantalla 2025-03-28 a la(s) 5 33 02 a m](https://github.com/user-attachments/assets/8e85f9ea-bc4e-4a75-9f76-6fea7c323420)
 
-### This is Version 1.1.0, last updated on May 20, 2025. Future versions will include additional analyses and enhancements.
+### This is Version 1.2.0, last updated on Spetember 3, 2025. Future versions will include additional analyses and enhancements.
+Maintainers: Sunny A, Marmolejo C, Cuervo-Robayo ÁP, Bolom-Huet R, Ochoa-Sanz DM (since v1.2.0), Guzmán-Díaz EO (since v1.2.0)
+
 
 Need Help or Found a Bug?
 For any questions, comments, or to report bugs related to EcoNicheS, feel free to:
