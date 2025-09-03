@@ -69,7 +69,7 @@ library(viridis)
 
 # Definir UI de la aplicación principal
 ui <- dashboardPage(
-  dashboardHeader(title = 'EcoNicheS V. 1.1.0',
+  dashboardHeader(title = 'EcoNicheS V. 1.2.0',
                   tags$li(class = "dropdown",
                           tags$style(HTML("
              .skin-pink .main-header {
@@ -4568,5 +4568,6 @@ shinyApp(ui, server)
 
 # Ejecutar la aplicación
 shinyApp(ui = ui, server = server)
+
 
 
