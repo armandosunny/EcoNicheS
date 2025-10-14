@@ -58,6 +58,20 @@ EcoNicheS requires 64-bit Java. Download and install it from [Oracle Java](https
 ---
 ## 2 Install EcoNicheS Dependencies
 
+## GitHub Libraries
+Some libraries are not available on CRAN and must be installed from GitHub. Run the following commands in your R console:
+
+```
+if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
+
+# Install ntbox
+remotes::install_github("luismurao/ntbox")
+
+# Install ENMTools
+remotes::install_github("danlwarren/ENMTools")
+```
+
+---
 
 ### CRAN Libraries
 EcoNicheS depends on several R libraries. Copy and paste the following command into your R console to install them all at once:
@@ -88,20 +102,6 @@ lapply(packages, library, character.only = TRUE)
 ```
 
 
-## GitHub Libraries
-Some libraries are not available on CRAN and must be installed from GitHub. Run the following commands in your R console:
-
-```
-if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
-
-# Install ntbox
-remotes::install_github("luismurao/ntbox")
-
-# Install ENMTools
-remotes::install_github("danlwarren/ENMTools")
-```
-
----
 
 ---
 
