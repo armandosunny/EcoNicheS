@@ -64,6 +64,9 @@ Some libraries are not available on CRAN and must be installed from GitHub. Run 
 ```
 if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
 
+# Install kuenm
+devtools::install_github("marlonecobos/kuenm")
+
 # Install ntbox
 remotes::install_github("luismurao/ntbox")
 
