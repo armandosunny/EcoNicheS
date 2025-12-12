@@ -91,7 +91,7 @@ packages <- c("shiny", "terra", "usdm", "spatstat.univar", "spatstat.explore", "
              "DT", "shinyBS", "prettymapr", "ntbox", "gt", "tidyverse", "gtExtras", 
              "shinyBS", "leaflet.extras", "geodata", "viridis", "ggthemes", "sp", 
              "earth", "xgboost", "gdistance", "foreach", "doParallel", "raster", 
-             "progress", "readr", "MIAmaxent", "shiny", "sf", "gdistance", "viridis", "geos")
+             "progress", "readr", "MIAmaxent", "shiny", "sf", "gdistance", "viridis", "geos", "DT")
 
 # Install missing packages
 missing_packages <- packages[!(packages %in% installed.packages()[,"Package"])]
