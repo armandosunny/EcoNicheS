@@ -3602,6 +3602,100 @@ output$downloadPdfThreshold <- downloadHandler(
   #############################################3
   #######################################################3
   ######################################### Partial roc
+
+
+
+
+
+
+
+
+################################
+  #############################################3
+  #######################################################3
+  #######################gains and looses
+
+observeEvent(input$run_analysis_btn, {
+
+  req(input$mapa_presente_input, input$mapa_futuro_input)
+
+  withProgress(message = "Running gains & losses analysis...", value = 0, {
+
+    message("Gains & Losses analysis started")
+
+    incProgress(0.2, detail = "Loading rasters")
+
+    pres <- terra::rast(input$mapa_presente_input$datapath)
+    fut  <- terra::rast(input$mapa_futuro_input$datapath)
+
+    if (terra::nlyr(pres) > 1) pres <- pres[[1]]
+    if (terra::nlyr(fut)  > 1) fut  <- fut[[1]]
+
+    fut <- terra::resample(fut, pres, method = "near")
+
+    # Normalizar si es BIOMOD2 (0–100)
+    if (terra::global(pres, "max", na.rm = TRUE)[1,1] > 1) pres <- pres / 100
+    if (terra::global(fut,  "max", na.rm = TRUE)[1,1] > 1) fut  <- fut  / 100
+
+    incProgress(0.4, detail = "Binarizing maps")
+
+    thr <- 0.5
+    pres_bin <- pres > thr
+    fut_bin  <- fut  > thr
+
+    incProgress(0.6, detail = "Calculating gains & losses")
+
+    gain <- (fut_bin == 1) & (pres_bin == 0)
+    loss <- (fut_bin == 0) & (pres_bin == 1)
+
+    terra::values(gain)[terra::values(gain) == 0] <- NA
+    terra::values(loss)[terra::values(loss) == 0] <- NA
+
+    message("Gain cells: ", sum(!is.na(terra::values(gain))))
+    message("Loss cells: ", sum(!is.na(terra::values(loss))))
+
+    # Guardar automático para debug
+    terra::writeRaster(gain, "gain_debug.tif", overwrite = TRUE)
+    terra::writeRaster(loss, "loss_debug.tif", overwrite = TRUE)
+
+    incProgress(0.8, detail = "Rendering plots")
+
+    output$Gains_plot <- renderPlot({
+      plot(gain, col = "darkgreen", main = "Gains (0 → 1)")
+    })
+
+    output$Losses_plot <- renderPlot({
+      plot(loss, col = "red", main = "Losses (1 → 0)")
+    })
+
+    output$download_Gains <- downloadHandler(
+      filename = function() "gains_map.tif",
+      content = function(file) {
+        terra::writeRaster(gain, file, overwrite = TRUE)
+      }
+    )
+
+    output$download_Losses <- downloadHandler(
+      filename = function() "losses_map.tif",
+      content = function(file) {
+        terra::writeRaster(loss, file, overwrite = TRUE)
+      }
+    )
+
+    incProgress(1, detail = "Done")
+  })
+})
+
+
+##############################
+  #############################################3
+  #######################################################3
+  #######################gains and looses
+
+
+
+
+
   
   #################################################################################################################
   #################################################ENMTools########################################################
