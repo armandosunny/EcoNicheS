@@ -71,7 +71,7 @@ devtools::install_github("marlonecobos/kuenm")
 remotes::install_github("luismurao/ntbox")
 
 # Install ENMTools
-remotes::install_github("danlwarren/ENMTools")V
+remotes::install_github("danlwarren/ENMTools")
 
 install.extras()
 ```
