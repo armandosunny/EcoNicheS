@@ -73,7 +73,7 @@ remotes::install_github("luismurao/ntbox")
 # Install ENMTools
 remotes::install_github("danlwarren/ENMTools")
 
-install.extras()
+#install.extras()
 ```
 
 ---
